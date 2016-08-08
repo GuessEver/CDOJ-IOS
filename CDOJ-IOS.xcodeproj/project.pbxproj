@@ -27,13 +27,21 @@
 		5F03EA101D58244700607DB9 /* ProblemMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA0F1D58244700607DB9 /* ProblemMainViewController.m */; };
 		5F03EA131D58245B00607DB9 /* UserMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA121D58245B00607DB9 /* UserMainViewController.m */; };
 		5F03EA161D58246E00607DB9 /* ContestMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA151D58246E00607DB9 /* ContestMainViewController.m */; };
+		5F7E4D461D58829C00E9D4C8 /* NoticeContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */; };
+		5F7E4D491D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D481D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m */; };
+		5F7E4D4C1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D4B1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m */; };
+		5F7E4D4F1D58B6F900E9D4C8 /* ProblemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D4E1D58B6F900E9D4C8 /* ProblemListViewController.m */; };
+		5F7E4D521D58B80100E9D4C8 /* ProblemSplitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D511D58B80100E9D4C8 /* ProblemSplitDetailViewController.m */; };
+		5F7E4D551D58B84500E9D4C8 /* ProblemContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D541D58B84500E9D4C8 /* ProblemContentViewController.m */; };
+		5F7E4D581D58B8FB00E9D4C8 /* ProblemListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D571D58B8FB00E9D4C8 /* ProblemListTableViewCell.m */; };
 		5FE468191D5850CE0050636D /* NoticeSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */; };
 		5FE4681D1D5851630050636D /* DefaultNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681C1D5851630050636D /* DefaultNavigationController.m */; };
 		5FE468201D5852E20050636D /* NoticeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681F1D5852E20050636D /* NoticeListViewController.m */; };
 		5FE468231D5853EE0050636D /* DefaultSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468221D5853EE0050636D /* DefaultSplitViewController.m */; };
 		5FE468271D585FD80050636D /* DefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468261D585FD80050636D /* DefaultTableViewCell.m */; };
 		5FE4682A1D58606D0050636D /* NoticeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468291D58606D0050636D /* NoticeListTableViewCell.m */; };
-		A9065B2ED07282106038CCAB /* libPods-CDOJ-IOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 828531C7F2B08AAE033D8175 /* libPods-CDOJ-IOS.a */; };
+		5FE4682D1D5875310050636D /* NoticeSplitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4682C1D5875310050636D /* NoticeSplitDetailViewController.m */; };
+		A9065B2ED07282106038CCAB /* libPods-CDOJ-IOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 828531C7F2B08AAE033D8175 /* libPods-CDOJ-IOS.a */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +92,20 @@
 		5F03EA121D58245B00607DB9 /* UserMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMainViewController.m; sourceTree = "<group>"; };
 		5F03EA141D58246E00607DB9 /* ContestMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestMainViewController.h; sourceTree = "<group>"; };
 		5F03EA151D58246E00607DB9 /* ContestMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestMainViewController.m; sourceTree = "<group>"; };
+		5F7E4D441D58829C00E9D4C8 /* NoticeContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeContentViewController.h; sourceTree = "<group>"; };
+		5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeContentViewController.m; sourceTree = "<group>"; };
+		5F7E4D471D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSplitDetailLogoViewController.h; sourceTree = "<group>"; };
+		5F7E4D481D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultSplitDetailLogoViewController.m; sourceTree = "<group>"; };
+		5F7E4D4A1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemSplitMasterViewController.h; sourceTree = "<group>"; };
+		5F7E4D4B1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemSplitMasterViewController.m; sourceTree = "<group>"; };
+		5F7E4D4D1D58B6F900E9D4C8 /* ProblemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemListViewController.h; sourceTree = "<group>"; };
+		5F7E4D4E1D58B6F900E9D4C8 /* ProblemListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemListViewController.m; sourceTree = "<group>"; };
+		5F7E4D501D58B80100E9D4C8 /* ProblemSplitDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemSplitDetailViewController.h; sourceTree = "<group>"; };
+		5F7E4D511D58B80100E9D4C8 /* ProblemSplitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemSplitDetailViewController.m; sourceTree = "<group>"; };
+		5F7E4D531D58B84500E9D4C8 /* ProblemContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemContentViewController.h; sourceTree = "<group>"; };
+		5F7E4D541D58B84500E9D4C8 /* ProblemContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemContentViewController.m; sourceTree = "<group>"; };
+		5F7E4D561D58B8FB00E9D4C8 /* ProblemListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemListTableViewCell.h; sourceTree = "<group>"; };
+		5F7E4D571D58B8FB00E9D4C8 /* ProblemListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemListTableViewCell.m; sourceTree = "<group>"; };
 		5FE468171D5850CE0050636D /* NoticeSplitMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeSplitMasterViewController.h; sourceTree = "<group>"; };
 		5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeSplitMasterViewController.m; sourceTree = "<group>"; };
 		5FE4681B1D5851630050636D /* DefaultNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultNavigationController.h; sourceTree = "<group>"; };
@@ -96,6 +118,8 @@
 		5FE468261D585FD80050636D /* DefaultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultTableViewCell.m; sourceTree = "<group>"; };
 		5FE468281D58606D0050636D /* NoticeListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeListTableViewCell.h; sourceTree = "<group>"; };
 		5FE468291D58606D0050636D /* NoticeListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeListTableViewCell.m; sourceTree = "<group>"; };
+		5FE4682B1D5875310050636D /* NoticeSplitDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeSplitDetailViewController.h; sourceTree = "<group>"; };
+		5FE4682C1D5875310050636D /* NoticeSplitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeSplitDetailViewController.m; sourceTree = "<group>"; };
 		828531C7F2B08AAE033D8175 /* libPods-CDOJ-IOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CDOJ-IOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF74DD03BA03BACE62F68F3B /* Pods-CDOJ-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDOJ-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDOJ-IOS/Pods-CDOJ-IOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -295,6 +319,10 @@
 				5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */,
 				5FE4681E1D5852E20050636D /* NoticeListViewController.h */,
 				5FE4681F1D5852E20050636D /* NoticeListViewController.m */,
+				5FE4682B1D5875310050636D /* NoticeSplitDetailViewController.h */,
+				5FE4682C1D5875310050636D /* NoticeSplitDetailViewController.m */,
+				5F7E4D441D58829C00E9D4C8 /* NoticeContentViewController.h */,
+				5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -304,6 +332,14 @@
 			children = (
 				5F03EA0E1D58244700607DB9 /* ProblemMainViewController.h */,
 				5F03EA0F1D58244700607DB9 /* ProblemMainViewController.m */,
+				5F7E4D4A1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.h */,
+				5F7E4D4B1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m */,
+				5F7E4D4D1D58B6F900E9D4C8 /* ProblemListViewController.h */,
+				5F7E4D4E1D58B6F900E9D4C8 /* ProblemListViewController.m */,
+				5F7E4D501D58B80100E9D4C8 /* ProblemSplitDetailViewController.h */,
+				5F7E4D511D58B80100E9D4C8 /* ProblemSplitDetailViewController.m */,
+				5F7E4D531D58B84500E9D4C8 /* ProblemContentViewController.h */,
+				5F7E4D541D58B84500E9D4C8 /* ProblemContentViewController.m */,
 			);
 			path = Problem;
 			sourceTree = "<group>";
@@ -324,6 +360,8 @@
 				5FE4681C1D5851630050636D /* DefaultNavigationController.m */,
 				5FE468211D5853EE0050636D /* DefaultSplitViewController.h */,
 				5FE468221D5853EE0050636D /* DefaultSplitViewController.m */,
+				5F7E4D471D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.h */,
+				5F7E4D481D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m */,
 			);
 			path = Default;
 			sourceTree = "<group>";
@@ -335,6 +373,8 @@
 				5FE468261D585FD80050636D /* DefaultTableViewCell.m */,
 				5FE468281D58606D0050636D /* NoticeListTableViewCell.h */,
 				5FE468291D58606D0050636D /* NoticeListTableViewCell.m */,
+				5F7E4D561D58B8FB00E9D4C8 /* ProblemListTableViewCell.h */,
+				5F7E4D571D58B8FB00E9D4C8 /* ProblemListTableViewCell.m */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -381,6 +421,7 @@
 				TargetAttributes = {
 					5F03E9B41D581A8200607DB9 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9MKLJRJTT4;
 					};
 				};
 			};
@@ -466,9 +507,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F7E4D581D58B8FB00E9D4C8 /* ProblemListTableViewCell.m in Sources */,
+				5F7E4D4C1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m in Sources */,
 				5F03EA131D58245B00607DB9 /* UserMainViewController.m in Sources */,
 				5F03E9BD1D581A8200607DB9 /* AppDelegate.m in Sources */,
 				5F03E9FD1D581D8100607DB9 /* NoticeContentModel.m in Sources */,
+				5F7E4D551D58B84500E9D4C8 /* ProblemContentViewController.m in Sources */,
 				5F03EA011D581D8100607DB9 /* UserModel.m in Sources */,
 				5FE468201D5852E20050636D /* NoticeListViewController.m in Sources */,
 				5F03E9FC1D581D8100607DB9 /* DefaultModel.m in Sources */,
@@ -479,17 +523,22 @@
 				5F03E9FF1D581D8100607DB9 /* ProblemContentModel.m in Sources */,
 				5F03E9F91D581D8100607DB9 /* Time.m in Sources */,
 				5FE4682A1D58606D0050636D /* NoticeListTableViewCell.m in Sources */,
+				5F7E4D491D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m in Sources */,
 				5F03E9F61D581D8100607DB9 /* HTTP.m in Sources */,
+				5F7E4D4F1D58B6F900E9D4C8 /* ProblemListViewController.m in Sources */,
 				5FE468231D5853EE0050636D /* DefaultSplitViewController.m in Sources */,
 				5FE468191D5850CE0050636D /* NoticeSplitMasterViewController.m in Sources */,
+				5FE4682D1D5875310050636D /* NoticeSplitDetailViewController.m in Sources */,
 				5F03E9FE1D581D8100607DB9 /* NoticeListModel.m in Sources */,
 				5F03EA001D581D8100607DB9 /* ProblemListModel.m in Sources */,
 				5F03EA0D1D58243300607DB9 /* NoticeMainViewController.m in Sources */,
 				5F03E9F81D581D8100607DB9 /* Security.m in Sources */,
 				5F03E9FB1D581D8100607DB9 /* ContestListModal.m in Sources */,
 				5FE4681D1D5851630050636D /* DefaultNavigationController.m in Sources */,
+				5F7E4D521D58B80100E9D4C8 /* ProblemSplitDetailViewController.m in Sources */,
 				5F03EA061D58224D00607DB9 /* MainViewController.m in Sources */,
 				5F03E9BA1D581A8200607DB9 /* main.m in Sources */,
+				5F7E4D461D58829C00E9D4C8 /* NoticeContentViewController.m in Sources */,
 				5F03EA161D58246E00607DB9 /* ContestMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,10 +636,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "CDOJ-IOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.edu.uestc.acm.CDOJ-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -600,10 +652,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "CDOJ-IOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.edu.uestc.acm.CDOJ-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

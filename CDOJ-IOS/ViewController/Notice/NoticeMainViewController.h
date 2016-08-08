@@ -6,7 +6,6 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "DefaultSplitViewController.h"
 
 @interface NoticeMainViewController : DefaultSplitViewController

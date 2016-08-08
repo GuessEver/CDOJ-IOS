@@ -18,7 +18,7 @@
     return self;
 }
 
-- (void)fetchData:(NSInteger)page {
+- (void)fetchDataOnPage:(NSInteger)page {
     NSDictionary* requestBody = @{@"currentPage":[NSString stringWithFormat:@"%ld", page],@"orderFields":@"id",@"orderAsc":@"true"};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
@@ -32,21 +32,6 @@
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];
-    
-    
-    
-    NSLog(@"%@", API_PROBLEM_LIST);
-    requestBody = @{@"currentPage":@"1",@"orderFields":@"id",@"orderAsc":@"true"};
-    manager = [AFHTTPSessionManager manager];
-    [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
-    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    [manager POST:@"http://acm.uestc.edu.cn/problem/search" parameters:requestBody progress:^(NSProgress * _Nonnull uploadProgress) {
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@", responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@", [error localizedDescription]);
-    }];
-    
 }
 
 @end

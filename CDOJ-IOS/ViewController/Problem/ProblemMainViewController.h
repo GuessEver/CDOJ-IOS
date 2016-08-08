@@ -6,8 +6,8 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DefaultSplitViewController.h"
 
-@interface ProblemMainViewController : UISplitViewController
+@interface ProblemMainViewController : DefaultSplitViewController
 
 @end

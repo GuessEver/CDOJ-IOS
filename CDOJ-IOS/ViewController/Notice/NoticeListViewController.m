@@ -9,6 +9,7 @@
 #import "NoticeListViewController.h"
 #import "NoticeListTableViewCell.h"
 #import "Time.h"
+#import "NoticeSplitDetailViewController.h"
 
 @implementation NoticeListViewController
 
@@ -17,12 +18,12 @@
         [self setTitle:@"公告"];
         self.data = [[NoticeListModel alloc] init];
         [self.data fetchDataOnPage:1];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(AAA) name:NOTIFICATION_NOTICE_LIST_REFRESHED object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_NOTICE_LIST_REFRESHED object:nil];
     }
     return self;
 }
 
-- (void)AAA {
+- (void)refreshList {
 //    NSLog(@"%@", self.data.pageInfo);
 //    NSLog(@"%@", self.data.list);
     [self.tableView reloadData];
@@ -31,6 +32,10 @@
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [NoticeListTableViewCell height];
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NoticeSplitDetailViewController* detailView = [[NoticeSplitDetailViewController alloc] initWithArticleId:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"articleId"]]];
+    [self.splitViewController showDetailViewController:detailView sender:nil];
 }
 
 #pragma mark UITableViewDataSource

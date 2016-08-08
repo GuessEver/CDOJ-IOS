@@ -1,5 +1,5 @@
 //
-//  NoticeSplitMasterViewController.h
+//  DefaultSplitDetailLogoViewController.h
 //  CDOJ-IOS
 //
 //  Created by GuessEver on 16/8/8.
@@ -8,6 +8,6 @@
 
 #import "DefaultNavigationController.h"
 
-@interface NoticeSplitMasterViewController : DefaultNavigationController
+@interface DefaultSplitDetailLogoViewController : DefaultNavigationController
 
 @end

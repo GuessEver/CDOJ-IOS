@@ -7,13 +7,16 @@
 //
 
 #import "NoticeMainViewController.h"
+#import "DefaultSplitDetailLogoViewController.h"
 #import "NoticeSplitMasterViewController.h"
 
 @implementation NoticeMainViewController
 
 - (instancetype)init {
     if(self = [super init]) {
-        [self setViewControllers:@[[[NoticeSplitMasterViewController alloc] init]]];
+        NoticeSplitMasterViewController* A = [[NoticeSplitMasterViewController alloc] init];
+        DefaultSplitDetailLogoViewController* B = [[DefaultSplitDetailLogoViewController alloc] init];
+        [self setViewControllers:@[A, B]];
     }
     return self;
 }

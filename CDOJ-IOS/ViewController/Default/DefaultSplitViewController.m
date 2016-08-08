@@ -7,6 +7,7 @@
 //
 
 #import "DefaultSplitViewController.h"
+#import "Color.h"
 
 @implementation DefaultSplitViewController
 
@@ -14,12 +15,17 @@
     if(self = [super init]) {
         [self setDelegate:self];
         [self setExtendedLayoutIncludesOpaqueBars:YES];
+        
+        [self.view setBackgroundColor:COLOR_GRAY];
     }
     return self;
 }
 
 #pragma mark UISplitViewDelegate
 - (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation {
+    return NO;
+}
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController showDetailViewController:(UIViewController *)vc sender:(id)sender {
     return NO;
 }
 

@@ -42,7 +42,7 @@
         
         [self.tabBar setTranslucent:NO];
         [self.tabBar setBarTintColor:COLOR_BAR];
-//        [self.tabBar setTintColor:COLOR_NAV];
+        [self.tabBar setTintColor:COLOR_TITLE];
     }
     return self;
 }

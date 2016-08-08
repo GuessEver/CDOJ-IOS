@@ -11,12 +11,25 @@
 
 @implementation DefaultNavigationController
 
-- (instancetype)initWithRootViewController:(UIViewController *)rootViewController {
-    if(self = [super initWithRootViewController:rootViewController]) {
-        [self.navigationBar setTranslucent:NO];
-        [self.navigationBar setBarTintColor:COLOR_BAR];
+- (instancetype)init {
+    if(self = [super init]) {
+        [self setBackground];
     }
     return self;
+}
+
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController {
+    if(self = [super initWithRootViewController:rootViewController]) {
+        [self setBackground];
+    }
+    return self;
+}
+
+- (void)setBackground {
+    [self setExtendedLayoutIncludesOpaqueBars:YES];
+    [self.navigationBar setTranslucent:NO];
+    [self.navigationBar setBarTintColor:COLOR_BAR];
+    [self.navigationBar setTintColor:COLOR_TITLE];
 }
 
 @end

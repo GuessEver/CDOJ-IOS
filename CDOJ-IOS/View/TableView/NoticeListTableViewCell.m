@@ -19,12 +19,7 @@
         self.updateTime = [[UILabel alloc] init];
         self.author = [[UILabel alloc] init];
         
-//        [self.title setNumberOfLines:1];
-//        [self.content setNumberOfLines:0];
-//        [self.updateTime setNumberOfLines:1];
-//        [self.author setNumberOfLines:1];
-        
-        [self.title setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
+//        [self.title setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
         [self.content setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]-1]];
         [self.updateTime setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]-3]];
         [self.author setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]-3]];
