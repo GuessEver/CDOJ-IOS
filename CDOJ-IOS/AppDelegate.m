@@ -2,11 +2,13 @@
 //  AppDelegate.m
 //  CDOJ-IOS
 //
-//  Created by Sunnycool on 16/8/8.
+//  Created by GuessEver on 16/8/8.
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
+#import "Color.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window setBackgroundColor:COLOR_BACKGROUND];
+    self.window.rootViewController = [[MainViewController alloc] init];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

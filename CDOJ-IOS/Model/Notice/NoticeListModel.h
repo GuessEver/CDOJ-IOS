@@ -15,6 +15,6 @@
 @property (nonatomic, strong) NSDictionary* pageInfo;
 
 
-- (void)fetchData:(NSInteger)page;
+- (void)fetchDataOnPage:(NSInteger)page;
 
 @end

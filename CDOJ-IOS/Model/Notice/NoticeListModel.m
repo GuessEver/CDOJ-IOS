@@ -18,7 +18,7 @@
     return self;
 }
 
-- (void)fetchData:(NSInteger)page {
+- (void)fetchDataOnPage:(NSInteger)page {
     NSDictionary* requestBody = @{@"currentPage":[NSString stringWithFormat:@"%ld", page],@"type":@"0",@"orderFields":@"order",@"orderAsc":@"true"};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];

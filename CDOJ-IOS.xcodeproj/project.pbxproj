@@ -22,6 +22,17 @@
 		5F03E9FF1D581D8100607DB9 /* ProblemContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9F01D581D8100607DB9 /* ProblemContentModel.m */; };
 		5F03EA001D581D8100607DB9 /* ProblemListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9F21D581D8100607DB9 /* ProblemListModel.m */; };
 		5F03EA011D581D8100607DB9 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9F51D581D8100607DB9 /* UserModel.m */; };
+		5F03EA061D58224D00607DB9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA051D58224D00607DB9 /* MainViewController.m */; };
+		5F03EA0D1D58243300607DB9 /* NoticeMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA0C1D58243300607DB9 /* NoticeMainViewController.m */; };
+		5F03EA101D58244700607DB9 /* ProblemMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA0F1D58244700607DB9 /* ProblemMainViewController.m */; };
+		5F03EA131D58245B00607DB9 /* UserMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA121D58245B00607DB9 /* UserMainViewController.m */; };
+		5F03EA161D58246E00607DB9 /* ContestMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA151D58246E00607DB9 /* ContestMainViewController.m */; };
+		5FE468191D5850CE0050636D /* NoticeSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */; };
+		5FE4681D1D5851630050636D /* DefaultNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681C1D5851630050636D /* DefaultNavigationController.m */; };
+		5FE468201D5852E20050636D /* NoticeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681F1D5852E20050636D /* NoticeListViewController.m */; };
+		5FE468231D5853EE0050636D /* DefaultSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468221D5853EE0050636D /* DefaultSplitViewController.m */; };
+		5FE468271D585FD80050636D /* DefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468261D585FD80050636D /* DefaultTableViewCell.m */; };
+		5FE4682A1D58606D0050636D /* NoticeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468291D58606D0050636D /* NoticeListTableViewCell.m */; };
 		A9065B2ED07282106038CCAB /* libPods-CDOJ-IOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 828531C7F2B08AAE033D8175 /* libPods-CDOJ-IOS.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +74,28 @@
 		5F03E9F21D581D8100607DB9 /* ProblemListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemListModel.m; sourceTree = "<group>"; };
 		5F03E9F41D581D8100607DB9 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		5F03E9F51D581D8100607DB9 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		5F03EA041D58224D00607DB9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		5F03EA051D58224D00607DB9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		5F03EA0B1D58243300607DB9 /* NoticeMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeMainViewController.h; sourceTree = "<group>"; };
+		5F03EA0C1D58243300607DB9 /* NoticeMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeMainViewController.m; sourceTree = "<group>"; };
+		5F03EA0E1D58244700607DB9 /* ProblemMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemMainViewController.h; sourceTree = "<group>"; };
+		5F03EA0F1D58244700607DB9 /* ProblemMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemMainViewController.m; sourceTree = "<group>"; };
+		5F03EA111D58245B00607DB9 /* UserMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMainViewController.h; sourceTree = "<group>"; };
+		5F03EA121D58245B00607DB9 /* UserMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMainViewController.m; sourceTree = "<group>"; };
+		5F03EA141D58246E00607DB9 /* ContestMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestMainViewController.h; sourceTree = "<group>"; };
+		5F03EA151D58246E00607DB9 /* ContestMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestMainViewController.m; sourceTree = "<group>"; };
+		5FE468171D5850CE0050636D /* NoticeSplitMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeSplitMasterViewController.h; sourceTree = "<group>"; };
+		5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeSplitMasterViewController.m; sourceTree = "<group>"; };
+		5FE4681B1D5851630050636D /* DefaultNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultNavigationController.h; sourceTree = "<group>"; };
+		5FE4681C1D5851630050636D /* DefaultNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultNavigationController.m; sourceTree = "<group>"; };
+		5FE4681E1D5852E20050636D /* NoticeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeListViewController.h; sourceTree = "<group>"; };
+		5FE4681F1D5852E20050636D /* NoticeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeListViewController.m; sourceTree = "<group>"; };
+		5FE468211D5853EE0050636D /* DefaultSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSplitViewController.h; sourceTree = "<group>"; };
+		5FE468221D5853EE0050636D /* DefaultSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultSplitViewController.m; sourceTree = "<group>"; };
+		5FE468251D585FD80050636D /* DefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultTableViewCell.h; sourceTree = "<group>"; };
+		5FE468261D585FD80050636D /* DefaultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultTableViewCell.m; sourceTree = "<group>"; };
+		5FE468281D58606D0050636D /* NoticeListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeListTableViewCell.h; sourceTree = "<group>"; };
+		5FE468291D58606D0050636D /* NoticeListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeListTableViewCell.m; sourceTree = "<group>"; };
 		828531C7F2B08AAE033D8175 /* libPods-CDOJ-IOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CDOJ-IOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF74DD03BA03BACE62F68F3B /* Pods-CDOJ-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDOJ-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDOJ-IOS/Pods-CDOJ-IOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +258,7 @@
 		5F03EA021D581F0900607DB9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5FE468241D585FC20050636D /* TableView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,8 +266,77 @@
 		5F03EA031D581F0900607DB9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5FE4681A1D5851500050636D /* Default */,
+				5F03EA071D58241700607DB9 /* Contest */,
+				5F03EA081D58241700607DB9 /* Notice */,
+				5F03EA091D58241700607DB9 /* Problem */,
+				5F03EA0A1D58241700607DB9 /* User */,
+				5F03EA041D58224D00607DB9 /* MainViewController.h */,
+				5F03EA051D58224D00607DB9 /* MainViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5F03EA071D58241700607DB9 /* Contest */ = {
+			isa = PBXGroup;
+			children = (
+				5F03EA141D58246E00607DB9 /* ContestMainViewController.h */,
+				5F03EA151D58246E00607DB9 /* ContestMainViewController.m */,
+			);
+			path = Contest;
+			sourceTree = "<group>";
+		};
+		5F03EA081D58241700607DB9 /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+				5F03EA0B1D58243300607DB9 /* NoticeMainViewController.h */,
+				5F03EA0C1D58243300607DB9 /* NoticeMainViewController.m */,
+				5FE468171D5850CE0050636D /* NoticeSplitMasterViewController.h */,
+				5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */,
+				5FE4681E1D5852E20050636D /* NoticeListViewController.h */,
+				5FE4681F1D5852E20050636D /* NoticeListViewController.m */,
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
+		5F03EA091D58241700607DB9 /* Problem */ = {
+			isa = PBXGroup;
+			children = (
+				5F03EA0E1D58244700607DB9 /* ProblemMainViewController.h */,
+				5F03EA0F1D58244700607DB9 /* ProblemMainViewController.m */,
+			);
+			path = Problem;
+			sourceTree = "<group>";
+		};
+		5F03EA0A1D58241700607DB9 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				5F03EA111D58245B00607DB9 /* UserMainViewController.h */,
+				5F03EA121D58245B00607DB9 /* UserMainViewController.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		5FE4681A1D5851500050636D /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				5FE4681B1D5851630050636D /* DefaultNavigationController.h */,
+				5FE4681C1D5851630050636D /* DefaultNavigationController.m */,
+				5FE468211D5853EE0050636D /* DefaultSplitViewController.h */,
+				5FE468221D5853EE0050636D /* DefaultSplitViewController.m */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		5FE468241D585FC20050636D /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				5FE468251D585FD80050636D /* DefaultTableViewCell.h */,
+				5FE468261D585FD80050636D /* DefaultTableViewCell.m */,
+				5FE468281D58606D0050636D /* NoticeListTableViewCell.h */,
+				5FE468291D58606D0050636D /* NoticeListTableViewCell.m */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		AC36B2153A8A58D5D717B681 /* Frameworks */ = {
@@ -363,20 +466,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F03EA131D58245B00607DB9 /* UserMainViewController.m in Sources */,
 				5F03E9BD1D581A8200607DB9 /* AppDelegate.m in Sources */,
 				5F03E9FD1D581D8100607DB9 /* NoticeContentModel.m in Sources */,
 				5F03EA011D581D8100607DB9 /* UserModel.m in Sources */,
+				5FE468201D5852E20050636D /* NoticeListViewController.m in Sources */,
 				5F03E9FC1D581D8100607DB9 /* DefaultModel.m in Sources */,
 				5F03E9F71D581D8100607DB9 /* Message.m in Sources */,
+				5F03EA101D58244700607DB9 /* ProblemMainViewController.m in Sources */,
 				5F03E9FA1D581D8100607DB9 /* ContestDetailModal.m in Sources */,
+				5FE468271D585FD80050636D /* DefaultTableViewCell.m in Sources */,
 				5F03E9FF1D581D8100607DB9 /* ProblemContentModel.m in Sources */,
 				5F03E9F91D581D8100607DB9 /* Time.m in Sources */,
+				5FE4682A1D58606D0050636D /* NoticeListTableViewCell.m in Sources */,
 				5F03E9F61D581D8100607DB9 /* HTTP.m in Sources */,
+				5FE468231D5853EE0050636D /* DefaultSplitViewController.m in Sources */,
+				5FE468191D5850CE0050636D /* NoticeSplitMasterViewController.m in Sources */,
 				5F03E9FE1D581D8100607DB9 /* NoticeListModel.m in Sources */,
 				5F03EA001D581D8100607DB9 /* ProblemListModel.m in Sources */,
+				5F03EA0D1D58243300607DB9 /* NoticeMainViewController.m in Sources */,
 				5F03E9F81D581D8100607DB9 /* Security.m in Sources */,
 				5F03E9FB1D581D8100607DB9 /* ContestListModal.m in Sources */,
+				5FE4681D1D5851630050636D /* DefaultNavigationController.m in Sources */,
+				5F03EA061D58224D00607DB9 /* MainViewController.m in Sources */,
 				5F03E9BA1D581A8200607DB9 /* main.m in Sources */,
+				5F03EA161D58246E00607DB9 /* ContestMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
