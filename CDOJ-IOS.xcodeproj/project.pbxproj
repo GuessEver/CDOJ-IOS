@@ -9,23 +9,62 @@
 /* Begin PBXBuildFile section */
 		5F03E9BA1D581A8200607DB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9B91D581A8200607DB9 /* main.m */; };
 		5F03E9BD1D581A8200607DB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9BC1D581A8200607DB9 /* AppDelegate.m */; };
-		5F03E9C01D581A8200607DB9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9BF1D581A8200607DB9 /* ViewController.m */; };
-		5F03E9C31D581A8200607DB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F03E9C11D581A8200607DB9 /* Main.storyboard */; };
 		5F03E9C51D581A8200607DB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F03E9C41D581A8200607DB9 /* Assets.xcassets */; };
-		5F03E9C81D581A8200607DB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F03E9C61D581A8200607DB9 /* LaunchScreen.storyboard */; };
+		5F03E9F61D581D8100607DB9 /* HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9D31D581D8100607DB9 /* HTTP.m */; };
+		5F03E9F71D581D8100607DB9 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9D51D581D8100607DB9 /* Message.m */; };
+		5F03E9F81D581D8100607DB9 /* Security.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9D71D581D8100607DB9 /* Security.m */; };
+		5F03E9F91D581D8100607DB9 /* Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9D91D581D8100607DB9 /* Time.m */; };
+		5F03E9FA1D581D8100607DB9 /* ContestDetailModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9E31D581D8100607DB9 /* ContestDetailModal.m */; };
+		5F03E9FB1D581D8100607DB9 /* ContestListModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9E51D581D8100607DB9 /* ContestListModal.m */; };
+		5F03E9FC1D581D8100607DB9 /* DefaultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9E81D581D8100607DB9 /* DefaultModel.m */; };
+		5F03E9FD1D581D8100607DB9 /* NoticeContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9EB1D581D8100607DB9 /* NoticeContentModel.m */; };
+		5F03E9FE1D581D8100607DB9 /* NoticeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9ED1D581D8100607DB9 /* NoticeListModel.m */; };
+		5F03E9FF1D581D8100607DB9 /* ProblemContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9F01D581D8100607DB9 /* ProblemContentModel.m */; };
+		5F03EA001D581D8100607DB9 /* ProblemListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9F21D581D8100607DB9 /* ProblemListModel.m */; };
+		5F03EA011D581D8100607DB9 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9F51D581D8100607DB9 /* UserModel.m */; };
+		A9065B2ED07282106038CCAB /* libPods-CDOJ-IOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 828531C7F2B08AAE033D8175 /* libPods-CDOJ-IOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EE474F261EDAF2BBFD28F4E /* Pods-CDOJ-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDOJ-IOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CDOJ-IOS/Pods-CDOJ-IOS.release.xcconfig"; sourceTree = "<group>"; };
 		5F03E9B51D581A8200607DB9 /* CDOJ-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CDOJ-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F03E9B91D581A8200607DB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F03E9BB1D581A8200607DB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5F03E9BC1D581A8200607DB9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5F03E9BE1D581A8200607DB9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5F03E9BF1D581A8200607DB9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5F03E9C21D581A8200607DB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F03E9C41D581A8200607DB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5F03E9C71D581A8200607DB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F03E9C91D581A8200607DB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F03E9D11D581D8100607DB9 /* Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Function.h; sourceTree = "<group>"; };
+		5F03E9D21D581D8100607DB9 /* HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTP.h; sourceTree = "<group>"; };
+		5F03E9D31D581D8100607DB9 /* HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTP.m; sourceTree = "<group>"; };
+		5F03E9D41D581D8100607DB9 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		5F03E9D51D581D8100607DB9 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		5F03E9D61D581D8100607DB9 /* Security.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Security.h; sourceTree = "<group>"; };
+		5F03E9D71D581D8100607DB9 /* Security.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Security.m; sourceTree = "<group>"; };
+		5F03E9D81D581D8100607DB9 /* Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Time.h; sourceTree = "<group>"; };
+		5F03E9D91D581D8100607DB9 /* Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Time.m; sourceTree = "<group>"; };
+		5F03E9DB1D581D8100607DB9 /* Api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.h; sourceTree = "<group>"; };
+		5F03E9DC1D581D8100607DB9 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		5F03E9DD1D581D8100607DB9 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		5F03E9DE1D581D8100607DB9 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		5F03E9DF1D581D8100607DB9 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
+		5F03E9E21D581D8100607DB9 /* ContestDetailModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestDetailModal.h; sourceTree = "<group>"; };
+		5F03E9E31D581D8100607DB9 /* ContestDetailModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestDetailModal.m; sourceTree = "<group>"; };
+		5F03E9E41D581D8100607DB9 /* ContestListModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestListModal.h; sourceTree = "<group>"; };
+		5F03E9E51D581D8100607DB9 /* ContestListModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestListModal.m; sourceTree = "<group>"; };
+		5F03E9E71D581D8100607DB9 /* DefaultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultModel.h; sourceTree = "<group>"; };
+		5F03E9E81D581D8100607DB9 /* DefaultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultModel.m; sourceTree = "<group>"; };
+		5F03E9EA1D581D8100607DB9 /* NoticeContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeContentModel.h; sourceTree = "<group>"; };
+		5F03E9EB1D581D8100607DB9 /* NoticeContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeContentModel.m; sourceTree = "<group>"; };
+		5F03E9EC1D581D8100607DB9 /* NoticeListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeListModel.h; sourceTree = "<group>"; };
+		5F03E9ED1D581D8100607DB9 /* NoticeListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeListModel.m; sourceTree = "<group>"; };
+		5F03E9EF1D581D8100607DB9 /* ProblemContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemContentModel.h; sourceTree = "<group>"; };
+		5F03E9F01D581D8100607DB9 /* ProblemContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemContentModel.m; sourceTree = "<group>"; };
+		5F03E9F11D581D8100607DB9 /* ProblemListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemListModel.h; sourceTree = "<group>"; };
+		5F03E9F21D581D8100607DB9 /* ProblemListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemListModel.m; sourceTree = "<group>"; };
+		5F03E9F41D581D8100607DB9 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		5F03E9F51D581D8100607DB9 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		828531C7F2B08AAE033D8175 /* libPods-CDOJ-IOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CDOJ-IOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF74DD03BA03BACE62F68F3B /* Pods-CDOJ-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDOJ-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDOJ-IOS/Pods-CDOJ-IOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +72,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9065B2ED07282106038CCAB /* libPods-CDOJ-IOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42BCF5DDEE9EF0907C5D41DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF74DD03BA03BACE62F68F3B /* Pods-CDOJ-IOS.debug.xcconfig */,
+				0EE474F261EDAF2BBFD28F4E /* Pods-CDOJ-IOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5F03E9AC1D581A8200607DB9 = {
 			isa = PBXGroup;
 			children = (
 				5F03E9B71D581A8200607DB9 /* CDOJ-IOS */,
 				5F03E9B61D581A8200607DB9 /* Products */,
+				42BCF5DDEE9EF0907C5D41DB /* Pods */,
+				AC36B2153A8A58D5D717B681 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +109,12 @@
 		5F03E9B71D581A8200607DB9 /* CDOJ-IOS */ = {
 			isa = PBXGroup;
 			children = (
-				5F03E9BB1D581A8200607DB9 /* AppDelegate.h */,
-				5F03E9BC1D581A8200607DB9 /* AppDelegate.m */,
-				5F03E9BE1D581A8200607DB9 /* ViewController.h */,
-				5F03E9BF1D581A8200607DB9 /* ViewController.m */,
-				5F03E9C11D581A8200607DB9 /* Main.storyboard */,
+				5F03E9D01D581D8100607DB9 /* Function */,
+				5F03E9DA1D581D8100607DB9 /* Macro */,
+				5F03E9E01D581D8100607DB9 /* Model */,
+				5F03EA021D581F0900607DB9 /* View */,
+				5F03EA031D581F0900607DB9 /* ViewController */,
 				5F03E9C41D581A8200607DB9 /* Assets.xcassets */,
-				5F03E9C61D581A8200607DB9 /* LaunchScreen.storyboard */,
 				5F03E9C91D581A8200607DB9 /* Info.plist */,
 				5F03E9B81D581A8200607DB9 /* Supporting Files */,
 			);
@@ -75,8 +125,123 @@
 			isa = PBXGroup;
 			children = (
 				5F03E9B91D581A8200607DB9 /* main.m */,
+				5F03E9BB1D581A8200607DB9 /* AppDelegate.h */,
+				5F03E9BC1D581A8200607DB9 /* AppDelegate.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F03E9D01D581D8100607DB9 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				5F03E9D11D581D8100607DB9 /* Function.h */,
+				5F03E9D21D581D8100607DB9 /* HTTP.h */,
+				5F03E9D31D581D8100607DB9 /* HTTP.m */,
+				5F03E9D41D581D8100607DB9 /* Message.h */,
+				5F03E9D51D581D8100607DB9 /* Message.m */,
+				5F03E9D61D581D8100607DB9 /* Security.h */,
+				5F03E9D71D581D8100607DB9 /* Security.m */,
+				5F03E9D81D581D8100607DB9 /* Time.h */,
+				5F03E9D91D581D8100607DB9 /* Time.m */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		5F03E9DA1D581D8100607DB9 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				5F03E9DB1D581D8100607DB9 /* Api.h */,
+				5F03E9DC1D581D8100607DB9 /* Color.h */,
+				5F03E9DD1D581D8100607DB9 /* Global.h */,
+				5F03E9DE1D581D8100607DB9 /* Macro.h */,
+				5F03E9DF1D581D8100607DB9 /* Notification.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		5F03E9E01D581D8100607DB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F03E9E11D581D8100607DB9 /* Contest */,
+				5F03E9E61D581D8100607DB9 /* Default */,
+				5F03E9E91D581D8100607DB9 /* Notice */,
+				5F03E9EE1D581D8100607DB9 /* Problem */,
+				5F03E9F31D581D8100607DB9 /* User */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F03E9E11D581D8100607DB9 /* Contest */ = {
+			isa = PBXGroup;
+			children = (
+				5F03E9E21D581D8100607DB9 /* ContestDetailModal.h */,
+				5F03E9E31D581D8100607DB9 /* ContestDetailModal.m */,
+				5F03E9E41D581D8100607DB9 /* ContestListModal.h */,
+				5F03E9E51D581D8100607DB9 /* ContestListModal.m */,
+			);
+			path = Contest;
+			sourceTree = "<group>";
+		};
+		5F03E9E61D581D8100607DB9 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				5F03E9E71D581D8100607DB9 /* DefaultModel.h */,
+				5F03E9E81D581D8100607DB9 /* DefaultModel.m */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		5F03E9E91D581D8100607DB9 /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+				5F03E9EA1D581D8100607DB9 /* NoticeContentModel.h */,
+				5F03E9EB1D581D8100607DB9 /* NoticeContentModel.m */,
+				5F03E9EC1D581D8100607DB9 /* NoticeListModel.h */,
+				5F03E9ED1D581D8100607DB9 /* NoticeListModel.m */,
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
+		5F03E9EE1D581D8100607DB9 /* Problem */ = {
+			isa = PBXGroup;
+			children = (
+				5F03E9EF1D581D8100607DB9 /* ProblemContentModel.h */,
+				5F03E9F01D581D8100607DB9 /* ProblemContentModel.m */,
+				5F03E9F11D581D8100607DB9 /* ProblemListModel.h */,
+				5F03E9F21D581D8100607DB9 /* ProblemListModel.m */,
+			);
+			path = Problem;
+			sourceTree = "<group>";
+		};
+		5F03E9F31D581D8100607DB9 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				5F03E9F41D581D8100607DB9 /* UserModel.h */,
+				5F03E9F51D581D8100607DB9 /* UserModel.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		5F03EA021D581F0900607DB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F03EA031D581F0900607DB9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AC36B2153A8A58D5D717B681 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				828531C7F2B08AAE033D8175 /* libPods-CDOJ-IOS.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +251,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F03E9CC1D581A8200607DB9 /* Build configuration list for PBXNativeTarget "CDOJ-IOS" */;
 			buildPhases = (
+				4DE6A3630BCB5BEC11403F3B /* [CP] Check Pods Manifest.lock */,
 				5F03E9B11D581A8200607DB9 /* Sources */,
 				5F03E9B21D581A8200607DB9 /* Frameworks */,
 				5F03E9B31D581A8200607DB9 /* Resources */,
+				80859AB957B7C3EA5B02E6C7 /* [CP] Embed Pods Frameworks */,
+				7467259CB7A52F67583B5078 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,45 +304,83 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F03E9C81D581A8200607DB9 /* LaunchScreen.storyboard in Resources */,
 				5F03E9C51D581A8200607DB9 /* Assets.xcassets in Resources */,
-				5F03E9C31D581A8200607DB9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4DE6A3630BCB5BEC11403F3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7467259CB7A52F67583B5078 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CDOJ-IOS/Pods-CDOJ-IOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80859AB957B7C3EA5B02E6C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CDOJ-IOS/Pods-CDOJ-IOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5F03E9B11D581A8200607DB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F03E9C01D581A8200607DB9 /* ViewController.m in Sources */,
 				5F03E9BD1D581A8200607DB9 /* AppDelegate.m in Sources */,
+				5F03E9FD1D581D8100607DB9 /* NoticeContentModel.m in Sources */,
+				5F03EA011D581D8100607DB9 /* UserModel.m in Sources */,
+				5F03E9FC1D581D8100607DB9 /* DefaultModel.m in Sources */,
+				5F03E9F71D581D8100607DB9 /* Message.m in Sources */,
+				5F03E9FA1D581D8100607DB9 /* ContestDetailModal.m in Sources */,
+				5F03E9FF1D581D8100607DB9 /* ProblemContentModel.m in Sources */,
+				5F03E9F91D581D8100607DB9 /* Time.m in Sources */,
+				5F03E9F61D581D8100607DB9 /* HTTP.m in Sources */,
+				5F03E9FE1D581D8100607DB9 /* NoticeListModel.m in Sources */,
+				5F03EA001D581D8100607DB9 /* ProblemListModel.m in Sources */,
+				5F03E9F81D581D8100607DB9 /* Security.m in Sources */,
+				5F03E9FB1D581D8100607DB9 /* ContestListModal.m in Sources */,
 				5F03E9BA1D581A8200607DB9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		5F03E9C11D581A8200607DB9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5F03E9C21D581A8200607DB9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5F03E9C61D581A8200607DB9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5F03E9C71D581A8200607DB9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5F03E9CA1D581A8200607DB9 /* Debug */ = {
@@ -263,8 +469,10 @@
 		};
 		5F03E9CD1D581A8200607DB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF74DD03BA03BACE62F68F3B /* Pods-CDOJ-IOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "CDOJ-IOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.edu.uestc.acm.CDOJ-IOS";
@@ -274,8 +482,10 @@
 		};
 		5F03E9CE1D581A8200607DB9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EE474F261EDAF2BBFD28F4E /* Pods-CDOJ-IOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "CDOJ-IOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.edu.uestc.acm.CDOJ-IOS";
@@ -302,6 +512,7 @@
 				5F03E9CE1D581A8200607DB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

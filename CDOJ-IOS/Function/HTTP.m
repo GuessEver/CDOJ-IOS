@@ -1,0 +1,55 @@
+//
+//  HTTP.m
+//  CDOJ-IOS
+//
+//  Created by GuessEver on 16/5/5.
+//  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
+//
+
+#import "HTTP.h"
+#import "Macro.h"
+
+@implementation HTTP
+
+NSMutableDictionary* checkQuery(NSArray* querys, NSArray* args) {
+    if(querys.count != args.count) return [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* parameters = [[NSMutableDictionary alloc] init];
+    for(int i = 0; i < querys.count; ++i) {
+        NSString* query = [NSString stringWithFormat:@"%@", [querys objectAtIndex:i]];
+        NSString* arg = [NSString stringWithFormat:@"%@", [args objectAtIndex:i]];
+        if([arg characterAtIndex:0] == '{' && [arg characterAtIndex:arg.length - 1] == '}') {
+            [parameters setObject:query forKey:[arg substringWithRange:NSMakeRange(1, arg.length - 2)]];
+        }
+        else if(![query isEqualToString:arg]) {
+            return [[NSMutableDictionary alloc] init];
+        }
+    }
+    return parameters;
+}
+
+// determine how to jump page when requesting an url
++ (BOOL)openURL:(NSURLRequest*)request {
+    if(![request.URL.host isEqualToString:@"acm.uestc.edu.cn"]) {
+        return YES;
+    }
+    NSString* url = [NSString stringWithFormat:@"%@", request.URL];
+    NSString* baseURL = @"http://acm.uestc.edu.cn/#/";
+    if(url.length > baseURL.length && [[url substringToIndex:baseURL.length] isEqualToString:baseURL]) {
+        NSArray* querys = [[url substringFromIndex:baseURL.length] componentsSeparatedByString:@"/"];
+        NSMutableDictionary* parameters;
+        if((parameters = checkQuery(querys, @[@"article", @"show", @"{articleId}"])).count == 1) {
+            NSLog(@"%@", parameters);
+            [Message show:[NSString stringWithFormat:@"Article %@", [parameters objectForKey:@"articleId"]] withTitle:@"Skip in app"];
+        }
+        else if((parameters = checkQuery(querys, @[@"problem", @"show", @"{problemId}"])).count == 1) {
+            [Message show:[NSString stringWithFormat:@"Problem %@", [parameters objectForKey:@"problemId"]] withTitle:@"Skip in app"];
+        }
+        else if((parameters = checkQuery(querys, @[@"contest", @"show", @"{contestId}"])).count == 1) {
+            [Message show:[NSString stringWithFormat:@"Contest %@", [parameters objectForKey:@"contestId"]] withTitle:@"Skip in app"];
+        }
+        return NO;
+    }
+    else return YES; // For UIWebView loadHTMLString's baseURL
+}
+
+@end
