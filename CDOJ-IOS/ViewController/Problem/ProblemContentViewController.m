@@ -26,6 +26,8 @@
     if(self = [super init]) {
         self.data = [[ProblemContentModel alloc] init];
         self.data.content = data;
+        [self arrangeViews];
+        [self refreshData];
     }
     return self;
 }

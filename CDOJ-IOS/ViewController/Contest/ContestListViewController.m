@@ -15,7 +15,7 @@
 
 - (instancetype)init {
     if(self = [super initWithStyle:UITableViewStylePlain]) {
-        [self setTitle:@"题库"];
+        [self setTitle:@"比赛"];
         self.data = [[ContestListModel alloc] init];
         [self.data fetchDataOnPage:1];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_CONTEST_LIST_REFRESHED object:nil];

@@ -9,12 +9,21 @@
 #import "ContestContentViewController.h"
 #import "Color.h"
 #import "Masonry.h"
+#import "ProblemPageController.h"
 
 @implementation ContestContentViewController
 
 - (instancetype)initWithContestId:(NSString*)cid {
     if(self = [super init]) {
         self.titleOfTabs = @[@"概览", @"题库", @"讨论", @"记录", @"排名"];
+        self.controllersOfTabs = @[
+                                   [[UIViewController alloc] init],
+                                   self.tab_problems = [[ProblemPageController alloc] init],
+                                   [[UIViewController alloc] init],
+                                   [[UIViewController alloc] init],
+                                   [[UIViewController alloc] init]
+                                   ];
+        
         self.data = [[ContestContentModel alloc] init];
         [self.data fetchDataWithContestId:cid];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_CONTEST_DATA_REFRESHED object:nil];
@@ -28,12 +37,7 @@
 }
 
 - (void)refreshData {
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.data.detail
-                                                       options:NSJSONWritingPrettyPrinted
-                                                         error:nil];
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData
-                                                 encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", jsonString);
+    [self.tab_problems loadProblemsWithData:self.data.problems];
 }
 
 #pragma mark WMPageControllerDataSource
@@ -41,12 +45,7 @@
     return [self.titleOfTabs count];
 }
 - (__kindof UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
-    UIViewController* A = [[UIViewController alloc] init];
-    [A.view setBackgroundColor:[UIColor yellowColor]];
-    UILabel* B = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-    [B setText:[NSString stringWithFormat:@"%ld", index]];
-    [A.view addSubview:B];
-    return A;
+    return self.controllersOfTabs[index];
 }
 - (NSString *)pageController:(WMPageController *)pageController titleAtIndex:(NSInteger)index {
     return self.titleOfTabs[index];

@@ -18,6 +18,7 @@
         [self setProgressColor:COLOR_TITLE];
         [self setTitleColorSelected:COLOR_TITLE];
         [self setDataSource:self];
+        [self setExtendedLayoutIncludesOpaqueBars:YES];
     }
     return self;
 }
