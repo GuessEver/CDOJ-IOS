@@ -10,6 +10,7 @@
 
 @interface UserSettingViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
 
+@property NSInteger noUserLogin;
 @property (nonatomic, strong) NSArray* titleOfSections;
 @property (nonatomic, strong) NSArray* data;
 
