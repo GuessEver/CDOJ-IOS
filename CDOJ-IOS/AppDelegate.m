@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "Color.h"
+#import "LocalDataModel.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,10 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window setBackgroundColor:COLOR_BACKGROUND];
+    if([LocalDataModel needWelcome]) {
+        // open app for the first time, do something here ...
+        [LocalDataModel initLocalData];
+    }
     self.window.rootViewController = [[MainViewController alloc] init];
     [self.window makeKeyAndVisible];
     return YES;

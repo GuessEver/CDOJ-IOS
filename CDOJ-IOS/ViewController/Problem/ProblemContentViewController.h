@@ -6,11 +6,11 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DefaultViewController.h"
 #import "ProblemContentModel.h"
 #import "DefaultWebView.h"
 
-@interface ProblemContentViewController : UIViewController
+@interface ProblemContentViewController : DefaultViewController
 
 @property (nonatomic, strong) NSString* htmlStr;
 @property (nonatomic, strong) DefaultWebView* webView;

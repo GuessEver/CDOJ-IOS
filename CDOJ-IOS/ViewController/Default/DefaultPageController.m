@@ -13,6 +13,7 @@
 
 - (instancetype)init {
     if(self = [super init]) {
+        [self.view setBackgroundColor:COLOR_BACKGROUND];
         [self setMenuViewStyle:WMMenuViewStyleLine];
         [self setMenuBGColor:COLOR_BACKGROUND];
         [self setProgressColor:COLOR_TITLE];

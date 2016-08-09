@@ -18,13 +18,38 @@
     return self;
 }
 
-- (void)fetchDataWithUserName:(NSString*)username {
+- (void)fetchDataWithUsername:(NSString*)username {
     [[AFHTTPSessionManager manager] GET:API_USER_CENTERDATA(self.username) parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
             self.basicInfo = [responseObject objectForKey:@"targetUser"];
             self.achievementInfo = [responseObject objectForKey:@"problemStatus"];
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_DATA_REFRESHED object:nil];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    }];
+}
+
++ (void)userLoginWithUsername:(NSString *)username andPassword:(NSString *)password {
+    NSDictionary* requestBody = @{@"username":username, @"password":password};
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
+    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    [manager POST:API_USER_LOGIN parameters:requestBody progress:^(NSProgress * _Nonnull uploadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+        if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_SIGN_IN object:nil];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    }];
+}
++ (void)userLogout {
+    [[AFHTTPSessionManager manager] GET:API_USER_LOGOUT parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+        if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_SIGN_OUT object:nil];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];

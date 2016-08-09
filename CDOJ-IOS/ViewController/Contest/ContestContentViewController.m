@@ -28,8 +28,6 @@
         [self.data fetchDataWithContestId:cid];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_CONTEST_DATA_REFRESHED object:nil];
         
-        [self.view setBackgroundColor:COLOR_BACKGROUND];
-        
         // Options
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
     }

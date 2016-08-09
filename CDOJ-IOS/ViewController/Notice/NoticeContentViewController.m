@@ -7,8 +7,6 @@
 //
 
 #import "NoticeContentViewController.h"
-#import "Color.h"
-#import "Masonry.h"
 
 @implementation NoticeContentViewController
 
@@ -17,8 +15,6 @@
         self.data = [[NoticeContentModel alloc] init];
         [self.data fetchDataWithArticleId:aid];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_NOTICE_DATA_REFRESHED object:nil];
-        
-        [self.view setBackgroundColor:COLOR_BACKGROUND];
         
         // Options
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];

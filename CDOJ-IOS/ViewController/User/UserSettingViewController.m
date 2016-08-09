@@ -8,6 +8,9 @@
 
 #import "UserSettingViewController.h"
 #import "Color.h"
+#import "DefaultNavigationController.h"
+#import "AccountManageViewController.h"
+#import "AboutCDOJViewController.h"
 
 @implementation UserSettingViewController
 
@@ -30,6 +33,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger section = indexPath.section + self.noUserLogin;
     NSInteger row = indexPath.row;
+    __kindof UIViewController* root;
     if(section == 0) { // 我
         if(row == 0) { // 我的资料
         }
@@ -44,12 +48,16 @@
     }
     else if(section == 1) { // 设置
         if(row == 0) { //  账号管理
+            root = [[AccountManageViewController alloc] init];
         }
     }
-    else if(section == 3) { // 关于
+    else if(section == 2) { // 关于
         if(row == 0) { // 关于CDOJ
+            root = [[AboutCDOJViewController alloc] init];
         }
     }
+    DefaultNavigationController* nav = [[DefaultNavigationController alloc] initWithRootViewController:root];
+    [self.splitViewController showDetailViewController:nav sender:nil];
 }
 
 #pragma mark UITableViewDataSource

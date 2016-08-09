@@ -7,8 +7,6 @@
 //
 
 #import "ProblemContentViewController.h"
-#import "Color.h"
-#import "Masonry.h"
 
 @implementation ProblemContentViewController
 
@@ -33,8 +31,6 @@
 }
 
 - (void)arrangeViews {
-    [self.view setBackgroundColor:COLOR_BACKGROUND];
-    
     // Options
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
     

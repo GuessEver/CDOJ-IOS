@@ -6,11 +6,11 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DefaultViewController.h"
 #import "NoticeContentModel.h"
 #import "DefaultWebView.h"
 
-@interface NoticeContentViewController : UIViewController
+@interface NoticeContentViewController : DefaultViewController
 
 @property (nonatomic, strong) NSString* htmlStr;
 @property (nonatomic, strong) DefaultWebView* webView;
