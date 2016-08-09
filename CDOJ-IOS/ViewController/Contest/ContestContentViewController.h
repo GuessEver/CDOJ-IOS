@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DefaultPageController.h"
 #import "ContestContentModel.h"
+#import "ContestOverViewController.h"
 #import "ProblemPageController.h"
 
 @interface ContestContentViewController : DefaultPageController
@@ -16,6 +17,8 @@
 @property (nonatomic, strong) ContestContentModel* data;
 @property (nonatomic, strong) NSArray* titleOfTabs;
 @property (nonatomic, strong) NSArray* controllersOfTabs;
+
+@property (nonatomic, strong) ContestOverViewController* tab_overview;
 @property (nonatomic, strong) ProblemPageController* tab_problems;
 
 - (instancetype)initWithContestId:(NSString*)cid;

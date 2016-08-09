@@ -28,6 +28,7 @@
 		5F4B02F01D59A2CA00A531B3 /* DefaultPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B02EF1D59A2CA00A531B3 /* DefaultPageController.m */; };
 		5F4B02F31D59A37D00A531B3 /* ProblemPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B02F21D59A37D00A531B3 /* ProblemPageController.m */; };
 		5F4B02F81D59BBA100A531B3 /* DefaultWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B02F71D59BBA100A531B3 /* DefaultWebView.m */; };
+		5F4B02FB1D59C08900A531B3 /* ContestOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B02FA1D59C08900A531B3 /* ContestOverViewController.m */; };
 		5F7E4D461D58829C00E9D4C8 /* NoticeContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */; };
 		5F7E4D491D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D481D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m */; };
 		5F7E4D4C1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D4B1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m */; };
@@ -102,6 +103,8 @@
 		5F4B02F21D59A37D00A531B3 /* ProblemPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemPageController.m; sourceTree = "<group>"; };
 		5F4B02F61D59BBA100A531B3 /* DefaultWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultWebView.h; sourceTree = "<group>"; };
 		5F4B02F71D59BBA100A531B3 /* DefaultWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultWebView.m; sourceTree = "<group>"; };
+		5F4B02F91D59C08900A531B3 /* ContestOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestOverViewController.h; sourceTree = "<group>"; };
+		5F4B02FA1D59C08900A531B3 /* ContestOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestOverViewController.m; sourceTree = "<group>"; };
 		5F7E4D441D58829C00E9D4C8 /* NoticeContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeContentViewController.h; sourceTree = "<group>"; };
 		5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeContentViewController.m; sourceTree = "<group>"; };
 		5F7E4D471D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSplitDetailLogoViewController.h; sourceTree = "<group>"; };
@@ -330,6 +333,8 @@
 				5F7E4D631D596D9F00E9D4C8 /* ContestContentViewController.m */,
 				5F4B02F11D59A37D00A531B3 /* ProblemPageController.h */,
 				5F4B02F21D59A37D00A531B3 /* ProblemPageController.m */,
+				5F4B02F91D59C08900A531B3 /* ContestOverViewController.h */,
+				5F4B02FA1D59C08900A531B3 /* ContestOverViewController.m */,
 			);
 			path = Contest;
 			sourceTree = "<group>";
@@ -580,6 +585,7 @@
 				5FE468191D5850CE0050636D /* NoticeSplitMasterViewController.m in Sources */,
 				5FE4682D1D5875310050636D /* NoticeSplitDetailViewController.m in Sources */,
 				5F7E4D6B1D596F3300E9D4C8 /* ContestListModel.m in Sources */,
+				5F4B02FB1D59C08900A531B3 /* ContestOverViewController.m in Sources */,
 				5F03E9FE1D581D8100607DB9 /* NoticeListModel.m in Sources */,
 				5F03EA001D581D8100607DB9 /* ProblemListModel.m in Sources */,
 				5F03EA0D1D58243300607DB9 /* NoticeMainViewController.m in Sources */,

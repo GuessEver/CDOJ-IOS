@@ -15,9 +15,9 @@
 
 - (instancetype)initWithContestId:(NSString*)cid {
     if(self = [super init]) {
-        self.titleOfTabs = @[@"概览", @"题库", @"讨论", @"记录", @"排名"];
+        self.titleOfTabs = @[@"概览", @"题目", @"讨论", @"记录", @"排名"];
         self.controllersOfTabs = @[
-                                   [[UIViewController alloc] init],
+                                   self.tab_overview = [[ContestOverViewController alloc] init],
                                    self.tab_problems = [[ProblemPageController alloc] init],
                                    [[UIViewController alloc] init],
                                    [[UIViewController alloc] init],
@@ -37,6 +37,7 @@
 }
 
 - (void)refreshData {
+    [self.tab_overview loadDetailWithData:self.data.detail];
     [self.tab_problems loadProblemsWithData:self.data.problems];
 }
 

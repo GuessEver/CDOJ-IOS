@@ -1,28 +1,23 @@
 //
-//  NoticeContentViewController.m
+//  ContestOverViewController.m
 //  CDOJ-IOS
 //
-//  Created by Sunnycool on 16/8/8.
+//  Created by GuessEver on 16/8/9.
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import "NoticeContentViewController.h"
+#import "ContestOverViewController.h"
 #import "Color.h"
 #import "Masonry.h"
 
-@implementation NoticeContentViewController
+@implementation ContestOverViewController
 
-- (instancetype)initWithArticleId:(NSString*)aid {
+- (instancetype)init {
     if(self = [super init]) {
-        self.data = [[NoticeContentModel alloc] init];
-        [self.data fetchDataWithArticleId:aid];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_NOTICE_DATA_REFRESHED object:nil];
-        
         [self.view setBackgroundColor:COLOR_BACKGROUND];
         
         // Options
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
-                                                   
         
         self.webView = [[DefaultWebView alloc] init];
         [self.view addSubview:self.webView];
@@ -35,8 +30,9 @@
     return self;
 }
 
-- (void)refreshData {
-    [self.webView loadWithData:self.data.content andRenderName:@"articleRender"];
+- (void)loadDetailWithData:(NSDictionary*)data {
+    self.data = data;
+    [self.webView loadWithData:self.data andRenderName:@"contestOverviewRender"];
 }
 
 @end

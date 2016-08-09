@@ -8,11 +8,14 @@
 
 #import "DefaultWebView.h"
 #import "Api.h"
+#import "Color.h"
 
 @implementation DefaultWebView
 
 - (instancetype)init {
     if(self = [super init]) {
+        [self setBackgroundColor:COLOR_BACKGROUND];
+        [self setOpaque:NO];
     }
     return self;
 }
@@ -23,7 +26,7 @@
                                                          error:nil];
     NSString *jsonString = [[NSString alloc] initWithData:jsonData
                                                  encoding:NSUTF8StringEncoding];
-    //    NSLog(@"%@", jsonString);
+    // NSLog(@"%@", jsonString);
     self.htmlStr = [[NSString alloc] initWithData:[[[NSDataAsset alloc] initWithName:render] data]
                                          encoding:NSUTF8StringEncoding];
     self.htmlStr = [self.htmlStr stringByReplacingOccurrencesOfString:@"{{{replace_data_here}}}"

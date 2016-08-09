@@ -40,8 +40,6 @@
     
     
     self.webView = [[DefaultWebView alloc] init];
-    [self.webView setBackgroundColor:COLOR_BACKGROUND];
-    [self.webView setOpaque:NO];
     [self.view addSubview:self.webView];
     // self.webView Constraints
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
