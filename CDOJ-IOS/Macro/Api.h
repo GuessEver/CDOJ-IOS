@@ -14,6 +14,7 @@
 
 // Base URL
 #define APIURL @"http://acm.uestc.edu.cn"
+#define BASEURL [NSURL URLWithString:APIURL]
 #define API_USER [APIURL stringByAppendingString:@"/user"]
 #define API_ARTICLE [APIURL stringByAppendingString:@"/article"]
 #define API_CONTEST [APIURL stringByAppendingString:@"/contest"]

@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "NoticeContentModel.h"
+#import "DefaultWebView.h"
 
 @interface NoticeContentViewController : UIViewController
 
 @property (nonatomic, strong) NSString* htmlStr;
-@property (nonatomic, strong) UIWebView* webView;
+@property (nonatomic, strong) DefaultWebView* webView;
 @property (nonatomic, strong) NoticeContentModel* data;
 
 

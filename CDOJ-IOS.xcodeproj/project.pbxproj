@@ -27,6 +27,7 @@
 		5F03EA161D58246E00607DB9 /* ContestMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA151D58246E00607DB9 /* ContestMainViewController.m */; };
 		5F4B02F01D59A2CA00A531B3 /* DefaultPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B02EF1D59A2CA00A531B3 /* DefaultPageController.m */; };
 		5F4B02F31D59A37D00A531B3 /* ProblemPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B02F21D59A37D00A531B3 /* ProblemPageController.m */; };
+		5F4B02F81D59BBA100A531B3 /* DefaultWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B02F71D59BBA100A531B3 /* DefaultWebView.m */; };
 		5F7E4D461D58829C00E9D4C8 /* NoticeContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */; };
 		5F7E4D491D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D481D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m */; };
 		5F7E4D4C1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D4B1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m */; };
@@ -99,6 +100,8 @@
 		5F4B02EF1D59A2CA00A531B3 /* DefaultPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultPageController.m; sourceTree = "<group>"; };
 		5F4B02F11D59A37D00A531B3 /* ProblemPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemPageController.h; sourceTree = "<group>"; };
 		5F4B02F21D59A37D00A531B3 /* ProblemPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemPageController.m; sourceTree = "<group>"; };
+		5F4B02F61D59BBA100A531B3 /* DefaultWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultWebView.h; sourceTree = "<group>"; };
+		5F4B02F71D59BBA100A531B3 /* DefaultWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultWebView.m; sourceTree = "<group>"; };
 		5F7E4D441D58829C00E9D4C8 /* NoticeContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeContentViewController.h; sourceTree = "<group>"; };
 		5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeContentViewController.m; sourceTree = "<group>"; };
 		5F7E4D471D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSplitDetailLogoViewController.h; sourceTree = "<group>"; };
@@ -292,6 +295,7 @@
 		5F03EA021D581F0900607DB9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5F4B02F51D59BB9700A531B3 /* WebView */,
 				5FE468241D585FC20050636D /* TableView */,
 			);
 			path = View;
@@ -371,6 +375,15 @@
 				5F03EA121D58245B00607DB9 /* UserMainViewController.m */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		5F4B02F51D59BB9700A531B3 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				5F4B02F61D59BBA100A531B3 /* DefaultWebView.h */,
+				5F4B02F71D59BBA100A531B3 /* DefaultWebView.m */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		5F7E4D651D596F3300E9D4C8 /* Contest */ = {
@@ -579,6 +592,7 @@
 				5F7E4D6E1D596F8000E9D4C8 /* ContestListTableViewCell.m in Sources */,
 				5F7E4D711D59709E00E9D4C8 /* ContestContentModel.m in Sources */,
 				5F4B02F31D59A37D00A531B3 /* ProblemPageController.m in Sources */,
+				5F4B02F81D59BBA100A531B3 /* DefaultWebView.m in Sources */,
 				5F7E4D461D58829C00E9D4C8 /* NoticeContentViewController.m in Sources */,
 				5F03EA161D58246E00607DB9 /* ContestMainViewController.m in Sources */,
 				5F7E4D5E1D596CCB00E9D4C8 /* ContestListViewController.m in Sources */,

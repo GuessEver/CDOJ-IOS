@@ -39,7 +39,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
     
     
-    self.webView = [[UIWebView alloc] init];
+    self.webView = [[DefaultWebView alloc] init];
     [self.webView setBackgroundColor:COLOR_BACKGROUND];
     [self.webView setOpaque:NO];
     [self.view addSubview:self.webView];
@@ -51,17 +51,7 @@
 }
 
 - (void)refreshData {
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self.data.content
-                                                       options:NSJSONWritingPrettyPrinted
-                                                         error:nil];
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData
-                                                 encoding:NSUTF8StringEncoding];
-//    NSLog(@"%@", jsonString);
-    self.htmlStr = [[NSString alloc] initWithData:[[[NSDataAsset alloc] initWithName:@"problemRender"] data]
-                                         encoding:NSUTF8StringEncoding];
-    self.htmlStr = [self.htmlStr stringByReplacingOccurrencesOfString:@"{{{replace_data_here}}}"
-                                                           withString:jsonString];
-    [self.webView loadHTMLString:self.htmlStr baseURL:[NSURL URLWithString:@"http://acm.uestc.edu.cn"]];
+    [self.webView loadWithData:self.data.content andRenderName:@"problemRender"];
 }
 
 @end

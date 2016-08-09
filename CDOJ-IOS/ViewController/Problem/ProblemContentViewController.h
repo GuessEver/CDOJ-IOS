@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ProblemContentModel.h"
+#import "DefaultWebView.h"
 
 @interface ProblemContentViewController : UIViewController
 
 @property (nonatomic, strong) NSString* htmlStr;
-@property (nonatomic, strong) UIWebView* webView;
+@property (nonatomic, strong) DefaultWebView* webView;
 @property (nonatomic, strong) ProblemContentModel* data;
 
 
