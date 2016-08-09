@@ -15,7 +15,7 @@
     if(self = [super init]) {
         self.problems = [[NSMutableArray alloc] init];
         self.problemPages = [[NSMutableArray alloc] init];
-        [self setMenuHeight:55];
+        [self setMenuHeight:80];
         [self setTitleSizeNormal:self.titleSizeNormal-1];
     }
     return self;
@@ -38,7 +38,7 @@
 }
 - (NSString *)pageController:(WMPageController *)pageController titleAtIndex:(NSInteger)index {
 //    NSLog(@"%@", self.problems[index]);
-    return [NSString stringWithFormat:@"\n%@", [self.problems[index] objectForKey:@"orderCharacter"]];
+    return [NSString stringWithFormat:@"\n\n%@", [self.problems[index] objectForKey:@"orderCharacter"]];
 }
 
 @end

@@ -17,7 +17,9 @@
         [self setMenuBGColor:COLOR_BACKGROUND];
         [self setProgressColor:COLOR_TITLE];
         [self setTitleColorSelected:COLOR_TITLE];
+        [self setMenuHeight:40];
         [self setDataSource:self];
+//        [self setShowOnNavigationBar:YES];
         [self setExtendedLayoutIncludesOpaqueBars:YES];
     }
     return self;
