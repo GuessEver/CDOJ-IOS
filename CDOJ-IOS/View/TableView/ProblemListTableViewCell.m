@@ -12,6 +12,12 @@
 
 @implementation ProblemListTableViewCell
 
+/*****************************************************
+ * title                                             *
+ * source                                            *
+ * pid                                  solved/tried *
+ *****************************************************/
+
 - (instancetype)init {
     if(self = [super init]) {
         self.pid = [[UILabel alloc] init];

@@ -14,6 +14,9 @@
 - (instancetype)init {
     if(self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil]) {
         [self setBackgroundColor:COLOR_BACKGROUND];
+//        UIView* bg = [[UIView alloc] init];
+//        [bg setBackgroundColor:RGBA(150, 150, 150, 0.1)];
+//        [self setSelectedBackgroundView:bg];
     }
     return self;
 }

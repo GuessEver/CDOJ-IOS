@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "DefaultModel.h"
 
-@interface ContestListModal : DefaultModel
+@interface ContestListModel : DefaultModel
 
 @property (nonatomic, strong) NSMutableArray* list;
 @property (nonatomic, strong) NSDictionary* pageInfo;
 
 
-- (void)fetchData:(NSInteger)page;
+- (void)fetchDataOnPage:(NSInteger)page;
 
 @end

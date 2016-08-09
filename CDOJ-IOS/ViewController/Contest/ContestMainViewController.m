@@ -7,13 +7,16 @@
 //
 
 #import "ContestMainViewController.h"
-#import "Color.h"
+#import "DefaultSplitDetailLogoViewController.h"
+#import "ContestSplitMasterViewController.h"
 
 @implementation ContestMainViewController
 
 - (instancetype)init {
     if(self = [super init]) {
-        [self setViewControllers:@[[[UIViewController alloc] init]]];
+        ContestSplitMasterViewController* A = [[ContestSplitMasterViewController alloc] init];
+        DefaultSplitDetailLogoViewController* B = [[DefaultSplitDetailLogoViewController alloc] init];
+        [self setViewControllers:@[A, B]];
     }
     return self;
 }

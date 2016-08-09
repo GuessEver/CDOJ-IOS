@@ -12,6 +12,12 @@
 
 @implementation NoticeListTableViewCell
 
+/*****************************************************
+ * title                                             *
+ * contet                                            *
+ * updateTime                                 author *
+ *****************************************************/
+
 - (instancetype)init {
     if(self = [super init]) {
         self.title = [[UILabel alloc] init];

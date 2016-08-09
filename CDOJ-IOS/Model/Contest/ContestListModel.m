@@ -6,9 +6,9 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import "ContestListModal.h"
+#import "ContestListModel.h"
 
-@implementation ContestListModal
+@implementation ContestListModel
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -18,7 +18,7 @@
     return self;
 }
 
-- (void)fetchData:(NSInteger)page {
+- (void)fetchDataOnPage:(NSInteger)page {
     NSDictionary* requestBody = @{@"currentPage":[NSString stringWithFormat:@"%ld", page],@"orderFields":@"time",@"orderAsc":@"false"};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
