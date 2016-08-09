@@ -34,6 +34,9 @@
     return [ContestListTableViewCell height];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(![[self.data.list[indexPath.row] objectForKey:@"type"] isEqual:@0]) {
+        NSLog(@"%@", [self.data.list[indexPath.row] objectForKey:@"typeName"]);
+    }
     ContestSplitDetailViewController* detailView = [[ContestSplitDetailViewController alloc] initWithContestId:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"contestId"]]];
     [self.splitViewController showDetailViewController:detailView sender:nil];
 }
