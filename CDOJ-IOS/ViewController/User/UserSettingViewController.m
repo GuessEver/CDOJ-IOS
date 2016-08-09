@@ -17,7 +17,7 @@
         [self.tableView setBackgroundColor:COLOR_BACKGROUND];
         self.titleOfSections = @[@"我", @"设置", @"关于"];
         self.data = @[
-                      @[@"我的信息", @"我的成就", @"我的博客", @"我的队伍", @"我的消息"],
+                      @[@"我的资料", @"我的成就", @"我的博客", @"我的队伍", @"我的消息"],
                       @[@"账号管理", @"登出"],
                       @[@"关于CDOJ"]
                       ];
