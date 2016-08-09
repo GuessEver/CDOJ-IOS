@@ -20,6 +20,9 @@
         [self.view addSubview:bgLogo];
         // imgView position constraints
         [bgLogo mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_lessThanOrEqualTo(self.view.mas_width).multipliedBy(0.3);
+            make.width.mas_lessThanOrEqualTo(self.view.mas_height).multipliedBy(0.3);
+            make.height.equalTo(bgLogo.mas_width);
             make.centerY.equalTo(self.view.mas_centerY).offset(-50);
             make.centerX.equalTo(self.view.mas_centerX);
         }];
