@@ -7,12 +7,16 @@
 //
 
 #import "UserMainViewController.h"
+#import "DefaultSplitDetailLogoViewController.h"
+#import "UserSplitMasterViewController.h"
 
 @implementation UserMainViewController
 
 - (instancetype)init {
     if(self = [super init]) {
-        [self setViewControllers:@[[[UIViewController alloc] init]]];
+        UserSplitMasterViewController* A = [[UserSplitMasterViewController alloc] init];
+        DefaultSplitDetailLogoViewController* B = [[DefaultSplitDetailLogoViewController alloc] init];
+        [self setViewControllers:@[A, B]];
     }
     return self;
 }
