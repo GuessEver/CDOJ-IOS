@@ -17,5 +17,6 @@
 
 
 - (instancetype)initWithProblemId:(NSString*)pid;
+- (instancetype)initWithProblemContent:(NSDictionary*)data;
 
 @end

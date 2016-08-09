@@ -5,4 +5,5 @@ target 'CDOJ-IOS' do
 	pod 'AFNetworking', '~> 3.0'
 	pod 'SDWebImage', '~>3.7'
 	pod 'Masonry'
+	pod 'WMPageController'
 end

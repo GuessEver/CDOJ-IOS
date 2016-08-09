@@ -14,6 +14,7 @@
 
 - (instancetype)initWithContestId:(NSString*)cid {
     if(self = [super init]) {
+        self.titleOfTabs = @[@"概览", @"题库", @"讨论", @"记录", @"排名"];
         self.data = [[ContestContentModel alloc] init];
         [self.data fetchDataWithContestId:cid];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_CONTEST_DATA_REFRESHED object:nil];
@@ -22,17 +23,6 @@
         
         // Options
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
-        
-        
-        self.webView = [[UIWebView alloc] init];
-        [self.webView setBackgroundColor:COLOR_BACKGROUND];
-        [self.webView setOpaque:NO];
-        [self.view addSubview:self.webView];
-        // self.webView Constraints
-        [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.equalTo(self.view.mas_width);
-            make.height.equalTo(self.view.mas_height);
-        }];
     }
     return self;
 }
@@ -43,12 +33,23 @@
                                                          error:nil];
     NSString *jsonString = [[NSString alloc] initWithData:jsonData
                                                  encoding:NSUTF8StringEncoding];
-    //    NSLog(@"%@", jsonString);
-    self.htmlStr = [[NSString alloc] initWithData:[[[NSDataAsset alloc] initWithName:@"problemRender"] data]
-                                         encoding:NSUTF8StringEncoding];
-    self.htmlStr = [self.htmlStr stringByReplacingOccurrencesOfString:@"{{{replace_data_here}}}"
-                                                           withString:jsonString];
-    [self.webView loadHTMLString:self.htmlStr baseURL:[NSURL URLWithString:@"http://acm.uestc.edu.cn"]];
+    NSLog(@"%@", jsonString);
+}
+
+#pragma mark WMPageControllerDataSource
+- (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController {
+    return [self.titleOfTabs count];
+}
+- (__kindof UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
+    UIViewController* A = [[UIViewController alloc] init];
+    [A.view setBackgroundColor:[UIColor yellowColor]];
+    UILabel* B = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    [B setText:[NSString stringWithFormat:@"%ld", index]];
+    [A.view addSubview:B];
+    return A;
+}
+- (NSString *)pageController:(WMPageController *)pageController titleAtIndex:(NSInteger)index {
+    return self.titleOfTabs[index];
 }
 
 @end

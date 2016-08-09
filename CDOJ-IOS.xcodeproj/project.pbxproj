@@ -25,6 +25,7 @@
 		5F03EA101D58244700607DB9 /* ProblemMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA0F1D58244700607DB9 /* ProblemMainViewController.m */; };
 		5F03EA131D58245B00607DB9 /* UserMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA121D58245B00607DB9 /* UserMainViewController.m */; };
 		5F03EA161D58246E00607DB9 /* ContestMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA151D58246E00607DB9 /* ContestMainViewController.m */; };
+		5F4B02F01D59A2CA00A531B3 /* DefaultPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B02EF1D59A2CA00A531B3 /* DefaultPageController.m */; };
 		5F7E4D461D58829C00E9D4C8 /* NoticeContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */; };
 		5F7E4D491D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D481D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m */; };
 		5F7E4D4C1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D4B1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m */; };
@@ -93,6 +94,8 @@
 		5F03EA121D58245B00607DB9 /* UserMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMainViewController.m; sourceTree = "<group>"; };
 		5F03EA141D58246E00607DB9 /* ContestMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestMainViewController.h; sourceTree = "<group>"; };
 		5F03EA151D58246E00607DB9 /* ContestMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestMainViewController.m; sourceTree = "<group>"; };
+		5F4B02EE1D59A2CA00A531B3 /* DefaultPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultPageController.h; sourceTree = "<group>"; };
+		5F4B02EF1D59A2CA00A531B3 /* DefaultPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultPageController.m; sourceTree = "<group>"; };
 		5F7E4D441D58829C00E9D4C8 /* NoticeContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeContentViewController.h; sourceTree = "<group>"; };
 		5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeContentViewController.m; sourceTree = "<group>"; };
 		5F7E4D471D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSplitDetailLogoViewController.h; sourceTree = "<group>"; };
@@ -385,6 +388,8 @@
 				5FE468221D5853EE0050636D /* DefaultSplitViewController.m */,
 				5F7E4D471D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.h */,
 				5F7E4D481D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m */,
+				5F4B02EE1D59A2CA00A531B3 /* DefaultPageController.h */,
+				5F4B02EF1D59A2CA00A531B3 /* DefaultPageController.m */,
 			);
 			path = Default;
 			sourceTree = "<group>";
@@ -547,6 +552,7 @@
 				5FE468271D585FD80050636D /* DefaultTableViewCell.m in Sources */,
 				5F03E9FF1D581D8100607DB9 /* ProblemContentModel.m in Sources */,
 				5F03E9F91D581D8100607DB9 /* Time.m in Sources */,
+				5F4B02F01D59A2CA00A531B3 /* DefaultPageController.m in Sources */,
 				5FE4682A1D58606D0050636D /* NoticeListTableViewCell.m in Sources */,
 				5F7E4D491D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m in Sources */,
 				5F7E4D641D596D9F00E9D4C8 /* ContestContentViewController.m in Sources */,

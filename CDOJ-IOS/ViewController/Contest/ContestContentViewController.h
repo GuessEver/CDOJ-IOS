@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DefaultPageController.h"
 #import "ContestContentModel.h"
 
-@interface ContestContentViewController : UIViewController
+@interface ContestContentViewController : DefaultPageController
 
-@property (nonatomic, strong) NSString* htmlStr;
-@property (nonatomic, strong) UIWebView* webView;
 @property (nonatomic, strong) ContestContentModel* data;
-
+@property (nonatomic, strong) NSArray* titleOfTabs;
 
 - (instancetype)initWithContestId:(NSString*)cid;
 
