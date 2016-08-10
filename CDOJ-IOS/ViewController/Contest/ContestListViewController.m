@@ -29,16 +29,73 @@
     [self.tableView reloadData];
 }
 
+
+- (void)enterContest:(NSString*)cid withType:(NSInteger)type {
+    if(type == 0) { // Public
+        [self loadContest:cid];
+    }
+    else if(type == 1) { // Private
+        [Message showInputBoxWithMessage:@"" title:@"请输入密码" callback:^(NSString *text) {
+            NSDictionary* requestBody = @{@"contestId":cid, @"password":sha1(text)};
+            AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+            [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
+            [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+            [manager POST:API_CONTEST_LOGIN parameters:requestBody progress:^(NSProgress * _Nonnull uploadProgress) {
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
+                    [self loadContest:cid];
+                }
+                else {
+                    [self enterContest:cid withType:type];
+                }
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            }];
+        }];
+    }
+    else if(type == 3) { // Invited
+        NSDictionary* requestBody = @{@"contestId":cid, @"password":sha1(@"")};
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
+        [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+        [manager POST:API_CONTEST_LOGIN parameters:requestBody progress:^(NSProgress * _Nonnull uploadProgress) {
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
+                [self loadContest:cid];
+            }
+            else {
+                [Message show:[NSString stringWithFormat:@"%@\n工程师暂时不想做，请去网页版，谢谢！", [responseObject objectForKey:@"error_msg"]] withTitle:@"Opps!"];
+            }
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        }];
+    }
+    else if(type == 5) { // Onsite
+        [[AFHTTPSessionManager manager] GET:API_CONTEST_DATA(cid) parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
+                [self loadContest:cid];
+            }
+            else {
+                [Message show:[NSString stringWithFormat:@"%@", [responseObject objectForKey:@"error_msg"]] withTitle:@"Opps!"];
+            }
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        }];
+    }
+    else { // 2 - DIY, 4 - Inherit
+        [Message show:[NSString stringWithFormat:@"Type-%ld of contest-%@ cannot be found!", type, cid] withTitle:@"Error!"];
+    }
+}
+- (void)loadContest:(NSString*)cid {
+    ContestSplitDetailViewController* detailView = [[ContestSplitDetailViewController alloc] initWithContestId:cid];
+    [self.splitViewController showDetailViewController:detailView sender:nil];
+}
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [ContestListTableViewCell height];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(![[self.data.list[indexPath.row] objectForKey:@"type"] isEqual:@0]) {
-        NSLog(@"%@", [self.data.list[indexPath.row] objectForKey:@"typeName"]);
-    }
-    ContestSplitDetailViewController* detailView = [[ContestSplitDetailViewController alloc] initWithContestId:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"contestId"]]];
-    [self.splitViewController showDetailViewController:detailView sender:nil];
+    NSString* cid = [NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"contestId"]];
+    NSInteger type = [[self.data.list[indexPath.row] objectForKey:@"type"] integerValue];
+    [self enterContest:cid withType:type];
 }
 
 #pragma mark UITableViewDataSource

@@ -27,10 +27,14 @@
         [self.problems addObject:data[i]];
         [self.problemPages addObject:[[ProblemContentViewController alloc] initWithProblemContent:self.problems[i]]];
     }
+    if(data.count) { // WMPageController cannot has 0 tabs
+        [self reloadData];
+    }
 }
 
 #pragma mark WMPageControllerDataSource
 - (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController {
+    NSLog(@"problem count: %ld", [self.problems count]);
     return [self.problems count];
 }
 - (__kindof UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {

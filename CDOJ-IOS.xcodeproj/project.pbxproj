@@ -57,11 +57,12 @@
 		5FE468271D585FD80050636D /* DefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468261D585FD80050636D /* DefaultTableViewCell.m */; };
 		5FE4682A1D58606D0050636D /* NoticeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468291D58606D0050636D /* NoticeListTableViewCell.m */; };
 		5FE4682D1D5875310050636D /* NoticeSplitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4682C1D5875310050636D /* NoticeSplitDetailViewController.m */; };
-		A9065B2ED07282106038CCAB /* libPods-CDOJ-IOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 828531C7F2B08AAE033D8175 /* libPods-CDOJ-IOS.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		642ADCE63A7747EF364A58D3 /* libPods-CDOJ-IOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 551FF3E10342B393AEF1D0EE /* libPods-CDOJ-IOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0EE474F261EDAF2BBFD28F4E /* Pods-CDOJ-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDOJ-IOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CDOJ-IOS/Pods-CDOJ-IOS.release.xcconfig"; sourceTree = "<group>"; };
+		551FF3E10342B393AEF1D0EE /* libPods-CDOJ-IOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CDOJ-IOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F03E9B51D581A8200607DB9 /* CDOJ-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CDOJ-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F03E9B91D581A8200607DB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F03E9BB1D581A8200607DB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -168,7 +169,6 @@
 		5FE468291D58606D0050636D /* NoticeListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeListTableViewCell.m; sourceTree = "<group>"; };
 		5FE4682B1D5875310050636D /* NoticeSplitDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeSplitDetailViewController.h; sourceTree = "<group>"; };
 		5FE4682C1D5875310050636D /* NoticeSplitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeSplitDetailViewController.m; sourceTree = "<group>"; };
-		828531C7F2B08AAE033D8175 /* libPods-CDOJ-IOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CDOJ-IOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF74DD03BA03BACE62F68F3B /* Pods-CDOJ-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDOJ-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDOJ-IOS/Pods-CDOJ-IOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,7 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9065B2ED07282106038CCAB /* libPods-CDOJ-IOS.a in Frameworks */,
+				642ADCE63A7747EF364A58D3 /* libPods-CDOJ-IOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +494,7 @@
 		AC36B2153A8A58D5D717B681 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				828531C7F2B08AAE033D8175 /* libPods-CDOJ-IOS.a */,
+				551FF3E10342B393AEF1D0EE /* libPods-CDOJ-IOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

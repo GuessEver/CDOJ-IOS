@@ -35,8 +35,10 @@
 }
 
 - (void)refreshData {
+//    NSLog(@"%@\n%@", self.data.detail, self.data.problems);
     [self.tab_overview loadDetailWithData:self.data.detail];
     [self.tab_problems loadProblemsWithData:self.data.problems];
+    [self reloadData];
 }
 
 #pragma mark WMPageControllerDataSource
