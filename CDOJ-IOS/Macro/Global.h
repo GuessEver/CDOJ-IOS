@@ -9,8 +9,12 @@
 #ifndef Global_h
 #define Global_h
 
-#define APP_NAME @"CDOJ"
-#define APP_VERSION @"0.1"
+#define INFO_DIC [[NSBundle mainBundle] infoDictionary]
+#define APP_NAME [INFO_DIC objectForKey:@"CFBundleDisplayName"]
+#define APP_VERSION [INFO_DIC objectForKey:@"CFBundleShortVersionString"]
+#define APP_BUILD [INFO_DIC objectForKey:@"CFBundleVersion"]
+#define APP_DESCRIPTION @"内测阶段中"
+#define APP_FEEDBACK @"使用中如发现任何问题，请联系开发人员！\nQQ: 905865858\nEmail: guessever@gmail.com"
 
 // Size
 #define SIZE_PERCENT_WIDTH_NAV 0.07 // of whole page
