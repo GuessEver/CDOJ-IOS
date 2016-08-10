@@ -38,7 +38,7 @@
                                                     selectedImage:[UIImage imageNamed:@"user_selected"]];
         
         [self setViewControllers:@[noticePage, problemPage, contestPage, userPage]];
-        [self setSelectedIndex:2];
+        [self setSelectedIndex:0];
         
         [self.tabBar setTranslucent:NO];
         [self.tabBar setBarTintColor:COLOR_BAR];
