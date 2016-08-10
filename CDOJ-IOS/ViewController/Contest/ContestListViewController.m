@@ -81,7 +81,7 @@
         }];
     }
     else { // 2 - DIY, 4 - Inherit
-        [Message show:[NSString stringWithFormat:@"Type-%ld of contest-%@ cannot be found!", type, cid] withTitle:@"Error!"];
+        [Message show:[NSString stringWithFormat:@"Type-%ld of contest-%@ cannot be found!", (long)type, cid] withTitle:@"Error!"];
     }
 }
 - (void)loadContest:(NSString*)cid {

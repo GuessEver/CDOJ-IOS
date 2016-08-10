@@ -34,7 +34,7 @@
 
 #pragma mark WMPageControllerDataSource
 - (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController {
-    NSLog(@"problem count: %ld", [self.problems count]);
+    NSLog(@"problem count: %ld", (unsigned long)[self.problems count]);
     return [self.problems count];
 }
 - (__kindof UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
