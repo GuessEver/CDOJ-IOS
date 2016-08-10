@@ -7,6 +7,7 @@
 //
 
 #import "UserModel.h"
+#import "LocalDataModel.h"
 
 @implementation UserModel
 
@@ -30,16 +31,19 @@
     }];
 }
 
-+ (void)userLoginWithUsername:(NSString *)username andPassword:(NSString *)password {
-    NSDictionary* requestBody = @{@"username":username, @"password":password};
++ (void)userLoginWithUser:(NSDictionary*)user {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    [manager POST:API_USER_LOGIN parameters:requestBody progress:^(NSProgress * _Nonnull uploadProgress) {
+    [manager POST:API_USER_LOGIN parameters:user progress:^(NSProgress * _Nonnull uploadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@", responseObject);
+//        NSLog(@"%@", responseObject);
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
+            [LocalDataModel setDefaultUsername:[user objectForKey:@"username"]];
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_SIGN_IN object:nil];
+        }
+        else {
+            [self userLogout];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];
@@ -47,10 +51,9 @@
 + (void)userLogout {
     [[AFHTTPSessionManager manager] GET:API_USER_LOGOUT parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@", responseObject);
-        if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_SIGN_OUT object:nil];
-        }
+//        NSLog(@"%@", responseObject);
+        [LocalDataModel setDefaultUsername:@""];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_SIGN_OUT object:nil];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];
 }

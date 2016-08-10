@@ -8,6 +8,7 @@
 
 #import "UserSettingViewController.h"
 #import "Color.h"
+#import "Notification.h"
 #import "DefaultNavigationController.h"
 #import "AccountManageViewController.h"
 #import "AboutCDOJViewController.h"
@@ -16,6 +17,8 @@
 
 - (instancetype)init {
     if(self = [super initWithStyle:UITableViewStyleGrouped]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userSignin) name:NOTIFICATION_USER_SIGN_IN object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userSignout) name:NOTIFICATION_USER_SIGN_OUT object:nil];
         [self setTitle:@"用户中心"];
         [self.tableView setBackgroundColor:COLOR_BACKGROUND];
         self.noUserLogin = 1; // set the offset to hide "我**" options when not login
@@ -27,6 +30,14 @@
                       ];
     }
     return self;
+}
+- (void)userSignin {
+    self.noUserLogin = 0;
+    [self.tableView reloadData];
+}
+- (void)userSignout {
+    self.noUserLogin = 1;
+    [self.tableView reloadData];
 }
 
 #pragma mark UITableViewDelegate

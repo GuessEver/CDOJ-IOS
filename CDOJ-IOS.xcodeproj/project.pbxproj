@@ -35,6 +35,7 @@
 		5F4B030A1D59FC5600A531B3 /* AboutCDOJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B03091D59FC5600A531B3 /* AboutCDOJViewController.m */; };
 		5F4B030D1D5A04DD00A531B3 /* AccountManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B030C1D5A04DD00A531B3 /* AccountManageViewController.m */; };
 		5F4B03131D5A085F00A531B3 /* LocalDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B03121D5A085F00A531B3 /* LocalDataModel.m */; };
+		5F4B03161D5ABEED00A531B3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B03151D5ABEED00A531B3 /* LoginViewController.m */; };
 		5F7E4D461D58829C00E9D4C8 /* NoticeContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */; };
 		5F7E4D491D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D481D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m */; };
 		5F7E4D4C1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D4B1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m */; };
@@ -123,6 +124,8 @@
 		5F4B030C1D5A04DD00A531B3 /* AccountManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManageViewController.m; sourceTree = "<group>"; };
 		5F4B03111D5A085F00A531B3 /* LocalDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataModel.h; sourceTree = "<group>"; };
 		5F4B03121D5A085F00A531B3 /* LocalDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataModel.m; sourceTree = "<group>"; };
+		5F4B03141D5ABEED00A531B3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		5F4B03151D5ABEED00A531B3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5F7E4D441D58829C00E9D4C8 /* NoticeContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeContentViewController.h; sourceTree = "<group>"; };
 		5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeContentViewController.m; sourceTree = "<group>"; };
 		5F7E4D471D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSplitDetailLogoViewController.h; sourceTree = "<group>"; };
@@ -439,6 +442,8 @@
 			children = (
 				5F4B030B1D5A04DD00A531B3 /* AccountManageViewController.h */,
 				5F4B030C1D5A04DD00A531B3 /* AccountManageViewController.m */,
+				5F4B03141D5ABEED00A531B3 /* LoginViewController.h */,
+				5F4B03151D5ABEED00A531B3 /* LoginViewController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -625,6 +630,7 @@
 				5F03EA011D581D8100607DB9 /* UserModel.m in Sources */,
 				5F7E4D611D596D5100E9D4C8 /* ContestSplitDetailViewController.m in Sources */,
 				5FE468201D5852E20050636D /* NoticeListViewController.m in Sources */,
+				5F4B03161D5ABEED00A531B3 /* LoginViewController.m in Sources */,
 				5F03E9FC1D581D8100607DB9 /* DefaultModel.m in Sources */,
 				5F03E9F71D581D8100607DB9 /* Message.m in Sources */,
 				5F03EA101D58244700607DB9 /* ProblemMainViewController.m in Sources */,

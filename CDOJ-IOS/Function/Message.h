@@ -11,6 +11,7 @@
 
 @interface Message : NSObject
 
+UIViewController* topViewController();
 + (void)show:(NSString*)message withTitle:(NSString*)title;
 + (void)showInputBoxWithMessage:(NSString*)message title:(NSString*)title callback:(void (^)(NSString* text))callback;
 

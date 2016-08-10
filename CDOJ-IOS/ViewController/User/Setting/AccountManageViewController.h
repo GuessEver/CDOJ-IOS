@@ -11,6 +11,6 @@
 @interface AccountManageViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray* users;
-@property NSInteger defaultUserIndex;
+@property (nonatomic, strong) NSString* defaultUsername;
 
 @end

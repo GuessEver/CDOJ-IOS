@@ -14,7 +14,11 @@
 + (void)initLocalData;
 + (NSArray*)getAllLocalUsers;
 + (NSDictionary*)getUserAtIndex:(NSInteger)index;
++ (NSDictionary*)getUserByUsername:(NSString*)username;
++ (NSString*)getDefaultUsername;
++ (NSDictionary*)getDefaultUser;
 + (void)deleteUserByUsername:(NSString*)username;
 + (void)addUserWithUsername:(NSString*)username andPassword:(NSString*)password;
++ (void)setDefaultUsername:(NSString*)username;
 
 @end

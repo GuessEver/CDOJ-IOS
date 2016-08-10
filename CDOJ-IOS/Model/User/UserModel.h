@@ -16,6 +16,6 @@
 @property (nonatomic, strong) NSDictionary* achievementInfo;
 
 - (void)fetchDataWithUsername:(NSString*)username;
-+ (void)userLoginWithUsername:(NSString*)username andPassword:(NSString*)password;
++ (void)userLoginWithUser:(NSDictionary*)user;
 
 @end

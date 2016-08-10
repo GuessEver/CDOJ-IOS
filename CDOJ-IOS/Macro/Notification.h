@@ -26,6 +26,8 @@
 #define NOTIFICATION_USER_SIGN_OUT [NOTIFICATION_USER_SIGN stringByAppendingString:@"Out."]
 #define NOTIFICATION_USER_DATA [NOTIFICATION_USER stringByAppendingString:@"Data."]
 #define NOTIFICATION_USER_DATA_REFRESHED [NOTIFICATION_USER_DATA stringByAppendingString:@"Refreshed."]
+#define NOTIFICATION_USER_LIST [NOTIFICATION_USER stringByAppendingString:@"List."]
+#define NOTIFICATION_USER_LIST_REFRESHED [NOTIFICATION_USER_LIST stringByAppendingString:@"Refreshed."]
 
 #define NOTIFICATION_NOTICE [NOTIFICATION_CENTER stringByAppendingString:@"Notice."]
 #define NOTIFICATION_NOTICE_LIST [NOTIFICATION_NOTICE stringByAppendingString:@"List."]

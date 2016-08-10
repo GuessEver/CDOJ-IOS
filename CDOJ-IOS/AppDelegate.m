@@ -24,6 +24,7 @@
     [self.window setBackgroundColor:COLOR_BACKGROUND];
     if([LocalDataModel needWelcome]) {
         // open app for the first time, do something here ...
+        NSLog(@"welcome!");
         [LocalDataModel initLocalData];
     }
     self.window.rootViewController = [[MainViewController alloc] init];
