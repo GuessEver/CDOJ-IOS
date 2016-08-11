@@ -16,6 +16,7 @@
     if(self = [super init]) {
         [self setBackgroundColor:COLOR_BACKGROUND];
         [self setOpaque:NO];
+        [self setDelegate:self];
     }
     return self;
 }
@@ -32,6 +33,16 @@
     self.htmlStr = [self.htmlStr stringByReplacingOccurrencesOfString:@"{{{replace_data_here}}}"
                                                            withString:jsonString];
     [self loadHTMLString:self.htmlStr baseURL:BASEURL];
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        if([[UIApplication sharedApplication]canOpenURL:[request URL]]) {
+            [[UIApplication sharedApplication]openURL:[request URL]];
+        }
+        return NO;
+    }
+    return YES;
 }
 
 @end
