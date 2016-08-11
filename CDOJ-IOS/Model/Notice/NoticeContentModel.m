@@ -20,11 +20,16 @@
 - (void)fetchDataWithArticleId:(NSString*)aid {
     [[AFHTTPSessionManager manager] GET:API_ARTICLE_DATA(aid) parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
             self.content = [responseObject objectForKey:@"article"];
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NOTICE_DATA_REFRESHED object:nil];
         }
+        else {
+            [Message show:[NSString stringWithFormat:@"没有编号为%@的文章，请检查是否正确，或者是否拥有足够权限！", aid] withTitle:@"Opps"];
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [Message show:@"请输入正确的文章数字编号" withTitle:@"错误！"];
     }];
 }
 

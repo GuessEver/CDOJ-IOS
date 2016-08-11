@@ -16,6 +16,7 @@
 - (instancetype)init {
     if(self = [super initWithStyle:UITableViewStylePlain]) {
         [self setTitle:@"公告"];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"#" style:UIBarButtonItemStyleDone target:self action:@selector(skipArticle)];
         self.data = [[NoticeListModel alloc] init];
         [self.data fetchDataOnPage:1];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_NOTICE_LIST_REFRESHED object:nil];
@@ -29,13 +30,22 @@
     [self.tableView reloadData];
 }
 
+- (void)showArticleWithArticleId:(NSString*)aid {
+    NoticeSplitDetailViewController* detailView = [[NoticeSplitDetailViewController alloc] initWithArticleId:aid];
+    [self.splitViewController showDetailViewController:detailView sender:nil];
+}
+- (void)skipArticle {
+    [Message showInputBoxWithMessage:@"请输入文章/公告编号" title:@"跳转" callback:^(NSString *text) {
+        [self showArticleWithArticleId:text];
+    }];
+}
+
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [NoticeListTableViewCell height];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NoticeSplitDetailViewController* detailView = [[NoticeSplitDetailViewController alloc] initWithArticleId:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"articleId"]]];
-    [self.splitViewController showDetailViewController:detailView sender:nil];
+    [self showArticleWithArticleId:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"articleId"]]];
 }
 
 #pragma mark UITableViewDataSource
