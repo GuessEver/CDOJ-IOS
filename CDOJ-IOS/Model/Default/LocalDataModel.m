@@ -71,9 +71,7 @@ NSString* LocalDataKeyDefaultUsername = @"defaultUsername";
 }
 + (void)addUserWithUser:(NSDictionary*)newUser {
     [self deleteUserByUsername:[newUser objectForKey:@"username"]];
-    NSMutableArray* users = [NSMutableArray arrayWithArray:[self getAllLocalUsers]];
-    [users addObject:newUser];
-    [self saveData:[NSArray arrayWithArray:users] to:LocalDataKeyUsers];
+    [self saveData:[@[newUser] arrayByAddingObjectsFromArray:[self getAllLocalUsers]] to:LocalDataKeyUsers];
     [self setDefaultUsername:[newUser objectForKey:@"username"]];
 }
 + (void)setDefaultUsername:(NSString*)username {
