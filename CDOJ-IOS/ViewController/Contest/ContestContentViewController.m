@@ -29,9 +29,14 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_CONTEST_DATA_REFRESHED object:nil];
         
         // Options
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInBrowser)];
     }
     return self;
+}
+
+- (void)openInBrowser {
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/#/contest/show/%@", APIURL, [self.data.detail objectForKey:@"contestId"]]];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 - (void)refreshData {

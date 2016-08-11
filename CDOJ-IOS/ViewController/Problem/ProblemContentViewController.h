@@ -10,7 +10,7 @@
 #import "ProblemContentModel.h"
 #import "DefaultWebView.h"
 
-@interface ProblemContentViewController : DefaultViewController
+@interface ProblemContentViewController : DefaultViewController <UIPopoverPresentationControllerDelegate>
 
 @property (nonatomic, strong) NSString* htmlStr;
 @property (nonatomic, strong) DefaultWebView* webView;

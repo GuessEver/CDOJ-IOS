@@ -30,9 +30,14 @@
     return self;
 }
 
+- (void)openInBrowser {
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/#/problem/show/%@", APIURL, [self.data.content objectForKey:@"problemId"]]];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
 - (void)arrangeViews {
     // Options
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInBrowser)];
     
     
     self.webView = [[DefaultWebView alloc] init];

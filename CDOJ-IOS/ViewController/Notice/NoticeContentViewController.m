@@ -17,7 +17,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_NOTICE_DATA_REFRESHED object:nil];
         
         // Options
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInBrowser)];
                                                    
         
         self.webView = [[DefaultWebView alloc] init];
@@ -29,6 +29,11 @@
         }];
     }
     return self;
+}
+
+- (void)openInBrowser {
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/#/article/show/%@", APIURL, [self.data.content objectForKey:@"articleId"]]];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 - (void)refreshData {
