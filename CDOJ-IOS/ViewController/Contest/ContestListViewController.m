@@ -123,7 +123,7 @@
 }
 - (void)contestLoginNeedPermission:(NSNotification*)contest {
     NSLog(@"Contest #%@ need permission", [contest.userInfo objectForKey:@"cid"]);
-    [Message show:@"您似乎没有权限哦～请联系管理员" withTitle:@"Opps"];
+    [Message show:[NSString stringWithFormat:@"您似乎没有权限哦\n%@", [contest.userInfo objectForKey:@"errorMessage"]] withTitle:@"Opps"];
 }
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
