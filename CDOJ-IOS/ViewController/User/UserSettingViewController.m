@@ -10,6 +10,11 @@
 #import "Color.h"
 #import "Notification.h"
 #import "DefaultNavigationController.h"
+#import "UserBasicInfoViewController.h"
+#import "UserAchievementViewController.h"
+#import "UserBlogViewController.h"
+#import "UserTeamViewController.h"
+#import "UserMessageViewController.h"
 #import "AccountManageViewController.h"
 #import "AboutCDOJViewController.h"
 
@@ -47,14 +52,19 @@
     __kindof UIViewController* root;
     if(section == 0) { // 我
         if(row == 0) { // 我的资料
+            root = [[UserBasicInfoViewController alloc] init];
         }
         else if(row == 1) { // 我的成就
+            root = [[UserAchievementViewController alloc] init];
         }
         else if(row == 2) { // 我的博客
+            root = [[UserBlogViewController alloc] init];
         }
         else if(row == 3) { // 我的队伍
+            root = [[UserTeamViewController alloc] init];
         }
         else if(row == 4) { // 我的消息
+            root = [[UserMessageViewController alloc] init];
         }
     }
     else if(section == 1) { // 设置

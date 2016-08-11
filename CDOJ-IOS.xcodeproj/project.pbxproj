@@ -51,6 +51,11 @@
 		5F7E4D711D59709E00E9D4C8 /* ContestContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D701D59709E00E9D4C8 /* ContestContentModel.m */; };
 		5FAF078E1D5C1693000CE6F6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF078D1D5C1693000CE6F6 /* LoginViewController.m */; };
 		5FAF07941D5C5A0E000CE6F6 /* DefaultDataListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07931D5C5A0E000CE6F6 /* DefaultDataListViewController.m */; };
+		5FAF07971D5C67B8000CE6F6 /* UserBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07961D5C67B8000CE6F6 /* UserBasicInfoViewController.m */; };
+		5FAF079A1D5C6818000CE6F6 /* UserAchievementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07991D5C6818000CE6F6 /* UserAchievementViewController.m */; };
+		5FAF079D1D5C6830000CE6F6 /* UserBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF079C1D5C6830000CE6F6 /* UserBlogViewController.m */; };
+		5FAF07A01D5C684B000CE6F6 /* UserTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF079F1D5C684B000CE6F6 /* UserTeamViewController.m */; };
+		5FAF07A31D5C6861000CE6F6 /* UserMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07A21D5C6861000CE6F6 /* UserMessageViewController.m */; };
 		5FE468191D5850CE0050636D /* NoticeSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */; };
 		5FE4681D1D5851630050636D /* DefaultNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681C1D5851630050636D /* DefaultNavigationController.m */; };
 		5FE468201D5852E20050636D /* NoticeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681F1D5852E20050636D /* NoticeListViewController.m */; };
@@ -158,6 +163,16 @@
 		5FAF078D1D5C1693000CE6F6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5FAF07921D5C5A0E000CE6F6 /* DefaultDataListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultDataListViewController.h; sourceTree = "<group>"; };
 		5FAF07931D5C5A0E000CE6F6 /* DefaultDataListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultDataListViewController.m; sourceTree = "<group>"; };
+		5FAF07951D5C67B8000CE6F6 /* UserBasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBasicInfoViewController.h; sourceTree = "<group>"; };
+		5FAF07961D5C67B8000CE6F6 /* UserBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBasicInfoViewController.m; sourceTree = "<group>"; };
+		5FAF07981D5C6818000CE6F6 /* UserAchievementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAchievementViewController.h; sourceTree = "<group>"; };
+		5FAF07991D5C6818000CE6F6 /* UserAchievementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAchievementViewController.m; sourceTree = "<group>"; };
+		5FAF079B1D5C6830000CE6F6 /* UserBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBlogViewController.h; sourceTree = "<group>"; };
+		5FAF079C1D5C6830000CE6F6 /* UserBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBlogViewController.m; sourceTree = "<group>"; };
+		5FAF079E1D5C684B000CE6F6 /* UserTeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTeamViewController.h; sourceTree = "<group>"; };
+		5FAF079F1D5C684B000CE6F6 /* UserTeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTeamViewController.m; sourceTree = "<group>"; };
+		5FAF07A11D5C6861000CE6F6 /* UserMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMessageViewController.h; sourceTree = "<group>"; };
+		5FAF07A21D5C6861000CE6F6 /* UserMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMessageViewController.m; sourceTree = "<group>"; };
 		5FE468171D5850CE0050636D /* NoticeSplitMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeSplitMasterViewController.h; sourceTree = "<group>"; };
 		5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeSplitMasterViewController.m; sourceTree = "<group>"; };
 		5FE4681B1D5851630050636D /* DefaultNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultNavigationController.h; sourceTree = "<group>"; };
@@ -438,6 +453,16 @@
 		5F4B03031D59FB7D00A531B3 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				5FAF07951D5C67B8000CE6F6 /* UserBasicInfoViewController.h */,
+				5FAF07961D5C67B8000CE6F6 /* UserBasicInfoViewController.m */,
+				5FAF07981D5C6818000CE6F6 /* UserAchievementViewController.h */,
+				5FAF07991D5C6818000CE6F6 /* UserAchievementViewController.m */,
+				5FAF079B1D5C6830000CE6F6 /* UserBlogViewController.h */,
+				5FAF079C1D5C6830000CE6F6 /* UserBlogViewController.m */,
+				5FAF079E1D5C684B000CE6F6 /* UserTeamViewController.h */,
+				5FAF079F1D5C684B000CE6F6 /* UserTeamViewController.m */,
+				5FAF07A11D5C6861000CE6F6 /* UserMessageViewController.h */,
+				5FAF07A21D5C6861000CE6F6 /* UserMessageViewController.m */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -625,8 +650,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F4B02FE1D59D87C00A531B3 /* UserSplitMasterViewController.m in Sources */,
+				5FAF07971D5C67B8000CE6F6 /* UserBasicInfoViewController.m in Sources */,
 				5F7E4D581D58B8FB00E9D4C8 /* ProblemListTableViewCell.m in Sources */,
 				5F4B03011D59D8CC00A531B3 /* UserSettingViewController.m in Sources */,
+				5FAF079D1D5C6830000CE6F6 /* UserBlogViewController.m in Sources */,
 				5F7E4D4C1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m in Sources */,
 				5F03EA131D58245B00607DB9 /* UserMainViewController.m in Sources */,
 				5F03E9BD1D581A8200607DB9 /* AppDelegate.m in Sources */,
@@ -644,9 +671,11 @@
 				5F4B03071D59FBB000A531B3 /* DefaultViewController.m in Sources */,
 				5F4B03131D5A085F00A531B3 /* LocalDataModel.m in Sources */,
 				5F03E9F91D581D8100607DB9 /* Time.m in Sources */,
+				5FAF079A1D5C6818000CE6F6 /* UserAchievementViewController.m in Sources */,
 				5F4B030A1D59FC5600A531B3 /* AboutCDOJViewController.m in Sources */,
 				5F4B02F01D59A2CA00A531B3 /* DefaultPageController.m in Sources */,
 				5FAF07941D5C5A0E000CE6F6 /* DefaultDataListViewController.m in Sources */,
+				5FAF07A01D5C684B000CE6F6 /* UserTeamViewController.m in Sources */,
 				5FE4682A1D58606D0050636D /* NoticeListTableViewCell.m in Sources */,
 				5F7E4D491D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m in Sources */,
 				5F7E4D641D596D9F00E9D4C8 /* ContestContentViewController.m in Sources */,
@@ -662,6 +691,7 @@
 				5F03EA0D1D58243300607DB9 /* NoticeMainViewController.m in Sources */,
 				5F03E9F81D581D8100607DB9 /* Security.m in Sources */,
 				5FE4681D1D5851630050636D /* DefaultNavigationController.m in Sources */,
+				5FAF07A31D5C6861000CE6F6 /* UserMessageViewController.m in Sources */,
 				5F7E4D521D58B80100E9D4C8 /* ProblemSplitDetailViewController.m in Sources */,
 				5F03EA061D58224D00607DB9 /* MainViewController.m in Sources */,
 				5F7E4D5B1D596C9D00E9D4C8 /* ContestSplitMasterViewController.m in Sources */,
