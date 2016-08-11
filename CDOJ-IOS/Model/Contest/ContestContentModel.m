@@ -17,15 +17,29 @@
     return self;
 }
 
-- (void)loginContestWithContestId:(NSString*)cid {
-    NSDictionary* requestBody = @{@"contestId":cid,@"password":@"1234567890123456789012345678901234567890"};
++ (void)loginContestWithContestId:(NSString*)cid andPassword:(NSString*)password inType:(NSInteger)type {
+    // type can only be 1 - Private, 3 - Invited, 5 - Onsite
+    NSDictionary* requestBody = @{@"contestId":cid,@"password":password};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
     [manager POST:API_CONTEST_LOGIN parameters:requestBody progress:^(NSProgress * _Nonnull uploadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"responseObject:\n%@", responseObject);
+        NSDictionary* userInfo = @{@"cid":cid, @"type":[NSNumber numberWithInteger:type]};
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_SUCCEED object:nil userInfo:userInfo];
+        }
+        else {
+            if(type == 1) { // Private
+                [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_NEED_PASSWORD object:nil userInfo:userInfo];
+            }
+            else if(type == 3) { // Invited
+                [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_NEED_REGISTER object:nil userInfo:userInfo];
+            }
+            else { // type == 3 // Onsite
+                [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_NEED_PERMISSION object:nil userInfo:userInfo];
+            }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];

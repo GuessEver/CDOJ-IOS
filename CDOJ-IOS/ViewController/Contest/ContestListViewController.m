@@ -9,6 +9,7 @@
 #import "ContestListViewController.h"
 #import "ContestListTableViewCell.h"
 #import "ContestSplitDetailViewController.h"
+#import "ContestContentModel.h"
 #import "Time.h"
 
 @implementation ContestListViewController
@@ -19,6 +20,10 @@
         self.data = [[ContestListModel alloc] init];
         [self.data fetchDataOnPage:1];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_CONTEST_LIST_REFRESHED object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contestLoginSucceed:) name:NOTIFICATION_CONTEST_LOGIN_SUCCEED object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contestLoginNeedPassword:) name:NOTIFICATION_CONTEST_LOGIN_NEED_PASSWORD object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contestLoginNeedRegister:) name:NOTIFICATION_CONTEST_LOGIN_NEED_REGISTER object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contestLoginNeedPermission:) name:NOTIFICATION_CONTEST_LOGIN_NEED_PERMISSION object:nil];
     }
     return self;
 }
@@ -29,64 +34,40 @@
     [self.tableView reloadData];
 }
 
-
-- (void)enterContest:(NSString*)cid withType:(NSInteger)type {
-    if(type == 0) { // Public
-        [self loadContest:cid];
-    }
-    else if(type == 1) { // Private
-        [Message showInputBoxWithMessage:@"" title:@"请输入密码" callback:^(NSString *text) {
-            NSDictionary* requestBody = @{@"contestId":cid, @"password":sha1(text)};
-            AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-            [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
-            [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
-            [manager POST:API_CONTEST_LOGIN parameters:requestBody progress:^(NSProgress * _Nonnull uploadProgress) {
-            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
-                    [self loadContest:cid];
-                }
-                else {
-                    [self enterContest:cid withType:type];
-                }
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            }];
-        }];
-    }
-    else if(type == 3) { // Invited
-        NSDictionary* requestBody = @{@"contestId":cid, @"password":sha1(@"")};
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
-        [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
-        [manager POST:API_CONTEST_LOGIN parameters:requestBody progress:^(NSProgress * _Nonnull uploadProgress) {
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
-                [self loadContest:cid];
-            }
-            else {
-                [Message show:[NSString stringWithFormat:@"%@\n工程师暂时不想做，请去网页版，谢谢！", [responseObject objectForKey:@"error_msg"]] withTitle:@"Opps!"];
-            }
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        }];
-    }
-    else if(type == 5) { // Onsite
-        [[AFHTTPSessionManager manager] GET:API_CONTEST_DATA(cid) parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
-                [self loadContest:cid];
-            }
-            else {
-                [Message show:[NSString stringWithFormat:@"%@", [responseObject objectForKey:@"error_msg"]] withTitle:@"Opps!"];
-            }
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        }];
-    }
-    else { // 2 - DIY, 4 - Inherit
-        [Message show:[NSString stringWithFormat:@"Type-%ld of contest-%@ cannot be found!", (long)type, cid] withTitle:@"Error!"];
-    }
-}
 - (void)loadContest:(NSString*)cid {
     ContestSplitDetailViewController* detailView = [[ContestSplitDetailViewController alloc] initWithContestId:cid];
     [self.splitViewController showDetailViewController:detailView sender:nil];
+}
+- (void)enterContest:(NSString*)cid withType:(NSInteger)type {
+    if(type == 2 || type == 4) { // 2 - DIY, 4 - Inherit
+        [Message show:[NSString stringWithFormat:@"Type-%ld of contest-%@ cannot be found!", (long)type, cid] withTitle:@"Error!"];
+    }
+    else if(type == 0) { // Public
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_SUCCEED object:nil userInfo:@{@"cid":cid}];
+    }
+    else { // 1 - Private, 3 - Invited, 5 - Onsite
+        [ContestContentModel loginContestWithContestId:cid andPassword:sha1(@"") inType:type];
+    }
+}
+- (void)contestLoginSucceed:(NSNotification*)contest {
+    NSLog(@"Now going to contest %@", contest.userInfo);
+    [self loadContest:[contest.userInfo objectForKey:@"cid"]];
+}
+- (void)contestLoginNeedPassword:(NSNotification*)contest {
+    NSLog(@"Contest #%@ need password", [contest.userInfo objectForKey:@"cid"]);
+    [Message showInputBoxWithMessage:@"请输入正确的比赛密码" title:@"比赛密码" callback:^(NSString *text) {
+        NSString* password = sha1(text);
+        NSLog(@"password: %@ -> %@", text, password);
+        [ContestContentModel loginContestWithContestId:[contest.userInfo objectForKey:@"cid"] andPassword:password inType:[[contest.userInfo objectForKey:@"type"] integerValue]];
+    }];
+}
+- (void)contestLoginNeedRegister:(NSNotification*)contest {
+    NSLog(@"Contest #%@ need register", [contest.userInfo objectForKey:@"cid"]);
+    [Message show:@"请先检查是否登录并已成功注册了本比赛！\n注册比赛请前往网页版，APP也会陆续上线，敬请期待" withTitle:@"您需要先注册本比赛"];
+}
+- (void)contestLoginNeedPermission:(NSNotification*)contest {
+    NSLog(@"Contest #%@ need permission", [contest.userInfo objectForKey:@"cid"]);
+    [Message show:@"您似乎没有权限哦～请联系管理员" withTitle:@"Opps"];
 }
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

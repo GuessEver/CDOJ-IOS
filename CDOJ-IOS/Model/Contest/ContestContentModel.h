@@ -16,6 +16,6 @@
 
 
 - (void)fetchDataWithContestId:(NSString*)cid;
-- (void)loginContestWithContestId:(NSString*)cid;
++ (void)loginContestWithContestId:(NSString*)cid andPassword:(NSString*)password inType:(NSInteger)type;
 
 @end
