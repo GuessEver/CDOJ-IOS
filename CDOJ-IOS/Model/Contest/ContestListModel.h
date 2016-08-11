@@ -11,10 +11,12 @@
 
 @interface ContestListModel : DefaultModel
 
+@property (nonatomic, strong) NSString* keyword;
 @property (nonatomic, strong) NSMutableArray* list;
 @property (nonatomic, strong) NSDictionary* pageInfo;
 
 
 - (void)fetchDataOnPage:(NSInteger)page;
+- (void)clearList;
 
 @end

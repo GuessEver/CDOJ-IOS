@@ -19,6 +19,7 @@
         [self setTitle:@"比赛"];
         self.data = [[ContestListModel alloc] init];
         [self.data fetchDataOnPage:1];
+        [self loadLeftNavigationItems];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_CONTEST_LIST_REFRESHED object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contestLoginSucceed:) name:NOTIFICATION_CONTEST_LOGIN_SUCCEED object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contestLoginNeedPassword:) name:NOTIFICATION_CONTEST_LOGIN_NEED_PASSWORD object:nil];
@@ -32,6 +33,42 @@
     //    NSLog(@"%@", self.data.pageInfo);
     //    NSLog(@"%@", self.data.list);
     [self.tableView reloadData];
+}
+
+- (void)loadLeftNavigationItems {
+    if([self.data.keyword isEqualToString:@""]) {
+        self.navigationItem.leftBarButtonItems = @[
+                                                   [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(inputSearchKeyword)]
+                                                   ];
+    }
+    else {
+        self.navigationItem.leftBarButtonItems = @[
+                                                   [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(inputSearchKeyword)],
+                                                   [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(clearSearchKeyword)]
+                                                   ];
+    }
+}
+- (void)clearSearchKeyword {
+    [self setTitle:@"比赛"];
+    [self.data setKeyword:@""];
+    [self searchContestList];
+}
+- (void)inputSearchKeyword {
+    [Message showInputBoxWithPassword:NO message:@"请输入搜索关键字" title:@"搜索" callback:^(NSString *text) {
+        [self.data setKeyword:text];
+        if([text isEqualToString:@""]) {
+            [self clearSearchKeyword];
+        }
+        else {
+            [self setTitle:[NSString stringWithFormat:@"搜索：%@", text]];
+            [self searchContestList];
+        }
+    }];
+}
+- (void)searchContestList {
+    [self loadLeftNavigationItems];
+    [self.data clearList];
+    [self.data fetchDataOnPage:1];
 }
 
 - (void)loadContest:(NSString*)cid {

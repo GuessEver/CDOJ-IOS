@@ -12,14 +12,19 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        self.keyword = @"";
         self.list = [[NSMutableArray alloc] init];
         self.pageInfo = [[NSDictionary alloc] init];
     }
     return self;
 }
 
+- (void)clearList {
+    self.list = [[NSMutableArray alloc] init];
+}
+
 - (void)fetchDataOnPage:(NSInteger)page {
-    NSDictionary* requestBody = @{@"currentPage":[NSString stringWithFormat:@"%ld", (long)page],@"orderFields":@"time",@"orderAsc":@"false"};
+    NSDictionary* requestBody = @{@"currentPage":[NSString stringWithFormat:@"%ld", (long)page],@"orderFields":@"time",@"orderAsc":@"false",@"keyword":self.keyword};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
