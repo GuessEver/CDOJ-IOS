@@ -18,16 +18,36 @@
         [self setTitle:@"公告"];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"#" style:UIBarButtonItemStyleDone target:self action:@selector(skipArticle)];
         self.data = [[NoticeListModel alloc] init];
-        [self.data fetchDataOnPage:1];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_NOTICE_LIST_REFRESHED object:nil];
+        // refresh data when entering
+        [self.tableView.mj_header beginRefreshing];
     }
     return self;
 }
 
+- (void)refreshFirstPageData {
+    [self.data clearList];
+    [self.data fetchDataOnPage:1];
+}
+- (BOOL)fetchNextPage {
+    NSInteger page = [[self.data.pageInfo objectForKey:@"currentPage"] integerValue] + 1;
+    NSInteger totalPages = [[self.data.pageInfo objectForKey:@"totalPages"] integerValue];
+    if(page > totalPages) return NO;
+    //    NSLog(@"Now fetching notice at page:%ld\n", page);
+    [self.data fetchDataOnPage:page];
+    return YES;
+}
+- (void)refreshNextPageData {
+    if(![self fetchNextPage]) {
+        [self.refreshFooter endRefreshing];
+    }
+}
 - (void)refreshList {
 //    NSLog(@"%@", self.data.pageInfo);
 //    NSLog(@"%@", self.data.list);
     [self.tableView reloadData];
+    [self.refreshHeader endRefreshing];
+    [self.refreshFooter endRefreshing];
 }
 
 - (void)showArticleWithArticleId:(NSString*)aid {

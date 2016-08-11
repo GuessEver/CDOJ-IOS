@@ -18,6 +18,10 @@
     return self;
 }
 
+- (void)clearList {
+    self.list = [[NSMutableArray alloc] init];
+}
+
 - (void)fetchDataOnPage:(NSInteger)page {
     NSDictionary* requestBody = @{@"currentPage":[NSString stringWithFormat:@"%ld", (long)page],@"type":@"0",@"orderFields":@"order",@"orderAsc":@"true"};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];

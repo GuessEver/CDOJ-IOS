@@ -6,10 +6,10 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DefaultDataListViewController.h"
 #import "NoticeListModel.h"
 
-@interface NoticeListViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface NoticeListViewController : DefaultDataListViewController
 
 @property (nonatomic, strong) NoticeListModel* data;
 

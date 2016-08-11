@@ -16,5 +16,6 @@
 
 
 - (void)fetchDataOnPage:(NSInteger)page;
+- (void)clearList;
 
 @end

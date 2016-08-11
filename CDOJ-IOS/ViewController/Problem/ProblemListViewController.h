@@ -6,10 +6,10 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DefaultDataListViewController.h"
 #import "ProblemListModel.h"
 
-@interface ProblemListViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
+@interface ProblemListViewController : DefaultDataListViewController
 
 @property (nonatomic, strong) ProblemListModel* data;
 

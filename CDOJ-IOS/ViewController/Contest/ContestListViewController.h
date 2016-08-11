@@ -6,10 +6,10 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DefaultDataListViewController.h"
 #import "ContestListModel.h"
 
-@interface ContestListViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
+@interface ContestListViewController : DefaultDataListViewController
 
 @property (nonatomic, strong) ContestListModel* data;
 
