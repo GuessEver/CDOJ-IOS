@@ -34,7 +34,7 @@
     [self.splitViewController showDetailViewController:detailView sender:nil];
 }
 - (void)skipProblem {
-    [Message showInputBoxWithMessage:@"请输入题目编号" title:@"跳转" callback:^(NSString *text) {
+    [Message showInputBoxWithPassword:NO message:@"请输入题目编号" title:@"跳转" callback:^(NSString *text) {
         [self showProblemWithProblemId:text];
     }];
 }

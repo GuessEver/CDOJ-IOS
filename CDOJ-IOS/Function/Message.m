@@ -25,7 +25,7 @@ UIViewController* topViewController() {
     [topViewController() presentViewController:alertMsg animated:YES completion:nil];
 }
 
-+ (void)showInputBoxWithMessage:(NSString*)message title:(NSString*)title callback:(void (^)(NSString* text))callback {
++ (void)showInputBoxWithPassword:(BOOL)password message:(NSString*)message title:(NSString*)title callback:(void (^)(NSString* text))callback {
     UIAlertController* alertMsg = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         callback(alertMsg.textFields[0].text);
@@ -36,7 +36,7 @@ UIViewController* topViewController() {
     [alertMsg addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         [textField setAutocorrectionType:UITextAutocorrectionTypeNo];
         [textField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
-        [textField setSecureTextEntry:YES];
+        [textField setSecureTextEntry:password];
     }];
     [topViewController() presentViewController:alertMsg animated:YES completion:nil];
 }

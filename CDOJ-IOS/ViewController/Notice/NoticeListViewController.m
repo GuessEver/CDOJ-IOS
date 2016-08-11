@@ -35,7 +35,7 @@
     [self.splitViewController showDetailViewController:detailView sender:nil];
 }
 - (void)skipArticle {
-    [Message showInputBoxWithMessage:@"请输入文章/公告编号" title:@"跳转" callback:^(NSString *text) {
+    [Message showInputBoxWithPassword:NO message:@"请输入文章/公告编号" title:@"跳转" callback:^(NSString *text) {
         [self showArticleWithArticleId:text];
     }];
 }

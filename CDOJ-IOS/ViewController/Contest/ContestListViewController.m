@@ -55,7 +55,7 @@
 }
 - (void)contestLoginNeedPassword:(NSNotification*)contest {
     NSLog(@"Contest #%@ need password", [contest.userInfo objectForKey:@"cid"]);
-    [Message showInputBoxWithMessage:@"请输入正确的比赛密码" title:@"比赛密码" callback:^(NSString *text) {
+    [Message showInputBoxWithPassword:YES message:@"请输入正确的比赛密码" title:@"比赛密码" callback:^(NSString *text) {
         NSString* password = sha1(text);
         NSLog(@"password: %@ -> %@", text, password);
         [ContestContentModel loginContestWithContestId:[contest.userInfo objectForKey:@"cid"] andPassword:password inType:[[contest.userInfo objectForKey:@"type"] integerValue]];
