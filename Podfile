@@ -7,4 +7,6 @@ target 'CDOJ-IOS' do
 	pod 'Masonry'
 	pod ‘WMPageController’
 	pod 'MJRefresh'
+	pod 'Pgyer'
+	pod 'PgyUpdate'
 end

@@ -56,6 +56,7 @@
 		5FAF079D1D5C6830000CE6F6 /* UserBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF079C1D5C6830000CE6F6 /* UserBlogViewController.m */; };
 		5FAF07A01D5C684B000CE6F6 /* UserTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF079F1D5C684B000CE6F6 /* UserTeamViewController.m */; };
 		5FAF07A31D5C6861000CE6F6 /* UserMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07A21D5C6861000CE6F6 /* UserMessageViewController.m */; };
+		5FAF07A61D5C77DE000CE6F6 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07A51D5C77DE000CE6F6 /* FeedbackViewController.m */; };
 		5FE468191D5850CE0050636D /* NoticeSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */; };
 		5FE4681D1D5851630050636D /* DefaultNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681C1D5851630050636D /* DefaultNavigationController.m */; };
 		5FE468201D5852E20050636D /* NoticeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681F1D5852E20050636D /* NoticeListViewController.m */; };
@@ -173,6 +174,8 @@
 		5FAF079F1D5C684B000CE6F6 /* UserTeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTeamViewController.m; sourceTree = "<group>"; };
 		5FAF07A11D5C6861000CE6F6 /* UserMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMessageViewController.h; sourceTree = "<group>"; };
 		5FAF07A21D5C6861000CE6F6 /* UserMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMessageViewController.m; sourceTree = "<group>"; };
+		5FAF07A41D5C77DE000CE6F6 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		5FAF07A51D5C77DE000CE6F6 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		5FE468171D5850CE0050636D /* NoticeSplitMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeSplitMasterViewController.h; sourceTree = "<group>"; };
 		5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeSplitMasterViewController.m; sourceTree = "<group>"; };
 		5FE4681B1D5851630050636D /* DefaultNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultNavigationController.h; sourceTree = "<group>"; };
@@ -446,6 +449,8 @@
 			children = (
 				5F4B03081D59FC5600A531B3 /* AboutCDOJViewController.h */,
 				5F4B03091D59FC5600A531B3 /* AboutCDOJViewController.m */,
+				5FAF07A41D5C77DE000CE6F6 /* FeedbackViewController.h */,
+				5FAF07A51D5C77DE000CE6F6 /* FeedbackViewController.m */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -680,6 +685,7 @@
 				5F7E4D491D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m in Sources */,
 				5F7E4D641D596D9F00E9D4C8 /* ContestContentViewController.m in Sources */,
 				5F03E9F61D581D8100607DB9 /* HTTP.m in Sources */,
+				5FAF07A61D5C77DE000CE6F6 /* FeedbackViewController.m in Sources */,
 				5F7E4D4F1D58B6F900E9D4C8 /* ProblemListViewController.m in Sources */,
 				5FE468231D5853EE0050636D /* DefaultSplitViewController.m in Sources */,
 				5FE468191D5850CE0050636D /* NoticeSplitMasterViewController.m in Sources */,

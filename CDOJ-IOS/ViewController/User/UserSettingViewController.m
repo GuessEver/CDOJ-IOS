@@ -16,6 +16,7 @@
 #import "UserTeamViewController.h"
 #import "UserMessageViewController.h"
 #import "AccountManageViewController.h"
+#import "FeedbackViewController.h"
 #import "AboutCDOJViewController.h"
 
 @implementation UserSettingViewController
@@ -31,7 +32,7 @@
         self.data = @[
                       @[@"我的资料", @"我的成就", @"我的博客", @"我的队伍", @"我的消息"],
                       @[@"账号管理"],
-                      @[@"关于CDOJ"]
+                      @[@"反馈", @"关于CDOJ"]
                       ];
     }
     return self;
@@ -73,7 +74,10 @@
         }
     }
     else if(section == 2) { // 关于
-        if(row == 0) { // 关于CDOJ
+        if(row == 0) { // 反馈
+            root = [[FeedbackViewController alloc] init];
+        }
+        else if(row == 1) { // 关于CDOJ
             root = [[AboutCDOJViewController alloc] init];
         }
     }
