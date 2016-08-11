@@ -6,5 +6,4 @@ target 'CDOJ-IOS' do
 	pod 'SDWebImage', '~>3.7'
 	pod 'Masonry'
 	pod ‘WMPageController’
-	pod 'Bugly'
 end

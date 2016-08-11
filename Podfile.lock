@@ -14,7 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Bugly (2.3.1)
   - Masonry (1.0.1)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
@@ -23,18 +22,16 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
-  - Bugly
   - Masonry
   - SDWebImage (~> 3.7)
   - WMPageController
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Bugly: c8ece2fa5bdcb404abdd0e07131e8129f580d893
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   WMPageController: 1aca8dbbce6ffbe997b34aa7cc567386d8eef3ba
 
-PODFILE CHECKSUM: adcf55c6dd4357bf3242f46b9c9cc3a71e93814f
+PODFILE CHECKSUM: 5121a7023a37bcfebe106c50aa17d5b5e980a13b
 
 COCOAPODS: 1.0.1
