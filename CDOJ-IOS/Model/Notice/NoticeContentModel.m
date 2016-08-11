@@ -20,7 +20,6 @@
 - (void)fetchDataWithArticleId:(NSString*)aid {
     [[AFHTTPSessionManager manager] GET:API_ARTICLE_DATA(aid) parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@", responseObject);
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
             self.content = [responseObject objectForKey:@"article"];
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NOTICE_DATA_REFRESHED object:nil];

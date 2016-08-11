@@ -15,6 +15,7 @@
 - (instancetype)init {
     if(self = [super initWithStyle:UITableViewStylePlain]) {
         [self setTitle:@"题库"];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"#" style:UIBarButtonItemStyleDone target:self action:@selector(skipProblem)];
         self.data = [[ProblemListModel alloc] init];
         [self.data fetchDataOnPage:1];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_PROBLEM_LIST_REFRESHED object:nil];
@@ -28,13 +29,22 @@
     [self.tableView reloadData];
 }
 
+- (void)showProblemWithProblemId:(NSString*)pid {
+    ProblemSplitDetailViewController* detailView = [[ProblemSplitDetailViewController alloc] initWithProblemId:pid];
+    [self.splitViewController showDetailViewController:detailView sender:nil];
+}
+- (void)skipProblem {
+    [Message showInputBoxWithMessage:@"请输入题目编号" title:@"跳转" callback:^(NSString *text) {
+        [self showProblemWithProblemId:text];
+    }];
+}
+
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [ProblemListTableViewCell height];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ProblemSplitDetailViewController* detailView = [[ProblemSplitDetailViewController alloc] initWithProblemId:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"problemId"]]];
-    [self.splitViewController showDetailViewController:detailView sender:nil];
+    [self showProblemWithProblemId:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"problemId"]]];
 }
 
 #pragma mark UITableViewDataSource
