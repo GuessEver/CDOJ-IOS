@@ -7,12 +7,14 @@
 //
 
 #import "DefaultSplitViewController.h"
+#import "DefaultSplitDetailLogoViewController.h"
 #import "Color.h"
 
 @implementation DefaultSplitViewController
 
 - (instancetype)init {
     if(self = [super init]) {
+        [self setViewControllers:@[[[UIViewController alloc] init]]];
         [self setDelegate:self];
         [self setExtendedLayoutIncludesOpaqueBars:YES];
         
