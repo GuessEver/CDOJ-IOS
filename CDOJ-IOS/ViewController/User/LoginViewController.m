@@ -36,13 +36,19 @@
         
         self.loginBtn = [[UIButton alloc] init];
         [self.loginBtn.layer setCornerRadius:5];
+        [self.loginBtn.layer setMasksToBounds:YES];
         [self.loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
-        [self.loginBtn setBackgroundColor:COLOR_BLUE];
+        [self.loginBtn setBackgroundColor:COLOR_TITLE];
         [self.loginBtn addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:self.loginBtn];
         
-//        NSDictionary* views = @{@"logo":self.logoView,@"username":self.usernameInput,@"password":self.passwordInput};
-//        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[logo(100)]-20-[username]-[password]" options:0 metrics:nil views:views]];
+        self.cancelBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [self.cancelBtn.layer setCornerRadius:5];
+        [self.cancelBtn.layer setMasksToBounds:YES];
+        [self.cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+        [self.cancelBtn addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:self.cancelBtn];
+        
         [self.logoView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(@150);
             make.height.equalTo(self.logoView.mas_width);
@@ -64,6 +70,11 @@
             make.top.equalTo(self.passwordInput.mas_bottom).offset(10);
             make.centerX.equalTo(self.view.mas_centerX);
         }];
+        [self.cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(self.usernameInput.mas_width);
+            make.top.equalTo(self.loginBtn.mas_bottom).offset(10);
+            make.centerX.equalTo(self.view.mas_centerX);
+        }];
     }
     return self;
 }
@@ -72,6 +83,9 @@
     NSString* username = self.usernameInput.text;
     NSString* password = sha1(self.passwordInput.text);
     [LocalDataModel addUserWithUsername:username andPassword:password];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)cancel {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

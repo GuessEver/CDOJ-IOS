@@ -35,7 +35,6 @@
 		5F4B030A1D59FC5600A531B3 /* AboutCDOJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B03091D59FC5600A531B3 /* AboutCDOJViewController.m */; };
 		5F4B030D1D5A04DD00A531B3 /* AccountManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B030C1D5A04DD00A531B3 /* AccountManageViewController.m */; };
 		5F4B03131D5A085F00A531B3 /* LocalDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B03121D5A085F00A531B3 /* LocalDataModel.m */; };
-		5F4B03161D5ABEED00A531B3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B03151D5ABEED00A531B3 /* LoginViewController.m */; };
 		5F7E4D461D58829C00E9D4C8 /* NoticeContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */; };
 		5F7E4D491D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D481D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m */; };
 		5F7E4D4C1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D4B1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m */; };
@@ -50,6 +49,7 @@
 		5F7E4D6B1D596F3300E9D4C8 /* ContestListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D691D596F3300E9D4C8 /* ContestListModel.m */; };
 		5F7E4D6E1D596F8000E9D4C8 /* ContestListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D6D1D596F8000E9D4C8 /* ContestListTableViewCell.m */; };
 		5F7E4D711D59709E00E9D4C8 /* ContestContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D701D59709E00E9D4C8 /* ContestContentModel.m */; };
+		5FAF078E1D5C1693000CE6F6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF078D1D5C1693000CE6F6 /* LoginViewController.m */; };
 		5FE468191D5850CE0050636D /* NoticeSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */; };
 		5FE4681D1D5851630050636D /* DefaultNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681C1D5851630050636D /* DefaultNavigationController.m */; };
 		5FE468201D5852E20050636D /* NoticeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681F1D5852E20050636D /* NoticeListViewController.m */; };
@@ -125,8 +125,6 @@
 		5F4B030C1D5A04DD00A531B3 /* AccountManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManageViewController.m; sourceTree = "<group>"; };
 		5F4B03111D5A085F00A531B3 /* LocalDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataModel.h; sourceTree = "<group>"; };
 		5F4B03121D5A085F00A531B3 /* LocalDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataModel.m; sourceTree = "<group>"; };
-		5F4B03141D5ABEED00A531B3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		5F4B03151D5ABEED00A531B3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5F7E4D441D58829C00E9D4C8 /* NoticeContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeContentViewController.h; sourceTree = "<group>"; };
 		5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeContentViewController.m; sourceTree = "<group>"; };
 		5F7E4D471D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSplitDetailLogoViewController.h; sourceTree = "<group>"; };
@@ -155,6 +153,8 @@
 		5F7E4D6D1D596F8000E9D4C8 /* ContestListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestListTableViewCell.m; sourceTree = "<group>"; };
 		5F7E4D6F1D59709E00E9D4C8 /* ContestContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestContentModel.h; sourceTree = "<group>"; };
 		5F7E4D701D59709E00E9D4C8 /* ContestContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestContentModel.m; sourceTree = "<group>"; };
+		5FAF078C1D5C1693000CE6F6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		5FAF078D1D5C1693000CE6F6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5FE468171D5850CE0050636D /* NoticeSplitMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeSplitMasterViewController.h; sourceTree = "<group>"; };
 		5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeSplitMasterViewController.m; sourceTree = "<group>"; };
 		5FE4681B1D5851630050636D /* DefaultNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultNavigationController.h; sourceTree = "<group>"; };
@@ -408,6 +408,8 @@
 				5F4B02FD1D59D87C00A531B3 /* UserSplitMasterViewController.m */,
 				5F4B02FF1D59D8CC00A531B3 /* UserSettingViewController.h */,
 				5F4B03001D59D8CC00A531B3 /* UserSettingViewController.m */,
+				5FAF078C1D5C1693000CE6F6 /* LoginViewController.h */,
+				5FAF078D1D5C1693000CE6F6 /* LoginViewController.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -442,8 +444,6 @@
 			children = (
 				5F4B030B1D5A04DD00A531B3 /* AccountManageViewController.h */,
 				5F4B030C1D5A04DD00A531B3 /* AccountManageViewController.m */,
-				5F4B03141D5ABEED00A531B3 /* LoginViewController.h */,
-				5F4B03151D5ABEED00A531B3 /* LoginViewController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -630,7 +630,7 @@
 				5F03EA011D581D8100607DB9 /* UserModel.m in Sources */,
 				5F7E4D611D596D5100E9D4C8 /* ContestSplitDetailViewController.m in Sources */,
 				5FE468201D5852E20050636D /* NoticeListViewController.m in Sources */,
-				5F4B03161D5ABEED00A531B3 /* LoginViewController.m in Sources */,
+				5FAF078E1D5C1693000CE6F6 /* LoginViewController.m in Sources */,
 				5F03E9FC1D581D8100607DB9 /* DefaultModel.m in Sources */,
 				5F03E9F71D581D8100607DB9 /* Message.m in Sources */,
 				5F03EA101D58244700607DB9 /* ProblemMainViewController.m in Sources */,
