@@ -12,14 +12,20 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        self.keyword = @"";
         self.list = [[NSMutableArray alloc] init];
         self.pageInfo = [[NSDictionary alloc] init];
     }
     return self;
 }
 
+- (void)clearList {
+    self.list = [[NSMutableArray alloc] init];
+}
+
 - (void)fetchDataOnPage:(NSInteger)page {
-    NSDictionary* requestBody = @{@"currentPage":[NSString stringWithFormat:@"%ld", (long)page],@"orderFields":@"id",@"orderAsc":@"true"};
+//    NSLog(@"fetching problem on page %ld with keyword %@", (long)page, self.keyword);
+    NSDictionary* requestBody = @{@"currentPage":[NSString stringWithFormat:@"%ld", (long)page],@"orderFields":@"id",@"orderAsc":@"true",@"keyword":self.keyword};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];

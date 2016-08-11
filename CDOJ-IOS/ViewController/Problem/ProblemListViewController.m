@@ -9,6 +9,7 @@
 #import "ProblemListViewController.h"
 #import "ProblemListTableViewCell.h"
 #import "ProblemSplitDetailViewController.h"
+#import "Masonry.h"
 
 @implementation ProblemListViewController
 
@@ -18,6 +19,7 @@
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"#" style:UIBarButtonItemStyleDone target:self action:@selector(skipProblem)];
         self.data = [[ProblemListModel alloc] init];
         [self.data fetchDataOnPage:1];
+        [self loadLeftNavigationItems];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_PROBLEM_LIST_REFRESHED object:nil];
     }
     return self;
@@ -38,6 +40,46 @@
         [self showProblemWithProblemId:text];
     }];
 }
+
+- (void)loadLeftNavigationItems {
+    if([self.data.keyword isEqualToString:@""]) {
+        self.navigationItem.leftBarButtonItems = @[
+                                                   [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(inputSearchKeyword)]
+                                                   ];
+    }
+    else {
+        self.navigationItem.leftBarButtonItems = @[
+                                                   [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(inputSearchKeyword)],
+                                                   [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(clearSearchKeyword)]
+                                                   ];
+    }
+}
+- (void)clearSearchKeyword {
+    [self setTitle:@"题库"];
+    [self.data setKeyword:@""];
+    [self searchProblemList];
+}
+- (void)inputSearchKeyword {
+    [Message showInputBoxWithPassword:NO message:@"请输入搜索关键字" title:@"搜索" callback:^(NSString *text) {
+        [self.data setKeyword:text];
+        if([text isEqualToString:@""]) {
+            [self clearSearchKeyword];
+        }
+        else {
+            [self setTitle:[NSString stringWithFormat:@"搜索：%@", text]];
+            [self searchProblemList];
+        }
+    }];
+}
+- (void)searchProblemList {
+    [self loadLeftNavigationItems];
+    [self.data clearList];
+    [self.data fetchDataOnPage:1];
+}
+
+#pragma mark UISearchBarDelegate
+
+#pragma mark UISearchResultsUpdating
 
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
