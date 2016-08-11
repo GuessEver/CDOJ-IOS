@@ -69,15 +69,12 @@ NSString* LocalDataKeyDefaultUsername = @"defaultUsername";
     }
     [self saveData:[NSArray arrayWithArray:users] to:LocalDataKeyUsers];
 }
-+ (void)addUserWithUsername:(NSString*)username andPassword:(NSString*)password {
-    [self deleteUserByUsername:username];
++ (void)addUserWithUser:(NSDictionary*)newUser {
+    [self deleteUserByUsername:[newUser objectForKey:@"username"]];
     NSMutableArray* users = [NSMutableArray arrayWithArray:[self getAllLocalUsers]];
-    NSDictionary* newUser = @{@"username":username, @"password":password};
     [users addObject:newUser];
     [self saveData:[NSArray arrayWithArray:users] to:LocalDataKeyUsers];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_LIST_REFRESHED object:nil];
-    [self saveData:username to:LocalDataKeyDefaultUsername];
-    [UserModel userLoginWithUser:[self getUserByUsername:username]];
+    [self setDefaultUsername:[newUser objectForKey:@"username"]];
 }
 + (void)setDefaultUsername:(NSString*)username {
     [self saveData:username to:LocalDataKeyDefaultUsername];

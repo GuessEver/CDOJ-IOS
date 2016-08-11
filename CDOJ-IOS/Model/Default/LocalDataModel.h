@@ -18,7 +18,7 @@
 + (NSString*)getDefaultUsername;
 + (NSDictionary*)getDefaultUser;
 + (void)deleteUserByUsername:(NSString*)username;
-+ (void)addUserWithUsername:(NSString*)username andPassword:(NSString*)password;
++ (void)addUserWithUser:(NSDictionary*)newUser;
 + (void)setDefaultUsername:(NSString*)username;
 
 @end

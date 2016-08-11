@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "Security.h"
-#import "LocalDataModel.h"
+#import "UserModel.h"
 
 @implementation LoginViewController
 
@@ -75,18 +75,28 @@
             make.top.equalTo(self.loginBtn.mas_bottom).offset(10);
             make.centerX.equalTo(self.view.mas_centerX);
         }];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucceed) name:NOTIFICATION_USER_SIGN_IN object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginFailed) name:NOTIFICATION_USER_SIGN_OUT object:nil];
     }
     return self;
 }
 
 - (void)login {
-    NSString* username = self.usernameInput.text;
-    NSString* password = sha1(self.passwordInput.text);
-    [LocalDataModel addUserWithUsername:username andPassword:password];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    NSDictionary* user = @{
+                           @"username": self.usernameInput.text,
+                           @"password": sha1(self.passwordInput.text)
+                           };
+    [UserModel userLoginWithUser:user];
 }
 - (void)cancel {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)loginSucceed {
+    [self cancel];
+}
+- (void)loginFailed {
+    [Message show:@"用户名与密码不匹配，请重新输入！" withTitle:@"登录失败"];
 }
 
 @end

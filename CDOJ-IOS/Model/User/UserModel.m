@@ -39,7 +39,8 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //        NSLog(@"%@", responseObject);
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
-            [LocalDataModel setDefaultUsername:[user objectForKey:@"username"]];
+//            [LocalDataModel setDefaultUsername:[user objectForKey:@"username"]];
+            [LocalDataModel addUserWithUser:user];
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_SIGN_IN object:nil];
         }
         else {
