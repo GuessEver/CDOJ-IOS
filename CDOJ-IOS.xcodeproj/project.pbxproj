@@ -533,7 +533,7 @@
 				TargetAttributes = {
 					5F03E9B41D581A8200607DB9 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 9MKLJRJTT4;
+						DevelopmentTeam = L6YE3TUZKD;
 					};
 				};
 			};
@@ -767,8 +767,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "CDOJ-IOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cn.edu.uestc.acm.CDOJ-IOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.edu.uestc.acm.cdoj-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -783,8 +784,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "CDOJ-IOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cn.edu.uestc.acm.CDOJ-IOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.edu.uestc.acm.cdoj-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
