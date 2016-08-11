@@ -18,9 +18,9 @@
         [self setTitle:@"题库"];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"#" style:UIBarButtonItemStyleDone target:self action:@selector(skipProblem)];
         self.data = [[ProblemListModel alloc] init];
-        [self.data fetchDataOnPage:1];
         [self loadLeftNavigationItems];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_PROBLEM_LIST_REFRESHED object:nil];
+        [self.tableView.mj_header beginRefreshing];
     }
     return self;
 }

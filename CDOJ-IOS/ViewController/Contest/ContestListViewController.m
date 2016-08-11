@@ -18,13 +18,13 @@
     if(self = [super initWithStyle:UITableViewStylePlain]) {
         [self setTitle:@"比赛"];
         self.data = [[ContestListModel alloc] init];
-        [self.data fetchDataOnPage:1];
         [self loadLeftNavigationItems];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_CONTEST_LIST_REFRESHED object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contestLoginSucceed:) name:NOTIFICATION_CONTEST_LOGIN_SUCCEED object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contestLoginNeedPassword:) name:NOTIFICATION_CONTEST_LOGIN_NEED_PASSWORD object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contestLoginNeedRegister:) name:NOTIFICATION_CONTEST_LOGIN_NEED_REGISTER object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contestLoginNeedPermission:) name:NOTIFICATION_CONTEST_LOGIN_NEED_PERMISSION object:nil];
+        [self.tableView.mj_header beginRefreshing];
     }
     return self;
 }
