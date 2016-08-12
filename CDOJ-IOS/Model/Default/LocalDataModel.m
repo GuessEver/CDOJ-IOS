@@ -34,7 +34,7 @@ NSString* LocalDataKeyDefaultUsername = @"defaultUsername";
 }
 
 
-#pragma mark users {username, password(sha1)}
+#pragma mark users {username, password(sha1), email}
 + (NSArray*)getAllLocalUsers {
     return [[NSUserDefaults standardUserDefaults] objectForKey:LocalDataKeyUsers];
 }
@@ -57,9 +57,6 @@ NSString* LocalDataKeyDefaultUsername = @"defaultUsername";
     return [self getUserByUsername:[self getDefaultUsername]];
 }
 + (void)deleteUserByUsername:(NSString*)username {
-    if([[self getDefaultUsername] isEqualToString:username]) {
-        [self saveData:@"" to:LocalDataKeyDefaultUsername];
-    }
     NSMutableArray* users = [NSMutableArray arrayWithArray:[self getAllLocalUsers]];
     for(int i = 0; i < users.count; i++) {
         if([[users[i] objectForKey:@"username"] isEqualToString:username]) {
@@ -68,6 +65,12 @@ NSString* LocalDataKeyDefaultUsername = @"defaultUsername";
         }
     }
     [self saveData:[NSArray arrayWithArray:users] to:LocalDataKeyUsers];
+    if([[self getDefaultUsername] isEqualToString:username]) {
+        [self setDefaultUsername:@""];
+    }
+    else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_LIST_REFRESHED object:nil];
+    }
 }
 + (void)addUserWithUser:(NSDictionary*)newUser {
     [self deleteUserByUsername:[newUser objectForKey:@"username"]];

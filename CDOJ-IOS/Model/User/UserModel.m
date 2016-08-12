@@ -45,7 +45,9 @@
 //        NSLog(@"%@", responseObject);
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
 //            [LocalDataModel setDefaultUsername:[user objectForKey:@"username"]];
-            [LocalDataModel addUserWithUser:user];
+            NSMutableDictionary* newUser = [NSMutableDictionary dictionaryWithDictionary:user];
+            [newUser setObject:[responseObject objectForKey:@"email"] forKey:@"email"];
+            [LocalDataModel addUserWithUser:[NSDictionary dictionaryWithDictionary:newUser]];
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_SIGN_IN object:nil];
         }
         else {

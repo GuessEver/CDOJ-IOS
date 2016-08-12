@@ -7,8 +7,6 @@
 //
 
 #import "ContestListTableViewCell.h"
-#import "Color.h"
-#import "Masonry.h"
 
 @implementation ContestListTableViewCell
 

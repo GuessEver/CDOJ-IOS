@@ -7,8 +7,6 @@
 //
 
 #import "NoticeListTableViewCell.h"
-#import "Color.h"
-#import "Masonry.h"
 
 @implementation NoticeListTableViewCell
 

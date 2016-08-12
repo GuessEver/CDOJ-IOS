@@ -7,9 +7,6 @@
 //
 
 #import "ProblemListTableViewCell.h"
-#import "Color.h"
-#import "Masonry.h"
-
 @implementation ProblemListTableViewCell
 
 /*****************************************************

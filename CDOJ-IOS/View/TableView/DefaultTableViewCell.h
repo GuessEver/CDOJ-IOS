@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Color.h"
+#import "Masonry.h"
 
 @interface DefaultTableViewCell : UITableViewCell
 
