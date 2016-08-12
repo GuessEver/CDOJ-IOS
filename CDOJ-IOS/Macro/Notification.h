@@ -13,7 +13,10 @@
 #define NOTIFICATION_CENTER @"Notification"
 
 // ERROR
-#define NOTIFICATION_HTTPERROR [NOTIFICATION_CENTER stringByAppendingString:@"Error."]
+#define NOTIFICATION_HTTP [NOTIFICATION_CENTER stringByAppendingString:@"Http."]
+#define NOTIFICATION_HTTP_CONNECTING [NOTIFICATION_HTTP stringByAppendingString:@"Connecting."]
+#define NOTIFICATION_HTTP_CONNECTED [NOTIFICATION_HTTP stringByAppendingString:@"Connected."]
+#define NOTIFICATION_HTTP_ERROR [NOTIFICATION_HTTP stringByAppendingString:@"Error."]
 
 #define NOTIFICATION_SITE [NOTIFICATION_CENTER stringByAppendingString:@"Site."]
 #define NOTIFICATION_SITE_SESSION [NOTIFICATION_SITE stringByAppendingString:@"Session."]

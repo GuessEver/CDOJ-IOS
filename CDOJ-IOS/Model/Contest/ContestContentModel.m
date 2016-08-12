@@ -20,6 +20,7 @@
 }
 
 + (void)loginContestWithContestId:(NSString*)cid andPassword:(NSString*)password inType:(NSInteger)type {
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
     [UserModel userLoginWithUser:[LocalDataModel getDefaultUser]];
     // type can only be 1 - Private, 3 - Invited, 5 - Onsite
     NSDictionary* requestBody = @{@"contestId":cid,@"password":password};
@@ -28,7 +29,8 @@
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
     [manager POST:API_CONTEST_LOGIN parameters:requestBody progress:^(NSProgress * _Nonnull uploadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"responseObject:\n%@", responseObject);
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
+//        NSLog(@"responseObject:\n%@", responseObject);
         NSMutableDictionary* userInfo = [NSMutableDictionary dictionaryWithDictionary:@{@"cid":cid, @"type":[NSNumber numberWithInteger:type]}];
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_SUCCEED object:nil userInfo:userInfo];
@@ -48,18 +50,22 @@
             }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];
     }];
 }
 
 - (void)fetchDataWithContestId:(NSString *)cid {
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
     [[AFHTTPSessionManager manager] GET:API_CONTEST_DATA(cid) parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
             self.detail = [responseObject objectForKey:@"contest"];
             self.problems = [responseObject objectForKey:@"problemList"];
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_DATA_REFRESHED object:nil];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];
     }];
 }
 

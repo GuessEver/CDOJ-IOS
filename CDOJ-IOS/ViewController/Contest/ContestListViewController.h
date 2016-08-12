@@ -11,6 +11,4 @@
 
 @interface ContestListViewController : DefaultDataListViewController
 
-@property (nonatomic, strong) ContestListModel* data;
-
 @end

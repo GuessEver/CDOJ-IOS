@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UITabBarController
+@property (nonatomic, strong) UIView* networkConnectionErrorTipBar;
+@property NSInteger numberOfNetworkConnections;
 
 @end

@@ -7,15 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DefaultModel.h"
+#import "DefaultListModel.h"
 
-@interface NoticeListModel : DefaultModel
-
-@property (nonatomic, strong) NSMutableArray* list;
-@property (nonatomic, strong) NSDictionary* pageInfo;
-
-
-- (void)fetchDataOnPage:(NSInteger)page;
-- (void)clearList;
+@interface NoticeListModel : DefaultListModel
 
 @end

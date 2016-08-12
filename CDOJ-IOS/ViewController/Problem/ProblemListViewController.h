@@ -11,7 +11,4 @@
 
 @interface ProblemListViewController : DefaultDataListViewController
 
-@property (nonatomic, strong) ProblemListModel* data;
-
-
 @end

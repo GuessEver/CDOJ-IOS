@@ -58,6 +58,7 @@
 		5FAF07A31D5C6861000CE6F6 /* UserMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07A21D5C6861000CE6F6 /* UserMessageViewController.m */; };
 		5FAF07A61D5C77DE000CE6F6 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07A51D5C77DE000CE6F6 /* FeedbackViewController.m */; };
 		5FAF07AA1D5C98DC000CE6F6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FAF07A91D5C98DC000CE6F6 /* Launch Screen.storyboard */; };
+		5FAF07DF1D5DC8F9000CE6F6 /* DefaultListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07DE1D5DC8F9000CE6F6 /* DefaultListModel.m */; };
 		5FE468191D5850CE0050636D /* NoticeSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */; };
 		5FE4681D1D5851630050636D /* DefaultNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681C1D5851630050636D /* DefaultNavigationController.m */; };
 		5FE468201D5852E20050636D /* NoticeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681F1D5852E20050636D /* NoticeListViewController.m */; };
@@ -178,6 +179,8 @@
 		5FAF07A41D5C77DE000CE6F6 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		5FAF07A51D5C77DE000CE6F6 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		5FAF07A91D5C98DC000CE6F6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		5FAF07DD1D5DC8F9000CE6F6 /* DefaultListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultListModel.h; sourceTree = "<group>"; };
+		5FAF07DE1D5DC8F9000CE6F6 /* DefaultListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultListModel.m; sourceTree = "<group>"; };
 		5FE468171D5850CE0050636D /* NoticeSplitMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeSplitMasterViewController.h; sourceTree = "<group>"; };
 		5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeSplitMasterViewController.m; sourceTree = "<group>"; };
 		5FE4681B1D5851630050636D /* DefaultNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultNavigationController.h; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 				5F03E9E81D581D8100607DB9 /* DefaultModel.m */,
 				5F4B03111D5A085F00A531B3 /* LocalDataModel.h */,
 				5F4B03121D5A085F00A531B3 /* LocalDataModel.m */,
+				5FAF07DD1D5DC8F9000CE6F6 /* DefaultListModel.h */,
+				5FAF07DE1D5DC8F9000CE6F6 /* DefaultListModel.m */,
 			);
 			path = Default;
 			sourceTree = "<group>";
@@ -685,6 +690,7 @@
 				5F4B02F01D59A2CA00A531B3 /* DefaultPageController.m in Sources */,
 				5FAF07941D5C5A0E000CE6F6 /* DefaultDataListViewController.m in Sources */,
 				5FAF07A01D5C684B000CE6F6 /* UserTeamViewController.m in Sources */,
+				5FAF07DF1D5DC8F9000CE6F6 /* DefaultListModel.m in Sources */,
 				5FE4682A1D58606D0050636D /* NoticeListTableViewCell.m in Sources */,
 				5F7E4D491D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m in Sources */,
 				5F7E4D641D596D9F00E9D4C8 /* ContestContentViewController.m in Sources */,

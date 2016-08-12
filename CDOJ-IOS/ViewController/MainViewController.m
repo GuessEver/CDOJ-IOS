@@ -12,10 +12,16 @@
 #import "ContestMainViewController.h"
 #import "UserMainViewController.h"
 #import "Color.h"
+#import "Masonry.h"
+#import "Notification.h"
 
 @implementation MainViewController
 
 - (instancetype)init {
+    // check networking status
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkConnecting) name:NOTIFICATION_HTTP_CONNECTING object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkConnected) name:NOTIFICATION_HTTP_CONNECTED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkError) name:NOTIFICATION_HTTP_ERROR object:nil];
     if(self = [super init]) {
         NoticeMainViewController* noticePage = [[NoticeMainViewController alloc] init];
         noticePage.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"公告"
@@ -43,8 +49,70 @@
         [self.tabBar setTranslucent:NO];
         [self.tabBar setBarTintColor:COLOR_BAR];
         [self.tabBar setTintColor:COLOR_TITLE];
+        
+        [self initNetworkConnectionErrorTipBar];
     }
     return self;
 }
 
+- (void)setNetworkIndicator {
+    if(self.numberOfNetworkConnections > 0) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    }
+    else {
+        self.numberOfNetworkConnections = 0;
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    }
+}
+- (void)networkConnecting {
+    self.numberOfNetworkConnections += 1;
+    [self setNetworkIndicator];
+}
+- (void)networkConnected {
+    self.numberOfNetworkConnections -= 1;
+    [self removeNetworkConnectionErrorTipBar];
+    [self setNetworkIndicator];
+}
+- (void)networkError {
+    self.numberOfNetworkConnections -= 1;
+    [self showNetworkConnectionErrorTipBar];
+    [self setNetworkIndicator];
+}
+- (void)showNetworkConnectionErrorTipBar {
+    [self.view bringSubviewToFront:self.networkConnectionErrorTipBar];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.networkConnectionErrorTipBar setAlpha:1];
+    }];
+}
+- (void)removeNetworkConnectionErrorTipBar {
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.networkConnectionErrorTipBar setAlpha:0];
+    }];
+//    [self.view sendSubviewToBack:self.networkConnectionErrorTipBar];
+}
+- (void)initNetworkConnectionErrorTipBar {
+    UILabel* tip = [[UILabel alloc] init];
+    [tip setBackgroundColor:nil];
+    [tip setText:@"网络连接错误，请检查网络设置"];
+    [tip setFont:[UIFont systemFontOfSize:12]];
+    [tip setTextColor:COLOR_WHITE];
+    [tip setTextAlignment:NSTextAlignmentCenter];
+    self.networkConnectionErrorTipBar = [[UIView alloc] init];
+    [self.networkConnectionErrorTipBar setBackgroundColor:COLOR_RED];
+    [self.networkConnectionErrorTipBar addSubview:tip];
+    [self.view addSubview:self.networkConnectionErrorTipBar];
+    [tip mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.networkConnectionErrorTipBar.mas_left);
+        make.width.equalTo(self.networkConnectionErrorTipBar.mas_width);
+        make.bottom.equalTo(self.networkConnectionErrorTipBar.mas_bottom).offset(-5);
+        make.height.equalTo(@10);
+    }];
+    [self.networkConnectionErrorTipBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left);
+        make.width.equalTo(self.view.mas_width);
+        make.top.equalTo(self.view.mas_top);
+        make.height.equalTo(@35);
+    }];
+    [self.networkConnectionErrorTipBar setAlpha:0];
+}
 @end

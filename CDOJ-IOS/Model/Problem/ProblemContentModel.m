@@ -18,8 +18,10 @@
 }
 
 - (void)fetchDataWithProblemId:(NSString *)pid {
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
     [[AFHTTPSessionManager manager] GET:API_PROBLEM_DATA(pid) parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
             self.content = [responseObject objectForKey:@"problem"];
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_PROBLEM_DATA_REFRESHED object:nil];
@@ -28,7 +30,12 @@
             [Message show:[NSString stringWithFormat:@"没有编号为%@的题目，请检查是否正确，或者是否拥有足够权限！", pid] withTitle:@"Opps"];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [Message show:@"请输入正确的题目数字编号" withTitle:@"错误！"];
+        if(error.code == NSURLErrorBadServerResponse || error.code == NSURLErrorResourceUnavailable) {
+            [Message show:@"请输入正确的题目数字编号" withTitle:@"错误！"];
+        }
+        else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];
+        }
     }];
 }
 

@@ -11,6 +11,4 @@
 
 @interface NoticeListViewController : DefaultDataListViewController
 
-@property (nonatomic, strong) NoticeListModel* data;
-
 @end
