@@ -17,5 +17,6 @@
 
 - (void)fetchDataWithUsername:(NSString*)username;
 + (void)userLoginWithUser:(NSDictionary*)user;
++ (void)userLoginWithDefaultUser;
 
 @end

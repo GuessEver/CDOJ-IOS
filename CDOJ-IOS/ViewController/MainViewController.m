@@ -14,14 +14,12 @@
 #import "Color.h"
 #import "Masonry.h"
 #import "Notification.h"
+#import "UserModel.h"
+#import "LocalDataModel.h"
 
 @implementation MainViewController
 
 - (instancetype)init {
-    // check networking status
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkConnecting) name:NOTIFICATION_HTTP_CONNECTING object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkConnected) name:NOTIFICATION_HTTP_CONNECTED object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkError) name:NOTIFICATION_HTTP_ERROR object:nil];
     if(self = [super init]) {
         NoticeMainViewController* noticePage = [[NoticeMainViewController alloc] init];
         noticePage.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"公告"
@@ -50,11 +48,16 @@
         [self.tabBar setBarTintColor:COLOR_BAR];
         [self.tabBar setTintColor:COLOR_TITLE];
         
+        // check networking status
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkConnecting) name:NOTIFICATION_HTTP_CONNECTING object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkConnected) name:NOTIFICATION_HTTP_CONNECTED object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkError) name:NOTIFICATION_HTTP_ERROR object:nil];
         [self initNetworkConnectionErrorTipBar];
     }
     return self;
 }
 
+#pragma mark network tips
 - (void)setNetworkIndicator {
     if(self.numberOfNetworkConnections > 0) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];

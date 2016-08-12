@@ -13,16 +13,10 @@
 
 @implementation DefaultModel
 
-- (instancetype)init
-{
+- (instancetype)init {
     if (self = [super init]) {
-        [UserModel userLoginWithUser:[LocalDataModel getDefaultUser]];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userSignout) name:NOTIFICATION_USER_SIGN_OUT object:nil];
     }
     return self;
-}
-- (void)userSignout {
-//    [Message show:@"用户已登出，请到用户中心重新登录" withTitle:@"Oops!"];
 }
 
 @end

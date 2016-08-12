@@ -67,5 +67,12 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];
     }];
 }
++ (void)userLoginWithDefaultUser {
+    NSLog(@"default user login");
+    NSDictionary* defaultUser = [LocalDataModel getDefaultUser];
+    if(defaultUser != nil) {
+        [UserModel userLoginWithUser:defaultUser];
+    }
+}
 
 @end

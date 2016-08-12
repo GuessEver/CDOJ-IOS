@@ -25,7 +25,6 @@
 - (void)refreshData {
     self.users = [LocalDataModel getAllLocalUsers];
     self.defaultUsername = [LocalDataModel getDefaultUsername];
-    NSLog(@"de: %@", self.defaultUsername);
     [self.tableView reloadData];
 }
 
@@ -33,6 +32,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.row == self.users.count) { // add button
         [self presentViewController:[[LoginViewController alloc] init] animated:YES completion:nil];
+//        [self.navigationController pushViewController:[[LoginViewController alloc] init] animated:YES];
     }
     else {
 //        [LocalDataModel setDefaultUsername:[self.users[indexPath.row] objectForKey:@"username"]];
