@@ -13,5 +13,6 @@
 @property NSInteger noUserLogin;
 @property (nonatomic, strong) NSArray* titleOfSections;
 @property (nonatomic, strong) NSArray* data;
+@property (nonatomic, strong) NSArray* classType;
 
 @end
