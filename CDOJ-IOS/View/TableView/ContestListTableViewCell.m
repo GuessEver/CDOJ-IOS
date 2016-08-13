@@ -41,13 +41,6 @@
         [self.length setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
         [self.cid setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
         
-        [self.cid setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self.title setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self.startTime setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self.length setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self.status setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self.typeName setTranslatesAutoresizingMaskIntoConstraints:NO];
-        
         [self.contentView addSubview:self.cid];
         [self.contentView addSubview:self.title];
         [self.contentView addSubview:self.startTime];
@@ -55,22 +48,42 @@
         [self.contentView addSubview:self.status];
         [self.contentView addSubview:self.typeName];
         
-        NSDictionary* views = @{@"cid":self.cid,@"title":self.title,@"startTime":self.startTime,@"length":self.length,@"status":self.status,@"typeName":self.typeName};
-        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[title(27)][startTime][cid(15)]-5-|" options:0 metrics:nil views:views]];
-        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[title]-10-|" options:0 metrics:nil views:views]];
-        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[startTime(length)][length]-10-|" options:0 metrics:nil views:views]];
-        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[cid][status(60)]-5-[typeName(60)]-10-|" options:0 metrics:nil views:views]];
+        [self.title mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.contentView.mas_top).offset(5);
+            make.left.equalTo(self.contentView.mas_left).offset(20);
+            make.right.equalTo(self.contentView.mas_right).offset(-10);
+            make.height.equalTo(@27);
+        }];
+        [self.startTime mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.title.mas_bottom);
+            make.left.equalTo(self.contentView.mas_left).offset(20);
+            make.right.equalTo(self.length.mas_left);
+            make.width.equalTo(self.length.mas_width);
+        }];
         [self.length mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.startTime.mas_top);
+            make.left.equalTo(self.startTime.mas_right);
+            make.right.equalTo(self.contentView.mas_right).offset(-10);
             make.height.equalTo(self.startTime.mas_height);
+        }];
+        [self.cid mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.startTime.mas_bottom);
+            make.height.equalTo(@15);
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(-5);
+            make.left.equalTo(self.contentView.mas_left).offset(20);
         }];
         [self.status mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.cid.mas_top);
+            make.left.equalTo(self.cid.mas_right);
             make.height.equalTo(self.cid.mas_height);
+            make.width.equalTo(@60);
         }];
         [self.typeName mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.cid.mas_top);
+            make.left.equalTo(self.status.mas_right).offset(5);
             make.height.equalTo(self.cid.mas_height);
+            make.width.equalTo(@60);
+            make.right.equalTo(self.contentView.mas_right).offset(-10);
         }];
     }
     return self;

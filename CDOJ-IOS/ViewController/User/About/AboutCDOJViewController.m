@@ -46,34 +46,37 @@
         [feedback setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
         [self.view addSubview:feedback];
         
-        NSDictionary* views = @{@"logo":logoView,@"name":appName,@"version":appVersion,@"description":description,@"feedback":feedback};
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-50-[logo]-50-[name]-10-[version]-30-[description]-10-[feedback]" options:0 metrics:nil views:views]];
         [logoView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.lessThanOrEqualTo(@150);
             make.width.lessThanOrEqualTo(self.view.mas_width).multipliedBy(0.3);
             make.width.lessThanOrEqualTo(self.view.mas_height).multipliedBy(0.3);
             make.height.equalTo(logoView.mas_width);
             make.centerX.equalTo(self.view.mas_centerX);
+            make.top.equalTo(self.view.mas_top).offset(50);
         }];
         [appName mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.view.mas_centerX);
             make.left.equalTo(self.view.mas_left).offset(20);
             make.right.equalTo(self.view.mas_right).offset(-20);
+            make.top.equalTo(logoView.mas_bottom).offset(50);
         }];
         [appVersion mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.view.mas_centerX);
             make.left.equalTo(self.view.mas_left).offset(20);
             make.right.equalTo(self.view.mas_right).offset(-20);
+            make.top.equalTo(appName.mas_bottom).offset(10);
         }];
         [description mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.view.mas_centerX);
             make.left.equalTo(self.view.mas_left).offset(20);
             make.right.equalTo(self.view.mas_right).offset(-20);
+            make.top.equalTo(appVersion.mas_bottom).offset(30);
         }];
         [feedback mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.view.mas_centerX);
             make.left.equalTo(self.view.mas_left).offset(20);
             make.right.equalTo(self.view.mas_right).offset(-20);
+            make.top.equalTo(description.mas_bottom).offset(10);
         }];
     }
     return self;

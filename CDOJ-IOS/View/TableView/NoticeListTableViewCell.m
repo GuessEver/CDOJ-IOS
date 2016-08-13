@@ -35,11 +35,6 @@
         [self.updateTime setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
         [self.author setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
         
-        [self.title setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self.content setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self.updateTime setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self.author setTranslatesAutoresizingMaskIntoConstraints:NO];
-        
 // Just for test here
 //        [self.title setBackgroundColor:[UIColor purpleColor]];
 //        [self.content setBackgroundColor:[UIColor blueColor]];
@@ -51,13 +46,28 @@
         [self.contentView addSubview:self.updateTime];
         [self.contentView addSubview:self.author];
         
-        NSDictionary* views = @{@"title":self.title, @"content":self.content, @"updateTime":self.updateTime, @"author":self.author};
-        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[title(27)][content][updateTime(15)]-5-|" options:0 metrics:nil views:views]];
-        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[title]-10-|" options:0 metrics:nil views:views]];
-        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[content]-10-|" options:0 metrics:nil views:views]];
-        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[updateTime(author)][author]-10-|" options:0 metrics:nil views:views]];
+        [self.title mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.contentView.mas_top).offset(5);
+            make.left.equalTo(self.contentView.mas_left).offset(20);
+            make.right.equalTo(self.contentView.mas_right).offset(-10);
+            make.height.equalTo(@27);
+        }];
+        [self.content mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.title.mas_bottom);
+            make.left.equalTo(self.contentView.mas_left).offset(20);
+            make.right.equalTo(self.contentView.mas_right).offset(-10);
+        }];
+        [self.updateTime mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.content.mas_bottom);
+            make.left.equalTo(self.contentView.mas_left).offset(20);
+            make.height.equalTo(@15);
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(-5);
+            make.width.equalTo(self.author.mas_width);
+        }];
         [self.author mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.updateTime.mas_top);
+            make.left.equalTo(self.updateTime.mas_right);
+            make.right.equalTo(self.contentView.mas_right).offset(-10);
             make.height.equalTo(self.updateTime.mas_height);
         }];
     }

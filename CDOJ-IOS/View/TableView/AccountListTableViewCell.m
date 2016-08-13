@@ -35,10 +35,6 @@
         [self.tip setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
         [self.avatar setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];
         
-        [self.avatar setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self.username setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self.tip setTranslatesAutoresizingMaskIntoConstraints:NO];
-        
         [self.tip setTextAlignment:NSTextAlignmentRight];
         
         [self.contentView addSubview:self.avatar];
