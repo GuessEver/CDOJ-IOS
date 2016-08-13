@@ -16,7 +16,7 @@
 + (NSInteger)getDefaultThemeIndex;
 + (void)setDefaultThemeIndex:(NSInteger)index;
 
-+ (NSArray*)getAllLocalUsers;
++ (NSArray<NSDictionary*>*)getAllLocalUsers;
 + (NSDictionary*)getUserAtIndex:(NSInteger)index;
 + (NSDictionary*)getUserByUsername:(NSString*)username;
 + (NSString*)getDefaultUsername;

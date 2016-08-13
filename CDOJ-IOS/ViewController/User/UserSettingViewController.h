@@ -11,8 +11,8 @@
 @interface UserSettingViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property NSInteger noUserLogin;
-@property (nonatomic, strong) NSArray* titleOfSections;
-@property (nonatomic, strong) NSArray* data;
-@property (nonatomic, strong) NSArray* classType;
+@property (nonatomic, strong) NSArray<NSString*>* titleOfSections;
+@property (nonatomic, strong) NSArray<NSArray<NSString*>*>* data;
+@property (nonatomic, strong) NSArray<NSArray<__kindof UIViewController*>*>* classType;
 
 @end

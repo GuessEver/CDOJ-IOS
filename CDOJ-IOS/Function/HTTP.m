@@ -11,7 +11,7 @@
 
 @implementation HTTP
 
-NSMutableDictionary* checkQuery(NSArray* querys, NSArray* args) {
+NSMutableDictionary* checkQuery(NSArray<NSString*>* querys, NSArray<NSString*>* args) {
     if(querys.count != args.count) return [[NSMutableDictionary alloc] init];
     NSMutableDictionary* parameters = [[NSMutableDictionary alloc] init];
     for(int i = 0; i < querys.count; ++i) {
@@ -35,7 +35,7 @@ NSMutableDictionary* checkQuery(NSArray* querys, NSArray* args) {
     NSString* url = STR(request.URL);
     NSString* baseURL = @"http://acm.uestc.edu.cn/#/";
     if(url.length > baseURL.length && [[url substringToIndex:baseURL.length] isEqualToString:baseURL]) {
-        NSArray* querys = [[url substringFromIndex:baseURL.length] componentsSeparatedByString:@"/"];
+        NSArray<NSString*>* querys = [[url substringFromIndex:baseURL.length] componentsSeparatedByString:@"/"];
         NSMutableDictionary* parameters;
         if((parameters = checkQuery(querys, @[@"article", @"show", @"{articleId}"])).count == 1) {
             NSLog(@"%@", parameters);

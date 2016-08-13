@@ -20,7 +20,7 @@
 @property (nonatomic, strong) UIColor* textColor;
 @property (nonatomic, strong) UIColor* commentColor;
 
-+ (NSArray*)colorSchemes;
++ (NSArray<ColorSchemeModel*>*)colorSchemes;
 + (instancetype)defaultColorScheme;
 
 @end

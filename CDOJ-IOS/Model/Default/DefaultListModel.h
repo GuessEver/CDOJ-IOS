@@ -11,7 +11,7 @@
 @interface DefaultListModel : DefaultModel
 
 @property (nonatomic, strong) NSString* keyword;
-@property (nonatomic, strong) NSMutableArray* list;
+@property (nonatomic, strong) NSMutableArray<NSDictionary*>* list;
 @property (nonatomic, strong) NSDictionary* pageInfo;
 @property BOOL hasData;
 

@@ -10,7 +10,7 @@
 
 @interface AccountManageViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSMutableArray* users;
+@property (nonatomic, strong) NSMutableArray<NSDictionary*>* users;
 @property (nonatomic, strong) NSString* defaultUsername;
 
 @end

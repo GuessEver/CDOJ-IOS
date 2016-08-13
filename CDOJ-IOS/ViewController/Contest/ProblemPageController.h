@@ -10,10 +10,10 @@
 
 @interface ProblemPageController : DefaultPageController
 
-@property (nonatomic, strong) NSMutableArray* problems;
-@property (nonatomic, strong) NSMutableArray* problemPages;
+@property (nonatomic, strong) NSMutableArray<NSDictionary*>* problems;
+@property (nonatomic, strong) NSMutableArray<__kindof UIViewController*>* problemPages;
 
 
-- (void)loadProblemsWithData:(NSArray*)data;
+- (void)loadProblemsWithData:(NSArray<NSDictionary*>*)data;
 
 @end

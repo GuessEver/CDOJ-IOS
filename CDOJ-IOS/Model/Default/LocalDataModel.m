@@ -52,14 +52,14 @@ NSString* LocalDataKeyDefaultThemeIndex = @"defaultThemeIndex";
 }
 
 #pragma mark users {username, password(sha1), email}
-+ (NSArray*)getAllLocalUsers {
++ (NSArray<NSDictionary*>*)getAllLocalUsers {
     return [self getDataForKey:LocalDataKeyUsers];
 }
 + (NSDictionary*)getUserAtIndex:(NSInteger)index {
     return [self getAllLocalUsers][index];
 }
 + (NSDictionary*)getUserByUsername:(NSString*)username {
-    NSArray* users = [self getAllLocalUsers];
+    NSArray<NSDictionary*>* users = [self getAllLocalUsers];
     for(int i = 0; i < users.count; i++) {
         if([[users[i] objectForKey:@"username"] isEqualToString:username]) {
             return users[i];
@@ -74,7 +74,7 @@ NSString* LocalDataKeyDefaultThemeIndex = @"defaultThemeIndex";
     return [self getUserByUsername:[self getDefaultUsername]];
 }
 + (void)deleteUserByUsername:(NSString*)username {
-    NSMutableArray* users = [NSMutableArray arrayWithArray:[self getAllLocalUsers]];
+    NSMutableArray<NSDictionary*>* users = [NSMutableArray arrayWithArray:[self getAllLocalUsers]];
     for(int i = 0; i < users.count; i++) {
         if([[users[i] objectForKey:@"username"] isEqualToString:username]) {
             [users removeObjectAtIndex:i];

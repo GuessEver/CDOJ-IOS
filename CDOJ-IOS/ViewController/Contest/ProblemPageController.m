@@ -21,7 +21,7 @@
     return self;
 }
 
-- (void)loadProblemsWithData:(NSArray*)data {
+- (void)loadProblemsWithData:(NSArray<NSDictionary*>*)data {
 //    [self setProblems:data];
     for(int i = 0; i < data.count; i++) {
         [self.problems addObject:data[i]];

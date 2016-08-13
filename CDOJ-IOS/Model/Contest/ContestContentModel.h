@@ -12,7 +12,7 @@
 @interface ContestContentModel : DefaultModel
 
 @property (nonatomic, strong) NSDictionary* detail;
-@property (nonatomic, strong) NSArray* problems;
+@property (nonatomic, strong) NSArray<NSDictionary*>* problems;
 
 
 - (void)fetchDataWithContestId:(NSString*)cid;

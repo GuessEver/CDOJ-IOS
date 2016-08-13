@@ -15,8 +15,8 @@
 @interface ContestContentViewController : DefaultPageController
 
 @property (nonatomic, strong) ContestContentModel* data;
-@property (nonatomic, strong) NSArray* titleOfTabs;
-@property (nonatomic, strong) NSArray* controllersOfTabs;
+@property (nonatomic, strong) NSArray<NSString*>* titleOfTabs;
+@property (nonatomic, strong) NSArray<__kindof UIViewController*>* controllersOfTabs;
 
 @property (nonatomic, strong) ContestOverViewController* tab_overview;
 @property (nonatomic, strong) ProblemPageController* tab_problems;

@@ -33,7 +33,7 @@
     return self;
 }
 
-+ (NSArray*)colorSchemes {
++ (NSArray<ColorSchemeModel*>*)colorSchemes {
     return @[
              [[[self class] alloc] initWithThemeName:@"橙"
                                            tintColor:COLOR_ORANGE
