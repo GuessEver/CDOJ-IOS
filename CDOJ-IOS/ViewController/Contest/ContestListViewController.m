@@ -100,6 +100,7 @@
     NSLog(@"Contest #%@ need permission", [contest.userInfo objectForKey:@"cid"]);
     [Message show:STRF(@"您似乎没有权限哦\n%@", [contest.userInfo objectForKey:@"errorMessage"]) withTitle:@"Opps"];
 }
+
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [ContestListTableViewCell height];

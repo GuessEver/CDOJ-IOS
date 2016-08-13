@@ -71,10 +71,6 @@
     [self.data fetchDataOnPage:1];
 }
 
-#pragma mark UISearchBarDelegate
-
-#pragma mark UISearchResultsUpdating
-
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [ProblemListTableViewCell height];
