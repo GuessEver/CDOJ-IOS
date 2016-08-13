@@ -28,6 +28,7 @@
         self.isAdd = NO;
         
         [self.avatar.layer setCornerRadius:25];
+        [self.avatar.layer setMasksToBounds:YES];
         [self.tip setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
         
         [self.username setTextColor:[ColorSchemeModel defaultColorScheme].textColor];
@@ -73,6 +74,8 @@
     else {
         if(self.isDefault) {
             [self.tip setText:@"当前登录用户"];
+            [self.avatar.layer setBorderWidth:2];
+            [self.avatar.layer setBorderColor:[ColorSchemeModel defaultColorScheme].tintColor.CGColor];
         }
         [self.avatar sd_setImageWithURL:[NSURL URLWithString:API_AVATAR(self.email, 100)] placeholderImage:[UIImage imageNamed:@"logo"]];
     }

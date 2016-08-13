@@ -16,7 +16,8 @@
     if(self = [super init]) {
         [self setModalPresentationStyle:UIModalPresentationFormSheet];
         
-        self.logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
+        self.logoView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        [self.logoView setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [self.view addSubview:self.logoView];
         
         self.usernameInput = [[UITextField alloc] init];
