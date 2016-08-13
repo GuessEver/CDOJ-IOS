@@ -10,12 +10,20 @@
 #import "ColorSchemeModel.h"
 #import "Notification.h"
 #import "DefaultNavigationController.h"
+
 #import "UserBasicInfoViewController.h"
 #import "UserAchievementViewController.h"
 #import "UserBlogViewController.h"
 #import "UserTeamViewController.h"
 #import "UserMessageViewController.h"
+
+#import "FAQViewController.h"
+#import "StepByStepViewController.h"
+
+#import "TeamHornorViewController.h"
+
 #import "AccountManageViewController.h"
+
 #import "FeedbackViewController.h"
 #import "AboutCDOJViewController.h"
 
@@ -46,11 +54,11 @@
                                ],
                            @[
                                [DefaultViewController class],
-                               [DefaultViewController class],
-                               [DefaultViewController class]
+                               [FAQViewController class],
+                               [StepByStepViewController class]
                                ],
                            @[
-                               [DefaultViewController class],
+                               [TeamHornorViewController class],
                                [DefaultViewController class]
                                ],
                            @[
