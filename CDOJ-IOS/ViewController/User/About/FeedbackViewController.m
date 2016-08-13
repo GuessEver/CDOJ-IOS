@@ -28,6 +28,7 @@
         
         self.feedbackBtn = [[UIButton alloc] init];
         [self.feedbackBtn.layer setCornerRadius:5];
+        [self.feedbackBtn.layer setMasksToBounds:YES];
         [self.feedbackBtn setTitle:@"反馈" forState:UIControlStateNormal];
         [self.feedbackBtn setBackgroundColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [self.feedbackBtn addTarget:self action:@selector(showFeedback) forControlEvents:UIControlEventTouchUpInside];
