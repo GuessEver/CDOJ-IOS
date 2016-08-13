@@ -35,6 +35,7 @@
 #define API_USER_REGISTER                   CONCAT( API_USER,                                       @"/register"        )
 #define API_USER_CENTERDATA(username)       CONCAT( CONCAT( API_USER,       @"/userCenterData/" ),  username            )
 #define API_USER_PROFILE(username)          CONCAT( CONCAT( API_USER,       @"/profile/"        ),  username            )
+#define API_USER_INFO(username)             CONCAT( CONCAT( API_USER,       @"/typeAheadItem/"  ),  username            )
 
 // Article
 #define API_ARTICLE_LIST                    CONCAT( API_ARTICLE,                                    @"/search"          )

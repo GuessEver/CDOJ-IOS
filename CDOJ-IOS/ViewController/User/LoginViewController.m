@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "Security.h"
 #import "UserModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation LoginViewController
 
@@ -16,9 +17,11 @@
     if(self = [super init]) {
         [self setModalPresentationStyle:UIModalPresentationFormSheet];
         
-        self.logoView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-        [self.logoView setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];
-        [self.view addSubview:self.logoView];
+        self.avatar = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        [self.avatar setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];
+        [self.avatar.layer setCornerRadius:150/2];
+        [self.avatar.layer setMasksToBounds:YES];
+        [self.view addSubview:self.avatar];
         
         self.usernameInput = [[UITextField alloc] init];
         [self.usernameInput setPlaceholder:@"用户名"];
@@ -26,6 +29,7 @@
         [self.usernameInput setAutocorrectionType:UITextAutocorrectionTypeNo];
         [self.usernameInput setAutocapitalizationType:UITextAutocapitalizationTypeNone];
         [self.view addSubview:self.usernameInput];
+        [self.usernameInput setDelegate:self];
         
         self.passwordInput = [[UITextField alloc] init];
         [self.passwordInput setPlaceholder:@"密码"];
@@ -50,15 +54,15 @@
         [self.cancelBtn addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:self.cancelBtn];
         
-        [self.logoView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.avatar mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(@150);
-            make.height.equalTo(self.logoView.mas_width);
+            make.height.equalTo(self.avatar.mas_width);
             make.top.equalTo(self.view.mas_top).offset(50);
             make.centerX.equalTo(self.view.mas_centerX);
         }];
         [self.usernameInput mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(@250);
-            make.top.equalTo(self.logoView.mas_bottom).offset(30);
+            make.top.equalTo(self.avatar.mas_bottom).offset(30);
             make.centerX.equalTo(self.view.mas_centerX);
         }];
         [self.passwordInput mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -98,6 +102,27 @@
 }
 - (void)loginFailed {
     [Message show:@"用户名与密码不匹配，请重新输入！" withTitle:@"登录失败"];
+}
+
+#pragma mark UITextFieldDelegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    [self.avatar setImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    return YES;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
+    [[AFHTTPSessionManager manager] GET:API_USER_INFO(self.usernameInput.text) parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
+        if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
+            [self.avatar sd_setImageWithURL:[NSURL URLWithString:API_AVATAR([[responseObject objectForKey:@"user"] objectForKey:@"email"], 128)] placeholderImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        }
+        else {
+            [self.avatar setImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];
+    }];
 }
 
 @end

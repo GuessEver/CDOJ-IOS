@@ -8,9 +8,9 @@
 
 #import "DefaultViewController.h"
 
-@interface LoginViewController : DefaultViewController
+@interface LoginViewController : DefaultViewController <UITextFieldDelegate>
 
-@property (nonatomic, strong) UIImageView* logoView;
+@property (nonatomic, strong) UIImageView* avatar;
 @property (nonatomic, strong) UITextField* usernameInput;
 @property (nonatomic, strong) UITextField* passwordInput;
 @property (nonatomic, strong) UIButton* loginBtn;
