@@ -187,6 +187,7 @@
 		5FAF07E11D5DF344000CE6F6 /* AccountListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountListTableViewCell.m; sourceTree = "<group>"; };
 		5FAF07E31D5E0393000CE6F6 /* ColorSchemeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSchemeModel.h; sourceTree = "<group>"; };
 		5FAF07E41D5E0393000CE6F6 /* ColorSchemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSchemeModel.m; sourceTree = "<group>"; };
+		5FAF07E61D5ECD52000CE6F6 /* String.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = String.h; sourceTree = "<group>"; };
 		5FE468171D5850CE0050636D /* NoticeSplitMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeSplitMasterViewController.h; sourceTree = "<group>"; };
 		5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeSplitMasterViewController.m; sourceTree = "<group>"; };
 		5FE4681B1D5851630050636D /* DefaultNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultNavigationController.h; sourceTree = "<group>"; };
@@ -293,6 +294,7 @@
 				5F03E9DD1D581D8100607DB9 /* Global.h */,
 				5F03E9DE1D581D8100607DB9 /* Macro.h */,
 				5F03E9DF1D581D8100607DB9 /* Notification.h */,
+				5FAF07E61D5ECD52000CE6F6 /* String.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
