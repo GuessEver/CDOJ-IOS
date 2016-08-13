@@ -19,7 +19,7 @@
 - (void)fetchDataOnPage:(NSInteger)page {
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
 //    NSLog(@"fetching problem on page %ld with keyword %@", (long)page, self.keyword);
-    NSDictionary* requestBody = @{@"currentPage":[NSString stringWithFormat:@"%ld", (long)page],@"orderFields":@"id",@"orderAsc":@"true",@"keyword":self.keyword};
+    NSDictionary* requestBody = @{@"currentPage":STRF(@"%ld", (long)page),@"orderFields":@"id",@"orderAsc":@"true",@"keyword":self.keyword};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];

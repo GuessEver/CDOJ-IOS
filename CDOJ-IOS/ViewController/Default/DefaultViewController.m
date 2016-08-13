@@ -7,6 +7,7 @@
 //
 
 #import "DefaultViewController.h"
+#import "String.h"
 
 @implementation DefaultViewController
 

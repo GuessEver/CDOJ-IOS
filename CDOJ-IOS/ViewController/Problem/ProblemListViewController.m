@@ -60,7 +60,7 @@
             [self clearSearchKeyword];
         }
         else {
-            [self setTitle:[NSString stringWithFormat:@"搜索：%@", text]];
+            [self setTitle:STRF(@"搜索：%@", text)];
             [self searchProblemList];
         }
     }];
@@ -80,7 +80,7 @@
     return [ProblemListTableViewCell height];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self showProblemWithProblemId:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"problemId"]]];
+    [self showProblemWithProblemId:STR([self.data.list[indexPath.row] objectForKey:@"problemId"])];
 }
 
 #pragma mark UITableViewDataSource
@@ -89,10 +89,10 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProblemListTableViewCell* cell = [[ProblemListTableViewCell alloc] init];
-    [cell.pid setText:[NSString stringWithFormat:@"#%@", [self.data.list[indexPath.row] objectForKey:@"problemId"]]];
-    [cell.title setText:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"title"]]];
-    [cell.source setText:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"source"]]];
-    [cell.statistics setText:[NSString stringWithFormat:@"solved/tried:%@/%@", [self.data.list[indexPath.row] objectForKey:@"solved"], [NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"tried"]]]];
+    [cell.pid setText:STRF(@"#%@", [self.data.list[indexPath.row] objectForKey:@"problemId"])];
+    [cell.title setText:STR([self.data.list[indexPath.row] objectForKey:@"title"])];
+    [cell.source setText:STR([self.data.list[indexPath.row] objectForKey:@"source"])];
+    [cell.statistics setText:STRF(@"solved/tried:%@/%@", [self.data.list[indexPath.row] objectForKey:@"solved"], [self.data.list[indexPath.row] objectForKey:@"tried"])];
     return cell;
 }
 

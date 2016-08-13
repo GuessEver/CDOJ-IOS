@@ -18,7 +18,7 @@
 
 - (void)fetchDataOnPage:(NSInteger)page {
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
-    NSDictionary* requestBody = @{@"currentPage":[NSString stringWithFormat:@"%ld", (long)page],@"type":@"0",@"orderFields":@"order",@"orderAsc":@"true"};
+    NSDictionary* requestBody = @{@"currentPage":STRF(@"%ld", (long)page),@"type":@"0",@"orderFields":@"order",@"orderAsc":@"true"};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];

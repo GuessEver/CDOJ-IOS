@@ -42,7 +42,7 @@
 }
 - (NSString *)pageController:(WMPageController *)pageController titleAtIndex:(NSInteger)index {
 //    NSLog(@"%@", self.problems[index]);
-    return [NSString stringWithFormat:@"\n\n%@", [self.problems[index] objectForKey:@"orderCharacter"]];
+    return STRF(@"\n\n%@", [self.problems[index] objectForKey:@"orderCharacter"]);
 }
 
 @end

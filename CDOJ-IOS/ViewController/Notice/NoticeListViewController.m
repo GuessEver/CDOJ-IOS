@@ -40,7 +40,7 @@
     return [NoticeListTableViewCell height];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self showArticleWithArticleId:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"articleId"]]];
+    [self showArticleWithArticleId:STR([self.data.list[indexPath.row] objectForKey:@"articleId"])];
 }
 
 #pragma mark UITableViewDataSource
@@ -49,10 +49,10 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NoticeListTableViewCell* cell = [[NoticeListTableViewCell alloc] init];
-    [cell.title setText:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"title"]]];
-    [cell.content setText:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"content"]]];
-    [cell.updateTime setText:getTimeString([NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"time"]])];
-    [cell.author setText:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"ownerName"]]];
+    [cell.title setText:STR([self.data.list[indexPath.row] objectForKey:@"title"])];
+    [cell.content setText:STR([self.data.list[indexPath.row] objectForKey:@"content"])];
+    [cell.updateTime setText:getTimeString(STR([self.data.list[indexPath.row] objectForKey:@"time"]))];
+    [cell.author setText:STR([self.data.list[indexPath.row] objectForKey:@"ownerName"])];
     return cell;
 }
 

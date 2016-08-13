@@ -27,7 +27,7 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_PROBLEM_DATA_REFRESHED object:nil];
         }
         else {
-            [Message show:[NSString stringWithFormat:@"没有编号为%@的题目，请检查是否正确，或者是否拥有足够权限！", pid] withTitle:@"Opps"];
+            [Message show:STRF(@"没有编号为%@的题目，请检查是否正确，或者是否拥有足够权限！", pid) withTitle:@"Opps"];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if(error.code == NSURLErrorBadServerResponse || error.code == NSURLErrorResourceUnavailable) {

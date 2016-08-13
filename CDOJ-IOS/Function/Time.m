@@ -7,11 +7,12 @@
 //
 
 #import "Time.h"
+#import "String.h"
 
 @implementation Time
 
 NSString* getTimeString(NSString* timeStamp) {
-    NSString* timeStamp10 = [[NSString stringWithString:timeStamp] substringToIndex:10];
+    NSString* timeStamp10 = [STR(timeStamp) substringToIndex:10];
     NSDate* stamp = [NSDate dateWithTimeIntervalSince1970:[timeStamp10 intValue]];
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -25,16 +26,16 @@ NSString* getTimeLengthString(NSString* timeStamp) {
     hours %= 24; minutes %= 60; seconds %= 60;
     NSString* str = @"";
     if(days > 0) {
-        str = [NSString stringWithFormat:@"%@%ld %@ ", str, (long)days, days == 1 ? @"day" : @"days"];
+        str = STRF(@"%@%ld %@ ", str, (long)days, days == 1 ? @"day" : @"days");
     }
     if(hours > 0) {
-        str = [NSString stringWithFormat:@"%@%ld %@ ", str, (long)hours, hours == 1 ? @"hour" : @"hours"];
+        str = STRF(@"%@%ld %@ ", str, (long)hours, hours == 1 ? @"hour" : @"hours");
     }
     if(minutes > 0) {
-        str = [NSString stringWithFormat:@"%@%ld %@ ", str, (long)minutes, minutes == 1 ? @"minute" : @"minutes"];
+        str = STRF(@"%@%ld %@ ", str, (long)minutes, minutes == 1 ? @"minute" : @"minutes");
     }
     if(seconds > 0) {
-        str = [NSString stringWithFormat:@"%@%ld %@ ", str, (long)seconds, seconds == 1 ? @"second" : @"seconds"];
+        str = STRF(@"%@%ld %@ ", str, (long)seconds, seconds == 1 ? @"second" : @"seconds");
     }
     return str;
 }
@@ -47,9 +48,9 @@ NSString* getTimeLengthString2(NSString* timeStamp) {
     hours %= 24; minutes %= 60; seconds %= 60;
     NSString* str = @"";
     if(days > 0) {
-        str = [NSString stringWithFormat:@"%@%ld %@ ", str, (long)days, days == 1 ? @"day" : @"days"];
+        str = STRF(@"%@%ld %@ ", str, (long)days, days == 1 ? @"day" : @"days");
     }
-    str = [NSString stringWithFormat:@"%@ %02ld:%02ld:%02ld", str, (long)hours, (long)minutes, (long)seconds];
+    str = STRF(@"%@ %02ld:%02ld:%02ld", str, (long)hours, (long)minutes, (long)seconds);
     return str;
 }
 

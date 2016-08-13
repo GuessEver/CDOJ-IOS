@@ -35,7 +35,7 @@
 }
 
 - (void)openInBrowser {
-    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/#/contest/show/%@", APIURL, [self.data.detail objectForKey:@"contestId"]]];
+    NSURL* url = [NSURL URLWithString:STRF(@"%@/#/contest/show/%@", APIURL, [self.data.detail objectForKey:@"contestId"])];
     [[UIApplication sharedApplication] openURL:url];
 }
 

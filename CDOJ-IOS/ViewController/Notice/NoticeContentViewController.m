@@ -32,7 +32,7 @@
 }
 
 - (void)openInBrowser {
-    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/#/article/show/%@", APIURL, [self.data.content objectForKey:@"articleId"]]];
+    NSURL* url = [NSURL URLWithString:STRF(@"%@/#/article/show/%@", APIURL, [self.data.content objectForKey:@"articleId"])];
     [[UIApplication sharedApplication] openURL:url];
 }
 

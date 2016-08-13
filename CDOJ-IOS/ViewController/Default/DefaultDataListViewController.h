@@ -10,6 +10,7 @@
 #import "MJRefresh.h"
 #import "ProblemListModel.h"
 #import "DefaultListModel.h"
+#import "String.h"
 
 @interface DefaultDataListViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 

@@ -10,6 +10,7 @@
 #import "Function.h"
 #import "Macro.h"
 #import "AFNetworking.h"
+#import "String.h"
 
 @interface DefaultModel : NSObject
 

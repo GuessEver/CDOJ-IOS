@@ -54,7 +54,7 @@
             [self clearSearchKeyword];
         }
         else {
-            [self setTitle:[NSString stringWithFormat:@"搜索：%@", text]];
+            [self setTitle:STRF(@"搜索：%@", text)];
             [self searchContestList];
         }
     }];
@@ -71,7 +71,7 @@
 }
 - (void)enterContest:(NSString*)cid withType:(NSInteger)type {
     if(type == 2 || type == 4) { // 2 - DIY, 4 - Inherit
-        [Message show:[NSString stringWithFormat:@"Type-%ld of contest-%@ cannot be found!", (long)type, cid] withTitle:@"Error!"];
+        [Message show:STRF(@"Type-%ld of contest-%@ cannot be found!", (long)type, cid) withTitle:@"Error!"];
     }
     else if(type == 0) { // Public
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_SUCCEED object:nil userInfo:@{@"cid":cid}];
@@ -98,14 +98,14 @@
 }
 - (void)contestLoginNeedPermission:(NSNotification*)contest {
     NSLog(@"Contest #%@ need permission", [contest.userInfo objectForKey:@"cid"]);
-    [Message show:[NSString stringWithFormat:@"您似乎没有权限哦\n%@", [contest.userInfo objectForKey:@"errorMessage"]] withTitle:@"Opps"];
+    [Message show:STRF(@"您似乎没有权限哦\n%@", [contest.userInfo objectForKey:@"errorMessage"]) withTitle:@"Opps"];
 }
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [ContestListTableViewCell height];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString* cid = [NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"contestId"]];
+    NSString* cid = STR([self.data.list[indexPath.row] objectForKey:@"contestId"]);
     NSInteger type = [[self.data.list[indexPath.row] objectForKey:@"type"] integerValue];
     [self enterContest:cid withType:type];
 }
@@ -116,12 +116,12 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ContestListTableViewCell* cell = [[ContestListTableViewCell alloc] init];
-    [cell.cid setText:[NSString stringWithFormat:@"#%@", [self.data.list[indexPath.row] objectForKey:@"contestId"]]];
-    [cell.title setText:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"title"]]];
-    [cell.startTime setText:getTimeString([NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"time"]])];
-    [cell.length setText:getTimeLengthString2([NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"length"]])];
-    [cell.status setText:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"status"]]];
-    [cell.typeName setText:[NSString stringWithFormat:@"%@", [self.data.list[indexPath.row] objectForKey:@"typeName"]]];
+    [cell.cid setText:STRF(@"#%@", [self.data.list[indexPath.row] objectForKey:@"contestId"])];
+    [cell.title setText:STR([self.data.list[indexPath.row] objectForKey:@"title"])];
+    [cell.startTime setText:getTimeString(STR([self.data.list[indexPath.row] objectForKey:@"time"]))];
+    [cell.length setText:getTimeLengthString2(STR([self.data.list[indexPath.row] objectForKey:@"length"]))];
+    [cell.status setText:STR([self.data.list[indexPath.row] objectForKey:@"status"])];
+    [cell.typeName setText:STR([self.data.list[indexPath.row] objectForKey:@"typeName"])];
     [cell refreshTagColor];
     return cell;
 }

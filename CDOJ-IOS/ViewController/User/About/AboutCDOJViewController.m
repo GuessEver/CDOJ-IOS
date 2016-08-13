@@ -8,6 +8,7 @@
 
 #import "AboutCDOJViewController.h"
 #import "Global.h"
+#import "String.h"
 
 @implementation AboutCDOJViewController
 
@@ -25,7 +26,7 @@
         
         UILabel* appVersion = [[UILabel alloc] init];
         [appVersion setTextAlignment:NSTextAlignmentCenter];
-        [appVersion setText:[NSString stringWithFormat:@"Version %@ Build %@", APP_VERSION, APP_BUILD]];
+        [appVersion setText:STRF(@"Version %@ Build %@", APP_VERSION, APP_BUILD)];
         [appVersion setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
         [appVersion setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
         [self.view addSubview:appVersion];
