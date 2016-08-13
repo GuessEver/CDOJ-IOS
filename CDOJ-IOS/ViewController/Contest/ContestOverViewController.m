@@ -7,14 +7,14 @@
 //
 
 #import "ContestOverViewController.h"
-#import "Color.h"
+#import "ColorSchemeModel.h"
 #import "Masonry.h"
 
 @implementation ContestOverViewController
 
 - (instancetype)init {
     if(self = [super init]) {
-        [self.view setBackgroundColor:COLOR_BACKGROUND];
+        [self.view setBackgroundColor:[ColorSchemeModel defaultColorScheme].backgroundColor2];
         
         // Options
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];

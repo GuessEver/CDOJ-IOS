@@ -18,7 +18,7 @@
         [self setPreferredDisplayMode:UISplitViewControllerDisplayModeAllVisible];
         [self setExtendedLayoutIncludesOpaqueBars:YES];
         
-        [self.view setBackgroundColor:COLOR_GRAY];
+        [self.view setBackgroundColor:COLOR_GRAY]; // split line color
     }
     return self;
 }

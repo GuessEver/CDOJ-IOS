@@ -8,13 +8,13 @@
 
 #import "DefaultWebView.h"
 #import "Api.h"
-#import "Color.h"
+#import "ColorSchemeModel.h"
 
 @implementation DefaultWebView
 
 - (instancetype)init {
     if(self = [super init]) {
-        [self setBackgroundColor:COLOR_BACKGROUND];
+        [self setBackgroundColor:[ColorSchemeModel defaultColorScheme].backgroundColor2];
         [self setOpaque:NO];
         [self setDelegate:self];
     }

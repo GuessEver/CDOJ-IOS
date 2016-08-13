@@ -11,7 +11,7 @@
 #import "ProblemMainViewController.h"
 #import "ContestMainViewController.h"
 #import "UserMainViewController.h"
-#import "Color.h"
+#import "ColorSchemeModel.h"
 #import "Masonry.h"
 #import "Notification.h"
 #import "UserModel.h"
@@ -45,8 +45,8 @@
         [self setSelectedIndex:0];
         
         [self.tabBar setTranslucent:NO];
-        [self.tabBar setBarTintColor:COLOR_BAR];
-        [self.tabBar setTintColor:COLOR_TITLE];
+        [self.tabBar setBarTintColor:[ColorSchemeModel defaultColorScheme].bottomBarColor];
+        [self.tabBar setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];
         
         // check networking status
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkConnecting) name:NOTIFICATION_HTTP_CONNECTING object:nil];

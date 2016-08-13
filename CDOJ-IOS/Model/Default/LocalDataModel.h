@@ -12,6 +12,10 @@
 
 + (BOOL)needWelcome;
 + (void)initLocalData;
+
++ (NSInteger)getDefaultThemeIndex;
++ (void)setDefaultThemeIndex:(NSInteger)index;
+
 + (NSArray*)getAllLocalUsers;
 + (NSDictionary*)getUserAtIndex:(NSInteger)index;
 + (NSDictionary*)getUserByUsername:(NSString*)username;

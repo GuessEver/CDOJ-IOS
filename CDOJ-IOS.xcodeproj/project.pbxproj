@@ -60,6 +60,7 @@
 		5FAF07AA1D5C98DC000CE6F6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FAF07A91D5C98DC000CE6F6 /* Launch Screen.storyboard */; };
 		5FAF07DF1D5DC8F9000CE6F6 /* DefaultListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07DE1D5DC8F9000CE6F6 /* DefaultListModel.m */; };
 		5FAF07E21D5DF344000CE6F6 /* AccountListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07E11D5DF344000CE6F6 /* AccountListTableViewCell.m */; };
+		5FAF07E51D5E0393000CE6F6 /* ColorSchemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07E41D5E0393000CE6F6 /* ColorSchemeModel.m */; };
 		5FE468191D5850CE0050636D /* NoticeSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */; };
 		5FE4681D1D5851630050636D /* DefaultNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681C1D5851630050636D /* DefaultNavigationController.m */; };
 		5FE468201D5852E20050636D /* NoticeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681F1D5852E20050636D /* NoticeListViewController.m */; };
@@ -184,6 +185,8 @@
 		5FAF07DE1D5DC8F9000CE6F6 /* DefaultListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultListModel.m; sourceTree = "<group>"; };
 		5FAF07E01D5DF344000CE6F6 /* AccountListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountListTableViewCell.h; sourceTree = "<group>"; };
 		5FAF07E11D5DF344000CE6F6 /* AccountListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountListTableViewCell.m; sourceTree = "<group>"; };
+		5FAF07E31D5E0393000CE6F6 /* ColorSchemeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSchemeModel.h; sourceTree = "<group>"; };
+		5FAF07E41D5E0393000CE6F6 /* ColorSchemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSchemeModel.m; sourceTree = "<group>"; };
 		5FE468171D5850CE0050636D /* NoticeSplitMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeSplitMasterViewController.h; sourceTree = "<group>"; };
 		5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeSplitMasterViewController.m; sourceTree = "<group>"; };
 		5FE4681B1D5851630050636D /* DefaultNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultNavigationController.h; sourceTree = "<group>"; };
@@ -315,6 +318,8 @@
 				5F4B03121D5A085F00A531B3 /* LocalDataModel.m */,
 				5FAF07DD1D5DC8F9000CE6F6 /* DefaultListModel.h */,
 				5FAF07DE1D5DC8F9000CE6F6 /* DefaultListModel.m */,
+				5FAF07E31D5E0393000CE6F6 /* ColorSchemeModel.h */,
+				5FAF07E41D5E0393000CE6F6 /* ColorSchemeModel.m */,
 			);
 			path = Default;
 			sourceTree = "<group>";
@@ -682,6 +687,7 @@
 				5F7E4D611D596D5100E9D4C8 /* ContestSplitDetailViewController.m in Sources */,
 				5FE468201D5852E20050636D /* NoticeListViewController.m in Sources */,
 				5FAF078E1D5C1693000CE6F6 /* LoginViewController.m in Sources */,
+				5FAF07E51D5E0393000CE6F6 /* ColorSchemeModel.m in Sources */,
 				5F03E9FC1D581D8100607DB9 /* DefaultModel.m in Sources */,
 				5F03E9F71D581D8100607DB9 /* Message.m in Sources */,
 				5F03EA101D58244700607DB9 /* ProblemMainViewController.m in Sources */,

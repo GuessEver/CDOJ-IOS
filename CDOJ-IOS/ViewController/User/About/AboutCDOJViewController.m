@@ -13,26 +13,28 @@
 
 - (instancetype)init {
     if(self = [super init]) {
-        UIImageView* logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
+        UIImageView* logoView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        [logoView setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [self.view addSubview:logoView];
         
         UILabel* appName = [[UILabel alloc] init];
         [appName setTextAlignment:NSTextAlignmentCenter];
         [appName setText:APP_NAME];
-//        [appName setTextColor:COLOR_COMMENT];
+        [appName setTextColor:[ColorSchemeModel defaultColorScheme].textColor];
         [self.view addSubview:appName];
         
         UILabel* appVersion = [[UILabel alloc] init];
         [appVersion setTextAlignment:NSTextAlignmentCenter];
         [appVersion setText:[NSString stringWithFormat:@"Version %@ Build %@", APP_VERSION, APP_BUILD]];
         [appVersion setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
-        [appVersion setTextColor:COLOR_COMMENT];
+        [appVersion setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
         [self.view addSubview:appVersion];
         
         UILabel* description = [[UILabel alloc] init];
         [description setTextAlignment:NSTextAlignmentCenter];
         [description setNumberOfLines:0];
         [description setText:APP_DESCRIPTION];
+        [description setTextColor:[ColorSchemeModel defaultColorScheme].textColor];
         [self.view addSubview:description];
         
         UILabel* feedback = [[UILabel alloc] init];
@@ -40,7 +42,7 @@
         [feedback setNumberOfLines:0];
         [feedback setText:APP_FEEDBACK];
         [feedback setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
-        [feedback setTextColor:COLOR_COMMENT];
+        [feedback setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
         [self.view addSubview:feedback];
         
         NSDictionary* views = @{@"logo":logoView,@"name":appName,@"version":appVersion,@"description":description,@"feedback":feedback};

@@ -7,6 +7,7 @@
 //
 
 #import "WMPageController.h"
+#import "ColorSchemeModel.h"
 
 @interface DefaultPageController : WMPageController <WMPageControllerDataSource>
 

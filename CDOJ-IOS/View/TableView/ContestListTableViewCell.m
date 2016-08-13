@@ -7,6 +7,7 @@
 //
 
 #import "ContestListTableViewCell.h"
+#import "Color.h"
 
 @implementation ContestListTableViewCell
 
@@ -35,9 +36,10 @@
         [self.status setTextAlignment:NSTextAlignmentCenter];
         [self.typeName setTextAlignment:NSTextAlignmentCenter];
         
-        [self.startTime setTextColor:COLOR_COMMENT];
-        [self.length setTextColor:COLOR_COMMENT];
-        [self.cid setTextColor:COLOR_COMMENT];
+        [self.title setTextColor:[ColorSchemeModel defaultColorScheme].textColor];
+        [self.startTime setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
+        [self.length setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
+        [self.cid setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
         
         [self.cid setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.title setTranslatesAutoresizingMaskIntoConstraints:NO];

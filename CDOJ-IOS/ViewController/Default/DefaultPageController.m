@@ -7,17 +7,16 @@
 //
 
 #import "DefaultPageController.h"
-#import "Color.h"
 
 @implementation DefaultPageController
 
 - (instancetype)init {
     if(self = [super init]) {
-        [self.view setBackgroundColor:COLOR_BACKGROUND];
+        [self.view setBackgroundColor:[ColorSchemeModel defaultColorScheme].backgroundColor2];
         [self setMenuViewStyle:WMMenuViewStyleLine];
-        [self setMenuBGColor:COLOR_BACKGROUND];
-        [self setProgressColor:COLOR_TITLE];
-        [self setTitleColorSelected:COLOR_TITLE];
+        [self setMenuBGColor:[ColorSchemeModel defaultColorScheme].backgroundColor1];
+        [self setProgressColor:[ColorSchemeModel defaultColorScheme].tintColor];
+        [self setTitleColorSelected:[ColorSchemeModel defaultColorScheme].tintColor];
         [self setMenuHeight:40];
         [self setDataSource:self];
 //        [self setShowOnNavigationBar:YES];

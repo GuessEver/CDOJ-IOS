@@ -7,7 +7,7 @@
 //
 
 #import "UserSettingViewController.h"
-#import "Color.h"
+#import "ColorSchemeModel.h"
 #import "Notification.h"
 #import "DefaultNavigationController.h"
 #import "UserBasicInfoViewController.h"
@@ -26,7 +26,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userSignin) name:NOTIFICATION_USER_SIGN_IN object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userSignout) name:NOTIFICATION_USER_SIGN_OUT object:nil];
         [self setTitle:@"用户中心"];
-        [self.tableView setBackgroundColor:COLOR_BACKGROUND];
+        [self.tableView setBackgroundColor:[ColorSchemeModel defaultColorScheme].backgroundColor1];
         self.noUserLogin = 1; // set the offset to hide "我**" options when not login
         self.titleOfSections = @[@"我", @"设置", @"关于"];
         self.data = @[

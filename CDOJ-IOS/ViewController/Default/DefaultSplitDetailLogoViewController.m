@@ -8,18 +8,20 @@
 
 #import "DefaultSplitDetailLogoViewController.h"
 #import "Masonry.h"
-#import "Color.h"
+#import "ColorSchemeModel.h"
 
 @implementation DefaultSplitDetailLogoViewController
 
 - (instancetype)init {
     if(self = [super init]) {
-        [self.view setBackgroundColor:COLOR_BACKGROUND];
-        UIImageView* bgLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
+        [self.view setBackgroundColor:[ColorSchemeModel defaultColorScheme].backgroundColor2];
+        UIImageView* bgLogo = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        [bgLogo setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [bgLogo setAlpha:0.5];
         [self.view addSubview:bgLogo];
         // imgView position constraints
         [bgLogo mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_lessThanOrEqualTo(@150);
             make.width.mas_lessThanOrEqualTo(self.view.mas_width).multipliedBy(0.3);
             make.width.mas_lessThanOrEqualTo(self.view.mas_height).multipliedBy(0.3);
             make.height.equalTo(bgLogo.mas_width);

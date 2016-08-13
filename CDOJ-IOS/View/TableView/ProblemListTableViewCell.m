@@ -28,9 +28,10 @@
         
         [self.statistics setTextAlignment:NSTextAlignmentRight];
         
-        [self.pid setTextColor:COLOR_COMMENT];
-        [self.source setTextColor:COLOR_COMMENT];
-        [self.statistics setTextColor:COLOR_COMMENT];
+        [self.pid setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
+        [self.title setTextColor:[ColorSchemeModel defaultColorScheme].textColor];
+        [self.source setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
+        [self.statistics setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
         
         [self.pid setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.title setTranslatesAutoresizingMaskIntoConstraints:NO];

@@ -12,7 +12,7 @@
 
 - (instancetype)init {
     if(self = [super init]) {
-        [self.view setBackgroundColor:COLOR_BACKGROUND];
+        [self.view setBackgroundColor:[ColorSchemeModel defaultColorScheme].backgroundColor2];
     }
     return self;
 }

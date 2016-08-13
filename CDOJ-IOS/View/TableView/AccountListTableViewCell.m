@@ -20,7 +20,7 @@
 
 - (instancetype)init {
     if(self = [super init]) {
-        self.avatar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
+        self.avatar = [[UIImageView alloc] init];
         self.username = [[UILabel alloc] init];
         self.tip = [[UILabel alloc] init];
         self.email = @"";
@@ -30,7 +30,9 @@
         [self.avatar.layer setCornerRadius:25];
         [self.tip setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
         
-        [self.tip setTextColor:COLOR_COMMENT];
+        [self.username setTextColor:[ColorSchemeModel defaultColorScheme].textColor];
+        [self.tip setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
+        [self.avatar setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];
         
         [self.avatar setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.username setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -67,7 +69,6 @@
     if(self.isAdd) {
         [self.tip setText:@"添加新用户"];
         [self.avatar setImage:[[UIImage imageNamed:@"add"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-        [self.avatar setTintColor:COLOR_TITLE];
     }
     else {
         if(self.isDefault) {

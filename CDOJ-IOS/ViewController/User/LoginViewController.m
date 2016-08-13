@@ -38,7 +38,7 @@
         [self.loginBtn.layer setCornerRadius:5];
         [self.loginBtn.layer setMasksToBounds:YES];
         [self.loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
-        [self.loginBtn setBackgroundColor:COLOR_TITLE];
+        [self.loginBtn setBackgroundColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [self.loginBtn addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:self.loginBtn];
         

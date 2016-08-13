@@ -10,7 +10,7 @@
 #import <PgySDK/PgyManager.h>
 #import <PgyUpdate/PgyUpdateManager.h>
 #import "MainViewController.h"
-#import "Color.h"
+#import "ColorSchemeModel.h"
 #import "LocalDataModel.h"
 #import "UserModel.h"
 
@@ -25,14 +25,14 @@
     // Override point for customization after application launch.
     
     // pgyer Crash SDK
-    [[PgyManager sharedPgyManager] setThemeColor:COLOR_TITLE];
+    [[PgyManager sharedPgyManager] setThemeColor:[ColorSchemeModel defaultColorScheme].tintColor];
     [[PgyManager sharedPgyManager] setFeedbackActiveType:kPGYFeedbackActiveTypeThreeFingersPan];
     [[PgyManager sharedPgyManager] startManagerWithAppId:@"74616353180ead882c4e5fb795aeb7d7"];
     [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"74616353180ead882c4e5fb795aeb7d7"];
     [[PgyUpdateManager sharedPgyManager] checkUpdate];
 //    [NSThread sleepForTimeInterval:1];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.window setBackgroundColor:COLOR_BACKGROUND];
+    [self.window setBackgroundColor:[ColorSchemeModel defaultColorScheme].backgroundColor1];
     if([LocalDataModel needWelcome]) {
         // open app for the first time, do something here ...
         NSLog(@"welcome!");

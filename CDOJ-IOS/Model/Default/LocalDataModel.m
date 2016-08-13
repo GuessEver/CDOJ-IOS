@@ -14,6 +14,7 @@
 NSString* LocalDataKeyOpened = @"opened";
 NSString* LocalDataKeyUsers = @"users";
 NSString* LocalDataKeyDefaultUsername = @"defaultUsername";
+NSString* LocalDataKeyDefaultThemeIndex = @"defaultThemeIndex";
 
 + (BOOL)needWelcome {
     if([[[NSUserDefaults standardUserDefaults] objectForKey:LocalDataKeyOpened] isEqualToString:@"yes"]) {
@@ -26,17 +27,33 @@ NSString* LocalDataKeyDefaultUsername = @"defaultUsername";
     [[NSUserDefaults standardUserDefaults] setObject:data forKey:key];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
++ (id)getDataForKey:(NSString*)key {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:key];
+}
 
 + (void)initLocalData {
     [self saveData:@"yes" to:LocalDataKeyOpened];
     [self saveData:@"" to:LocalDataKeyDefaultUsername];
-    [[NSUserDefaults standardUserDefaults] setObject:@[] forKey:LocalDataKeyUsers];
+    [self saveData:@[] to:LocalDataKeyUsers];
+    [self saveData:@0 to:LocalDataKeyDefaultThemeIndex];
 }
 
+#pragma mark theme
++ (NSInteger)getDefaultThemeIndex {
+    if(![self getDataForKey:LocalDataKeyDefaultThemeIndex]) {
+        return 0;
+    }
+    else {
+        return [[self getDataForKey:LocalDataKeyDefaultThemeIndex] integerValue];
+    }
+}
++ (void)setDefaultThemeIndex:(NSInteger)index {
+    [self saveData:[NSNumber numberWithInteger:index] to:LocalDataKeyDefaultThemeIndex];
+}
 
 #pragma mark users {username, password(sha1), email}
 + (NSArray*)getAllLocalUsers {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:LocalDataKeyUsers];
+    return [self getDataForKey:LocalDataKeyUsers];
 }
 + (NSDictionary*)getUserAtIndex:(NSInteger)index {
     return [self getAllLocalUsers][index];
@@ -51,7 +68,7 @@ NSString* LocalDataKeyDefaultUsername = @"defaultUsername";
     return nil;
 }
 + (NSString*)getDefaultUsername {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:LocalDataKeyDefaultUsername];
+    return [self getDataForKey:LocalDataKeyDefaultUsername];
 }
 + (NSDictionary*)getDefaultUser {
     return [self getUserByUsername:[self getDefaultUsername]];

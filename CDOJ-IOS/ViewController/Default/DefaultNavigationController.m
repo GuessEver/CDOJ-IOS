@@ -7,7 +7,7 @@
 //
 
 #import "DefaultNavigationController.h"
-#import "Color.h"
+#import "ColorSchemeModel.h"
 
 @implementation DefaultNavigationController
 
@@ -28,8 +28,8 @@
 - (void)setBackground {
     [self setExtendedLayoutIncludesOpaqueBars:YES];
     [self.navigationBar setTranslucent:NO];
-    [self.navigationBar setBarTintColor:COLOR_BAR];
-    [self.navigationBar setTintColor:COLOR_TITLE];
+    [self.navigationBar setBarTintColor:[ColorSchemeModel defaultColorScheme].topBarColor];
+    [self.navigationBar setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];
 }
 
 @end

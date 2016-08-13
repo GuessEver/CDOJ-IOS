@@ -30,9 +30,10 @@
         
         [self.author setTextAlignment:NSTextAlignmentRight];
         
-        [self.content setTextColor:COLOR_COMMENT];
-        [self.updateTime setTextColor:COLOR_COMMENT];
-        [self.author setTextColor:COLOR_COMMENT];
+        [self.title setTextColor:[ColorSchemeModel defaultColorScheme].textColor];
+        [self.content setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
+        [self.updateTime setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
+        [self.author setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
         
         [self.title setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.content setTranslatesAutoresizingMaskIntoConstraints:NO];
