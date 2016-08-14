@@ -10,6 +10,6 @@
 
 @interface NoticeSplitDetailViewController : DefaultNavigationController
 
-- (instancetype)initWithArticleId:(NSString*)aid;
+- (instancetype)initWithArticleId:(NSString*)articleId;
 
 @end

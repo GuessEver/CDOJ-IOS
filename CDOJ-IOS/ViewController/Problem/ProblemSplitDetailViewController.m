@@ -11,8 +11,8 @@
 
 @implementation ProblemSplitDetailViewController
 
-- (instancetype)initWithProblemId:(NSString*)pid {
-    if(self = [super initWithRootViewController:[[ProblemContentViewController alloc] initWithProblemId:pid]]) {
+- (instancetype)initWithProblemId:(NSString*)problemId {
+    if(self = [super initWithRootViewController:[[ProblemContentViewController alloc] initWithProblemId:problemId]]) {
     }
     return self;
 }

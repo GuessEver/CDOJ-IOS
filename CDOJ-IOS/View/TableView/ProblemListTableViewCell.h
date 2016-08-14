@@ -10,7 +10,7 @@
 
 @interface ProblemListTableViewCell : DefaultTableViewCell
 
-@property (nonatomic, strong) UILabel* pid;
+@property (nonatomic, strong) UILabel* problemId;
 @property (nonatomic, strong) UILabel* title;
 @property (nonatomic, strong) UILabel* source;
 @property (nonatomic, strong) UILabel* statistics;

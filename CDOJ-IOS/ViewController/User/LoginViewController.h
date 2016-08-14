@@ -14,6 +14,5 @@
 @property (nonatomic, strong) UITextField* usernameInput;
 @property (nonatomic, strong) UITextField* passwordInput;
 @property (nonatomic, strong) UIButton* loginBtn;
-@property (nonatomic, strong) UIButton* cancelBtn;
 
 @end

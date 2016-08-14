@@ -10,7 +10,7 @@
 
 @interface ContestListTableViewCell : DefaultTableViewCell
 
-@property (nonatomic, strong) UILabel* cid;
+@property (nonatomic, strong) UILabel* contestId;
 @property (nonatomic, strong) UILabel* title;
 @property (nonatomic, strong) UILabel* startTime;
 @property (nonatomic, strong) UILabel* length;

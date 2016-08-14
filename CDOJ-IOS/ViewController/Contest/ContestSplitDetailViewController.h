@@ -10,6 +10,6 @@
 
 @interface ContestSplitDetailViewController : DefaultNavigationController
 
-- (instancetype)initWithContestId:(NSString*)cid;
+- (instancetype)initWithContestId:(NSString*)contestId;
 
 @end

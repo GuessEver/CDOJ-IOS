@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSArray<NSDictionary*>* problems;
 
 
-- (void)fetchDataWithContestId:(NSString*)cid;
-+ (void)loginContestWithContestId:(NSString*)cid andPassword:(NSString*)password inType:(NSInteger)type;
+- (void)fetchDataWithContestId:(NSString*)contestId;
++ (void)loginContestWithContestId:(NSString*)contestId andPassword:(NSString*)password inType:(NSInteger)type;
 
 @end

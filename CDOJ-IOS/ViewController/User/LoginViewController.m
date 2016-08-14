@@ -15,8 +15,6 @@
 
 - (instancetype)init {
     if(self = [super init]) {
-        [self setModalPresentationStyle:UIModalPresentationFormSheet];
-        
         self.avatar = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
         [self.avatar setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [self.avatar.layer setCornerRadius:150/2];
@@ -47,13 +45,6 @@
         [self.loginBtn addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:self.loginBtn];
         
-        self.cancelBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [self.cancelBtn.layer setCornerRadius:5];
-        [self.cancelBtn.layer setMasksToBounds:YES];
-        [self.cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-        [self.cancelBtn addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:self.cancelBtn];
-        
         [self.avatar mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(@150);
             make.height.equalTo(self.avatar.mas_width);
@@ -75,11 +66,6 @@
             make.top.equalTo(self.passwordInput.mas_bottom).offset(10);
             make.centerX.equalTo(self.view.mas_centerX);
         }];
-        [self.cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.equalTo(self.usernameInput.mas_width);
-            make.top.equalTo(self.loginBtn.mas_bottom).offset(10);
-            make.centerX.equalTo(self.view.mas_centerX);
-        }];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucceed) name:NOTIFICATION_USER_SIGN_IN object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginFailed) name:NOTIFICATION_USER_SIGN_OUT object:nil];
@@ -95,7 +81,7 @@
     [UserModel userLoginWithUser:user];
 }
 - (void)cancel {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)loginSucceed {
     [self cancel];

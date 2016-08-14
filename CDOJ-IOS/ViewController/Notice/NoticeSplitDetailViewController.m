@@ -11,8 +11,8 @@
 
 @implementation NoticeSplitDetailViewController
 
-- (instancetype)initWithArticleId:(NSString*)aid {
-    if(self = [super initWithRootViewController:[[NoticeContentViewController alloc] initWithArticleId:aid]]) {
+- (instancetype)initWithArticleId:(NSString*)articleId {
+    if(self = [super initWithRootViewController:[[NoticeContentViewController alloc] initWithArticleId:articleId]]) {
     }
     return self;
 }

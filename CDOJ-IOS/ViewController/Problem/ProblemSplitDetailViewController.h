@@ -10,6 +10,6 @@
 
 @interface ProblemSplitDetailViewController : DefaultNavigationController
 
-- (instancetype)initWithProblemId:(NSString*)pid;
+- (instancetype)initWithProblemId:(NSString*)problemId;
 
 @end

@@ -17,7 +17,7 @@
 @property (nonatomic, strong) ProblemContentModel* data;
 
 
-- (instancetype)initWithProblemId:(NSString*)pid;
+- (instancetype)initWithProblemId:(NSString*)problemId;
 - (instancetype)initWithProblemContent:(NSDictionary*)data;
 
 @end

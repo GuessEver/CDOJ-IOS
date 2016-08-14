@@ -19,11 +19,11 @@
     return self;
 }
 
-+ (void)loginContestWithContestId:(NSString*)cid andPassword:(NSString*)password inType:(NSInteger)type {
++ (void)loginContestWithContestId:(NSString*)contestId andPassword:(NSString*)password inType:(NSInteger)type {
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
     [UserModel userLoginWithUser:[LocalDataModel getDefaultUser]];
     // type can only be 1 - Private, 3 - Invited, 5 - Onsite
-    NSDictionary* requestBody = @{@"contestId":cid,@"password":password};
+    NSDictionary* requestBody = @{@"contestId":contestId,@"password":password};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
@@ -31,7 +31,7 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
 //        NSLog(@"responseObject:\n%@", responseObject);
-        NSMutableDictionary* userInfo = [NSMutableDictionary dictionaryWithDictionary:@{@"cid":cid, @"type":[NSNumber numberWithInteger:type]}];
+        NSMutableDictionary* userInfo = [NSMutableDictionary dictionaryWithDictionary:@{@"contestId":contestId, @"type":[NSNumber numberWithInteger:type]}];
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_SUCCEED object:nil userInfo:userInfo];
         }
@@ -54,9 +54,9 @@
     }];
 }
 
-- (void)fetchDataWithContestId:(NSString *)cid {
+- (void)fetchDataWithContestId:(NSString *)contestId {
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
-    [[AFHTTPSessionManager manager] GET:API_CONTEST_DATA(cid) parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [[AFHTTPSessionManager manager] GET:API_CONTEST_DATA(contestId) parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {

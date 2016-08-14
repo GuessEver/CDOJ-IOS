@@ -10,10 +10,10 @@
 
 @implementation NoticeContentViewController
 
-- (instancetype)initWithArticleId:(NSString*)aid {
+- (instancetype)initWithArticleId:(NSString*)articleId {
     if(self = [super init]) {
         self.data = [[NoticeContentModel alloc] init];
-        [self.data fetchDataWithArticleId:aid];
+        [self.data fetchDataWithArticleId:articleId];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_NOTICE_DATA_REFRESHED object:nil];
         
         // Options

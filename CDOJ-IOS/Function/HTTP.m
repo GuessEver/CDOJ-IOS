@@ -28,7 +28,7 @@ NSMutableDictionary* checkQuery(NSArray<NSString*>* querys, NSArray<NSString*>* 
 }
 
 // determine how to jump page when requesting an url
-+ (BOOL)openURL:(NSURLRequest*)request {
++ (BOOL)openURLWithBrowser:(NSURLRequest*)request {
     if(![request.URL.host isEqualToString:@"acm.uestc.edu.cn"]) {
         return YES;
     }
@@ -38,18 +38,19 @@ NSMutableDictionary* checkQuery(NSArray<NSString*>* querys, NSArray<NSString*>* 
         NSArray<NSString*>* querys = [[url substringFromIndex:baseURL.length] componentsSeparatedByString:@"/"];
         NSMutableDictionary* parameters;
         if((parameters = checkQuery(querys, @[@"article", @"show", @"{articleId}"])).count == 1) {
-            NSLog(@"%@", parameters);
-            [Message show:STRF(@"Article %@", [parameters objectForKey:@"articleId"]) withTitle:@"Skip in app"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_SHOW_NOTICE object:nil userInfo:@{@"articleId":STR([parameters objectForKey:@"articleId"])}];
         }
         else if((parameters = checkQuery(querys, @[@"problem", @"show", @"{problemId}"])).count == 1) {
-            [Message show:STRF(@"Problem %@", [parameters objectForKey:@"problemId"]) withTitle:@"Skip in app"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_SKIP_PROBLEM object:nil userInfo:@{@"problemId":STR([parameters objectForKey:@"problemId"])}];
         }
         else if((parameters = checkQuery(querys, @[@"contest", @"show", @"{contestId}"])).count == 1) {
-            [Message show:STRF(@"Contest %@", [parameters objectForKey:@"contestId"]) withTitle:@"Skip in app"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_SKIP_CONTEST object:nil userInfo:@{@"contestId":STR([parameters objectForKey:@"contestId"]),@"action":@"enter"}];
         }
-        return NO;
+        else if((parameters = checkQuery(querys, @[@"contest", @"register", @"{contestId}"])).count == 1) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_SKIP_CONTEST object:nil userInfo:@{@"contestId":STR([parameters objectForKey:@"contestId"]),@"action":@"register"}];
+        }
     }
-    else return YES; // For UIWebView loadHTMLString's baseURL
+    return NO;
 }
 
 @end

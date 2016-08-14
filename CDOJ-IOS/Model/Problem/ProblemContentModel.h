@@ -14,6 +14,6 @@
 @property (nonatomic, strong) NSDictionary* content;
 
 
-- (void)fetchDataWithProblemId:(NSString*)pid;
+- (void)fetchDataWithProblemId:(NSString*)problemId;
 
 @end

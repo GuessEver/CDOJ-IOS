@@ -21,18 +21,27 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_NOTICE_LIST_REFRESHED object:nil];
         // refresh data when entering
         [self.tableView.mj_header beginRefreshing];
+        
+        // skip in app
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changePage:) name:NOTIFICATION_SKIP_NOTICE object:nil];
     }
     return self;
 }
 
-- (void)showArticleWithArticleId:(NSString*)aid {
-    NoticeSplitDetailViewController* detailView = [[NoticeSplitDetailViewController alloc] initWithArticleId:aid];
+- (void)showArticleWithArticleId:(NSString*)articleId {
+    NoticeSplitDetailViewController* detailView = [[NoticeSplitDetailViewController alloc] initWithArticleId:articleId];
     [self.splitViewController showDetailViewController:detailView sender:nil];
 }
 - (void)skipArticle {
     [Message showInputBoxWithPassword:NO message:@"请输入文章/公告编号" title:@"跳转" callback:^(NSString *text) {
-        [self showArticleWithArticleId:text];
+//        [self showArticleWithArticleId:text];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_SKIP_NOTICE object:nil userInfo:@{@"articleId":text}];
     }];
+}
+
+#pragma mark skip in app {articleId}
+- (void)changePage:(NSNotification*)sender {
+    [self showArticleWithArticleId:[sender.userInfo objectForKey:@"articleId"]];
 }
 
 #pragma mark UITableViewDelegate

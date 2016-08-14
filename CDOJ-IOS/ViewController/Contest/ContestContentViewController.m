@@ -13,7 +13,7 @@
 
 @implementation ContestContentViewController
 
-- (instancetype)initWithContestId:(NSString*)cid {
+- (instancetype)initWithContestId:(NSString*)contestId {
     if(self = [super init]) {
         self.titleOfTabs = @[@"概览", @"题目", @"讨论", @"记录", @"排名"];
         self.controllersOfTabs = @[
@@ -25,7 +25,7 @@
                                    ];
         
         self.data = [[ContestContentModel alloc] init];
-        [self.data fetchDataWithContestId:cid];
+        [self.data fetchDataWithContestId:contestId];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_CONTEST_DATA_REFRESHED object:nil];
         
         // Options

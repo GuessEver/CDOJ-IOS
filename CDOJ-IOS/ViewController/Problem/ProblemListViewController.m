@@ -21,18 +21,27 @@
         [self loadLeftNavigationItems];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_PROBLEM_LIST_REFRESHED object:nil];
         [self.tableView.mj_header beginRefreshing];
+        
+        // skip in app
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changePage:) name:NOTIFICATION_SKIP_PROBLEM object:nil];
     }
     return self;
 }
 
-- (void)showProblemWithProblemId:(NSString*)pid {
-    ProblemSplitDetailViewController* detailView = [[ProblemSplitDetailViewController alloc] initWithProblemId:pid];
+- (void)showProblemWithProblemId:(NSString*)problemId {
+    ProblemSplitDetailViewController* detailView = [[ProblemSplitDetailViewController alloc] initWithProblemId:problemId];
     [self.splitViewController showDetailViewController:detailView sender:nil];
 }
 - (void)skipProblem {
     [Message showInputBoxWithPassword:NO message:@"请输入题目编号" title:@"跳转" callback:^(NSString *text) {
-        [self showProblemWithProblemId:text];
+//        [self showProblemWithProblemId:text];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_SKIP_PROBLEM object:nil userInfo:@{@"problemId":text}];
     }];
+}
+
+#pragma mark skip in app {problemId}
+- (void)changePage:(NSNotification*)sender {
+    [self showProblemWithProblemId:[sender.userInfo objectForKey:@"problemId"]];
 }
 
 - (void)loadLeftNavigationItems {
@@ -85,7 +94,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProblemListTableViewCell* cell = [[ProblemListTableViewCell alloc] init];
-    [cell.pid setText:STRF(@"#%@", [self.data.list[indexPath.row] objectForKey:@"problemId"])];
+    [cell.problemId setText:STRF(@"#%@", [self.data.list[indexPath.row] objectForKey:@"problemId"])];
     [cell.title setText:STR([self.data.list[indexPath.row] objectForKey:@"title"])];
     [cell.source setText:STR([self.data.list[indexPath.row] objectForKey:@"source"])];
     [cell.statistics setText:STRF(@"solved/tried:%@/%@", [self.data.list[indexPath.row] objectForKey:@"solved"], [self.data.list[indexPath.row] objectForKey:@"tried"])];

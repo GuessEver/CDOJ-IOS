@@ -17,6 +17,6 @@
 @property (nonatomic, strong) NoticeContentModel* data;
 
 
-- (instancetype)initWithArticleId:(NSString*)aid;
+- (instancetype)initWithArticleId:(NSString*)articleId;
 
 @end

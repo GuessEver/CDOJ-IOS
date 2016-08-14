@@ -10,10 +10,10 @@
 
 @implementation ProblemContentViewController
 
-- (instancetype)initWithProblemId:(NSString*)pid {
+- (instancetype)initWithProblemId:(NSString*)problemId {
     if(self = [super init]) {
         self.data = [[ProblemContentModel alloc] init];
-        [self.data fetchDataWithProblemId:pid];
+        [self.data fetchDataWithProblemId:problemId];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_PROBLEM_DATA_REFRESHED object:nil];
         [self arrangeViews];
     }

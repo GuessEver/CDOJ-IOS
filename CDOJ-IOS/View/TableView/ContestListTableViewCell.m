@@ -14,12 +14,12 @@
 /*****************************************************
  * title                                             *
  * startTime                                  length *
- * cid                             status   typeName *
+ * contestId                       status   typeName *
  *****************************************************/
 
 - (instancetype)init {
     if(self = [super init]) {
-        self.cid = [[UILabel alloc] init];
+        self.contestId = [[UILabel alloc] init];
         self.title = [[UILabel alloc] init];
         self.startTime = [[UILabel alloc] init];
         self.length = [[UILabel alloc] init];
@@ -28,7 +28,7 @@
         
         [self.startTime setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]-1]];
         [self.length setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]-1]];
-        [self.cid setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]-3]];
+        [self.contestId setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]-3]];
         [self.status setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]-3]];
         [self.typeName setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]-3]];
         
@@ -39,9 +39,9 @@
         [self.title setTextColor:[ColorSchemeModel defaultColorScheme].textColor];
         [self.startTime setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
         [self.length setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
-        [self.cid setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
+        [self.contestId setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
         
-        [self.contentView addSubview:self.cid];
+        [self.contentView addSubview:self.contestId];
         [self.contentView addSubview:self.title];
         [self.contentView addSubview:self.startTime];
         [self.contentView addSubview:self.length];
@@ -66,22 +66,22 @@
             make.right.equalTo(self.contentView.mas_right).offset(-10);
             make.height.equalTo(self.startTime.mas_height);
         }];
-        [self.cid mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.contestId mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.startTime.mas_bottom);
             make.height.equalTo(@15);
             make.bottom.equalTo(self.contentView.mas_bottom).offset(-5);
             make.left.equalTo(self.contentView.mas_left).offset(20);
         }];
         [self.status mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.cid.mas_top);
-            make.left.equalTo(self.cid.mas_right);
-            make.height.equalTo(self.cid.mas_height);
+            make.top.equalTo(self.contestId.mas_top);
+            make.left.equalTo(self.contestId.mas_right);
+            make.height.equalTo(self.contestId.mas_height);
             make.width.equalTo(@60);
         }];
         [self.typeName mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.cid.mas_top);
+            make.top.equalTo(self.contestId.mas_top);
             make.left.equalTo(self.status.mas_right).offset(5);
-            make.height.equalTo(self.cid.mas_height);
+            make.height.equalTo(self.contestId.mas_height);
             make.width.equalTo(@60);
             make.right.equalTo(self.contentView.mas_right).offset(-10);
         }];

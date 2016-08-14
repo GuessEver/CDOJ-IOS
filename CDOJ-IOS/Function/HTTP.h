@@ -12,7 +12,7 @@
 
 @interface HTTP : NSObject
 
-+ (BOOL)openURL:(NSURLRequest*)request;
++ (BOOL)openURLWithBrowser:(NSURLRequest*)request;
 
 
 @end

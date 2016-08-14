@@ -11,6 +11,7 @@
 #import "UserModel.h"
 #import "LoginViewController.h"
 #import "AccountListTableViewCell.h"
+#import "DefaultNavigationController.h"
 
 @implementation AccountManageViewController
 
@@ -54,7 +55,7 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.row == self.users.count) { // add button
-        [self presentViewController:[[LoginViewController alloc] init] animated:YES completion:nil];
+        [self presentViewController:[[DefaultNavigationController alloc] initWithCancelButtonOnLeftAndRootViewController:[[LoginViewController alloc] init]] animated:YES completion:nil];
 //        [self.navigationController pushViewController:[[LoginViewController alloc] init] animated:YES];
     }
     else {

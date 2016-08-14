@@ -21,6 +21,6 @@
 @property (nonatomic, strong) ContestOverViewController* tab_overview;
 @property (nonatomic, strong) ProblemPageController* tab_problems;
 
-- (instancetype)initWithContestId:(NSString*)cid;
+- (instancetype)initWithContestId:(NSString*)contestId;
 
 @end

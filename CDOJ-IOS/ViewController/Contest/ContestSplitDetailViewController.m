@@ -11,8 +11,8 @@
 
 @implementation ContestSplitDetailViewController
 
-- (instancetype)initWithContestId:(NSString*)cid {
-    if(self = [super initWithRootViewController:[[ContestContentViewController alloc] initWithContestId:cid]]) {
+- (instancetype)initWithContestId:(NSString*)contestId {
+    if(self = [super initWithRootViewController:[[ContestContentViewController alloc] initWithContestId:contestId]]) {
     }
     return self;
 }

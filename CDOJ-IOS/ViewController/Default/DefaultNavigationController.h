@@ -10,4 +10,8 @@
 
 @interface DefaultNavigationController : UINavigationController
 
+
+- (instancetype)initWithCancelButtonOnLeftAndRootViewController:(UIViewController *)rootViewController;
+- (void)closePage;
+
 @end

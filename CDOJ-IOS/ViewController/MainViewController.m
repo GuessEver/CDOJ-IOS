@@ -16,6 +16,9 @@
 #import "Notification.h"
 #import "UserModel.h"
 #import "LocalDataModel.h"
+#import "DefaultNavigationController.h"
+#import "NoticeContentViewController.h"
+#import "ProblemContentViewController.h"
 
 @implementation MainViewController
 
@@ -53,6 +56,15 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkConnected) name:NOTIFICATION_HTTP_CONNECTED object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkError) name:NOTIFICATION_HTTP_ERROR object:nil];
         [self initNetworkConnectionErrorTipBar];
+        
+        // skip in app
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeTabPage:) name:NOTIFICATION_SKIP_NOTICE object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeTabPage:) name:NOTIFICATION_SKIP_PROBLEM object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeTabPage:) name:NOTIFICATION_SKIP_CONTEST object:nil];
+        // show page in app
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showPage:) name:NOTIFICATION_SHOW_NOTICE object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showPage:) name:NOTIFICATION_SHOW_PROBLEM object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showPage:) name:NOTIFICATION_SHOW_CONTEST object:nil];
     }
     return self;
 }
@@ -118,4 +130,33 @@
     }];
     [self.networkConnectionErrorTipBar setAlpha:0];
 }
+
+#pragma mark skip in app {(a/p/c)id}
+- (void)changeTabPage:(NSNotification*)sender {
+    if([sender.name isEqualToString:NOTIFICATION_SKIP_NOTICE]) {
+        [self setSelectedIndex:0];
+    }
+    else if([sender.name isEqualToString:NOTIFICATION_SKIP_PROBLEM]) {
+        [self setSelectedIndex:1];
+    }
+    else if([sender.name isEqualToString:NOTIFICATION_SKIP_CONTEST]) {
+        [self setSelectedIndex:2];
+    }
+}
+#pragma mark show page in app {articleId/problemId/contestId}
+- (void)showPage:(NSNotification*)sender {
+    __kindof UIViewController* root;
+    if([sender.name isEqualToString:NOTIFICATION_SHOW_NOTICE]) {
+        root = [[NoticeContentViewController alloc] initWithArticleId:STR([sender.userInfo objectForKey:@"articleId"])];
+    }
+    else if([sender.name isEqualToString:NOTIFICATION_SHOW_PROBLEM]) {
+        root = [[ProblemContentViewController alloc] initWithProblemId:STR([sender.userInfo objectForKey:@"problemId"])];
+    }
+    else if([sender.name isEqualToString:NOTIFICATION_SHOW_CONTEST]) {
+    }
+    if(root) {
+        [self presentViewController:[[DefaultNavigationController alloc] initWithCancelButtonOnLeftAndRootViewController:root] animated:YES completion:nil];
+    }
+}
+
 @end

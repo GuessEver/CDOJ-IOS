@@ -9,6 +9,7 @@
 #import "DefaultWebView.h"
 #import "Api.h"
 #import "ColorSchemeModel.h"
+#import "HTTP.h"
 
 @implementation DefaultWebView
 
@@ -37,8 +38,10 @@
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     if(navigationAction.navigationType == WKNavigationTypeLinkActivated) {
-        if([[UIApplication sharedApplication]canOpenURL:navigationAction.request.URL]) {
-            [[UIApplication sharedApplication]openURL:navigationAction.request.URL];
+        if([HTTP openURLWithBrowser:navigationAction.request]) {
+            if([[UIApplication sharedApplication]canOpenURL:navigationAction.request.URL]) {
+                [[UIApplication sharedApplication]openURL:navigationAction.request.URL];
+            }
         }
         decisionHandler(WKNavigationActionPolicyCancel);
     }

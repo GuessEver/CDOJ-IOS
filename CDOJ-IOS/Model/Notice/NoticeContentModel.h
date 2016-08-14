@@ -14,6 +14,6 @@
 @property (nonatomic, strong) NSDictionary* content;
 
 
-- (void)fetchDataWithArticleId:(NSString*)aid;
+- (void)fetchDataWithArticleId:(NSString*)articleId;
 
 @end
