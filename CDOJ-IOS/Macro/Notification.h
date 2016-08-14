@@ -42,8 +42,12 @@
 #define NOTIFICATION_USER_SIGN                          CONCAT( NOTIFICATION_USER,                  @"Sign."        )
 #define NOTIFICATION_USER_SIGN_IN                       CONCAT( NOTIFICATION_USER_SIGN,             @"In."          )
 #define NOTIFICATION_USER_SIGN_OUT                      CONCAT( NOTIFICATION_USER_SIGN,             @"Out."         )
-#define NOTIFICATION_USER_DATA                          CONCAT( NOTIFICATION_USER,                  @"Data."        )
-#define NOTIFICATION_USER_DATA_REFRESHED                CONCAT( NOTIFICATION_USER_DATA,             @"Refreshed."   )
+#define NOTIFICATION_USER_INFO                          CONCAT( NOTIFICATION_USER,                  @"Info."        )
+#define NOTIFICATION_USER_INFO_REFRESHED                CONCAT( NOTIFICATION_USER_INFO,             @"Refreshed."   )
+#define NOTIFICATION_USER_BASIC                         CONCAT( NOTIFICATION_USER,                  @"Basic."       )
+#define NOTIFICATION_USER_BASIC_REFRESHED               CONCAT( NOTIFICATION_USER_BASIC,            @"Refreshed."   )
+#define NOTIFICATION_USER_ACHIEVEMENT                   CONCAT( NOTIFICATION_USER,                  @"Achievement." )
+#define NOTIFICATION_USER_ACHIEVEMENT_REFRESHED         CONCAT( NOTIFICATION_USER_ACHIEVEMENT,      @"Refreshed."   )
 #define NOTIFICATION_USER_LIST                          CONCAT( NOTIFICATION_USER,                  @"List."        )
 #define NOTIFICATION_USER_LIST_REFRESHED                CONCAT( NOTIFICATION_USER_LIST,             @"Refreshed."   )
 
@@ -77,6 +81,17 @@
 // RecentContestList
 #define NOTIFICATION_RECENTCONTEST                      CONCAT( NOTIFICATION_CENTER,                @"Recent."      )
 #define NOTIFICATION_RECENTCONTEST_REFRESHED            CONCAT( NOTIFICATION_RECENTCONTEST,         @"Refreshed."   )
+
+// Training
+#define NOTIFICATION_TRAINING                           CONCAT( NOTIFICATION_CENTER,                @"Training."    )
+#define NOTIFICATION_TRAINING_LIST                      CONCAT( NOTIFICATION_TRAINING,              @"List."        )
+#define NOTIFICATION_TRAINING_LIST_REFRESHED            CONCAT( NOTIFICATION_TRAINING_LIST,         @"Refreshed."   )
+#define NOTIFICATION_TRAINING_INFO                      CONCAT( NOTIFICATION_TRAINING,              @"Info."        )
+#define NOTIFICATION_TRAINING_INFO_REFRESHED            CONCAT( NOTIFICATION_TRAINING_INFO,         @"Refreshed."   )
+#define NOTIFICATION_TRAINING_USER                      CONCAT( NOTIFICATION_TRAINING,              @"User."        )
+#define NOTIFICATION_TRAINING_USER_REFRESHED            CONCAT( NOTIFICATION_TRAINING_USER,         @"Refreshed."   )
+#define NOTIFICATION_TRAINING_CONTEST                   CONCAT( NOTIFICATION_TRAINING,              @"Contest."     )
+#define NOTIFICATION_TRAINING_CONTEST_REFRESHED         CONCAT( NOTIFICATION_TRAINING_CONTEST,      @"Refreshed."   )
 
 
 #endif /* Notification_h */

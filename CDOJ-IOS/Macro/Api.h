@@ -20,13 +20,13 @@
 // recentContest
 #define API_RECENTCONTEST                   CONCAT( APIURL,                                         @"/recentContest"   )
 
-// User
+#define API_GLOBAL                          APIURL
 #define API_USER                            CONCAT( APIURL,                                         @"/user"            )
 #define API_ARTICLE                         CONCAT( APIURL,                                         @"/article"         )
 #define API_CONTEST                         CONCAT( APIURL,                                         @"/contest"         )
 #define API_PROBLEM                         CONCAT( APIURL,                                         @"/problem"         )
 #define API_STATUS                          CONCAT( APIURL,                                         @"/status"          )
-#define API_GLOBAL APIURL
+#define API_TRAINING                        CONCAT( APIURL,                                         @"/training"        )
 
 // Global
 #define API_GLOBAL_USERDATA                 CONCAT( API_GLOBAL,                                     @"/data"            )
@@ -59,6 +59,12 @@
 // Status
 #define API_STATUS_LIST                     CONCAT( API_STATUS,                                     @"/search"          )
 #define API_STATUS_INFO(id)                 CONCAT( CONCAT( API_STATUS,     @"/info/"           ),  id                  )
+
+// Training
+#define API_TRAINING_LIST                   CONCAT( API_TRAINING,                                   @"/search"          )
+#define API_TRAINING_INFO(id)               CONCAT( CONCAT( API_TRAINING,   @"/data/"           ),  id                  )
+#define API_TRAINING_CONTEST(id)            CONCAT( CONCAT( API_TRAINING,   @"/searchTrainingContest/"),    id          )
+#define API_TRAINING_USER(id)               CONCAT( CONCAT( API_TRAINING,   @"/searchTrainingUser/"),       id          )
 
 
 #endif /* Api_h */

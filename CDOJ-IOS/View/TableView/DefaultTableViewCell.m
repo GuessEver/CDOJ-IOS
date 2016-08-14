@@ -17,4 +17,11 @@
     return self;
 }
 
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    if(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        [self setBackgroundColor:[ColorSchemeModel defaultColorScheme].backgroundColor1];
+    }
+    return self;
+}
+
 @end

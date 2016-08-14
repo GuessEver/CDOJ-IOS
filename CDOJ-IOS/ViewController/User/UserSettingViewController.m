@@ -11,17 +11,12 @@
 #import "Notification.h"
 #import "DefaultNavigationController.h"
 
-#import "UserBasicInfoViewController.h"
-#import "UserAchievementViewController.h"
-#import "UserBlogViewController.h"
-#import "UserTeamViewController.h"
-#import "UserMessageViewController.h"
-
 #import "RecentContestListViewController.h"
 #import "FAQViewController.h"
 #import "StepByStepViewController.h"
 
 #import "TeamHornorViewController.h"
+#import "TrainingRatingListViewController.h"
 
 #import "AccountManageViewController.h"
 
@@ -47,10 +42,10 @@
                       ];
         self.classType = @[
                            @[
-                               [UserBasicInfoViewController class],
-                               [UserAchievementViewController class],
-                               [UserTeamViewController class],
-                               [UserMessageViewController class]
+                               [DefaultViewController class],
+                               [DefaultViewController class],
+                               [DefaultViewController class],
+                               [DefaultViewController class]
                                ],
                            @[
                                [RecentContestListViewController class],
@@ -59,7 +54,7 @@
                                ],
                            @[
                                [TeamHornorViewController class],
-                               [DefaultViewController class]
+                               [TrainingRatingListViewController class]
                                ],
                            @[
                                [AccountManageViewController class]
@@ -73,7 +68,7 @@
     return self;
 }
 - (void)userSignin {
-    self.noUserLogin = 0;
+//    self.noUserLogin = 0;
     [self.tableView reloadData];
 }
 - (void)userSignout {

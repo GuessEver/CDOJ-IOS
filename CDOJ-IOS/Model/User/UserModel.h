@@ -15,7 +15,9 @@
 @property (nonatomic, strong) NSDictionary* basicInfo;
 @property (nonatomic, strong) NSDictionary* achievementInfo;
 
-- (void)fetchDataWithUsername:(NSString*)username;
+- (void)fetchInfoData;
+- (void)fetchBasicData;
+- (void)fetchAchievementData;
 + (void)userLoginWithUser:(NSDictionary*)user;
 + (void)userLoginWithDefaultUser;
 

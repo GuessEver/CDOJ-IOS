@@ -19,15 +19,40 @@
     return self;
 }
 
-- (void)fetchDataWithUsername:(NSString*)username {
+- (void)fetchInfoData {
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
+    [[AFHTTPSessionManager manager] GET:API_USER_INFO(self.username) parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
+        if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
+            self.basicInfo = [responseObject objectForKey:@"user"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_INFO_REFRESHED object:nil];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];
+    }];
+}
+- (void)fetchBasicData {
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
+    [[AFHTTPSessionManager manager] GET:API_USER_PROFILE(self.username) parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
+        if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
+            self.basicInfo = [responseObject objectForKey:@"user"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_BASIC_REFRESHED object:nil];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];
+    }];
+}
+- (void)fetchAchievementData {
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
     [[AFHTTPSessionManager manager] GET:API_USER_CENTERDATA(self.username) parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
-            self.basicInfo = [responseObject objectForKey:@"targetUser"];
             self.achievementInfo = [responseObject objectForKey:@"problemStatus"];
-            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_DATA_REFRESHED object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_ACHIEVEMENT_REFRESHED object:nil];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];
@@ -42,7 +67,6 @@
     [manager POST:API_USER_LOGIN parameters:user progress:^(NSProgress * _Nonnull uploadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
-//        NSLog(@"%@", responseObject);
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
 //            [LocalDataModel setDefaultUsername:[user objectForKey:@"username"]];
             NSMutableDictionary* newUser = [NSMutableDictionary dictionaryWithDictionary:user];
