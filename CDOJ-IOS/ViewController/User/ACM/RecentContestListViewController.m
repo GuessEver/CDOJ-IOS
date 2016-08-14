@@ -17,6 +17,9 @@
         self.data = [[RecentContestListModel alloc] init];
         [self.data fetchList];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:NOTIFICATION_RECENTCONTEST_REFRESHED object:nil];
+        self.navigationItem.rightBarButtonItems = @[
+                                                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self.data action:@selector(fetchList)]
+                                                    ];
     }
     return self;
 }
