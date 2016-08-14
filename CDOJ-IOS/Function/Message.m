@@ -20,17 +20,27 @@ UIViewController* topViewController() {
 
 + (void)show:(NSString*)message withTitle:(NSString*)title {
     UIAlertController* alertMsg = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"知道了" style:(UIAlertActionStyleDefault) handler:nil];
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil];
     [alertMsg addAction:okAction];
+    [topViewController() presentViewController:alertMsg animated:YES completion:nil];
+}
++ (void)confirm:(NSString*)message withTitle:(NSString*)title callback:(void (^)())callback {
+    UIAlertController* alertMsg = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        callback();
+    }];
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alertMsg addAction:okAction];
+    [alertMsg addAction:cancelAction];
     [topViewController() presentViewController:alertMsg animated:YES completion:nil];
 }
 
 + (void)showInputBoxWithPassword:(BOOL)password message:(NSString*)message title:(NSString*)title callback:(void (^)(NSString* text))callback {
     UIAlertController* alertMsg = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         callback(alertMsg.textFields[0].text);
     }];
-    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     [alertMsg addAction:okAction];
     [alertMsg addAction:cancelAction];
     [alertMsg addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {

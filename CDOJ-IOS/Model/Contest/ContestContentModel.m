@@ -21,7 +21,6 @@
 
 + (void)loginContestWithContestId:(NSString*)contestId andPassword:(NSString*)password inType:(NSInteger)type {
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
-    [UserModel userLoginWithUser:[LocalDataModel getDefaultUser]];
     // type can only be 1 - Private, 3 - Invited, 5 - Onsite
     NSDictionary* requestBody = @{@"contestId":contestId,@"password":password};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -35,18 +34,20 @@
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_SUCCEED object:nil userInfo:userInfo];
         }
-        else if([[responseObject objectForKey:@"result"] isEqualToString:@"error"]) {
-            // 5 - Onsite
-            // or when not login
-            [userInfo setObject:[responseObject objectForKey:@"error_msg"] forKey:@"errorMessage"];
-            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_NEED_PERMISSION object:nil userInfo:userInfo];
-        }
         else {
-            if(type == 1) { // Private
-                [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_NEED_PASSWORD object:nil userInfo:userInfo];
+            if([[responseObject objectForKey:@"result"] isEqualToString:@"error"]) {
+                if(type == 3) { // Invited
+                    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_NEED_REGISTER object:nil userInfo:userInfo];
+                }
+                else {
+                    // 5 - Onsite
+                    // or when not login
+                    [userInfo setObject:[responseObject objectForKey:@"error_msg"] forKey:@"errorMessage"];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_NEED_PERMISSION object:nil userInfo:userInfo];
+                }
             }
-            else { // 3 - Invited
-                [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_NEED_REGISTER object:nil userInfo:userInfo];
+            else { // 1 - Private
+                [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONTEST_LOGIN_NEED_PASSWORD object:nil userInfo:userInfo];
             }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

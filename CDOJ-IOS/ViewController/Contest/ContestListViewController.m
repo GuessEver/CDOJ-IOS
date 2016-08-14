@@ -11,6 +11,7 @@
 #import "ContestSplitDetailViewController.h"
 #import "ContestContentModel.h"
 #import "Time.h"
+#import "ContestRegisterViewController.h"
 
 @implementation ContestListViewController
 
@@ -25,6 +26,9 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contestLoginNeedRegister:) name:NOTIFICATION_CONTEST_LOGIN_NEED_REGISTER object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contestLoginNeedPermission:) name:NOTIFICATION_CONTEST_LOGIN_NEED_PERMISSION object:nil];
         [self.tableView.mj_header beginRefreshing];
+        
+        // skip in app
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changePage:) name:NOTIFICATION_SKIP_CONTEST object:nil];
     }
     return self;
 }
@@ -42,6 +46,14 @@
                                                    ];
     }
 }
+
+- (void)changePage:(NSNotification*)sender {
+    if([[sender.userInfo objectForKey:@"action"] isEqualToString:@"register"]) {
+        ContestRegisterViewController* root = [[ContestRegisterViewController alloc] initWithContestId:STR([sender.userInfo objectForKey:@"contestId"])];
+        [self presentViewController:[[DefaultNavigationController alloc] initWithCancelButtonOnLeftAndRootViewController:root] animated:YES completion:nil];
+    }
+}
+
 - (void)clearSearchKeyword {
     [self setTitle:@"比赛"];
     [self.data setKeyword:@""];
@@ -94,7 +106,9 @@
 }
 - (void)contestLoginNeedRegister:(NSNotification*)contest {
     NSLog(@"Contest #%@ need register", [contest.userInfo objectForKey:@"contestId"]);
-    [Message show:@"请先检查是否登录并已成功注册了本比赛！\n注册比赛请前往网页版，APP也会陆续上线，敬请期待" withTitle:@"您需要先注册本比赛"];
+    [Message confirm:@"请先检查是否登录并已成功注册了本比赛！\n点击确定前往网页版注册" withTitle:@"您需要先注册本比赛" callback:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_SKIP_CONTEST object:nil userInfo:@{@"contestId":STR([contest.userInfo objectForKey:@"contestId"]),@"action":@"register"}];
+    }];
 }
 - (void)contestLoginNeedPermission:(NSNotification*)contest {
     NSLog(@"Contest #%@ need permission", [contest.userInfo objectForKey:@"contestId"]);
