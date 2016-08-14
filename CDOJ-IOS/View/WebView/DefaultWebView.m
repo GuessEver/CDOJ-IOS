@@ -35,14 +35,14 @@
     [self loadHTMLString:self.htmlStr baseURL:BASEURL];
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
-        if([[UIApplication sharedApplication]canOpenURL:[request URL]]) {
-            [[UIApplication sharedApplication]openURL:[request URL]];
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    if(navigationAction.navigationType == WKNavigationTypeLinkActivated) {
+        if([[UIApplication sharedApplication]canOpenURL:navigationAction.request.URL]) {
+            [[UIApplication sharedApplication]openURL:navigationAction.request.URL];
         }
-        return NO;
+        decisionHandler(WKNavigationActionPolicyCancel);
     }
-    return YES;
+    decisionHandler(WKNavigationActionPolicyAllow);
 }
 
 @end
