@@ -17,6 +17,7 @@
 #import "UserTeamViewController.h"
 #import "UserMessageViewController.h"
 
+#import "RecentContestListViewController.h"
 #import "FAQViewController.h"
 #import "StepByStepViewController.h"
 
@@ -53,7 +54,7 @@
                                [UserMessageViewController class]
                                ],
                            @[
-                               [DefaultViewController class],
+                               [RecentContestListViewController class],
                                [FAQViewController class],
                                [StepByStepViewController class]
                                ],

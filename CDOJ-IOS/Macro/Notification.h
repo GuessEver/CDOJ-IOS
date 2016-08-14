@@ -74,5 +74,9 @@
 #define NOTIFICATION_CONTEST_LOGIN_NEED_REGISTER        CONCAT( NOTIFICATION_CONTEST_LOGIN_NEED,    @"Register."    )
 #define NOTIFICATION_CONTEST_LOGIN_NEED_PERMISSION      CONCAT( NOTIFICATION_CONTEST_LOGIN_NEED,    @"Permission."  )
 
+// RecentContestList
+#define NOTIFICATION_RECENTCONTEST                      CONCAT( NOTIFICATION_CENTER,                @"Recent."      )
+#define NOTIFICATION_RECENTCONTEST_REFRESHED            CONCAT( NOTIFICATION_RECENTCONTEST,         @"Refreshed."   )
+
 
 #endif /* Notification_h */

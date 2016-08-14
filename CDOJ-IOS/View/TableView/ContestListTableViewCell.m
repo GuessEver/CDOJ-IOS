@@ -90,16 +90,7 @@
 }
 
 - (void)refreshTagColor {
-    NSDictionary* tagColors = @{
-                                @"Pending": COLOR_ORANGE,
-                                @"Running": COLOR_RED,
-                                @"Ended": COLOR_GREEN,
-                                @"Public": COLOR_GREEN,
-                                @"Private": COLOR_RED,
-                                @"DIY": COLOR_RED,
-                                @"Invited": COLOR_BLUE,
-                                @"Onsite": COLOR_BLACK
-                                };
+    NSDictionary* tagColors = [ColorSchemeModel defaultColorScheme].contestTagColors;
     [self.status setTextColor:[tagColors objectForKey:self.status.text]];
     [self.typeName setTextColor:[tagColors objectForKey:self.typeName.text]];
 }

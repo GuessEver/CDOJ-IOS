@@ -19,7 +19,8 @@
                  backgroundColor1:(UIColor*)backgroundColor1
                  backgroundColor2:(UIColor*)backgroundColor2
                         textColor:(UIColor*)textColor
-                     commentColor:(UIColor*)commentColor {
+                     commentColor:(UIColor*)commentColor
+                 contestTagColors:(NSDictionary*)contestTagColors {
     if(self = [super init]) {
         self.themeName = themeName;
         self.tintColor = tintColor;
@@ -29,8 +30,22 @@
         self.backgroundColor2 = backgroundColor2;
         self.textColor = textColor;
         self.commentColor = commentColor;
+        self.contestTagColors = contestTagColors;
     }
     return self;
+}
+
++ (NSDictionary*)defaultContestTagColors {
+    return @{
+             @"Pending": COLOR_ORANGE,
+             @"Running": COLOR_RED,
+             @"Ended": COLOR_GREEN,
+             @"Public": COLOR_GREEN,
+             @"Private": COLOR_RED,
+             @"DIY": COLOR_RED,
+             @"Invited": COLOR_BLUE,
+             @"Onsite": COLOR_BLACK
+             };
 }
 
 + (NSArray<ColorSchemeModel*>*)colorSchemes {
@@ -42,7 +57,8 @@
                                     backgroundColor1:COLOR_WHITE
                                     backgroundColor2:COLOR_WHITE
                                            textColor:COLOR_BLACK
-                                        commentColor:COLOR_GRAY],
+                                        commentColor:COLOR_GRAY
+                                    contestTagColors:[self defaultContestTagColors]],
              [[[self class] alloc] initWithThemeName:@"蓝"
                                            tintColor:COLOR_BLUE
                                          topBarColor:COLOR_WHITE
@@ -50,7 +66,8 @@
                                     backgroundColor1:COLOR_WHITE
                                     backgroundColor2:COLOR_WHITE
                                            textColor:COLOR_BLACK
-                                        commentColor:COLOR_GRAY]
+                                        commentColor:COLOR_GRAY
+                                    contestTagColors:[self defaultContestTagColors]]
              ];
 }
 + (instancetype)defaultColorScheme {
