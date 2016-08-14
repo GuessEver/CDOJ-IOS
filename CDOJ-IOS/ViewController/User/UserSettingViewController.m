@@ -39,7 +39,7 @@
         self.noUserLogin = 1; // set the offset to hide "我**" options when not login
         self.titleOfSections = @[@"我", @"ACM", @"集训队", @"设置", @"关于"];
         self.data = @[
-                      @[@"我的资料", @"我的成就", @"我的博客", @"我的队伍", @"我的消息"],
+                      @[@"我的资料", @"我的成就", @"我的队伍", @"我的消息"],
                       @[@"最近比赛", @"F.A.Q", @"Step By Step"],
                       @[@"队内荣誉", @"训练Rating"],
                       @[@"账号管理"],
@@ -49,7 +49,6 @@
                            @[
                                [UserBasicInfoViewController class],
                                [UserAchievementViewController class],
-                               [UserBlogViewController class],
                                [UserTeamViewController class],
                                [UserMessageViewController class]
                                ],
