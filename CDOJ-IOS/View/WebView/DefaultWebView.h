@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Webkit/Webkit.h>
 
-@interface DefaultWebView : UIWebView <UIWebViewDelegate>
+@interface DefaultWebView : WKWebView <WKNavigationDelegate>
 
 @property (nonatomic, strong) NSString* htmlStr;
 

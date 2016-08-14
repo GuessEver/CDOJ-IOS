@@ -16,7 +16,7 @@
     if(self = [super init]) {
         [self setBackgroundColor:[ColorSchemeModel defaultColorScheme].backgroundColor2];
         [self setOpaque:NO];
-        [self setDelegate:self];
+        [self setNavigationDelegate:self];
     }
     return self;
 }
