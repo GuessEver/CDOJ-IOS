@@ -214,7 +214,7 @@
     TrainingRatingUserListTableViewCell* cell = [[TrainingRatingUserListTableViewCell alloc] init];
     [cell.name setText:STR([self.data.users[indexPath.row] objectForKey:@"trainingUserName"])];
     [cell.rank setText:STRF(@"Rank %@", [self.data.users[indexPath.row] objectForKey:@"rank"])];
-    [cell.currentRating setText:STRF(@"当前Rating: %.0f", [[self.data.users[indexPath.row] objectForKey:@"currentRating"] doubleValue])];
+    [cell.currentRating setText:STRF(@"Rating: %.0f", [[self.data.users[indexPath.row] objectForKey:@"currentRating"] doubleValue])];
     [cell.volatility setText:STRF(@"Volatility: %.0f", [[self.data.users[indexPath.row] objectForKey:@"currentVolatility"] doubleValue])];
     return cell;
 }
