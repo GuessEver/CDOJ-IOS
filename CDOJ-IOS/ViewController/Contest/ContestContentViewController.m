@@ -46,14 +46,14 @@
     [self reloadData];
 }
 
-#pragma mark WMPageControllerDataSource
-- (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController {
+#pragma mark TYPagerControllerDataSource
+- (NSInteger)numberOfControllersInPagerController {
     return [self.titleOfTabs count];
 }
-- (__kindof UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
+- (UIViewController *)pagerController:(TYPagerController *)pagerController controllerForIndex:(NSInteger)index {
     return self.controllersOfTabs[index];
 }
-- (NSString *)pageController:(WMPageController *)pageController titleAtIndex:(NSInteger)index {
+- (NSString *)pagerController:(TYPagerController *)pagerController titleForIndex:(NSInteger)index {
     return self.titleOfTabs[index];
 }
 

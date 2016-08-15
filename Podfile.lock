@@ -22,7 +22,6 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
-  - WMPageController (1.8.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -32,7 +31,6 @@ DEPENDENCIES:
   - Pgyer
   - PgyUpdate
   - SDWebImage (~> 3.7)
-  - WMPageController
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -42,8 +40,7 @@ SPEC CHECKSUMS:
   Pgyer: 26edfcc8da6da6383fabfdbccd2f77c623b9d6eb
   PgyUpdate: a42e82cec5ad4e992af390e9d494f6fc62db65e4
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
-  WMPageController: 1aca8dbbce6ffbe997b34aa7cc567386d8eef3ba
 
-PODFILE CHECKSUM: 91eda1300d910f4748ad2720276c41619fae8344
+PODFILE CHECKSUM: 5402d83aa63a9bcdb32b9c157b1cf9056a2f956b
 
 COCOAPODS: 1.0.1

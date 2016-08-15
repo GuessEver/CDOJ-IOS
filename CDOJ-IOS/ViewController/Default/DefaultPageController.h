@@ -6,9 +6,9 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import "WMPageController.h"
+#import "TYTabButtonPagerController.h"
 #import "ColorSchemeModel.h"
 
-@interface DefaultPageController : WMPageController <WMPageControllerDataSource>
+@interface DefaultPageController : TYTabButtonPagerController <TYPagerControllerDataSource, TYTabPagerControllerDelegate>
 
 @end

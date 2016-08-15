@@ -15,8 +15,6 @@
     if(self = [super init]) {
         self.problems = [[NSMutableArray alloc] init];
         self.problemPages = [[NSMutableArray alloc] init];
-        [self setMenuHeight:80];
-        [self setTitleSizeNormal:self.titleSizeNormal-1];
     }
     return self;
 }
@@ -27,22 +25,19 @@
         [self.problems addObject:data[i]];
         [self.problemPages addObject:[[ProblemContentViewController alloc] initWithProblemContent:self.problems[i]]];
     }
-    if(data.count) { // WMPageController cannot has 0 tabs
-        [self reloadData];
-    }
+    [self reloadData];
 }
 
-#pragma mark WMPageControllerDataSource
-- (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController {
+#pragma mark TYPagerControllerDataSource
+- (NSInteger)numberOfControllersInPagerController {
     NSLog(@"problem count: %ld", (unsigned long)[self.problems count]);
     return [self.problems count];
 }
-- (__kindof UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
+- (UIViewController *)pagerController:(TYPagerController *)pagerController controllerForIndex:(NSInteger)index {
     return self.problemPages[index];
 }
-- (NSString *)pageController:(WMPageController *)pageController titleAtIndex:(NSInteger)index {
-//    NSLog(@"%@", self.problems[index]);
-    return STRF(@"\n\n%@", [self.problems[index] objectForKey:@"orderCharacter"]);
+- (NSString *)pagerController:(TYPagerController *)pagerController titleForIndex:(NSInteger)index {
+    return STRF(@"%@", [self.problems[index] objectForKey:@"orderCharacter"]);
 }
 
 @end

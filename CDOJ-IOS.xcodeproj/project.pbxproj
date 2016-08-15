@@ -69,6 +69,10 @@
 		5FB512C91D608C6D00253B38 /* TrainingRatingContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB512C81D608C6D00253B38 /* TrainingRatingContentModel.m */; };
 		5FB512CF1D60928600253B38 /* TrainingRatingUserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB512CE1D60928600253B38 /* TrainingRatingUserListViewController.m */; };
 		5FB512D61D609F6600253B38 /* TrainingRatingUserListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB512D51D609F6600253B38 /* TrainingRatingUserListTableViewCell.m */; };
+		5FB5138B1D61951900253B38 /* TYPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB513831D61951900253B38 /* TYPagerController.m */; };
+		5FB5138C1D61951900253B38 /* TYTabButtonPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB513851D61951900253B38 /* TYTabButtonPagerController.m */; };
+		5FB5138D1D61951900253B38 /* TYTabPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB513871D61951900253B38 /* TYTabPagerController.m */; };
+		5FB5138E1D61951900253B38 /* TYTabTitleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB5138A1D61951900253B38 /* TYTabTitleViewCell.m */; };
 		5FE468191D5850CE0050636D /* NoticeSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */; };
 		5FE4681D1D5851630050636D /* DefaultNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681C1D5851630050636D /* DefaultNavigationController.m */; };
 		5FE468201D5852E20050636D /* NoticeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681F1D5852E20050636D /* NoticeListViewController.m */; };
@@ -212,6 +216,15 @@
 		5FB512CE1D60928600253B38 /* TrainingRatingUserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingRatingUserListViewController.m; sourceTree = "<group>"; };
 		5FB512D41D609F6600253B38 /* TrainingRatingUserListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingRatingUserListTableViewCell.h; sourceTree = "<group>"; };
 		5FB512D51D609F6600253B38 /* TrainingRatingUserListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingRatingUserListTableViewCell.m; sourceTree = "<group>"; };
+		5FB513821D61951900253B38 /* TYPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPagerController.h; sourceTree = "<group>"; };
+		5FB513831D61951900253B38 /* TYPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPagerController.m; sourceTree = "<group>"; };
+		5FB513841D61951900253B38 /* TYTabButtonPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabButtonPagerController.h; sourceTree = "<group>"; };
+		5FB513851D61951900253B38 /* TYTabButtonPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabButtonPagerController.m; sourceTree = "<group>"; };
+		5FB513861D61951900253B38 /* TYTabPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabPagerController.h; sourceTree = "<group>"; };
+		5FB513871D61951900253B38 /* TYTabPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabPagerController.m; sourceTree = "<group>"; };
+		5FB513881D61951900253B38 /* TYTabTitleCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabTitleCellProtocol.h; sourceTree = "<group>"; };
+		5FB513891D61951900253B38 /* TYTabTitleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabTitleViewCell.h; sourceTree = "<group>"; };
+		5FB5138A1D61951900253B38 /* TYTabTitleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabTitleViewCell.m; sourceTree = "<group>"; };
 		5FE468171D5850CE0050636D /* NoticeSplitMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeSplitMasterViewController.h; sourceTree = "<group>"; };
 		5FE468181D5850CE0050636D /* NoticeSplitMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeSplitMasterViewController.m; sourceTree = "<group>"; };
 		5FE4681B1D5851630050636D /* DefaultNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultNavigationController.h; sourceTree = "<group>"; };
@@ -257,6 +270,7 @@
 				5F03E9B61D581A8200607DB9 /* Products */,
 				42BCF5DDEE9EF0907C5D41DB /* Pods */,
 				AC36B2153A8A58D5D717B681 /* Frameworks */,
+				5FB513801D61951900253B38 /* Library */,
 			);
 			sourceTree = "<group>";
 		};
@@ -632,6 +646,30 @@
 			path = Team;
 			sourceTree = "<group>";
 		};
+		5FB513801D61951900253B38 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				5FB513811D61951900253B38 /* TYPagerController */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		5FB513811D61951900253B38 /* TYPagerController */ = {
+			isa = PBXGroup;
+			children = (
+				5FB513821D61951900253B38 /* TYPagerController.h */,
+				5FB513831D61951900253B38 /* TYPagerController.m */,
+				5FB513841D61951900253B38 /* TYTabButtonPagerController.h */,
+				5FB513851D61951900253B38 /* TYTabButtonPagerController.m */,
+				5FB513861D61951900253B38 /* TYTabPagerController.h */,
+				5FB513871D61951900253B38 /* TYTabPagerController.m */,
+				5FB513881D61951900253B38 /* TYTabTitleCellProtocol.h */,
+				5FB513891D61951900253B38 /* TYTabTitleViewCell.h */,
+				5FB5138A1D61951900253B38 /* TYTabTitleViewCell.m */,
+			);
+			path = TYPagerController;
+			sourceTree = "<group>";
+		};
 		5FE4681A1D5851500050636D /* Default */ = {
 			isa = PBXGroup;
 			children = (
@@ -829,6 +867,7 @@
 				5FB512C61D6089A200253B38 /* TrainingRatingListViewController.m in Sources */,
 				5FE4682A1D58606D0050636D /* NoticeListTableViewCell.m in Sources */,
 				5FB512BF1D606BA200253B38 /* DefaultWebView.m in Sources */,
+				5FB5138E1D61951900253B38 /* TYTabTitleViewCell.m in Sources */,
 				5F7E4D491D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m in Sources */,
 				5F7E4D641D596D9F00E9D4C8 /* ContestContentViewController.m in Sources */,
 				5FB512C31D60865800253B38 /* TrainingRatingListModel.m in Sources */,
@@ -838,6 +877,7 @@
 				5FB512D61D609F6600253B38 /* TrainingRatingUserListTableViewCell.m in Sources */,
 				5FE468231D5853EE0050636D /* DefaultSplitViewController.m in Sources */,
 				5FE468191D5850CE0050636D /* NoticeSplitMasterViewController.m in Sources */,
+				5FB5138B1D61951900253B38 /* TYPagerController.m in Sources */,
 				5FE4682D1D5875310050636D /* NoticeSplitDetailViewController.m in Sources */,
 				5F7E4D6B1D596F3300E9D4C8 /* ContestListModel.m in Sources */,
 				5F4B02FB1D59C08900A531B3 /* ContestOverViewController.m in Sources */,
@@ -851,11 +891,13 @@
 				5FB512B11D60509F00253B38 /* RecentContestListModel.m in Sources */,
 				5F7E4D521D58B80100E9D4C8 /* ProblemSplitDetailViewController.m in Sources */,
 				5F03EA061D58224D00607DB9 /* MainViewController.m in Sources */,
+				5FB5138C1D61951900253B38 /* TYTabButtonPagerController.m in Sources */,
 				5F7E4D5B1D596C9D00E9D4C8 /* ContestSplitMasterViewController.m in Sources */,
 				5F03E9BA1D581A8200607DB9 /* main.m in Sources */,
 				5FB512A71D60494600253B38 /* RecentContestListTableViewCell.m in Sources */,
 				5F7E4D6E1D596F8000E9D4C8 /* ContestListTableViewCell.m in Sources */,
 				5F7E4D711D59709E00E9D4C8 /* ContestContentModel.m in Sources */,
+				5FB5138D1D61951900253B38 /* TYTabPagerController.m in Sources */,
 				5F4B02F31D59A37D00A531B3 /* ProblemPageController.m in Sources */,
 				5FB512951D5F4B0D00253B38 /* TeamHornorViewController.m in Sources */,
 				5F4B030D1D5A04DD00A531B3 /* AccountManageViewController.m in Sources */,
