@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - JBChartView (3.0.12)
   - Masonry (1.0.1)
   - MJRefresh (3.1.12)
   - Pgyer (2.8.4)
@@ -25,6 +26,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - JBChartView
   - Masonry
   - MJRefresh
   - Pgyer
@@ -34,6 +36,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  JBChartView: 08877554448ccf99c12625ad0ebce70588ff8318
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Pgyer: 26edfcc8da6da6383fabfdbccd2f77c623b9d6eb
@@ -41,6 +44,6 @@ SPEC CHECKSUMS:
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   WMPageController: 1aca8dbbce6ffbe997b34aa7cc567386d8eef3ba
 
-PODFILE CHECKSUM: 85e42a82fc64eb45abe1c57dae9d53b7c4c736d4
+PODFILE CHECKSUM: 91eda1300d910f4748ad2720276c41619fae8344
 
 COCOAPODS: 1.0.1
