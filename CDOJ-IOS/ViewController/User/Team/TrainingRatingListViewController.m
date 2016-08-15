@@ -17,6 +17,7 @@
     if(self = [super initWithStyle:UITableViewStylePlain]) {
         self.data = [[TrainingRatingListModel alloc] init];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_TRAINING_LIST_REFRESHED object:nil];
+        self.tableView.mj_footer = nil;
         [self.tableView.mj_header beginRefreshing];
     }
     return self;
