@@ -18,7 +18,7 @@
         [self setCellWidth:100];
         [self setSelectedTextColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [self setProgressColor:[ColorSchemeModel defaultColorScheme].tintColor];
-        [self setPagerBarColor:[ColorSchemeModel defaultColorScheme].tintColor];
+        [self setPagerBarColor:[ColorSchemeModel defaultColorScheme].backgroundColor1];
         [self setDataSource:self];
         [self setDelegate:self];
         [self setExtendedLayoutIncludesOpaqueBars:YES];
