@@ -29,8 +29,8 @@
         [self.view addSubview:self.graph];
         [self.graph mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.view.mas_top);
-            make.left.equalTo(self.view.mas_left);
-            make.width.equalTo(self.view.mas_width);
+            make.left.equalTo(self.view.mas_left).offset(10);
+            make.width.equalTo(self.view.mas_width).offset(-20);
             make.height.equalTo(self.view.mas_height).multipliedBy(0.5);
         }];
         [self.graph setDelegate:self];
@@ -111,7 +111,7 @@
 }
 - (void)contestsListRefreshed {
     [self.graph reloadData];
-    self.ratingSections[0] = [NSNumber numberWithFloat:self.graph.maximumValue];
+    self.ratingSections[0] = [NSNumber numberWithFloat:self.graph.maximumValue + 1];
     [self.graph reloadDataAnimated:YES];
 }
 
