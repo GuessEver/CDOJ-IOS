@@ -179,11 +179,12 @@
     }
 }
 - (UIColor *)lineChartView:(JBLineChartView *)lineChartView fillColorForLineAtLineIndex:(NSUInteger)lineIndex {
-    if(1 || lineIndex < self.data.users.count) { // user line
+    if(lineIndex < self.data.users.count) { // user line
         return [ColorSchemeModel defaultColorScheme].backgroundColor1;
     }
     else { // rating section
-        return self.colorSections[lineIndex - self.data.users.count];
+        return [ColorSchemeModel defaultColorScheme].backgroundColor1;
+        // return self.colorSections[lineIndex - self.data.users.count];
     }
 }
 
