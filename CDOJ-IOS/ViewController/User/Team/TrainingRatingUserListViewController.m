@@ -60,20 +60,11 @@
     }
     else {
         self.navigationItem.rightBarButtonItems = @[
-                                                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(changeUserGraphChooseStatus)],
-                                                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(chooseUserGraph)]
+                                                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(changeUserGraphChooseStatus)]
                                                     ];
     }
 }
 
-- (void)chooseUserGraph {
-    [self changeAllUserVisibilityTo:NO];
-    for(NSInteger i = 0; i < self.tableView.indexPathsForSelectedRows.count; i++) {
-        self.userVisibility[self.tableView.indexPathsForSelectedRows[i].row] = [NSNumber numberWithBool:YES];
-    }
-    [self.graph reloadDataAnimated:YES];
-    [self changeUserGraphChooseStatus];
-}
 - (void)changeUserGraphChooseStatus {
     [self.tableView setEditing:!self.tableView.isEditing animated:YES];
     if(self.tableView.isEditing) {
