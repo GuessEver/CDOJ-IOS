@@ -15,7 +15,7 @@
         [self.view setBackgroundColor:[ColorSchemeModel defaultColorScheme].backgroundColor2];
         [self setBarStyle:TYPagerBarStyleProgressView];
         [self setContentTopEdging:40];
-        [self setCellWidth:100];
+        [self setCellWidth:90];
         [self setSelectedTextColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [self setProgressColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [self setPagerBarColor:[ColorSchemeModel defaultColorScheme].backgroundColor1];
@@ -24,10 +24,6 @@
         [self setExtendedLayoutIncludesOpaqueBars:YES];
     }
     return self;
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(MAX(70, MIN(self.view.frame.size.width, self.view.frame.size.height)/[self.dataSource numberOfControllersInPagerController]), 40);
 }
 
 @end

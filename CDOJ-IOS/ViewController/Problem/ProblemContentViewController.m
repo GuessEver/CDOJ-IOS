@@ -8,6 +8,8 @@
 
 #import "ProblemContentViewController.h"
 #import "StatusListViewController.h"
+#import "CodeSubmitViewController.h"
+#import "DefaultNavigationController.h"
 
 @implementation ProblemContentViewController
 
@@ -18,6 +20,8 @@
         [self.data fetchDataWithProblemId:problemId];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_PROBLEM_DATA_REFRESHED object:nil];
         [self arrangeViews];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openStatusPage) name:NOTIFICATION_STATUS_SUBMIT_SUCCEED object:nil];
     }
     return self;
 }
@@ -41,7 +45,8 @@
     // Options
     self.navigationItem.rightBarButtonItems = @[
                                                 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInBrowser)],
-                                                [[UIBarButtonItem alloc] initWithTitle:@"记录" style:UIBarButtonItemStylePlain target:self action:@selector(openStatusPage)]
+                                                [[UIBarButtonItem alloc] initWithTitle:@"记录" style:UIBarButtonItemStylePlain target:self action:@selector(openStatusPage)],
+                                                [[UIBarButtonItem alloc] initWithTitle:@"提交" style:UIBarButtonItemStylePlain target:self action:@selector(openSubmitPage)]
                                                 ];
     
     
@@ -59,8 +64,11 @@
 }
 
 - (void)openStatusPage {
-    StatusListViewController* status = [[StatusListViewController alloc] initWithProblemId:self.problemId];
-    [self.navigationController pushViewController:status animated:YES];
+    StatusListViewController* statusPage = [[StatusListViewController alloc] initWithProblemId:self.problemId];
+    [self.navigationController pushViewController:statusPage animated:YES];
 }
-
+- (void)openSubmitPage {
+    CodeSubmitViewController* submitPage = [[CodeSubmitViewController alloc] init];
+    [self presentViewController:[[DefaultNavigationController alloc] initWithCancelButtonOnLeftAndRootViewController:submitPage] animated:YES completion:nil];
+}
 @end

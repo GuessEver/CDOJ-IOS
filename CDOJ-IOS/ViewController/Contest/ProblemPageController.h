@@ -10,10 +10,12 @@
 
 @interface ProblemPageController : DefaultPageController
 
+@property (nonatomic, strong) NSString* contestId;
 @property (nonatomic, strong) NSMutableArray<NSDictionary*>* problems;
 @property (nonatomic, strong) NSMutableArray<__kindof UIViewController*>* problemPages;
 
 
+- (instancetype)initWithContestId:(NSString*)contestId;
 - (void)loadProblemsWithData:(NSArray<NSDictionary*>*)data;
 
 @end

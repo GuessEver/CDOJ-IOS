@@ -150,7 +150,7 @@
         root = [[NoticeContentViewController alloc] initWithArticleId:STR([sender.userInfo objectForKey:@"articleId"])];
     }
     else if([sender.name isEqualToString:NOTIFICATION_SHOW_PROBLEM]) {
-        root = [[ProblemContentViewController alloc] initWithProblemId:STR([sender.userInfo objectForKey:@"problemId"])];
+        root = [[ProblemContentViewController alloc] init];
     }
     else if([sender.name isEqualToString:NOTIFICATION_SHOW_CONTEST]) {
     }

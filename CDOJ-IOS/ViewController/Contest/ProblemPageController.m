@@ -8,13 +8,16 @@
 
 #import "ProblemPageController.h"
 #import "ProblemContentViewController.h"
+#import "LocalDataModel.h"
 
 @implementation ProblemPageController
 
-- (instancetype)init {
+- (instancetype)initWithContestId:(NSString*)contestId {
     if(self = [super init]) {
+        self.contestId = contestId;
         self.problems = [[NSMutableArray alloc] init];
         self.problemPages = [[NSMutableArray alloc] init];
+        [self setCellWidth:70];
     }
     return self;
 }
@@ -37,7 +40,12 @@
     return self.problemPages[index];
 }
 - (NSString *)pagerController:(TYPagerController *)pagerController titleForIndex:(NSInteger)index {
-    return STRF(@"%@", [self.problems[index] objectForKey:@"orderCharacter"]);
+    return STR([self.problems[index] objectForKey:@"orderCharacter"]);
+}
+
+#pragma mark TYPagerControllerDelegate
+- (void)pagerController:(TYTabPagerController *)pagerController didScrollToTabPageIndex:(NSInteger)index {
+    [LocalDataModel setCurrentProblem:STR([self.problems[index] objectForKey:@"problemId"]) inContest:self.contestId withOrderCharacter:STR([self.problems[index] objectForKey:@"orderCharacter"])];
 }
 
 @end

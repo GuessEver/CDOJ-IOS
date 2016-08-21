@@ -15,6 +15,7 @@ NSString* LocalDataKeyOpened = @"opened";
 NSString* LocalDataKeyUsers = @"users";
 NSString* LocalDataKeyDefaultUsername = @"defaultUsername";
 NSString* LocalDataKeyDefaultThemeIndex = @"defaultThemeIndex";
+NSString* LocalDataKeyCurrentSubmitterDestination = @"currentSubmitterDestination";
 
 + (BOOL)needWelcome {
     if([[[NSUserDefaults standardUserDefaults] objectForKey:LocalDataKeyOpened] isEqualToString:@"yes"]) {
@@ -97,6 +98,22 @@ NSString* LocalDataKeyDefaultThemeIndex = @"defaultThemeIndex";
 + (void)setDefaultUsername:(NSString*)username {
     [self saveData:username to:LocalDataKeyDefaultUsername];
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_LIST_REFRESHED object:nil];
+}
+
+# pragma mark problem
++ (void)setCurrentProblem:(NSString*)problemId inContest:(NSString*)contestId withOrderCharacter:(NSString*)orderCharacter {
+    NSDictionary* destination = @{
+                          @"problemId": problemId,
+                          @"contestId": contestId,
+                          @"orderCharacter": orderCharacter
+                          };
+    [self saveData:destination to:LocalDataKeyCurrentSubmitterDestination];
+}
++ (void)setCurrentProblem:(NSString*)problemId {
+    [self setCurrentProblem:problemId inContest:@"" withOrderCharacter:@""];
+}
++ (NSDictionary*)getCurrentProblemAndContest {
+    return [self getDataForKey:LocalDataKeyCurrentSubmitterDestination];
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "ProblemListTableViewCell.h"
 #import "ProblemSplitDetailViewController.h"
 #import "Masonry.h"
+#import "LocalDataModel.h"
 
 @implementation ProblemListViewController
 
@@ -85,7 +86,9 @@
     return [ProblemListTableViewCell height];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self showProblemWithProblemId:STR([self.data.list[indexPath.row] objectForKey:@"problemId"])];
+    NSString* problemId = STR([self.data.list[indexPath.row] objectForKey:@"problemId"]);
+    [self showProblemWithProblemId:problemId];
+    [LocalDataModel setCurrentProblem:problemId];
 }
 
 #pragma mark UITableViewDataSource

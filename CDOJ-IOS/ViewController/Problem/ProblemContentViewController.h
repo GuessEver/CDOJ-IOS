@@ -9,6 +9,7 @@
 #import "DefaultViewController.h"
 #import "ProblemContentModel.h"
 #import "DefaultWebView.h"
+#import "ContestContentViewController.h"
 
 @interface ProblemContentViewController : DefaultViewController <UIPopoverPresentationControllerDelegate>
 

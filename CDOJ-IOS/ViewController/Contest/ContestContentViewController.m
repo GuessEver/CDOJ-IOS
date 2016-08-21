@@ -10,6 +10,8 @@
 #import "Color.h"
 #import "Masonry.h"
 #import "ProblemPageController.h"
+#import "CodeSubmitViewController.h"
+#import "DefaultNavigationController.h"
 
 @implementation ContestContentViewController
 
@@ -18,7 +20,7 @@
         self.titleOfTabs = @[@"概览", @"题目", @"讨论", @"记录", @"排名"];
         self.controllersOfTabs = @[
                                    self.tab_overview = [[ContestOverViewController alloc] init],
-                                   self.tab_problems = [[ProblemPageController alloc] init],
+                                   self.tab_problems = [[ProblemPageController alloc] initWithContestId:contestId],
                                    [[UIViewController alloc] init],
                                    self.tab_status = [[StatusListViewController alloc] initWithContestId:contestId],
                                    [[UIViewController alloc] init]
@@ -29,7 +31,9 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_CONTEST_DATA_REFRESHED object:nil];
         
         // Options
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInBrowser)];
+        self.navigationItem.rightBarButtonItems = @[
+                                                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInBrowser)]
+                                                    ];
     }
     return self;
 }
@@ -55,6 +59,26 @@
 }
 - (NSString *)pagerController:(TYPagerController *)pagerController titleForIndex:(NSInteger)index {
     return self.titleOfTabs[index];
+}
+
+#pragma mark TYPagerControllerDelegate
+- (void)pagerController:(TYTabPagerController *)pagerController didSelectAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.row == 1) {
+        self.navigationItem.rightBarButtonItems = @[
+                                                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInBrowser)],
+                                                    [[UIBarButtonItem alloc] initWithTitle:@"提交" style:UIBarButtonItemStylePlain target:self action:@selector(openSubmitPage)]
+                                                    ];
+    }
+    else {
+        self.navigationItem.rightBarButtonItems = @[
+                                                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInBrowser)]
+                                                    ];
+    }
+}
+
+- (void)openSubmitPage {
+    CodeSubmitViewController* submitPage = [[CodeSubmitViewController alloc] init];
+    [self presentViewController:[[DefaultNavigationController alloc] initWithCancelButtonOnLeftAndRootViewController:submitPage] animated:YES completion:nil];
 }
 
 @end

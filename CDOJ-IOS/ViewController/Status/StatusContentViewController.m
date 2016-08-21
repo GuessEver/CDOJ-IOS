@@ -34,7 +34,7 @@
         }];
         [copyright mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.view.mas_left);
-            make.width.equalTo(self.view.mas_width);
+            make.width.equalTo(self.view.mas_width).offset(-5);
             make.bottom.equalTo(self.view.mas_bottom);
             make.height.equalTo(@15);
         }];

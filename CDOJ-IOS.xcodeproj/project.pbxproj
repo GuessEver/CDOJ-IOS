@@ -60,6 +60,7 @@
 		5FB075E91D6983D4002C4730 /* StatusListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075E81D6983D4002C4730 /* StatusListTableViewCell.m */; };
 		5FB075EC1D6995E7002C4730 /* StatusContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075EB1D6995E7002C4730 /* StatusContentViewController.m */; };
 		5FB075EF1D699EF4002C4730 /* CodeSubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075EE1D699EF4002C4730 /* CodeSubmitViewController.m */; };
+		5FB075F21D69A75D002C4730 /* CodeSubmitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075F11D69A75D002C4730 /* CodeSubmitModel.m */; };
 		5FB5128F1D5F49ED00253B38 /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB5128E1D5F49ED00253B38 /* FAQViewController.m */; };
 		5FB512921D5F4AC400253B38 /* StepByStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB512911D5F4AC400253B38 /* StepByStepViewController.m */; };
 		5FB512951D5F4B0D00253B38 /* TeamHornorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB512941D5F4B0D00253B38 /* TeamHornorViewController.m */; };
@@ -204,6 +205,8 @@
 		5FB075EB1D6995E7002C4730 /* StatusContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusContentViewController.m; sourceTree = "<group>"; };
 		5FB075ED1D699EF4002C4730 /* CodeSubmitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeSubmitViewController.h; sourceTree = "<group>"; };
 		5FB075EE1D699EF4002C4730 /* CodeSubmitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeSubmitViewController.m; sourceTree = "<group>"; };
+		5FB075F01D69A75D002C4730 /* CodeSubmitModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeSubmitModel.h; sourceTree = "<group>"; };
+		5FB075F11D69A75D002C4730 /* CodeSubmitModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeSubmitModel.m; sourceTree = "<group>"; };
 		5FB5128D1D5F49ED00253B38 /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
 		5FB5128E1D5F49ED00253B38 /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
 		5FB512901D5F4AC400253B38 /* StepByStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepByStepViewController.h; sourceTree = "<group>"; };
@@ -572,6 +575,8 @@
 				5FB075DE1D697C59002C4730 /* StatusListModel.m */,
 				5FB075E01D697ED1002C4730 /* StatusContentModel.h */,
 				5FB075E11D697ED1002C4730 /* StatusContentModel.m */,
+				5FB075F01D69A75D002C4730 /* CodeSubmitModel.h */,
+				5FB075F11D69A75D002C4730 /* CodeSubmitModel.m */,
 			);
 			path = Status;
 			sourceTree = "<group>";
@@ -888,6 +893,7 @@
 				5FB512A31D6033A100253B38 /* ContestRegisterViewController.m in Sources */,
 				5F03E9BD1D581A8200607DB9 /* AppDelegate.m in Sources */,
 				5F03E9FD1D581D8100607DB9 /* NoticeContentModel.m in Sources */,
+				5FB075F21D69A75D002C4730 /* CodeSubmitModel.m in Sources */,
 				5F7E4D551D58B84500E9D4C8 /* ProblemContentViewController.m in Sources */,
 				5F03EA011D581D8100607DB9 /* UserModel.m in Sources */,
 				5F7E4D611D596D5100E9D4C8 /* ContestSplitDetailViewController.m in Sources */,

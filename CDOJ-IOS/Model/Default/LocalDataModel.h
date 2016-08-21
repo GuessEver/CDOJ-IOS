@@ -25,4 +25,8 @@
 + (void)addUserWithUser:(NSDictionary*)newUser;
 + (void)setDefaultUsername:(NSString*)username;
 
++ (void)setCurrentProblem:(NSString*)problemId;
++ (void)setCurrentProblem:(NSString*)problemId inContest:(NSString*)contestId withOrderCharacter:(NSString*)orderCharacter;
++ (NSDictionary*)getCurrentProblemAndContest;
+
 @end

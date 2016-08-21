@@ -71,6 +71,9 @@
 #define NOTIFICATION_STATUS_LIST_REFRESHED              CONCAT( NOTIFICATION_STATUS_LIST,           @"Refreshed."   )
 #define NOTIFICATION_STATUS_DATA                        CONCAT( NOTIFICATION_STATUS,                @"Data."        )
 #define NOTIFICATION_STATUS_DATA_REFRESHED              CONCAT( NOTIFICATION_STATUS_DATA,           @"Refreshed."   )
+#define NOTIFICATION_STATUS_SUBMIT                      CONCAT( NOTIFICATION_STATUS,                @"Status."      )
+#define NOTIFICATION_STATUS_SUBMIT_SUCCEED              CONCAT( NOTIFICATION_STATUS_DATA,           @"Succeed."     )
+#define NOTIFICATION_STATUS_SUBMIT_FAILED               CONCAT( NOTIFICATION_STATUS_DATA,           @"Failed."      )
 
 // CONTEST
 #define NOTIFICATION_CONTEST                            CONCAT( NOTIFICATION_CENTER,                @"Contest."     )
