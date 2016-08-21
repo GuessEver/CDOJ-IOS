@@ -62,8 +62,8 @@
 }
 
 #pragma mark TYPagerControllerDelegate
-- (void)pagerController:(TYTabPagerController *)pagerController didSelectAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.row == 1) {
+- (void)pagerController:(TYTabPagerController *)pagerController didScrollToTabPageIndex:(NSInteger)index {
+    if(index == 1) {
         self.navigationItem.rightBarButtonItems = @[
                                                     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInBrowser)],
                                                     [[UIBarButtonItem alloc] initWithTitle:@"提交" style:UIBarButtonItemStylePlain target:self action:@selector(openSubmitPage)]
