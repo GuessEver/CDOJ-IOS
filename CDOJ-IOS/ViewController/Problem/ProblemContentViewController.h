@@ -12,6 +12,7 @@
 
 @interface ProblemContentViewController : DefaultViewController <UIPopoverPresentationControllerDelegate>
 
+@property (nonatomic, strong) NSString* problemId;
 @property (nonatomic, strong) NSString* htmlStr;
 @property (nonatomic, strong) DefaultWebView* webView;
 @property (nonatomic, strong) ProblemContentModel* data;

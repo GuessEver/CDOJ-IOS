@@ -20,7 +20,7 @@
                                    self.tab_overview = [[ContestOverViewController alloc] init],
                                    self.tab_problems = [[ProblemPageController alloc] init],
                                    [[UIViewController alloc] init],
-                                   [[UIViewController alloc] init],
+                                   self.tab_status = [[StatusListViewController alloc] initWithContestId:contestId],
                                    [[UIViewController alloc] init]
                                    ];
         

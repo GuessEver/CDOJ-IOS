@@ -81,7 +81,7 @@
 }
 
 - (void)refreshTagColor {
-    NSDictionary* tagColors = [ColorSchemeModel defaultColorScheme].contestTagColors;
+    NSDictionary* tagColors = [ColorSchemeModel defaultColorScheme].tagColors;
     [self.access setTextColor:[tagColors objectForKey:self.access.text]];
 }
 

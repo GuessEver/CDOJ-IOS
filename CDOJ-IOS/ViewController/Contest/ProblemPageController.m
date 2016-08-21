@@ -30,7 +30,7 @@
 
 #pragma mark TYPagerControllerDataSource
 - (NSInteger)numberOfControllersInPagerController {
-    NSLog(@"problem count: %ld", (unsigned long)[self.problems count]);
+//    NSLog(@"problem count: %ld", (unsigned long)[self.problems count]);
     return [self.problems count];
 }
 - (UIViewController *)pagerController:(TYPagerController *)pagerController controllerForIndex:(NSInteger)index {

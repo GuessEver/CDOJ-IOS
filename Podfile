@@ -9,4 +9,5 @@ target 'CDOJ-IOS' do
 	pod 'Pgyer'
 	pod 'PgyUpdate'
 	pod 'JBChartView'
+	pod 'CodeEditorView'
 end

@@ -19,7 +19,7 @@
 @property (nonatomic, strong) UIColor* backgroundColor2;
 @property (nonatomic, strong) UIColor* textColor;
 @property (nonatomic, strong) UIColor* commentColor;
-@property (nonatomic, strong) NSDictionary* contestTagColors;
+@property (nonatomic, strong) NSDictionary* tagColors;
 
 + (NSArray<ColorSchemeModel*>*)colorSchemes;
 + (instancetype)defaultColorScheme;

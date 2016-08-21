@@ -65,6 +65,13 @@
 #define NOTIFICATION_PROBLEM_DATA                       CONCAT( NOTIFICATION_PROBLEM,               @"Data."        )
 #define NOTIFICATION_PROBLEM_DATA_REFRESHED             CONCAT( NOTIFICATION_PROBLEM_DATA,          @"Refreshed."   )
 
+// STATUS
+#define NOTIFICATION_STATUS                             CONCAT( NOTIFICATION_CENTER,                @"Status."      )
+#define NOTIFICATION_STATUS_LIST                        CONCAT( NOTIFICATION_STATUS,                @"List."        )
+#define NOTIFICATION_STATUS_LIST_REFRESHED              CONCAT( NOTIFICATION_STATUS_LIST,           @"Refreshed."   )
+#define NOTIFICATION_STATUS_DATA                        CONCAT( NOTIFICATION_STATUS,                @"Data."        )
+#define NOTIFICATION_STATUS_DATA_REFRESHED              CONCAT( NOTIFICATION_STATUS_DATA,           @"Refreshed."   )
+
 // CONTEST
 #define NOTIFICATION_CONTEST                            CONCAT( NOTIFICATION_CENTER,                @"Contest."     )
 #define NOTIFICATION_CONTEST_LIST                       CONCAT( NOTIFICATION_CONTEST,               @"List."        )

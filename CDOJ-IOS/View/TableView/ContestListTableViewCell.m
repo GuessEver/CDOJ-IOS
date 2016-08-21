@@ -7,7 +7,6 @@
 //
 
 #import "ContestListTableViewCell.h"
-#import "Color.h"
 
 @implementation ContestListTableViewCell
 
@@ -90,7 +89,7 @@
 }
 
 - (void)refreshTagColor {
-    NSDictionary* tagColors = [ColorSchemeModel defaultColorScheme].contestTagColors;
+    NSDictionary* tagColors = [ColorSchemeModel defaultColorScheme].tagColors;
     [self.status setTextColor:[tagColors objectForKey:self.status.text]];
     [self.typeName setTextColor:[tagColors objectForKey:self.typeName.text]];
 }

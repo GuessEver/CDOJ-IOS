@@ -7,11 +7,13 @@
 //
 
 #import "ProblemContentViewController.h"
+#import "StatusListViewController.h"
 
 @implementation ProblemContentViewController
 
 - (instancetype)initWithProblemId:(NSString*)problemId {
     if(self = [super init]) {
+        self.problemId = problemId;
         self.data = [[ProblemContentModel alloc] init];
         [self.data fetchDataWithProblemId:problemId];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_PROBLEM_DATA_REFRESHED object:nil];
@@ -37,7 +39,10 @@
 
 - (void)arrangeViews {
     // Options
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInBrowser)];
+    self.navigationItem.rightBarButtonItems = @[
+                                                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInBrowser)],
+                                                [[UIBarButtonItem alloc] initWithTitle:@"记录" style:UIBarButtonItemStylePlain target:self action:@selector(openStatusPage)]
+                                                ];
     
     
     self.webView = [[DefaultWebView alloc] init];
@@ -51,6 +56,11 @@
 
 - (void)refreshData {
     [self.webView loadWithData:self.data.content andRenderName:@"problemRender"];
+}
+
+- (void)openStatusPage {
+    StatusListViewController* status = [[StatusListViewController alloc] initWithProblemId:self.problemId];
+    [self.navigationController pushViewController:status animated:YES];
 }
 
 @end
