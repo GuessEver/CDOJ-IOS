@@ -23,7 +23,16 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
-            self.content = STR([responseObject objectForKey:@"code"]);
+            NSString* codeContent = STR([responseObject objectForKey:@"code"]);
+            if([responseObject objectForKey:@"compileInfo"]) {
+                codeContent = STRF(@"/* Compile Info\n"
+                                   "%@\n"
+                                   " */\n"
+                                   "%@"
+                                   , [responseObject objectForKey:@"compileInfo"]
+                                   , codeContent);
+            }
+            self.content = codeContent;
         }
         else {
             self.content = STR([responseObject objectForKey:@"error_msg"]);
