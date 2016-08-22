@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - CodeEditorView (0.3.4)
+  - CodeEditorView (0.3.5)
   - JBChartView (3.0.12)
   - Masonry (1.0.1)
   - MJRefresh (3.1.12)
@@ -36,7 +36,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  CodeEditorView: dc6c7c21091e2595e637396b7feb21c5fa61516d
+  CodeEditorView: 42212822fc8bf26c13313f55fa0e78315a4b657d
   JBChartView: 08877554448ccf99c12625ad0ebce70588ff8318
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
