@@ -106,9 +106,10 @@
 }
 - (void)contestLoginNeedRegister:(NSNotification*)contest {
     NSLog(@"Contest #%@ need register", [contest.userInfo objectForKey:@"contestId"]);
-    [Message confirm:@"请先检查是否登录并已成功注册了本比赛！\n点击确定前往网页版注册" withTitle:@"您需要先注册本比赛" callback:^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_SKIP_CONTEST object:nil userInfo:@{@"contestId":STR([contest.userInfo objectForKey:@"contestId"]),@"action":@"register"}];
-    }];
+    [Message show:@"请先检查是否登录并已成功注册了本比赛！\n请前往网页版注册" withTitle:@"您需要先注册本比赛"];
+//    [Message confirm:@"请先检查是否登录并已成功注册了本比赛！\n点击确定前往网页版注册" withTitle:@"您需要先注册本比赛" callback:^{
+//        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_SKIP_CONTEST object:nil userInfo:@{@"contestId":STR([contest.userInfo objectForKey:@"contestId"]),@"action":@"register"}];
+//    }];
 }
 - (void)contestLoginNeedPermission:(NSNotification*)contest {
     NSLog(@"Contest #%@ need permission", [contest.userInfo objectForKey:@"contestId"]);
