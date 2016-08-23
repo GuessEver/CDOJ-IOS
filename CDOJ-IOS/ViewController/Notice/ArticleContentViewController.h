@@ -1,5 +1,5 @@
 //
-//  NoticeContentViewController.h
+//  ArticleContentViewController.h
 //  CDOJ-IOS
 //
 //  Created by Sunnycool on 16/8/8.
@@ -7,14 +7,14 @@
 //
 
 #import "DefaultViewController.h"
-#import "NoticeContentModel.h"
+#import "ArticleContentModel.h"
 #import "DefaultWebView.h"
 
-@interface NoticeContentViewController : DefaultViewController
+@interface ArticleContentViewController : DefaultViewController
 
 @property (nonatomic, strong) NSString* htmlStr;
 @property (nonatomic, strong) DefaultWebView* webView;
-@property (nonatomic, strong) NoticeContentModel* data;
+@property (nonatomic, strong) ArticleContentModel* data;
 
 
 - (instancetype)initWithArticleId:(NSString*)articleId;

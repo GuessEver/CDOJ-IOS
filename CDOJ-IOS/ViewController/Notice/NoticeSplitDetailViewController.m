@@ -7,12 +7,12 @@
 //
 
 #import "NoticeSplitDetailViewController.h"
-#import "NoticeContentViewController.h"
+#import "ArticleContentViewController.h"
 
 @implementation NoticeSplitDetailViewController
 
 - (instancetype)initWithArticleId:(NSString*)articleId {
-    if(self = [super initWithRootViewController:[[NoticeContentViewController alloc] initWithArticleId:articleId]]) {
+    if(self = [super initWithRootViewController:[[ArticleContentViewController alloc] initWithArticleId:articleId]]) {
     }
     return self;
 }

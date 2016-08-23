@@ -1,5 +1,5 @@
 //
-//  NoticeContentModal.h
+//  ArticleContentModel.h
 //  CDOJ-IOS
 //
 //  Created by GuessEver on 16/5/12.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DefaultModel.h"
 
-@interface NoticeContentModel : DefaultModel
+@interface ArticleContentModel : DefaultModel
 
 @property (nonatomic, strong) NSDictionary* content;
 

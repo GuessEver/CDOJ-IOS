@@ -1,18 +1,18 @@
 //
-//  NoticeContentViewController.m
+//  ArticleContentViewController.m
 //  CDOJ-IOS
 //
 //  Created by Sunnycool on 16/8/8.
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import "NoticeContentViewController.h"
+#import "ArticleContentViewController.h"
 
-@implementation NoticeContentViewController
+@implementation ArticleContentViewController
 
 - (instancetype)initWithArticleId:(NSString*)articleId {
     if(self = [super init]) {
-        self.data = [[NoticeContentModel alloc] init];
+        self.data = [[ArticleContentModel alloc] init];
         [self.data fetchDataWithArticleId:articleId];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_NOTICE_DATA_REFRESHED object:nil];
         

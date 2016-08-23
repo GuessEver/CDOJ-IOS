@@ -17,7 +17,7 @@
     if(self = [super initWithStyle:UITableViewStylePlain]) {
         [self setTitle:@"公告"];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"#" style:UIBarButtonItemStyleDone target:self action:@selector(skipArticle)];
-        self.data = [[NoticeListModel alloc] init];
+        self.data = [[ArticleListModel alloc] initWithNoticeList];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_NOTICE_LIST_REFRESHED object:nil];
         // refresh data when entering
         [self.tableView.mj_header beginRefreshing];

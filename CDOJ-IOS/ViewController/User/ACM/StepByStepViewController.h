@@ -6,8 +6,8 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import "NoticeContentViewController.h"
+#import "ArticleContentViewController.h"
 
-@interface StepByStepViewController : NoticeContentViewController
+@interface StepByStepViewController : ArticleContentViewController
 
 @end

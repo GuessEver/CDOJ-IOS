@@ -15,8 +15,6 @@
 		5F03E9F81D581D8100607DB9 /* Security.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9D71D581D8100607DB9 /* Security.m */; };
 		5F03E9F91D581D8100607DB9 /* Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9D91D581D8100607DB9 /* Time.m */; };
 		5F03E9FC1D581D8100607DB9 /* DefaultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9E81D581D8100607DB9 /* DefaultModel.m */; };
-		5F03E9FD1D581D8100607DB9 /* NoticeContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9EB1D581D8100607DB9 /* NoticeContentModel.m */; };
-		5F03E9FE1D581D8100607DB9 /* NoticeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9ED1D581D8100607DB9 /* NoticeListModel.m */; };
 		5F03E9FF1D581D8100607DB9 /* ProblemContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9F01D581D8100607DB9 /* ProblemContentModel.m */; };
 		5F03EA001D581D8100607DB9 /* ProblemListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9F21D581D8100607DB9 /* ProblemListModel.m */; };
 		5F03EA011D581D8100607DB9 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03E9F51D581D8100607DB9 /* UserModel.m */; };
@@ -34,7 +32,6 @@
 		5F4B030A1D59FC5600A531B3 /* AboutCDOJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B03091D59FC5600A531B3 /* AboutCDOJViewController.m */; };
 		5F4B030D1D5A04DD00A531B3 /* AccountManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B030C1D5A04DD00A531B3 /* AccountManageViewController.m */; };
 		5F4B03131D5A085F00A531B3 /* LocalDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B03121D5A085F00A531B3 /* LocalDataModel.m */; };
-		5F7E4D461D58829C00E9D4C8 /* NoticeContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */; };
 		5F7E4D491D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D481D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m */; };
 		5F7E4D4C1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D4B1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m */; };
 		5F7E4D4F1D58B6F900E9D4C8 /* ProblemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D4E1D58B6F900E9D4C8 /* ProblemListViewController.m */; };
@@ -61,6 +58,9 @@
 		5FB075EC1D6995E7002C4730 /* StatusContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075EB1D6995E7002C4730 /* StatusContentViewController.m */; };
 		5FB075EF1D699EF4002C4730 /* CodeSubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075EE1D699EF4002C4730 /* CodeSubmitViewController.m */; };
 		5FB075F21D69A75D002C4730 /* CodeSubmitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075F11D69A75D002C4730 /* CodeSubmitModel.m */; };
+		5FB075F81D6BE2F1002C4730 /* ArticleContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075F51D6BE2F1002C4730 /* ArticleContentModel.m */; };
+		5FB075F91D6BE2F1002C4730 /* ArticleListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075F71D6BE2F1002C4730 /* ArticleListModel.m */; };
+		5FB075FC1D6BE565002C4730 /* ArticleContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075FB1D6BE565002C4730 /* ArticleContentViewController.m */; };
 		5FB5128F1D5F49ED00253B38 /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB5128E1D5F49ED00253B38 /* FAQViewController.m */; };
 		5FB512921D5F4AC400253B38 /* StepByStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB512911D5F4AC400253B38 /* StepByStepViewController.m */; };
 		5FB512951D5F4B0D00253B38 /* TeamHornorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB512941D5F4B0D00253B38 /* TeamHornorViewController.m */; };
@@ -115,10 +115,6 @@
 		5F03E9DF1D581D8100607DB9 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
 		5F03E9E71D581D8100607DB9 /* DefaultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultModel.h; sourceTree = "<group>"; };
 		5F03E9E81D581D8100607DB9 /* DefaultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultModel.m; sourceTree = "<group>"; };
-		5F03E9EA1D581D8100607DB9 /* NoticeContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeContentModel.h; sourceTree = "<group>"; };
-		5F03E9EB1D581D8100607DB9 /* NoticeContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeContentModel.m; sourceTree = "<group>"; };
-		5F03E9EC1D581D8100607DB9 /* NoticeListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeListModel.h; sourceTree = "<group>"; };
-		5F03E9ED1D581D8100607DB9 /* NoticeListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeListModel.m; sourceTree = "<group>"; };
 		5F03E9EF1D581D8100607DB9 /* ProblemContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemContentModel.h; sourceTree = "<group>"; };
 		5F03E9F01D581D8100607DB9 /* ProblemContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemContentModel.m; sourceTree = "<group>"; };
 		5F03E9F11D581D8100607DB9 /* ProblemListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemListModel.h; sourceTree = "<group>"; };
@@ -153,8 +149,6 @@
 		5F4B030C1D5A04DD00A531B3 /* AccountManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManageViewController.m; sourceTree = "<group>"; };
 		5F4B03111D5A085F00A531B3 /* LocalDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataModel.h; sourceTree = "<group>"; };
 		5F4B03121D5A085F00A531B3 /* LocalDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataModel.m; sourceTree = "<group>"; };
-		5F7E4D441D58829C00E9D4C8 /* NoticeContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeContentViewController.h; sourceTree = "<group>"; };
-		5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeContentViewController.m; sourceTree = "<group>"; };
 		5F7E4D471D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSplitDetailLogoViewController.h; sourceTree = "<group>"; };
 		5F7E4D481D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultSplitDetailLogoViewController.m; sourceTree = "<group>"; };
 		5F7E4D4A1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemSplitMasterViewController.h; sourceTree = "<group>"; };
@@ -207,6 +201,12 @@
 		5FB075EE1D699EF4002C4730 /* CodeSubmitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeSubmitViewController.m; sourceTree = "<group>"; };
 		5FB075F01D69A75D002C4730 /* CodeSubmitModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeSubmitModel.h; sourceTree = "<group>"; };
 		5FB075F11D69A75D002C4730 /* CodeSubmitModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeSubmitModel.m; sourceTree = "<group>"; };
+		5FB075F41D6BE2F1002C4730 /* ArticleContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleContentModel.h; sourceTree = "<group>"; };
+		5FB075F51D6BE2F1002C4730 /* ArticleContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleContentModel.m; sourceTree = "<group>"; };
+		5FB075F61D6BE2F1002C4730 /* ArticleListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListModel.h; sourceTree = "<group>"; };
+		5FB075F71D6BE2F1002C4730 /* ArticleListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListModel.m; sourceTree = "<group>"; };
+		5FB075FA1D6BE565002C4730 /* ArticleContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleContentViewController.h; sourceTree = "<group>"; };
+		5FB075FB1D6BE565002C4730 /* ArticleContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleContentViewController.m; sourceTree = "<group>"; };
 		5FB5128D1D5F49ED00253B38 /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
 		5FB5128E1D5F49ED00253B38 /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
 		5FB512901D5F4AC400253B38 /* StepByStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepByStepViewController.h; sourceTree = "<group>"; };
@@ -363,7 +363,7 @@
 			children = (
 				5F7E4D651D596F3300E9D4C8 /* Contest */,
 				5F03E9E61D581D8100607DB9 /* Default */,
-				5F03E9E91D581D8100607DB9 /* Notice */,
+				5FB075F31D6BE2F1002C4730 /* Article */,
 				5F03E9EE1D581D8100607DB9 /* Problem */,
 				5FB075DC1D697C33002C4730 /* Status */,
 				5F03E9F31D581D8100607DB9 /* User */,
@@ -386,17 +386,6 @@
 				5FAF07E41D5E0393000CE6F6 /* ColorSchemeModel.m */,
 			);
 			path = Default;
-			sourceTree = "<group>";
-		};
-		5F03E9E91D581D8100607DB9 /* Notice */ = {
-			isa = PBXGroup;
-			children = (
-				5F03E9EA1D581D8100607DB9 /* NoticeContentModel.h */,
-				5F03E9EB1D581D8100607DB9 /* NoticeContentModel.m */,
-				5F03E9EC1D581D8100607DB9 /* NoticeListModel.h */,
-				5F03E9ED1D581D8100607DB9 /* NoticeListModel.m */,
-			);
-			path = Notice;
 			sourceTree = "<group>";
 		};
 		5F03E9EE1D581D8100607DB9 /* Problem */ = {
@@ -478,8 +467,8 @@
 				5FE4681F1D5852E20050636D /* NoticeListViewController.m */,
 				5FE4682B1D5875310050636D /* NoticeSplitDetailViewController.h */,
 				5FE4682C1D5875310050636D /* NoticeSplitDetailViewController.m */,
-				5F7E4D441D58829C00E9D4C8 /* NoticeContentViewController.h */,
-				5F7E4D451D58829C00E9D4C8 /* NoticeContentViewController.m */,
+				5FB075FA1D6BE565002C4730 /* ArticleContentViewController.h */,
+				5FB075FB1D6BE565002C4730 /* ArticleContentViewController.m */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -592,6 +581,17 @@
 				5FB075EE1D699EF4002C4730 /* CodeSubmitViewController.m */,
 			);
 			path = Status;
+			sourceTree = "<group>";
+		};
+		5FB075F31D6BE2F1002C4730 /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				5FB075F41D6BE2F1002C4730 /* ArticleContentModel.h */,
+				5FB075F51D6BE2F1002C4730 /* ArticleContentModel.m */,
+				5FB075F61D6BE2F1002C4730 /* ArticleListModel.h */,
+				5FB075F71D6BE2F1002C4730 /* ArticleListModel.m */,
+			);
+			path = Article;
 			sourceTree = "<group>";
 		};
 		5FB5128B1D5F49CE00253B38 /* ACM */ = {
@@ -892,7 +892,6 @@
 				5F03EA131D58245B00607DB9 /* UserMainViewController.m in Sources */,
 				5FB512A31D6033A100253B38 /* ContestRegisterViewController.m in Sources */,
 				5F03E9BD1D581A8200607DB9 /* AppDelegate.m in Sources */,
-				5F03E9FD1D581D8100607DB9 /* NoticeContentModel.m in Sources */,
 				5FB075F21D69A75D002C4730 /* CodeSubmitModel.m in Sources */,
 				5F7E4D551D58B84500E9D4C8 /* ProblemContentViewController.m in Sources */,
 				5F03EA011D581D8100607DB9 /* UserModel.m in Sources */,
@@ -901,6 +900,7 @@
 				5FAF078E1D5C1693000CE6F6 /* LoginViewController.m in Sources */,
 				5FB075E21D697ED1002C4730 /* StatusContentModel.m in Sources */,
 				5FAF07E51D5E0393000CE6F6 /* ColorSchemeModel.m in Sources */,
+				5FB075FC1D6BE565002C4730 /* ArticleContentViewController.m in Sources */,
 				5F03E9FC1D581D8100607DB9 /* DefaultModel.m in Sources */,
 				5F03E9F71D581D8100607DB9 /* Message.m in Sources */,
 				5F03EA101D58244700607DB9 /* ProblemMainViewController.m in Sources */,
@@ -923,6 +923,7 @@
 				5FE4682A1D58606D0050636D /* NoticeListTableViewCell.m in Sources */,
 				5FB512BF1D606BA200253B38 /* DefaultWebView.m in Sources */,
 				5FB5139C1D61F2C800253B38 /* TYTabTitleViewCell.m in Sources */,
+				5FB075F81D6BE2F1002C4730 /* ArticleContentModel.m in Sources */,
 				5F7E4D491D588DF700E9D4C8 /* DefaultSplitDetailLogoViewController.m in Sources */,
 				5F7E4D641D596D9F00E9D4C8 /* ContestContentViewController.m in Sources */,
 				5FB512C31D60865800253B38 /* TrainingRatingListModel.m in Sources */,
@@ -937,7 +938,6 @@
 				5FE4682D1D5875310050636D /* NoticeSplitDetailViewController.m in Sources */,
 				5F7E4D6B1D596F3300E9D4C8 /* ContestListModel.m in Sources */,
 				5F4B02FB1D59C08900A531B3 /* ContestOverViewController.m in Sources */,
-				5F03E9FE1D581D8100607DB9 /* NoticeListModel.m in Sources */,
 				5F03EA001D581D8100607DB9 /* ProblemListModel.m in Sources */,
 				5FB512921D5F4AC400253B38 /* StepByStepViewController.m in Sources */,
 				5F03EA0D1D58243300607DB9 /* NoticeMainViewController.m in Sources */,
@@ -956,10 +956,10 @@
 				5F7E4D6E1D596F8000E9D4C8 /* ContestListTableViewCell.m in Sources */,
 				5F7E4D711D59709E00E9D4C8 /* ContestContentModel.m in Sources */,
 				5FB5139B1D61F2C800253B38 /* TYTabPagerController.m in Sources */,
+				5FB075F91D6BE2F1002C4730 /* ArticleListModel.m in Sources */,
 				5F4B02F31D59A37D00A531B3 /* ProblemPageController.m in Sources */,
 				5FB512951D5F4B0D00253B38 /* TeamHornorViewController.m in Sources */,
 				5F4B030D1D5A04DD00A531B3 /* AccountManageViewController.m in Sources */,
-				5F7E4D461D58829C00E9D4C8 /* NoticeContentViewController.m in Sources */,
 				5F03EA161D58246E00607DB9 /* ContestMainViewController.m in Sources */,
 				5F7E4D5E1D596CCB00E9D4C8 /* ContestListViewController.m in Sources */,
 				5FB512C91D608C6D00253B38 /* TrainingRatingContentModel.m in Sources */,

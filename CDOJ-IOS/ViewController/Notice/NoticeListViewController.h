@@ -7,7 +7,7 @@
 //
 
 #import "DefaultDataListViewController.h"
-#import "NoticeListModel.h"
+#import "ArticleListModel.h"
 
 @interface NoticeListViewController : DefaultDataListViewController
 

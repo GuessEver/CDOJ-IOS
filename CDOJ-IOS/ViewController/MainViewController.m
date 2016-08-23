@@ -17,7 +17,7 @@
 #import "UserModel.h"
 #import "LocalDataModel.h"
 #import "DefaultNavigationController.h"
-#import "NoticeContentViewController.h"
+#import "ArticleContentViewController.h"
 #import "ProblemContentViewController.h"
 
 @implementation MainViewController
@@ -147,7 +147,7 @@
 - (void)showPage:(NSNotification*)sender {
     __kindof UIViewController* root;
     if([sender.name isEqualToString:NOTIFICATION_SHOW_NOTICE]) {
-        root = [[NoticeContentViewController alloc] initWithArticleId:STR([sender.userInfo objectForKey:@"articleId"])];
+        root = [[ArticleContentViewController alloc] initWithArticleId:STR([sender.userInfo objectForKey:@"articleId"])];
     }
     else if([sender.name isEqualToString:NOTIFICATION_SHOW_PROBLEM]) {
         root = [[ProblemContentViewController alloc] init];
