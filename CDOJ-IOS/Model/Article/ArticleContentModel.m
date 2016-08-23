@@ -24,7 +24,7 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
             self.content = [responseObject objectForKey:@"article"];
-            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NOTICE_DATA_REFRESHED object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_ARTICLE_DATA_REFRESHED object:nil];
         }
         else {
             [Message show:STRF(@"没有编号为%@的文章，请检查是否正确，或者是否拥有足够权限！", articleId) withTitle:@"Opps"];

@@ -73,7 +73,8 @@
             [self.avatar.layer setBorderWidth:2];
             [self.avatar.layer setBorderColor:[ColorSchemeModel defaultColorScheme].tintColor.CGColor];
         }
-        [self.avatar sd_setImageWithURL:[NSURL URLWithString:API_AVATAR(self.email, 100)] placeholderImage:[UIImage imageNamed:@"logo"]];
+        [self.avatar sd_setImageWithURL:[NSURL URLWithString:API_AVATAR(self.email, 100)] placeholderImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        [self.avatar setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];
     }
 }
 

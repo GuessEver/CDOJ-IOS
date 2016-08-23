@@ -1,26 +1,24 @@
 //
-//  UserBlogListViewController.m
+//  ContestClarificationViewController.m
 //  CDOJ-IOS
 //
 //  Created by GuessEver on 16/8/23.
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import "UserBlogListViewController.h"
-#import "LocalDataModel.h"
-#import "ArticleListTableViewCell.h"
+#import "ContestClarificationViewController.h"
 #import "ArticleContentViewController.h"
+#import "ContestClarificationListTableView.h"
 
-@interface UserBlogListViewController ()
+@interface ContestClarificationViewController ()
 
 @end
 
-@implementation UserBlogListViewController
+@implementation ContestClarificationViewController
 
-
-- (instancetype)init {
+- (instancetype)initWithContestId:(NSString*)contestId {
     if(self = [super initWithStyle:UITableViewStylePlain]) {
-        self.data = [[ArticleListModel alloc] initWithBlogListWithUsername:[LocalDataModel getDefaultUsername]];
+        self.data = [[ArticleListModel alloc] initWithCommentListInContest:contestId];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_ARTICLE_LIST_REFRESHED object:nil];
         // refresh data when entering
         [self.tableView.mj_header beginRefreshing];
@@ -35,7 +33,7 @@
 
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [ArticleListTableViewCell height];
+    return [ContestClarificationListTableView height];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self showArticleWithArticleId:STR([self.data.list[indexPath.row] objectForKey:@"articleId"])];
@@ -46,11 +44,11 @@
     return self.data.list.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ArticleListTableViewCell* cell = [[ArticleListTableViewCell alloc] init];
-    [cell.title setText:STR([self.data.list[indexPath.row] objectForKey:@"title"])];
+    ContestClarificationListTableView* cell = [[ContestClarificationListTableView alloc] init];
+    [cell.username setText:STR([self.data.list[indexPath.row] objectForKey:@"ownerName"])];
+    [cell.submitTime setText:getTimeString(STR([self.data.list[indexPath.row] objectForKey:@"time"]))];
     [cell.content setText:STR([self.data.list[indexPath.row] objectForKey:@"content"])];
-    [cell.updateTime setText:getTimeString(STR([self.data.list[indexPath.row] objectForKey:@"time"]))];
-    [cell.author setText:STR([self.data.list[indexPath.row] objectForKey:@"ownerName"])];
+    [cell loadAvatarWithUserEmail:STR([self.data.list[indexPath.row] objectForKey:@"ownerEmail"])];
     return cell;
 }
 

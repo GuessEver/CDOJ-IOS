@@ -51,12 +51,12 @@
 #define NOTIFICATION_USER_LIST                          CONCAT( NOTIFICATION_USER,                  @"List."        )
 #define NOTIFICATION_USER_LIST_REFRESHED                CONCAT( NOTIFICATION_USER_LIST,             @"Refreshed."   )
 
-// NOTICE
-#define NOTIFICATION_NOTICE                             CONCAT( NOTIFICATION_CENTER,                @"Notice."      )
-#define NOTIFICATION_NOTICE_LIST                        CONCAT( NOTIFICATION_NOTICE,                @"List."        )
-#define NOTIFICATION_NOTICE_LIST_REFRESHED              CONCAT( NOTIFICATION_NOTICE_LIST,           @"Refreshed."   )
-#define NOTIFICATION_NOTICE_DATA                        CONCAT( NOTIFICATION_NOTICE,                @"Data."        )
-#define NOTIFICATION_NOTICE_DATA_REFRESHED              CONCAT( NOTIFICATION_NOTICE_DATA,           @"Refreshed."   )
+// ARTICLE
+#define NOTIFICATION_ARTICLE                            CONCAT( NOTIFICATION_CENTER,                @"Article."     )
+#define NOTIFICATION_ARTICLE_LIST                       CONCAT( NOTIFICATION_ARTICLE,               @"List."        )
+#define NOTIFICATION_ARTICLE_LIST_REFRESHED             CONCAT( NOTIFICATION_ARTICLE_LIST,          @"Refreshed."   )
+#define NOTIFICATION_ARTICLE_DATA                       CONCAT( NOTIFICATION_ARTICLE,               @"Data."        )
+#define NOTIFICATION_ARTICLE_DATA_REFRESHED             CONCAT( NOTIFICATION_ARTICLE_DATA,          @"Refreshed."   )
 
 // PROBLEM
 #define NOTIFICATION_PROBLEM                            CONCAT( NOTIFICATION_CENTER,                @"Problem."     )

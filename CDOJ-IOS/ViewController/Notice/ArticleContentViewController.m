@@ -14,7 +14,7 @@
     if(self = [super init]) {
         self.data = [[ArticleContentModel alloc] init];
         [self.data fetchDataWithArticleId:articleId];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_NOTICE_DATA_REFRESHED object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_ARTICLE_DATA_REFRESHED object:nil];
         
         // Options
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInBrowser)];

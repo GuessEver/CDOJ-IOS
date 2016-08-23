@@ -31,7 +31,8 @@
 }
 - (instancetype)initWithCommentListInContest:(NSString*)contestId {
     if(self = [self init]) {
-        self.requestBody = [@{@"currentPage":@"1",@"orderFields":@"order",@"orderAsc":@"true"} mutableCopy];
+        self.requestUrl = API_CONTEST_CLARIFICATION;
+        self.requestBody = [@{@"currentPage":@"1",@"orderFields":@"id",@"orderAsc":@"false",@"contestId":contestId} mutableCopy];
     }
     return self;
 }
@@ -49,7 +50,7 @@
             self.hasData = YES;
             self.pageInfo = [responseObject objectForKey:@"pageInfo"];
             [self.list addObjectsFromArray:[responseObject objectForKey:@"list"]];
-            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NOTICE_LIST_REFRESHED object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_ARTICLE_LIST_REFRESHED object:nil];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];

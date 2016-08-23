@@ -21,7 +21,7 @@
         self.controllersOfTabs = @[
                                    self.tab_overview = [[ContestOverViewController alloc] init],
                                    self.tab_problems = [[ProblemPageController alloc] initWithContestId:contestId],
-                                   [[UIViewController alloc] init],
+                                   self.tab_clarification = [[ContestClarificationViewController alloc] initWithContestId:contestId],
                                    self.tab_status = [[StatusListViewController alloc] initWithContestId:contestId],
                                    [[UIViewController alloc] init]
                                    ];

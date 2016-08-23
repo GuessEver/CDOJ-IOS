@@ -63,6 +63,8 @@
 		5FB075FC1D6BE565002C4730 /* ArticleContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075FB1D6BE565002C4730 /* ArticleContentViewController.m */; };
 		5FB075FF1D6BE834002C4730 /* UserBlogListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075FE1D6BE834002C4730 /* UserBlogListViewController.m */; };
 		5FB076051D6BED88002C4730 /* ArticleListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB076041D6BED88002C4730 /* ArticleListTableViewCell.m */; };
+		5FB076081D6BEF1F002C4730 /* ContestClarificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB076071D6BEF1F002C4730 /* ContestClarificationViewController.m */; };
+		5FB0760B1D6BF03E002C4730 /* ContestClarificationListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0760A1D6BF03E002C4730 /* ContestClarificationListTableView.m */; };
 		5FB5128F1D5F49ED00253B38 /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB5128E1D5F49ED00253B38 /* FAQViewController.m */; };
 		5FB512921D5F4AC400253B38 /* StepByStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB512911D5F4AC400253B38 /* StepByStepViewController.m */; };
 		5FB512951D5F4B0D00253B38 /* TeamHornorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB512941D5F4B0D00253B38 /* TeamHornorViewController.m */; };
@@ -212,6 +214,10 @@
 		5FB075FE1D6BE834002C4730 /* UserBlogListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBlogListViewController.m; sourceTree = "<group>"; };
 		5FB076031D6BED88002C4730 /* ArticleListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListTableViewCell.h; sourceTree = "<group>"; };
 		5FB076041D6BED88002C4730 /* ArticleListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListTableViewCell.m; sourceTree = "<group>"; };
+		5FB076061D6BEF1F002C4730 /* ContestClarificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestClarificationViewController.h; sourceTree = "<group>"; };
+		5FB076071D6BEF1F002C4730 /* ContestClarificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestClarificationViewController.m; sourceTree = "<group>"; };
+		5FB076091D6BF03E002C4730 /* ContestClarificationListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestClarificationListTableView.h; sourceTree = "<group>"; };
+		5FB0760A1D6BF03E002C4730 /* ContestClarificationListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestClarificationListTableView.m; sourceTree = "<group>"; };
 		5FB5128D1D5F49ED00253B38 /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
 		5FB5128E1D5F49ED00253B38 /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
 		5FB512901D5F4AC400253B38 /* StepByStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepByStepViewController.h; sourceTree = "<group>"; };
@@ -455,6 +461,8 @@
 				5F4B02FA1D59C08900A531B3 /* ContestOverViewController.m */,
 				5FB512A11D6033A100253B38 /* ContestRegisterViewController.h */,
 				5FB512A21D6033A100253B38 /* ContestRegisterViewController.m */,
+				5FB076061D6BEF1F002C4730 /* ContestClarificationViewController.h */,
+				5FB076071D6BEF1F002C4730 /* ContestClarificationViewController.m */,
 			);
 			path = Contest;
 			sourceTree = "<group>";
@@ -757,6 +765,8 @@
 				5FB075E81D6983D4002C4730 /* StatusListTableViewCell.m */,
 				5FB076031D6BED88002C4730 /* ArticleListTableViewCell.h */,
 				5FB076041D6BED88002C4730 /* ArticleListTableViewCell.m */,
+				5FB076091D6BF03E002C4730 /* ContestClarificationListTableView.h */,
+				5FB0760A1D6BF03E002C4730 /* ContestClarificationListTableView.m */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -897,6 +907,7 @@
 				5F03EA131D58245B00607DB9 /* UserMainViewController.m in Sources */,
 				5FB512A31D6033A100253B38 /* ContestRegisterViewController.m in Sources */,
 				5F03E9BD1D581A8200607DB9 /* AppDelegate.m in Sources */,
+				5FB0760B1D6BF03E002C4730 /* ContestClarificationListTableView.m in Sources */,
 				5FB075F21D69A75D002C4730 /* CodeSubmitModel.m in Sources */,
 				5F7E4D551D58B84500E9D4C8 /* ProblemContentViewController.m in Sources */,
 				5F03EA011D581D8100607DB9 /* UserModel.m in Sources */,
@@ -944,6 +955,7 @@
 				5F7E4D6B1D596F3300E9D4C8 /* ContestListModel.m in Sources */,
 				5F4B02FB1D59C08900A531B3 /* ContestOverViewController.m in Sources */,
 				5F03EA001D581D8100607DB9 /* ProblemListModel.m in Sources */,
+				5FB076081D6BEF1F002C4730 /* ContestClarificationViewController.m in Sources */,
 				5FB512921D5F4AC400253B38 /* StepByStepViewController.m in Sources */,
 				5F03EA0D1D58243300607DB9 /* NoticeMainViewController.m in Sources */,
 				5FB075E91D6983D4002C4730 /* StatusListTableViewCell.m in Sources */,
