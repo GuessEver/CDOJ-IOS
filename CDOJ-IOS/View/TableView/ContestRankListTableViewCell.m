@@ -21,6 +21,8 @@
 
 - (instancetype)init {
     if(self = [super init]) {
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+        
         self.avatar = [[UIImageView alloc] init];
         self.username = [[UILabel alloc] init];
         self.nickname = [[UILabel alloc] init];
