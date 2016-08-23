@@ -79,6 +79,8 @@
 #define NOTIFICATION_CONTEST                            CONCAT( NOTIFICATION_CENTER,                @"Contest."     )
 #define NOTIFICATION_CONTEST_LIST                       CONCAT( NOTIFICATION_CONTEST,               @"List."        )
 #define NOTIFICATION_CONTEST_LIST_REFRESHED             CONCAT( NOTIFICATION_CONTEST_LIST,          @"Refreshed."   )
+#define NOTIFICATION_CONTEST_RANKLIST                   CONCAT( NOTIFICATION_CONTEST,               @"RankList."    )
+#define NOTIFICATION_CONTEST_RANKLIST_REFRESHED         CONCAT( NOTIFICATION_CONTEST_RANKLIST,      @"Refreshed."   )
 #define NOTIFICATION_CONTEST_DATA                       CONCAT( NOTIFICATION_CONTEST,               @"Data."        )
 #define NOTIFICATION_CONTEST_DATA_REFRESHED             CONCAT( NOTIFICATION_CONTEST_DATA,          @"Refreshed."   )
 #define NOTIFICATION_CONTEST_LOGIN                      CONCAT( NOTIFICATION_CONTEST,               @"Login."       )

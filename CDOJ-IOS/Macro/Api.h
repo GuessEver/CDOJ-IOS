@@ -50,6 +50,7 @@
 #define API_CONTEST_LIST                    CONCAT( API_CONTEST,                                    @"/search"          )
 #define API_CONTEST_DATA(id)                CONCAT( CONCAT( API_CONTEST,    @"/data/"           ),  id                  )
 #define API_CONTEST_LOGIN                   CONCAT( API_CONTEST,                                    @"/loginContest"    )
+#define API_CONTEST_RANKLIST(id)            CONCAT( CONCAT( API_CONTEST,    @"/rankList/"       ),  id                  )
 
 // Problem
 #define API_PROBLEM_LIST                    CONCAT( API_PROBLEM,                                    @"/search"          )

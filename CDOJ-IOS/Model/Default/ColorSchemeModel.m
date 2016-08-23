@@ -53,7 +53,7 @@
              @"16"          : COLOR_BLACK,
              @"17"          : COLOR_BLACK,
              @"18"          : COLOR_BLACK,
-             @"-1"          : COLOR_RED // for all the other status types
+             @"-1"          : COLOR_RED, // for all the other status types
              /*
               OJ_WAIT("Queuing"),                             // 0
               OJ_AC("Accepted"),                              // 1
@@ -75,6 +75,10 @@
               OJ_RUNNING("Running on test $case"),            // 17
               OJ_REJUDGING("Queuing");                        // 18
               */
+             // contest problem status
+             @"solved"      : COLOR_LIGHTGREEN,
+             @"firstBlood"  : COLOR_DARKGREEN,
+             @"tried"       : COLOR_BRIGHTORANGE
              };
 }
 

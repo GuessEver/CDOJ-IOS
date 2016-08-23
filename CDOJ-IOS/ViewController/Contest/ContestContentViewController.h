@@ -13,6 +13,7 @@
 #import "ProblemPageController.h"
 #import "ContestClarificationViewController.h"
 #import "StatusListViewController.h"
+#import "ContestRankListViewController.h"
 
 @interface ContestContentViewController : DefaultPageController
 
@@ -24,6 +25,7 @@
 @property (nonatomic, strong) ProblemPageController* tab_problems;
 @property (nonatomic, strong) ContestClarificationViewController* tab_clarification;
 @property (nonatomic, strong) StatusListViewController* tab_status;
+@property (nonatomic, strong) ContestRankListViewController* tab_rank;
 
 - (instancetype)initWithContestId:(NSString*)contestId;
 

@@ -54,4 +54,12 @@ NSString* getTimeLengthString2(NSString* timeStamp) {
     return str;
 }
 
+NSString* getTimeLengthString3(NSString* timeStamp) {
+    NSInteger seconds = [timeStamp integerValue] / 1000;
+    NSInteger minutes = seconds / 60;
+    NSInteger hours = minutes / 60;
+    minutes %= 60; seconds %= 60;
+    return STRF(@"%02ld:%02ld:%02ld", (long)hours, (long)minutes, (long)seconds);
+}
+
 @end

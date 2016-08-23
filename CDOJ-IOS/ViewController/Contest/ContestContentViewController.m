@@ -23,7 +23,7 @@
                                    self.tab_problems = [[ProblemPageController alloc] initWithContestId:contestId],
                                    self.tab_clarification = [[ContestClarificationViewController alloc] initWithContestId:contestId],
                                    self.tab_status = [[StatusListViewController alloc] initWithContestId:contestId],
-                                   [[UIViewController alloc] init]
+                                   self.tab_rank = [[ContestRankListViewController alloc] initWithContestId:contestId]
                                    ];
         
         self.data = [[ContestContentModel alloc] init];

@@ -13,5 +13,6 @@
 NSString* getTimeString(NSString* timeStamp);
 NSString* getTimeLengthString(NSString* timeStamp);
 NSString* getTimeLengthString2(NSString* timeStamp);
+NSString* getTimeLengthString3(NSString* timeStamp);
 
 @end
