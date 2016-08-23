@@ -28,7 +28,15 @@
         [self.problems addObject:data[i]];
         [self.problemPages addObject:[[ProblemContentViewController alloc] initWithProblemContent:self.problems[i]]];
     }
-    [self reloadData];
+    if(data.count > 0) { // reloadData can only be called when count > 0
+        [self reloadData];
+        [self setDataSource:self];
+        [self setDelegate:self];
+    }
+    else {
+        [self setDelegate:nil];
+        [self setDataSource:nil];
+    }
 }
 
 #pragma mark TYPagerControllerDataSource
