@@ -37,7 +37,8 @@
     [cell.oj setText:[self.data.list[indexPath.row] objectForKey:@"oj"]];
     [cell.dayOfWeek setText:[self.data.list[indexPath.row] objectForKey:@"week"]];
     [cell.access setText:[self.data.list[indexPath.row] objectForKey:@"access"]];
-    [cell refreshTagColor];
+    // DO NOT call refreshTagColor, because it cannot match contest type color correctly
+//    [cell refreshTagColor];
     return cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
