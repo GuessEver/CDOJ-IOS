@@ -61,6 +61,8 @@
 		5FB075F81D6BE2F1002C4730 /* ArticleContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075F51D6BE2F1002C4730 /* ArticleContentModel.m */; };
 		5FB075F91D6BE2F1002C4730 /* ArticleListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075F71D6BE2F1002C4730 /* ArticleListModel.m */; };
 		5FB075FC1D6BE565002C4730 /* ArticleContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075FB1D6BE565002C4730 /* ArticleContentViewController.m */; };
+		5FB075FF1D6BE834002C4730 /* UserBlogListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB075FE1D6BE834002C4730 /* UserBlogListViewController.m */; };
+		5FB076051D6BED88002C4730 /* ArticleListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB076041D6BED88002C4730 /* ArticleListTableViewCell.m */; };
 		5FB5128F1D5F49ED00253B38 /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB5128E1D5F49ED00253B38 /* FAQViewController.m */; };
 		5FB512921D5F4AC400253B38 /* StepByStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB512911D5F4AC400253B38 /* StepByStepViewController.m */; };
 		5FB512951D5F4B0D00253B38 /* TeamHornorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB512941D5F4B0D00253B38 /* TeamHornorViewController.m */; };
@@ -85,7 +87,6 @@
 		5FE468201D5852E20050636D /* NoticeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4681F1D5852E20050636D /* NoticeListViewController.m */; };
 		5FE468231D5853EE0050636D /* DefaultSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468221D5853EE0050636D /* DefaultSplitViewController.m */; };
 		5FE468271D585FD80050636D /* DefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468261D585FD80050636D /* DefaultTableViewCell.m */; };
-		5FE4682A1D58606D0050636D /* NoticeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468291D58606D0050636D /* NoticeListTableViewCell.m */; };
 		5FE4682D1D5875310050636D /* NoticeSplitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4682C1D5875310050636D /* NoticeSplitDetailViewController.m */; };
 		642ADCE63A7747EF364A58D3 /* libPods-CDOJ-IOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 551FF3E10342B393AEF1D0EE /* libPods-CDOJ-IOS.a */; };
 /* End PBXBuildFile section */
@@ -207,6 +208,10 @@
 		5FB075F71D6BE2F1002C4730 /* ArticleListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListModel.m; sourceTree = "<group>"; };
 		5FB075FA1D6BE565002C4730 /* ArticleContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleContentViewController.h; sourceTree = "<group>"; };
 		5FB075FB1D6BE565002C4730 /* ArticleContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleContentViewController.m; sourceTree = "<group>"; };
+		5FB075FD1D6BE834002C4730 /* UserBlogListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBlogListViewController.h; sourceTree = "<group>"; };
+		5FB075FE1D6BE834002C4730 /* UserBlogListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBlogListViewController.m; sourceTree = "<group>"; };
+		5FB076031D6BED88002C4730 /* ArticleListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListTableViewCell.h; sourceTree = "<group>"; };
+		5FB076041D6BED88002C4730 /* ArticleListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListTableViewCell.m; sourceTree = "<group>"; };
 		5FB5128D1D5F49ED00253B38 /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
 		5FB5128E1D5F49ED00253B38 /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
 		5FB512901D5F4AC400253B38 /* StepByStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepByStepViewController.h; sourceTree = "<group>"; };
@@ -256,8 +261,6 @@
 		5FE468221D5853EE0050636D /* DefaultSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultSplitViewController.m; sourceTree = "<group>"; };
 		5FE468251D585FD80050636D /* DefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultTableViewCell.h; sourceTree = "<group>"; };
 		5FE468261D585FD80050636D /* DefaultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultTableViewCell.m; sourceTree = "<group>"; };
-		5FE468281D58606D0050636D /* NoticeListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeListTableViewCell.h; sourceTree = "<group>"; };
-		5FE468291D58606D0050636D /* NoticeListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeListTableViewCell.m; sourceTree = "<group>"; };
 		5FE4682B1D5875310050636D /* NoticeSplitDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeSplitDetailViewController.h; sourceTree = "<group>"; };
 		5FE4682C1D5875310050636D /* NoticeSplitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeSplitDetailViewController.m; sourceTree = "<group>"; };
 		AF74DD03BA03BACE62F68F3B /* Pods-CDOJ-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDOJ-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDOJ-IOS/Pods-CDOJ-IOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -533,6 +536,8 @@
 		5F4B03031D59FB7D00A531B3 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				5FB075FD1D6BE834002C4730 /* UserBlogListViewController.h */,
+				5FB075FE1D6BE834002C4730 /* UserBlogListViewController.m */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -744,14 +749,14 @@
 				5FB512961D5F4E7C00253B38 /* User */,
 				5FE468251D585FD80050636D /* DefaultTableViewCell.h */,
 				5FE468261D585FD80050636D /* DefaultTableViewCell.m */,
-				5FE468281D58606D0050636D /* NoticeListTableViewCell.h */,
-				5FE468291D58606D0050636D /* NoticeListTableViewCell.m */,
 				5F7E4D561D58B8FB00E9D4C8 /* ProblemListTableViewCell.h */,
 				5F7E4D571D58B8FB00E9D4C8 /* ProblemListTableViewCell.m */,
 				5F7E4D6C1D596F8000E9D4C8 /* ContestListTableViewCell.h */,
 				5F7E4D6D1D596F8000E9D4C8 /* ContestListTableViewCell.m */,
 				5FB075E71D6983D4002C4730 /* StatusListTableViewCell.h */,
 				5FB075E81D6983D4002C4730 /* StatusListTableViewCell.m */,
+				5FB076031D6BED88002C4730 /* ArticleListTableViewCell.h */,
+				5FB076041D6BED88002C4730 /* ArticleListTableViewCell.m */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -918,9 +923,9 @@
 				5FAF07941D5C5A0E000CE6F6 /* DefaultDataListViewController.m in Sources */,
 				5FB075EC1D6995E7002C4730 /* StatusContentViewController.m in Sources */,
 				5FB075DF1D697C59002C4730 /* StatusListModel.m in Sources */,
+				5FB076051D6BED88002C4730 /* ArticleListTableViewCell.m in Sources */,
 				5FAF07DF1D5DC8F9000CE6F6 /* DefaultListModel.m in Sources */,
 				5FB512C61D6089A200253B38 /* TrainingRatingListViewController.m in Sources */,
-				5FE4682A1D58606D0050636D /* NoticeListTableViewCell.m in Sources */,
 				5FB512BF1D606BA200253B38 /* DefaultWebView.m in Sources */,
 				5FB5139C1D61F2C800253B38 /* TYTabTitleViewCell.m in Sources */,
 				5FB075F81D6BE2F1002C4730 /* ArticleContentModel.m in Sources */,
@@ -960,6 +965,7 @@
 				5F4B02F31D59A37D00A531B3 /* ProblemPageController.m in Sources */,
 				5FB512951D5F4B0D00253B38 /* TeamHornorViewController.m in Sources */,
 				5F4B030D1D5A04DD00A531B3 /* AccountManageViewController.m in Sources */,
+				5FB075FF1D6BE834002C4730 /* UserBlogListViewController.m in Sources */,
 				5F03EA161D58246E00607DB9 /* ContestMainViewController.m in Sources */,
 				5F7E4D5E1D596CCB00E9D4C8 /* ContestListViewController.m in Sources */,
 				5FB512C91D608C6D00253B38 /* TrainingRatingContentModel.m in Sources */,

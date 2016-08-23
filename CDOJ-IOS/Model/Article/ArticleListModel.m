@@ -25,7 +25,7 @@
 }
 - (instancetype)initWithBlogListWithUsername:(NSString*)username {
     if(self = [self init]) {
-        self.requestBody = [@{@"currentPage":@"1",@"orderFields":@"order",@"orderAsc":@"true"} mutableCopy];
+        self.requestBody = [@{@"currentPage":@"1",@"orderFields":@"id",@"orderAsc":@"false",@"userName":username} mutableCopy];
     }
     return self;
 }

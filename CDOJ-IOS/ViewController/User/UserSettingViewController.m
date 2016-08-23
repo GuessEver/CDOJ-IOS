@@ -11,6 +11,8 @@
 #import "Notification.h"
 #import "DefaultNavigationController.h"
 
+#import "UserBlogListViewController.h"
+
 #import "RecentContestListViewController.h"
 #import "FAQViewController.h"
 #import "StepByStepViewController.h"
@@ -34,32 +36,29 @@
         self.noUserLogin = 1; // set the offset to hide "我**" options when not login
         self.titleOfSections = @[@"我", @"ACM", @"集训队", @"设置", @"关于"];
         self.data = @[
-                      @[@"我的资料", @"我的成就", @"我的队伍", @"我的消息"],
+                      @[@"我的博客"],
                       @[@"最近比赛", @"F.A.Q", @"Step By Step"],
                       @[@"队内荣誉", @"训练Rating"],
                       @[@"账号管理"],
                       @[@"反馈", @"关于CDOJ"]
                       ];
         self.classType = @[
-                           @[
-                               [DefaultViewController class],
-                               [DefaultViewController class],
-                               [DefaultViewController class],
-                               [DefaultViewController class]
+                           @[ // Me
+                               [UserBlogListViewController class]
                                ],
-                           @[
+                           @[ // ACM
                                [RecentContestListViewController class],
                                [FAQViewController class],
                                [StepByStepViewController class]
                                ],
-                           @[
+                           @[ // Team
                                [TeamHornorViewController class],
                                [TrainingRatingListViewController class]
                                ],
-                           @[
+                           @[ // Setting
                                [AccountManageViewController class]
                                ],
-                           @[
+                           @[ // About
                                [FeedbackViewController class],
                                [AboutCDOJViewController class]
                                ]
@@ -68,7 +67,7 @@
     return self;
 }
 - (void)userSignin {
-//    self.noUserLogin = 0;
+    self.noUserLogin = 0;
     [self.tableView reloadData];
 }
 - (void)userSignout {

@@ -1,47 +1,36 @@
 //
-//  NoticeListViewController.m
+//  UserBlogListViewController.m
 //  CDOJ-IOS
 //
-//  Created by GuessEver on 16/8/8.
+//  Created by GuessEver on 16/8/23.
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import "NoticeListViewController.h"
+#import "UserBlogListViewController.h"
+#import "LocalDataModel.h"
 #import "ArticleListTableViewCell.h"
-#import "Time.h"
-#import "NoticeSplitDetailViewController.h"
+#import "ArticleContentViewController.h"
 
-@implementation NoticeListViewController
+@interface UserBlogListViewController ()
+
+@end
+
+@implementation UserBlogListViewController
+
 
 - (instancetype)init {
     if(self = [super initWithStyle:UITableViewStylePlain]) {
-        [self setTitle:@"公告"];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"#" style:UIBarButtonItemStyleDone target:self action:@selector(skipArticle)];
-        self.data = [[ArticleListModel alloc] initWithNoticeList];
+        self.data = [[ArticleListModel alloc] initWithBlogListWithUsername:[LocalDataModel getDefaultUsername]];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshList) name:NOTIFICATION_NOTICE_LIST_REFRESHED object:nil];
         // refresh data when entering
         [self.tableView.mj_header beginRefreshing];
-        
-        // skip in app
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changePage:) name:NOTIFICATION_SKIP_NOTICE object:nil];
     }
     return self;
 }
 
 - (void)showArticleWithArticleId:(NSString*)articleId {
-    NoticeSplitDetailViewController* detailView = [[NoticeSplitDetailViewController alloc] initWithArticleId:articleId];
-    [self.splitViewController showDetailViewController:detailView sender:nil];
-}
-- (void)skipArticle {
-    [Message showInputBoxWithPassword:NO message:@"请输入文章/公告编号" title:@"跳转" callback:^(NSString *text) {
-//        [self showArticleWithArticleId:text];
-        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_SKIP_NOTICE object:nil userInfo:@{@"articleId":text}];
-    }];
-}
-
-#pragma mark skip in app {articleId}
-- (void)changePage:(NSNotification*)sender {
-    [self showArticleWithArticleId:[sender.userInfo objectForKey:@"articleId"]];
+    ArticleContentViewController* article = [[ArticleContentViewController alloc] initWithArticleId:articleId];
+    [self.navigationController pushViewController:article animated:YES];
 }
 
 #pragma mark UITableViewDelegate

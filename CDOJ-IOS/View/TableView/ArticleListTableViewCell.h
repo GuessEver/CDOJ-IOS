@@ -1,5 +1,5 @@
 //
-//  NoticeListTableViewCell.h
+//  ArticleListTableViewCell.h
 //  CDOJ-IOS
 //
 //  Created by GuessEver on 16/8/8.
@@ -8,7 +8,7 @@
 
 #import "DefaultTableViewCell.h"
 
-@interface NoticeListTableViewCell : DefaultTableViewCell
+@interface ArticleListTableViewCell : DefaultTableViewCell
 
 @property (nonatomic, strong) UILabel* title;
 @property (nonatomic, strong) UILabel* content;
