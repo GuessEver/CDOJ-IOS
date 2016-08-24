@@ -22,7 +22,6 @@
 
 #import "AccountManageViewController.h"
 
-#import "FeedbackViewController.h"
 #import "AboutCDOJViewController.h"
 
 @implementation UserSettingViewController
@@ -40,7 +39,7 @@
                       @[@"最近比赛", @"F.A.Q", @"Step By Step"],
                       @[@"队内荣誉", @"训练Rating"],
                       @[@"账号管理"],
-                      @[@"反馈", @"关于CDOJ"]
+                      @[@"关于CDOJ"]
                       ];
         self.classType = @[
                            @[ // Me
@@ -59,7 +58,6 @@
                                [AccountManageViewController class]
                                ],
                            @[ // About
-                               [FeedbackViewController class],
                                [AboutCDOJViewController class]
                                ]
                            ];

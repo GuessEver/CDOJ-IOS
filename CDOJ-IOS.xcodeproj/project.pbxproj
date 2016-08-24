@@ -47,7 +47,6 @@
 		5F7E4D711D59709E00E9D4C8 /* ContestContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F7E4D701D59709E00E9D4C8 /* ContestContentModel.m */; };
 		5FAF078E1D5C1693000CE6F6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF078D1D5C1693000CE6F6 /* LoginViewController.m */; };
 		5FAF07941D5C5A0E000CE6F6 /* DefaultDataListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07931D5C5A0E000CE6F6 /* DefaultDataListViewController.m */; };
-		5FAF07A61D5C77DE000CE6F6 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07A51D5C77DE000CE6F6 /* FeedbackViewController.m */; };
 		5FAF07AA1D5C98DC000CE6F6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FAF07A91D5C98DC000CE6F6 /* Launch Screen.storyboard */; };
 		5FAF07DF1D5DC8F9000CE6F6 /* DefaultListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07DE1D5DC8F9000CE6F6 /* DefaultListModel.m */; };
 		5FAF07E51D5E0393000CE6F6 /* ColorSchemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF07E41D5E0393000CE6F6 /* ColorSchemeModel.m */; };
@@ -185,8 +184,6 @@
 		5FAF078D1D5C1693000CE6F6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5FAF07921D5C5A0E000CE6F6 /* DefaultDataListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultDataListViewController.h; sourceTree = "<group>"; };
 		5FAF07931D5C5A0E000CE6F6 /* DefaultDataListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultDataListViewController.m; sourceTree = "<group>"; };
-		5FAF07A41D5C77DE000CE6F6 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
-		5FAF07A51D5C77DE000CE6F6 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		5FAF07A91D5C98DC000CE6F6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5FAF07DD1D5DC8F9000CE6F6 /* DefaultListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultListModel.h; sourceTree = "<group>"; };
 		5FAF07DE1D5DC8F9000CE6F6 /* DefaultListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultListModel.m; sourceTree = "<group>"; };
@@ -546,8 +543,6 @@
 			children = (
 				5F4B03081D59FC5600A531B3 /* AboutCDOJViewController.h */,
 				5F4B03091D59FC5600A531B3 /* AboutCDOJViewController.m */,
-				5FAF07A41D5C77DE000CE6F6 /* FeedbackViewController.h */,
-				5FAF07A51D5C77DE000CE6F6 /* FeedbackViewController.m */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -828,7 +823,7 @@
 				TargetAttributes = {
 					5F03E9B41D581A8200607DB9 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = L6YE3TUZKD;
+						DevelopmentTeam = J87AADKLJR;
 					};
 				};
 			};
@@ -960,7 +955,6 @@
 				5FB512C31D60865800253B38 /* TrainingRatingListModel.m in Sources */,
 				5FB076111D6C083A002C4730 /* ContestRankListModel.m in Sources */,
 				5F03E9F61D581D8100607DB9 /* HTTP.m in Sources */,
-				5FAF07A61D5C77DE000CE6F6 /* FeedbackViewController.m in Sources */,
 				5F7E4D4F1D58B6F900E9D4C8 /* ProblemListViewController.m in Sources */,
 				5FB075E61D698310002C4730 /* StatusListViewController.m in Sources */,
 				5FB512D61D609F6600253B38 /* TrainingRatingUserListTableViewCell.m in Sources */,
@@ -1099,7 +1093,7 @@
 				INFOPLIST_FILE = "CDOJ-IOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cn.edu.uestc.acm.cdoj-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.uestc.acm.cdoj.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1115,7 +1109,7 @@
 				INFOPLIST_FILE = "CDOJ-IOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cn.edu.uestc.acm.cdoj-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.uestc.acm.cdoj.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
