@@ -104,6 +104,8 @@
 #define NOTIFICATION_TRAINING_USER_REFRESHED            CONCAT( NOTIFICATION_TRAINING_USER,         @"Refreshed."   )
 #define NOTIFICATION_TRAINING_CONTEST                   CONCAT( NOTIFICATION_TRAINING,              @"Contest."     )
 #define NOTIFICATION_TRAINING_CONTEST_REFRESHED         CONCAT( NOTIFICATION_TRAINING_CONTEST,      @"Refreshed."   )
+#define NOTIFICATION_TRAINING_GRAPH                     CONCAT( NOTIFICATION_TRAINING,              @"Graph."       )
+#define NOTIFICATION_TRAINING_GRAPH_REFRESHED           CONCAT( NOTIFICATION_TRAINING_GRAPH,        @"Refreshed."   )
 
 
 #endif /* Notification_h */

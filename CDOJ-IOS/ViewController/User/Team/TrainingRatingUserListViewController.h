@@ -16,8 +16,6 @@
 @property (nonatomic, strong) TrainingRatingContentModel* data;
 @property (nonatomic, strong) UITableView* tableView;
 @property (nonatomic, strong) JBLineChartView* graph;
-@property (nonatomic, strong) NSArray<UIColor*>* colorSections;
-@property (nonatomic, strong) NSMutableArray<NSNumber*>* ratingSections;
 @property (nonatomic, strong) NSMutableArray<NSNumber*>* userVisibility;
 
 - (instancetype)initWithTrainingId:(NSString*)trainingId;

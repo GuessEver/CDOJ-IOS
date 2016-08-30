@@ -21,9 +21,7 @@
         [self.data fetchUsers];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userListRefreshed) name:NOTIFICATION_TRAINING_USER_REFRESHED object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(contestsListRefreshed) name:NOTIFICATION_TRAINING_CONTEST_REFRESHED object:nil];
-        
-        self.ratingSections = [NSMutableArray arrayWithArray:@[@0, @2200, @1500, @1200, @900]];
-        self.colorSections = @[COLOR_RED, COLOR_YELLOW, COLOR_BLUE, COLOR_GREEN, COLOR_GRAY, COLOR_BLACK];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(graphRefreshed) name:NOTIFICATION_TRAINING_GRAPH_REFRESHED object:nil];
         
         self.graph = [[JBLineChartView alloc] init];
         [self.view addSubview:self.graph];
@@ -102,29 +100,25 @@
 }
 - (void)contestsListRefreshed {
     [self.graph reloadData];
-    self.ratingSections[0] = [NSNumber numberWithFloat:self.graph.maximumValue + 1];
+    self.data.ratingSections[0] = [NSNumber numberWithFloat:self.graph.maximumValue + 1];
+    [self.data processGraphData];
+}
+- (void)graphRefreshed {
     [self.graph reloadDataAnimated:YES];
 }
 
 #pragma mark JBLineChartViewDelegate
 - (CGFloat)lineChartView:(JBLineChartView *)lineChartView verticalValueForHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex {
     if(lineIndex < self.data.users.count) { // user line
-        NSArray* history = [self.data.users[lineIndex] objectForKey:@"ratingHistoryList"];
-        NSInteger trainingContestId = [[self.data.contests[horizontalIndex] objectForKey:@"trainingContestId"] integerValue];
-        for(NSInteger i = 0; i < history.count; i++) {
-            if([[history[i] objectForKey:@"trainingContestId"] integerValue] == trainingContestId) {
-                return [[history[i] objectForKey:@"rating"] floatValue];
-            }
-        }
-        return [[NSNumber numberWithFloat:NAN] floatValue];
+        return [self.data.rating[lineIndex][horizontalIndex] floatValue];
     }
     else { // rating section
-        return [self.ratingSections[lineIndex - self.data.users.count] floatValue];
+        return [self.data.ratingSections[lineIndex - self.data.users.count] floatValue];
     }
 }
 - (UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForLineAtLineIndex:(NSUInteger)lineIndex {
     // color of lines
-    return [self.colorSections lastObject];
+    return [self.data.colorSections lastObject];
 }
 - (CGFloat)lineChartView:(JBLineChartView *)lineChartView widthForLineAtLineIndex:(NSUInteger)lineIndex {
     // width of lines
@@ -151,22 +145,13 @@
 - (UIColor *)lineChartView:(JBLineChartView *)lineChartView colorForDotAtHorizontalIndex:(NSUInteger)horizontalIndex atLineIndex:(NSUInteger)lineIndex {
     // color of dots
     if(lineIndex < self.data.users.count) { // user line
-        NSArray* history = [self.data.users[lineIndex] objectForKey:@"ratingHistoryList"];
-        NSInteger trainingContestId = [[self.data.contests[horizontalIndex] objectForKey:@"trainingContestId"] integerValue];
-        for(NSInteger i = 0; i < history.count; i++) {
-            if([[history[i] objectForKey:@"trainingContestId"] integerValue] == trainingContestId) {
-                CGFloat rating = [[history[i] objectForKey:@"rating"] floatValue];
-                for(NSInteger j = self.ratingSections.count - 1; j >= 0; j--) {
-                    if(rating < [self.ratingSections[j] floatValue]) {
-                        return self.colorSections[j];
-                    }
-                }
-            }
-        }
-        return self.colorSections[0];
+//        if(lineIndex == 8 && horizontalIndex == 4) {
+//            return [UIColor blackColor];
+//        }
+        return self.data.ratingColor[lineIndex][horizontalIndex];
     }
     else { // rating section
-        return self.colorSections[lineIndex - self.data.users.count];
+        return self.data.colorSections[lineIndex - self.data.users.count];
     }
 }
 - (UIColor *)lineChartView:(JBLineChartView *)lineChartView fillColorForLineAtLineIndex:(NSUInteger)lineIndex {
@@ -181,7 +166,7 @@
 
 #pragma mark JBLineChartViewDataSource
 - (NSUInteger)numberOfLinesInLineChartView:(JBLineChartView *)lineChartView {
-    return self.data.users.count + self.ratingSections.count;
+    return self.data.users.count + self.data.ratingSections.count;
 }
 - (NSUInteger)lineChartView:(JBLineChartView *)lineChartView numberOfVerticalValuesAtLineIndex:(NSUInteger)lineIndex {
     return self.data.contests.count;

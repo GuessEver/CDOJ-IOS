@@ -15,10 +15,17 @@
 @property (nonatomic, strong) NSArray<NSDictionary*>* users;
 @property (nonatomic, strong) NSArray<NSDictionary*>* contests;
 
+@property (nonatomic, strong) NSMutableArray<NSNumber*>* ratingSections;
+@property (nonatomic, strong) NSArray<UIColor*>* colorSections;
+@property (nonatomic, strong) NSMutableArray<NSMutableArray<NSNumber*>*>* rating;
+@property (nonatomic, strong) NSMutableArray<NSMutableArray<UIColor*>*>* ratingColor;
+
+
 
 - (instancetype)initWithTrainingId:(NSString*)trainingId;
 - (void)fetchBasicInfo;
 - (void)fetchUsers;
 - (void)fetchContests;
+- (void)processGraphData;
 
 @end

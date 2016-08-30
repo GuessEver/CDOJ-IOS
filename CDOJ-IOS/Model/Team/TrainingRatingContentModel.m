@@ -16,6 +16,8 @@
         self.basicInfo = @{};
         self.users = @[];
         self.contests = @[];
+        self.ratingSections = [NSMutableArray arrayWithArray:@[@0, @2200, @1500, @1200, @900]];
+        self.colorSections = @[COLOR_RED, COLOR_YELLOW, COLOR_BLUE, COLOR_GREEN, COLOR_GRAY, COLOR_BLACK];
     }
     return self;
 }
@@ -67,4 +69,42 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];
     }];
 }
+
+- (void)processGraphData {
+    self.rating = [[NSMutableArray alloc] init];
+    for(NSInteger lineIndex = 0; lineIndex < self.users.count; lineIndex++) {
+        NSMutableArray<NSNumber*>* current = [[NSMutableArray alloc] init];
+        for(NSInteger horizontalIndex = 0; horizontalIndex < self.contests.count; horizontalIndex++) {
+            NSArray* history = [self.users[lineIndex] objectForKey:@"ratingHistoryList"];
+            NSInteger trainingContestId = [[self.contests[horizontalIndex] objectForKey:@"trainingContestId"] integerValue];
+            [current addObject:[NSNumber numberWithFloat:NAN]];
+            for(NSInteger i = 0; i < history.count; i++) {
+                if([[history[i] objectForKey:@"trainingContestId"] integerValue] == trainingContestId) {
+//                    return [[history[i] objectForKey:@"rating"] floatValue];
+                    current[horizontalIndex] = [history[i] objectForKey:@"rating"];
+                    break;
+                }
+            }
+        }
+        [self.rating addObject:current];
+    }
+    
+    self.ratingColor = [[NSMutableArray alloc] init];
+    for(NSInteger lineIndex = 0; lineIndex < self.users.count; lineIndex++) {
+        NSMutableArray<UIColor*>* current = [[NSMutableArray alloc] init];
+        for(NSInteger horizontalIndex = 0; horizontalIndex < self.contests.count; horizontalIndex++) {
+            [current addObject:self.colorSections[0]];
+            for(NSInteger j = self.ratingSections.count - 1; j >= 0; j--) {
+                if([self.rating[lineIndex][horizontalIndex] floatValue] < [self.ratingSections[j] floatValue]) {
+                    current[horizontalIndex] = self.colorSections[j];
+                    break;
+                }
+            }
+        }
+        [self.ratingColor addObject:current];
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_TRAINING_GRAPH_REFRESHED object:nil];
+}
+
 @end
