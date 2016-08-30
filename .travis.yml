@@ -9,4 +9,4 @@ before_install:
 
 script:
     - pod install
-    - xctool -workspace CDOJ-IOS.xcworkspace -scheme 'CDOJ-IOS' -sdk ipadsimulator ONLY_ACTIVE_ARCH=NO
+    - xctool -workspace CDOJ-IOS.xcworkspace -scheme 'CDOJ-IOS' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
