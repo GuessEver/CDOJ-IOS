@@ -23,6 +23,7 @@
 		5F03EA101D58244700607DB9 /* ProblemMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA0F1D58244700607DB9 /* ProblemMainViewController.m */; };
 		5F03EA131D58245B00607DB9 /* UserMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA121D58245B00607DB9 /* UserMainViewController.m */; };
 		5F03EA161D58246E00607DB9 /* ContestMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F03EA151D58246E00607DB9 /* ContestMainViewController.m */; };
+		5F3E05931D781482001D90E8 /* Resource in Resources */ = {isa = PBXBuildFile; fileRef = 5F3E05921D781482001D90E8 /* Resource */; };
 		5F4B02F01D59A2CA00A531B3 /* DefaultPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B02EF1D59A2CA00A531B3 /* DefaultPageController.m */; };
 		5F4B02F31D59A37D00A531B3 /* ProblemPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B02F21D59A37D00A531B3 /* ProblemPageController.m */; };
 		5F4B02FB1D59C08900A531B3 /* ContestOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B02FA1D59C08900A531B3 /* ContestOverViewController.m */; };
@@ -136,6 +137,7 @@
 		5F03EA121D58245B00607DB9 /* UserMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMainViewController.m; sourceTree = "<group>"; };
 		5F03EA141D58246E00607DB9 /* ContestMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestMainViewController.h; sourceTree = "<group>"; };
 		5F03EA151D58246E00607DB9 /* ContestMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestMainViewController.m; sourceTree = "<group>"; };
+		5F3E05921D781482001D90E8 /* Resource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resource; sourceTree = "<group>"; };
 		5F4B02EE1D59A2CA00A531B3 /* DefaultPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultPageController.h; sourceTree = "<group>"; };
 		5F4B02EF1D59A2CA00A531B3 /* DefaultPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultPageController.m; sourceTree = "<group>"; };
 		5F4B02F11D59A37D00A531B3 /* ProblemPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemPageController.h; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 		5F03E9B71D581A8200607DB9 /* CDOJ-IOS */ = {
 			isa = PBXGroup;
 			children = (
+				5F3E05921D781482001D90E8 /* Resource */,
 				5F03E9D01D581D8100607DB9 /* Function */,
 				5F03E9DA1D581D8100607DB9 /* Macro */,
 				5F03E9E01D581D8100607DB9 /* Model */,
@@ -850,6 +853,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F3E05931D781482001D90E8 /* Resource in Resources */,
 				5FAF07AA1D5C98DC000CE6F6 /* Launch Screen.storyboard in Resources */,
 				5F03E9C51D581A8200607DB9 /* Assets.xcassets in Resources */,
 			);
@@ -1091,7 +1095,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "CDOJ-IOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.uestc.acm.cdoj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1107,7 +1111,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "CDOJ-IOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.uestc.acm.cdoj;
 				PRODUCT_NAME = "$(TARGET_NAME)";

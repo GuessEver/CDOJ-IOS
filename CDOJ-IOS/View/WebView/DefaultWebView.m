@@ -29,8 +29,12 @@
     NSString *jsonString = [[NSString alloc] initWithData:jsonData
                                                  encoding:NSUTF8StringEncoding];
     // NSLog(@"%@", jsonString);
-    self.htmlStr = [[NSString alloc] initWithData:[[[NSDataAsset alloc] initWithName:render] data]
-                                         encoding:NSUTF8StringEncoding];
+    
+//    self.htmlStr = [[NSString alloc] initWithData:[[[NSDataAsset alloc] initWithName:render] data] encoding:NSUTF8StringEncoding];
+    self.htmlStr = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:render ofType:@"html" inDirectory:@"Resource/HTML5/"]
+                                             encoding:NSUTF8StringEncoding
+                                                error:nil];
+    
     self.htmlStr = [self.htmlStr stringByReplacingOccurrencesOfString:@"{{{replace_data_here}}}"
                                                            withString:jsonString];
     [self loadHTMLString:self.htmlStr baseURL:BASEURL];
