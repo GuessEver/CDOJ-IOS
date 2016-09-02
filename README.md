@@ -5,5 +5,5 @@
 
 CDOJ App for IOS on iPhone & iPad
 
-<img src="https://raw.githubusercontent.com/QKTeam/CDOJ-IOS/master/doc/AppIcon.png" width="150px">
+<img src="https://raw.githubusercontent.com/UESTC-ACM/CDOJ-IOS/master/doc/AppIcon.png" width="150px">
 
