@@ -3,7 +3,12 @@
 
 <a href="https://itunes.apple.com/app/cdoj/id1147018708"><img src="https://qkteam.github.io/resources/AppStoreBadge.png" width="150px"></a>
 
-CDOJ App for IOS on iPhone & iPad
-
+## Introduction
 <img src="https://raw.githubusercontent.com/UESTC-ACM/CDOJ-IOS/master/doc/AppIcon.png" width="150px">
 
+CDOJ App for IOS on iPhone & iPad
+
+UESTCACM评测平台官方客户端
+
+## Feedback
+http://www.qkteam.com/feedback?cdoj
