@@ -69,6 +69,7 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucceed) name:NOTIFICATION_USER_SIGN_IN object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginFailed) name:NOTIFICATION_USER_SIGN_OUT object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadAvatar) name:NOTIFICATION_USER_INFO_REFRESHED object:nil];
     }
     return self;
 }
@@ -90,25 +91,29 @@
     [Message show:@"用户名与密码不匹配，请重新输入！" withTitle:@"登录失败"];
 }
 
+- (void)reloadAvatar {
+    if([self.user.basicInfo objectForKey:@"email"]) {
+        [self.avatar sd_setImageWithURL:[NSURL URLWithString:API_AVATAR([self.user.basicInfo objectForKey:@"email"], 128)] placeholderImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    }
+    else {
+        [self.avatar setImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    }
+}
+
 #pragma mark UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     [self.avatar setImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     return YES;
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
-    [[AFHTTPSessionManager manager] GET:API_USER_INFO(self.usernameInput.text) parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
-        if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
-            [self.avatar sd_setImageWithURL:[NSURL URLWithString:API_AVATAR([[responseObject objectForKey:@"user"] objectForKey:@"email"], 128)] placeholderImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-        }
-        else {
-            [self.avatar setImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];
-    }];
+    self.user = [[UserModel alloc] init];
+    if([self.usernameInput.text isEqualToString:@""]) {
+        [self reloadAvatar];
+    }
+    else {
+        [self.user setUsername:self.usernameInput.text];
+        [self.user fetchInfoData];
+    }
 }
 
 @end
