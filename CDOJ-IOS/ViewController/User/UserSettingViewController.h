@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DefaultTableViewController.h"
 
-@interface UserSettingViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
+@interface UserSettingViewController : DefaultTableViewController;
 
 @property NSInteger noUserLogin;
 @property (nonatomic, strong) NSArray<NSString*>* titleOfSections;

@@ -95,6 +95,8 @@
 		5FE4682D1D5875310050636D /* NoticeSplitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4682C1D5875310050636D /* NoticeSplitDetailViewController.m */; };
 		642ADCE63A7747EF364A58D3 /* libPods-CDOJ-IOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 551FF3E10342B393AEF1D0EE /* libPods-CDOJ-IOS.a */; };
 		C036103F1D83EB5C00996AB9 /* DefaultCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C036103E1D83EB5C00996AB9 /* DefaultCodeViewController.m */; };
+		C03610461D8403A800996AB9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03610451D8403A800996AB9 /* RegisterViewController.m */; };
+		C03610491D84049300996AB9 /* DefaultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03610481D84049300996AB9 /* DefaultTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -281,6 +283,10 @@
 		AF74DD03BA03BACE62F68F3B /* Pods-CDOJ-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDOJ-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDOJ-IOS/Pods-CDOJ-IOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C036103D1D83EB5C00996AB9 /* DefaultCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultCodeViewController.h; sourceTree = "<group>"; };
 		C036103E1D83EB5C00996AB9 /* DefaultCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultCodeViewController.m; sourceTree = "<group>"; };
+		C03610441D8403A800996AB9 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		C03610451D8403A800996AB9 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		C03610471D84049300996AB9 /* DefaultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultTableViewController.h; sourceTree = "<group>"; };
+		C03610481D84049300996AB9 /* DefaultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -531,6 +537,8 @@
 				5F4B03001D59D8CC00A531B3 /* UserSettingViewController.m */,
 				5FAF078C1D5C1693000CE6F6 /* LoginViewController.h */,
 				5FAF078D1D5C1693000CE6F6 /* LoginViewController.m */,
+				C03610441D8403A800996AB9 /* RegisterViewController.h */,
+				C03610451D8403A800996AB9 /* RegisterViewController.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -763,6 +771,8 @@
 				5FAF07931D5C5A0E000CE6F6 /* DefaultDataListViewController.m */,
 				C036103D1D83EB5C00996AB9 /* DefaultCodeViewController.h */,
 				C036103E1D83EB5C00996AB9 /* DefaultCodeViewController.m */,
+				C03610471D84049300996AB9 /* DefaultTableViewController.h */,
+				C03610481D84049300996AB9 /* DefaultTableViewController.m */,
 			);
 			path = Default;
 			sourceTree = "<group>";
@@ -928,6 +938,7 @@
 				5F03E9BD1D581A8200607DB9 /* AppDelegate.m in Sources */,
 				5FB0760B1D6BF03E002C4730 /* ContestClarificationListTableView.m in Sources */,
 				5FB075F21D69A75D002C4730 /* CodeSubmitModel.m in Sources */,
+				C03610491D84049300996AB9 /* DefaultTableViewController.m in Sources */,
 				C036103F1D83EB5C00996AB9 /* DefaultCodeViewController.m in Sources */,
 				5F7E4D551D58B84500E9D4C8 /* ProblemContentViewController.m in Sources */,
 				5F03EA011D581D8100607DB9 /* UserModel.m in Sources */,
@@ -954,6 +965,7 @@
 				5FAF07941D5C5A0E000CE6F6 /* DefaultDataListViewController.m in Sources */,
 				5FB075EC1D6995E7002C4730 /* StatusContentViewController.m in Sources */,
 				5FB075DF1D697C59002C4730 /* StatusListModel.m in Sources */,
+				C03610461D8403A800996AB9 /* RegisterViewController.m in Sources */,
 				5FB076051D6BED88002C4730 /* ArticleListTableViewCell.m in Sources */,
 				5FAF07DF1D5DC8F9000CE6F6 /* DefaultListModel.m in Sources */,
 				5FB512C61D6089A200253B38 /* TrainingRatingListViewController.m in Sources */,

@@ -11,8 +11,9 @@
 #import "ProblemListModel.h"
 #import "DefaultListModel.h"
 #import "String.h"
+#import "DefaultTableViewController.h"
 
-@interface DefaultDataListViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface DefaultDataListViewController : DefaultTableViewController;
 
 @property (nonatomic, strong) __kindof DefaultListModel* data;
 @property (nonatomic, strong) MJRefreshNormalHeader* refreshHeader;

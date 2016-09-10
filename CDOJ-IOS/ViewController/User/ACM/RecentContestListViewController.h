@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "RecentContestListModel.h"
+#import "DefaultTableViewController.h"
 
-@interface RecentContestListViewController : UITableViewController <UITableViewDelegate, UITableViewDelegate>
+@interface RecentContestListViewController : DefaultTableViewController;
 
 @property (nonatomic, strong) RecentContestListModel* data;
 

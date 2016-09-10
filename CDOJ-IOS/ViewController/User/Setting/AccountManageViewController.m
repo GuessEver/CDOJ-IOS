@@ -39,7 +39,7 @@
 }
 
 - (void)changeTableViewEditingStatus {
-    [self.tableView setEditing:!self.tableView.isEditing];
+    [self.tableView setEditing:!self.tableView.isEditing animated:YES];
     [self loadRightBarButtonItems];
 }
 

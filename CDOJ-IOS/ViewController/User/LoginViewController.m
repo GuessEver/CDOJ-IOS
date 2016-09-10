@@ -10,6 +10,7 @@
 #import "Security.h"
 #import "UserModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "RegisterViewController.h"
 
 @implementation LoginViewController
 
@@ -37,13 +38,22 @@
         [self.passwordInput setSecureTextEntry:YES];
         [self.view addSubview:self.passwordInput];
         
-        self.loginBtn = [[UIButton alloc] init];
+        self.loginBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [self.loginBtn.layer setCornerRadius:5];
         [self.loginBtn.layer setMasksToBounds:YES];
         [self.loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
+        [self.loginBtn setTitleColor:[ColorSchemeModel defaultColorScheme].backgroundColor1 forState:UIControlStateNormal];
         [self.loginBtn setBackgroundColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [self.loginBtn addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:self.loginBtn];
+        
+        self.registerBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [self.registerBtn.layer setCornerRadius:5];
+        [self.registerBtn.layer setMasksToBounds:YES];
+        [self.registerBtn setTitle:@"还没账号？点此注册" forState:UIControlStateNormal];
+        [self.registerBtn setTitleColor:[ColorSchemeModel defaultColorScheme].tintColor forState:UIControlStateNormal];
+        [self.registerBtn addTarget:self action:@selector(openRegisterPage) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:self.registerBtn];
         
         [self.avatar mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(@150);
@@ -66,12 +76,22 @@
             make.top.equalTo(self.passwordInput.mas_bottom).offset(10);
             make.centerX.equalTo(self.view.mas_centerX);
         }];
+        [self.registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(self.loginBtn.mas_width);
+            make.top.equalTo(self.loginBtn.mas_bottom).offset(10);
+            make.centerX.equalTo(self.view.mas_centerX);
+        }];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucceed) name:NOTIFICATION_USER_SIGN_IN object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginFailed) name:NOTIFICATION_USER_SIGN_OUT object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadAvatar) name:NOTIFICATION_USER_INFO_REFRESHED object:nil];
     }
     return self;
+}
+
+- (void)openRegisterPage {
+    RegisterViewController* registerPage = [[RegisterViewController alloc] init];
+    [self.navigationController pushViewController:registerPage animated:YES];
 }
 
 - (void)login {

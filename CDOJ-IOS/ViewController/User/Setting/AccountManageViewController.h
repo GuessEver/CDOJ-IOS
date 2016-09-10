@@ -6,9 +6,10 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+//#import <UIKit/UIKit.h>
+#import "DefaultTableViewController.h"
 
-@interface AccountManageViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface AccountManageViewController : DefaultTableViewController;
 
 @property (nonatomic, strong) NSMutableArray<NSDictionary*>* users;
 @property (nonatomic, strong) NSString* defaultUsername;
