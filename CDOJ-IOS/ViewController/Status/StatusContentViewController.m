@@ -20,23 +20,11 @@
         [self.codeView setEditable:NO];
         [self.view addSubview:self.codeView];
         
-        UILabel* copyright = [[UILabel alloc] init];
-        [copyright setTextAlignment:NSTextAlignmentRight];
-        [copyright setText:@"Powered by Codeditor"];
-        [copyright setFont:[UIFont systemFontOfSize:[UIFont systemFontSize] - 3]];
-        [self.view addSubview:copyright];
-        
         [self.codeView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.view.mas_top);
             make.left.equalTo(self.view.mas_left);
             make.width.equalTo(self.view.mas_width);
-            make.bottom.equalTo(copyright.mas_top);
-        }];
-        [copyright mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.view.mas_left);
-            make.width.equalTo(self.view.mas_width).offset(-5);
-            make.bottom.equalTo(self.view.mas_bottom);
-            make.height.equalTo(@15);
+            make.bottom.equalTo(self.copyright.mas_top);
         }];
         self.data = [[StatusContentModel alloc] init];
         [self.data fetchDataWithStatusId:statusId];

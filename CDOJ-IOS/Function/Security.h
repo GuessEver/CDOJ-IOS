@@ -12,6 +12,7 @@
 
 NSString* sha1(NSString* input);
 NSString* md5(NSString* str);
+NSString* base64(NSString* str);
 
 
 #endif /* Security_h */

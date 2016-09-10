@@ -39,3 +39,8 @@ NSString* md5(NSString* str) {
     }
     return [hash lowercaseString];
 }
+
+NSString* base64(NSString* str) {
+    NSData* base64Data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    return [base64Data base64EncodedStringWithOptions:0];
+}

@@ -6,13 +6,11 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import "DefaultViewController.h"
-#import "CodeEditorView.h"
+#import "DefaultCodeViewController.h"
 #import "StatusContentModel.h"
 
-@interface StatusContentViewController : DefaultViewController
+@interface StatusContentViewController : DefaultCodeViewController
 
-@property (nonatomic, strong) CodeEditorView* codeView;
 @property (nonatomic, strong) StatusContentModel* data;
 
 

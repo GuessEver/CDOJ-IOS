@@ -6,17 +6,15 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import "DefaultViewController.h"
-#import "CodeEditorView.h"
+#import "DefaultCodeViewController.h"
 #import "CodeSubmitModel.h"
 
-@interface CodeSubmitViewController : DefaultViewController
+@interface CodeSubmitViewController : DefaultCodeViewController
 
 @property (nonatomic, strong) NSString* problemId;
 @property (nonatomic, strong) NSString* contestId;
 @property (nonatomic, strong) NSArray<NSString*>* languages;
 @property (nonatomic, strong) UISegmentedControl* languageChooser;
-@property (nonatomic, strong) CodeEditorView* codeView;
 @property (nonatomic, strong) CodeSubmitModel* codeSubmitter;
 
 @end
