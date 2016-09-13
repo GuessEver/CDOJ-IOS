@@ -95,6 +95,8 @@
 		5FE4682D1D5875310050636D /* NoticeSplitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4682C1D5875310050636D /* NoticeSplitDetailViewController.m */; };
 		642ADCE63A7747EF364A58D3 /* libPods-CDOJ-IOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 551FF3E10342B393AEF1D0EE /* libPods-CDOJ-IOS.a */; };
 		C0045C151D87CEA200BE56DB /* UserInfoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0045C141D87CEA200BE56DB /* UserInfoEditViewController.m */; };
+		C0045C181D87F53000BE56DB /* ThemeSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0045C171D87F53000BE56DB /* ThemeSwitchViewController.m */; };
+		C0045C1B1D87F76200BE56DB /* ThemeSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0045C1A1D87F76200BE56DB /* ThemeSwitchTableViewCell.m */; };
 		C036103F1D83EB5C00996AB9 /* DefaultCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C036103E1D83EB5C00996AB9 /* DefaultCodeViewController.m */; };
 		C03610461D8403A800996AB9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03610451D8403A800996AB9 /* RegisterViewController.m */; };
 		C03610491D84049300996AB9 /* DefaultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03610481D84049300996AB9 /* DefaultTableViewController.m */; };
@@ -286,6 +288,10 @@
 		AF74DD03BA03BACE62F68F3B /* Pods-CDOJ-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDOJ-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDOJ-IOS/Pods-CDOJ-IOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C0045C131D87CEA200BE56DB /* UserInfoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoEditViewController.h; sourceTree = "<group>"; };
 		C0045C141D87CEA200BE56DB /* UserInfoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoEditViewController.m; sourceTree = "<group>"; };
+		C0045C161D87F53000BE56DB /* ThemeSwitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeSwitchViewController.h; sourceTree = "<group>"; };
+		C0045C171D87F53000BE56DB /* ThemeSwitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeSwitchViewController.m; sourceTree = "<group>"; };
+		C0045C191D87F76200BE56DB /* ThemeSwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeSwitchTableViewCell.h; sourceTree = "<group>"; };
+		C0045C1A1D87F76200BE56DB /* ThemeSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeSwitchTableViewCell.m; sourceTree = "<group>"; };
 		C036103D1D83EB5C00996AB9 /* DefaultCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultCodeViewController.h; sourceTree = "<group>"; };
 		C036103E1D83EB5C00996AB9 /* DefaultCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultCodeViewController.m; sourceTree = "<group>"; };
 		C03610441D8403A800996AB9 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -586,6 +592,8 @@
 			children = (
 				5F4B030B1D5A04DD00A531B3 /* AccountManageViewController.h */,
 				5F4B030C1D5A04DD00A531B3 /* AccountManageViewController.m */,
+				C0045C161D87F53000BE56DB /* ThemeSwitchViewController.h */,
+				C0045C171D87F53000BE56DB /* ThemeSwitchViewController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -684,6 +692,8 @@
 			children = (
 				5FB512981D5F4E7C00253B38 /* AccountListTableViewCell.h */,
 				5FB512991D5F4E7C00253B38 /* AccountListTableViewCell.m */,
+				C0045C191D87F76200BE56DB /* ThemeSwitchTableViewCell.h */,
+				C0045C1A1D87F76200BE56DB /* ThemeSwitchTableViewCell.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -946,6 +956,7 @@
 				5F4B02FE1D59D87C00A531B3 /* UserSplitMasterViewController.m in Sources */,
 				5F7E4D581D58B8FB00E9D4C8 /* ProblemListTableViewCell.m in Sources */,
 				5F4B03011D59D8CC00A531B3 /* UserSettingViewController.m in Sources */,
+				C0045C181D87F53000BE56DB /* ThemeSwitchViewController.m in Sources */,
 				5F7E4D4C1D58B6A300E9D4C8 /* ProblemSplitMasterViewController.m in Sources */,
 				5F03EA131D58245B00607DB9 /* UserMainViewController.m in Sources */,
 				5FB512A31D6033A100253B38 /* ContestRegisterViewController.m in Sources */,
@@ -967,6 +978,7 @@
 				5F03E9F71D581D8100607DB9 /* Message.m in Sources */,
 				5F03EA101D58244700607DB9 /* ProblemMainViewController.m in Sources */,
 				5FE468271D585FD80050636D /* DefaultTableViewCell.m in Sources */,
+				C0045C1B1D87F76200BE56DB /* ThemeSwitchTableViewCell.m in Sources */,
 				5FB512CF1D60928600253B38 /* TrainingRatingUserListViewController.m in Sources */,
 				5F03E9FF1D581D8100607DB9 /* ProblemContentModel.m in Sources */,
 				5F4B03071D59FBB000A531B3 /* DefaultViewController.m in Sources */,

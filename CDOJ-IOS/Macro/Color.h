@@ -19,10 +19,6 @@
 #define COLOR_WHITE RGB(255, 255, 255)
 #define COLOR_WHITESMOKE RGB(249, 249, 249)
 
-#define COLOR_BLUE RGB(72, 133, 237)
-#define COLOR_LIGHTBLUE RGB(234, 247, 253)
-#define COLOR_BRIGHTBLUE RGB(6, 201, 247)
-
 #define COLOR_RED RGB(219, 50, 54)
 
 #define COLOR_GREEN RGB(60, 186, 84)
@@ -37,5 +33,8 @@
 #define COLOR_GRAY [UIColor grayColor]
 #define COLOR_LIGHTGRAY RGB(220, 220, 220)
 
+#define COLOR_PURPLE RGB(255, 0, 165)
+
+#define COLOR_BLUE RGB(0, 160, 233)
 
 #endif /* Color_h */

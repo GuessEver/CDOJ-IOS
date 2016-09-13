@@ -24,4 +24,7 @@
 + (NSArray<ColorSchemeModel*>*)colorSchemes;
 + (instancetype)defaultColorScheme;
 
+
++ (NSString*)hexCodeFromUIColor:(UIColor*)color;
+
 @end

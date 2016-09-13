@@ -37,6 +37,8 @@
     
     self.htmlStr = [self.htmlStr stringByReplacingOccurrencesOfString:@"{{{replace_data_here}}}"
                                                            withString:jsonString];
+    self.htmlStr = [self.htmlStr stringByReplacingOccurrencesOfString:@"{{{replace_color_here}}}"
+                                                           withString:[ColorSchemeModel hexCodeFromUIColor:[ColorSchemeModel defaultColorScheme].tintColor]];
 //    NSLog(@"%@", self.htmlStr);
     [self loadHTMLString:self.htmlStr baseURL:BASEURL];
 }

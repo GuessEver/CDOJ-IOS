@@ -84,7 +84,7 @@
 
 + (NSArray<ColorSchemeModel*>*)colorSchemes {
     return @[
-             [[[self class] alloc] initWithThemeName:@"橙"
+             [[[self class] alloc] initWithThemeName:@"简约橙"
                                            tintColor:COLOR_ORANGE
                                          topBarColor:COLOR_WHITE
                                       bottomBarColor:COLOR_WHITE
@@ -93,8 +93,17 @@
                                            textColor:COLOR_BLACK
                                         commentColor:COLOR_GRAY
                                            tagColors:[self defaultTagColors]],
-             [[[self class] alloc] initWithThemeName:@"蓝"
+             [[[self class] alloc] initWithThemeName:@"简约蓝"
                                            tintColor:COLOR_BLUE
+                                         topBarColor:COLOR_WHITE
+                                      bottomBarColor:COLOR_WHITE
+                                    backgroundColor1:COLOR_WHITE
+                                    backgroundColor2:COLOR_WHITE
+                                           textColor:COLOR_BLACK
+                                        commentColor:COLOR_GRAY
+                                           tagColors:[self defaultTagColors]],
+             [[[self class] alloc] initWithThemeName:@"简约紫"
+                                           tintColor:COLOR_PURPLE
                                          topBarColor:COLOR_WHITE
                                       bottomBarColor:COLOR_WHITE
                                     backgroundColor1:COLOR_WHITE
@@ -107,6 +116,25 @@
 + (instancetype)defaultColorScheme {
     NSInteger index = [LocalDataModel getDefaultThemeIndex];
     return [[self class] colorSchemes][index];
+}
+
++ (NSString*)hexCodeFromUIColor:(UIColor*)color {
+    if (CGColorGetNumberOfComponents(color.CGColor) < 4) {
+        const CGFloat *components = CGColorGetComponents(color.CGColor);
+        color = [UIColor colorWithRed:components[0]
+                                green:components[0]
+                                 blue:components[0]
+                                alpha:components[1]];
+    }
+    
+    if (CGColorSpaceGetModel(CGColorGetColorSpace(color.CGColor)) != kCGColorSpaceModelRGB) {
+        return [NSString stringWithFormat:@"#FFFFFF"];
+    }
+    
+    return [NSString stringWithFormat:@"#%02X%02X%02X",
+            (int)((CGColorGetComponents(color.CGColor))[0]*255.0),
+            (int)((CGColorGetComponents(color.CGColor))[1]*255.0),
+            (int)((CGColorGetComponents(color.CGColor))[2]*255.0)];
 }
 
 @end

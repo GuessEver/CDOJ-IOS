@@ -22,6 +22,7 @@
 #import "TrainingRatingListViewController.h"
 
 #import "AccountManageViewController.h"
+#import "ThemeSwitchViewController.h"
 
 #import "AboutCDOJViewController.h"
 
@@ -38,7 +39,7 @@
                       @[@"我的博客", @"个人信息"],
                       @[@"最近比赛", @"F.A.Q", @"Step By Step"],
                       @[@"队内荣誉", @"训练Rating"],
-                      @[@"账号管理"],
+                      @[@"账号管理", @"主题切换"],
                       @[@"关于CDOJ"]
                       ];
         self.classType = @[
@@ -56,7 +57,8 @@
                                [TrainingRatingListViewController class]
                                ],
                            @[ // Setting
-                               [AccountManageViewController class]
+                               [AccountManageViewController class],
+                               [ThemeSwitchViewController class]
                                ],
                            @[ // About
                                [AboutCDOJViewController class]
