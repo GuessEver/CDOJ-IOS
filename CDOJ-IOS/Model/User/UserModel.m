@@ -76,6 +76,7 @@
         }
         else {
             [self userLogout];
+            [Message show:@"请到用户中心重新登录！" withTitle:@"登录失败"];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];
@@ -116,6 +117,25 @@
         }
         else {
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_REGISTER_FAILED object:nil];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];
+    }];
+}
++ (void)userModifyWithData:(NSDictionary*)user {
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
+    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    [manager POST:API_USER_MODIFY parameters:user progress:^(NSProgress * _Nonnull uploadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
+        NSLog(@"%@", responseObject);
+        if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_MODIFY_SUCCEED object:nil];
+        }
+        else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_MODIFY_FAILED object:nil];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];

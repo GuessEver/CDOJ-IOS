@@ -12,6 +12,7 @@
 #import "DefaultNavigationController.h"
 
 #import "UserBlogListViewController.h"
+#import "UserInfoEditViewController.h"
 
 #import "RecentContestListViewController.h"
 #import "FAQViewController.h"
@@ -34,7 +35,7 @@
         self.noUserLogin = 1; // set the offset to hide "我**" options when not login
         self.titleOfSections = @[@"我", @"ACM", @"集训队", @"设置", @"关于"];
         self.data = @[
-                      @[@"我的博客"],
+                      @[@"我的博客", @"个人信息"],
                       @[@"最近比赛", @"F.A.Q", @"Step By Step"],
                       @[@"队内荣誉", @"训练Rating"],
                       @[@"账号管理"],
@@ -42,7 +43,8 @@
                       ];
         self.classType = @[
                            @[ // Me
-                               [UserBlogListViewController class]
+                               [UserBlogListViewController class],
+                               [UserInfoEditViewController class]
                                ],
                            @[ // ACM
                                [RecentContestListViewController class],

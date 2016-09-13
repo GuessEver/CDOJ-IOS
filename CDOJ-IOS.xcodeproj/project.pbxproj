@@ -94,6 +94,7 @@
 		5FE468271D585FD80050636D /* DefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE468261D585FD80050636D /* DefaultTableViewCell.m */; };
 		5FE4682D1D5875310050636D /* NoticeSplitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE4682C1D5875310050636D /* NoticeSplitDetailViewController.m */; };
 		642ADCE63A7747EF364A58D3 /* libPods-CDOJ-IOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 551FF3E10342B393AEF1D0EE /* libPods-CDOJ-IOS.a */; };
+		C0045C151D87CEA200BE56DB /* UserInfoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0045C141D87CEA200BE56DB /* UserInfoEditViewController.m */; };
 		C036103F1D83EB5C00996AB9 /* DefaultCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C036103E1D83EB5C00996AB9 /* DefaultCodeViewController.m */; };
 		C03610461D8403A800996AB9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03610451D8403A800996AB9 /* RegisterViewController.m */; };
 		C03610491D84049300996AB9 /* DefaultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03610481D84049300996AB9 /* DefaultTableViewController.m */; };
@@ -283,6 +284,8 @@
 		5FE4682B1D5875310050636D /* NoticeSplitDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeSplitDetailViewController.h; sourceTree = "<group>"; };
 		5FE4682C1D5875310050636D /* NoticeSplitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeSplitDetailViewController.m; sourceTree = "<group>"; };
 		AF74DD03BA03BACE62F68F3B /* Pods-CDOJ-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDOJ-IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDOJ-IOS/Pods-CDOJ-IOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C0045C131D87CEA200BE56DB /* UserInfoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoEditViewController.h; sourceTree = "<group>"; };
+		C0045C141D87CEA200BE56DB /* UserInfoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoEditViewController.m; sourceTree = "<group>"; };
 		C036103D1D83EB5C00996AB9 /* DefaultCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultCodeViewController.h; sourceTree = "<group>"; };
 		C036103E1D83EB5C00996AB9 /* DefaultCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultCodeViewController.m; sourceTree = "<group>"; };
 		C03610441D8403A800996AB9 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -572,6 +575,8 @@
 			children = (
 				5FB075FD1D6BE834002C4730 /* UserBlogListViewController.h */,
 				5FB075FE1D6BE834002C4730 /* UserBlogListViewController.m */,
+				C0045C131D87CEA200BE56DB /* UserInfoEditViewController.h */,
+				C0045C141D87CEA200BE56DB /* UserInfoEditViewController.m */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -945,6 +950,7 @@
 				5F03EA131D58245B00607DB9 /* UserMainViewController.m in Sources */,
 				5FB512A31D6033A100253B38 /* ContestRegisterViewController.m in Sources */,
 				5F03E9BD1D581A8200607DB9 /* AppDelegate.m in Sources */,
+				C0045C151D87CEA200BE56DB /* UserInfoEditViewController.m in Sources */,
 				5FB0760B1D6BF03E002C4730 /* ContestClarificationListTableView.m in Sources */,
 				5FB075F21D69A75D002C4730 /* CodeSubmitModel.m in Sources */,
 				C03610491D84049300996AB9 /* DefaultTableViewController.m in Sources */,

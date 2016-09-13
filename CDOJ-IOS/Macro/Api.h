@@ -36,6 +36,7 @@
 #define API_USER_LOGIN                      CONCAT( API_USER,                                       @"/login"           )
 #define API_USER_LOGOUT                     CONCAT( API_USER,                                       @"/logout"          )
 #define API_USER_REGISTER                   CONCAT( API_USER,                                       @"/register"        )
+#define API_USER_MODIFY                     CONCAT( API_USER,                                       @"/edit"            )
 #define API_USER_CENTERDATA(username)       CONCAT( CONCAT( API_USER,       @"/userCenterData/" ),  username            )
 #define API_USER_PROFILE(username)          CONCAT( CONCAT( API_USER,       @"/profile/"        ),  username            )
 #define API_USER_INFO(username)             CONCAT( CONCAT( API_USER,       @"/typeAheadItem/"  ),  username            )

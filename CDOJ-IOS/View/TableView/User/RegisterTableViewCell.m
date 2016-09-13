@@ -114,7 +114,6 @@
 }
 - (void)selectItemWithValue:(NSString*)value {
     NSInteger i = [self getItemIndexWithValue:value];
-    NSLog(@"%@ - %ld", value, (long)i);
     self.value = STR(self.values[i]);
     [self selectItem:i];
 }

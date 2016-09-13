@@ -21,5 +21,6 @@
 + (void)userLoginWithUser:(NSDictionary*)user;
 + (void)userLoginWithDefaultUser;
 + (void)userRegisterWithData:(NSDictionary*)user;
++ (void)userModifyWithData:(NSDictionary*)user;
 
 @end

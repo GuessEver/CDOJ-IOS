@@ -20,14 +20,14 @@
         [self.tableView setTag:0];
         self.sectionHeaderTitle = @[@"账号信息", @"个人信息"];
         self.sectionFooterTitle = @[@"这些信息将用于您账户登录", @"这些信息将在一些比赛中作为实名验证信息"];
-        self.userInfoTitle = @[
-                               @[@"用户名", @"密码", @"重复密码", @"昵称", @"邮箱", @"座右铭"],
-                               @[@"真实姓名", @"性别", @"T-Shirt大小", @"电话", @"学校", @"学院", @"年级", @"学号"]
-                               ];
-        self.userInfoKey = @[
-                             @[@"userName", @"password", @"passwordRepeat", @"nickName", @"email", @"motto"],
-                             @[@"name", @"sex", @"size", @"phone", @"school", @"departmentId", @"grade", @"studentId"]
-                             ];
+        self.userInfoTitle = [@[
+                                [@[@"用户名", @"密码", @"重复密码", @"昵称", @"邮箱", @"座右铭"] mutableCopy],
+                                [@[@"真实姓名", @"性别", @"T-Shirt大小", @"电话", @"学校", @"学院", @"年级", @"学号"] mutableCopy]
+                                ] mutableCopy];
+        self.userInfoKey = [@[
+                              [@[@"userName", @"password", @"passwordRepeat", @"nickName", @"email", @"motto"] mutableCopy],
+                              [@[@"name", @"sex", @"size", @"phone", @"school", @"departmentId", @"grade", @"studentId"] mutableCopy]
+                              ] mutableCopy];
         self.userInfoInput = [[NSMutableArray alloc] init];
         for(NSInteger section = 0; section < self.sectionHeaderTitle.count; section++) {
             NSMutableArray<RegisterTableViewCell*>* currentRow = [[NSMutableArray alloc] init];
@@ -64,17 +64,6 @@
         }
         
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registerSucceed:) name:NOTIFICATION_USER_REGISTER_SUCCEED object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registerFailed:) name:NOTIFICATION_USER_REGISTER_FAILED object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modifySucceed:) name:NOTIFICATION_USER_MODIFY_SUCCEED object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modifyFailed:) name:NOTIFICATION_USER_MODIFY_FAILED object:nil];
-    }
-    return self;
-}
-
-- (instancetype)initWithRegister {
-    if(self = [self init]) {
-        [self setIsRegister:YES];
         self.navigationItem.rightBarButtonItems = @[
                                                     [[UIBarButtonItem alloc] initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(submit)]
                                                     ];
@@ -95,15 +84,8 @@
                                          @"userName": @""
                                          };
         [self loadData:defaultSetting];
-    }
-    return self;
-}
-- (instancetype)initWithEdit {
-    if(self = [self init]) {
-        [self setIsRegister:NO];
-        self.navigationItem.rightBarButtonItems = @[
-                                                    [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(submit)]
-                                                    ];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registerSucceed:) name:NOTIFICATION_USER_REGISTER_SUCCEED object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registerFailed:) name:NOTIFICATION_USER_REGISTER_FAILED object:nil];
     }
     return self;
 }
@@ -113,6 +95,7 @@
         for(NSInteger row = 0; row < self.userInfoKey[section].count; row++) {
             RegisterTableViewCell* cell = self.userInfoInput[section][row];
             NSString* value = [data objectForKey:self.userInfoKey[section][row]];
+            if(!value) continue; // make sure null || nil cannot be set
             if(section == 1 && (row == 1 || row == 2)) { // sex || size <ratio>
                 [cell chooseItemWithValue:value];
             }
@@ -127,19 +110,18 @@
     }
 }
 
-- (void)submit {
+- (NSDictionary*)getUserDict {
     NSMutableDictionary* user = [[NSMutableDictionary alloc] init];
-    for(NSInteger section = 0; section < self.sectionHeaderTitle.count; section++) {
+    for(NSInteger section = 0; section < self.userInfoKey.count; section++) {
         for(NSInteger row = 0; row < self.userInfoKey[section].count; row++) {
             [user setObject:self.userInfoInput[section][row].value forKey:self.userInfoKey[section][row]];
         }
     }
-    NSLog(@"%@", user);
-    if(self.isRegister) {
-        [UserModel userRegisterWithData:user];
-    }
-    else {
-    }
+//    NSLog(@"%@", user);
+    return user;
+}
+- (void)submit {
+    [UserModel userRegisterWithData:[self getUserDict]];
 }
 - (void)registerSucceed:(NSNotification*)sender {
     [Message show:@"注册成功，请登录！" withTitle:@"注册成功" callback:^{
@@ -148,12 +130,6 @@
 }
 - (void)registerFailed:(NSNotification*)sender {
     [Message show:@"注册失败，请检查输入！" withTitle:@"注册失败"];
-}
-- (void)modifySucceed:(NSNotification*)sender {
-    [Message show:@"修改个人信息成功" withTitle:@"修改成功"];
-}
-- (void)modifyFailed:(NSNotification*)sender {
-    [Message show:@"修改个人信息失败，请检查输入！" withTitle:@"修改失败"];
 }
 
 # pragma mark UITableViewDataSource
