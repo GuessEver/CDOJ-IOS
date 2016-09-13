@@ -13,6 +13,7 @@
 
 UIViewController* topViewController();
 + (void)show:(NSString*)message withTitle:(NSString*)title;
++ (void)show:(NSString*)message withTitle:(NSString*)title callback:(void (^)())callback;
 + (void)confirm:(NSString*)message withTitle:(NSString*)title callback:(void (^)())callback;
 + (void)showInputBoxWithPassword:(BOOL)password message:(NSString*)message title:(NSString*)title callback:(void (^)(NSString* text))callback;
 

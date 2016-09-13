@@ -97,6 +97,8 @@
 		C036103F1D83EB5C00996AB9 /* DefaultCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C036103E1D83EB5C00996AB9 /* DefaultCodeViewController.m */; };
 		C03610461D8403A800996AB9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03610451D8403A800996AB9 /* RegisterViewController.m */; };
 		C03610491D84049300996AB9 /* DefaultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03610481D84049300996AB9 /* DefaultTableViewController.m */; };
+		C036104C1D840C3B00996AB9 /* RegisterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C036104B1D840C3B00996AB9 /* RegisterTableViewCell.m */; };
+		C0F784F81D8675CE00E1DC41 /* globalData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0F784F71D8675CE00E1DC41 /* globalData.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -287,6 +289,9 @@
 		C03610451D8403A800996AB9 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		C03610471D84049300996AB9 /* DefaultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultTableViewController.h; sourceTree = "<group>"; };
 		C03610481D84049300996AB9 /* DefaultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultTableViewController.m; sourceTree = "<group>"; };
+		C036104A1D840C3B00996AB9 /* RegisterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterTableViewCell.h; sourceTree = "<group>"; };
+		C036104B1D840C3B00996AB9 /* RegisterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterTableViewCell.m; sourceTree = "<group>"; };
+		C0F784F71D8675CE00E1DC41 /* globalData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = globalData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +347,7 @@
 				5F03E9C91D581A8200607DB9 /* Info.plist */,
 				5F03E9B81D581A8200607DB9 /* Supporting Files */,
 				5FAF07A91D5C98DC000CE6F6 /* Launch Screen.storyboard */,
+				C0F784F71D8675CE00E1DC41 /* globalData.plist */,
 			);
 			path = "CDOJ-IOS";
 			sourceTree = "<group>";
@@ -662,6 +668,8 @@
 				5FB512971D5F4E7C00253B38 /* Setting */,
 				5FB512B21D60682600253B38 /* Me */,
 				5FB512D31D609F6600253B38 /* Team */,
+				C036104A1D840C3B00996AB9 /* RegisterTableViewCell.h */,
+				C036104B1D840C3B00996AB9 /* RegisterTableViewCell.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -869,6 +877,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F3E05931D781482001D90E8 /* Resource in Resources */,
+				C0F784F81D8675CE00E1DC41 /* globalData.plist in Resources */,
 				5FAF07AA1D5C98DC000CE6F6 /* Launch Screen.storyboard in Resources */,
 				5F03E9C51D581A8200607DB9 /* Assets.xcassets in Resources */,
 			);
@@ -996,6 +1005,7 @@
 				5FB512AA1D604D8F00253B38 /* RecentContestListViewController.m in Sources */,
 				5FB075EF1D699EF4002C4730 /* CodeSubmitViewController.m in Sources */,
 				5FB076141D6C0AE9002C4730 /* ContestRankListTableViewCell.m in Sources */,
+				C036104C1D840C3B00996AB9 /* RegisterTableViewCell.m in Sources */,
 				5FB512B11D60509F00253B38 /* RecentContestListModel.m in Sources */,
 				5F7E4D521D58B80100E9D4C8 /* ProblemSplitDetailViewController.m in Sources */,
 				5F03EA061D58224D00607DB9 /* MainViewController.m in Sources */,

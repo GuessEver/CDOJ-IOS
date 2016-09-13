@@ -101,4 +101,25 @@
     }
 }
 
+//////
++ (void)userRegisterWithData:(NSDictionary*)user {
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTING object:nil];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
+    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    [manager POST:API_USER_REGISTER parameters:user progress:^(NSProgress * _Nonnull uploadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
+//        NSLog(@"%@", responseObject);
+        if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_REGISTER_SUCCEED object:nil];
+        }
+        else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_REGISTER_FAILED object:nil];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_ERROR object:nil];
+    }];
+}
+
 @end

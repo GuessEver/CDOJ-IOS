@@ -24,6 +24,14 @@ UIViewController* topViewController() {
     [alertMsg addAction:okAction];
     [topViewController() presentViewController:alertMsg animated:YES completion:nil];
 }
++ (void)show:(NSString*)message withTitle:(NSString*)title callback:(void (^)())callback {
+    UIAlertController* alertMsg = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        callback();
+    }];
+    [alertMsg addAction:okAction];
+    [topViewController() presentViewController:alertMsg animated:YES completion:nil];
+}
 + (void)confirm:(NSString*)message withTitle:(NSString*)title callback:(void (^)())callback {
     UIAlertController* alertMsg = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

@@ -50,6 +50,12 @@
 #define NOTIFICATION_USER_ACHIEVEMENT_REFRESHED         CONCAT( NOTIFICATION_USER_ACHIEVEMENT,      @"Refreshed."   )
 #define NOTIFICATION_USER_LIST                          CONCAT( NOTIFICATION_USER,                  @"List."        )
 #define NOTIFICATION_USER_LIST_REFRESHED                CONCAT( NOTIFICATION_USER_LIST,             @"Refreshed."   )
+#define NOTIFICATION_USER_REGISTER                      CONCAT( NOTIFICATION_USER,                  @"Register."    )
+#define NOTIFICATION_USER_REGISTER_SUCCEED              CONCAT( NOTIFICATION_USER_REGISTER,         @"Succeed."     )
+#define NOTIFICATION_USER_REGISTER_FAILED               CONCAT( NOTIFICATION_USER_REGISTER,         @"Failed."      )
+#define NOTIFICATION_USER_MODIFY                        CONCAT( NOTIFICATION_USER,                  @"Modify."    )
+#define NOTIFICATION_USER_MODIFY_SUCCEED                CONCAT( NOTIFICATION_USER_MODIFY,           @"Succeed."     )
+#define NOTIFICATION_USER_MODIFY_FAILED                 CONCAT( NOTIFICATION_USER_MODIFY,           @"Failed."      )
 
 // ARTICLE
 #define NOTIFICATION_ARTICLE                            CONCAT( NOTIFICATION_CENTER,                @"Article."     )

@@ -16,12 +16,14 @@
 
 - (instancetype)initWithStyle:(UITableViewStyle)style {
     if(self = [super initWithStyle:style]) {
+        [self.tableView setBackgroundColor:[ColorSchemeModel defaultColorScheme].backgroundColor1];
     }
     return self;
 }
 
 - (instancetype)init {
     if(self = [super init]) {
+        [self.tableView setBackgroundColor:[ColorSchemeModel defaultColorScheme].backgroundColor1];
     }
     return self;
 }

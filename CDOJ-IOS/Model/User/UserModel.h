@@ -20,5 +20,6 @@
 - (void)fetchAchievementData;
 + (void)userLoginWithUser:(NSDictionary*)user;
 + (void)userLoginWithDefaultUser;
++ (void)userRegisterWithData:(NSDictionary*)user;
 
 @end

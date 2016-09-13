@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ColorSchemeModel.h"
 
 @interface DefaultTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 

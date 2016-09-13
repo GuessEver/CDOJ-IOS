@@ -90,7 +90,7 @@
 }
 
 - (void)openRegisterPage {
-    RegisterViewController* registerPage = [[RegisterViewController alloc] init];
+    RegisterViewController* registerPage = [[RegisterViewController alloc] initWithRegister];
     [self.navigationController pushViewController:registerPage animated:YES];
 }
 
