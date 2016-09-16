@@ -19,8 +19,19 @@
         [self setExtendedLayoutIncludesOpaqueBars:YES];
         
         [self.view setBackgroundColor:COLOR_GRAY]; // split line color
+        
+        [self setDelegate:self];
     }
     return self;
+}
+
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController showDetailViewController:(UIViewController *)vc sender:(id)sender {
+    if([vc isKindOfClass:[UINavigationController class]]) {
+        __kindof UINavigationController* detailView = (__kindof UINavigationController*)vc;
+        detailView.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
+        [detailView.topViewController.navigationItem setLeftItemsSupplementBackButton:YES];
+    }
+    return NO; // let system to do the others such as showing detailView
 }
 
 @end
