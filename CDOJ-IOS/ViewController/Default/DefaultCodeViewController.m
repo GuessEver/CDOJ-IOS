@@ -64,7 +64,7 @@
             break;
     }
     NSString* filename = STRF(@"Untitled.%@", language);
-    NSURL* url = [NSURL URLWithString:STRF(@"codeditor://new/%@/%@", base64(filename), base64(content))];
+    NSURL* url = [NSURL URLWithString:STRF(@"codeditor://new/%@/%@", base64EncodeUrlsafe(filename), base64EncodeUrlsafe(content))];
     if([[UIApplication sharedApplication] canOpenURL:url]) {
         [[UIApplication sharedApplication] openURL:url];
     }

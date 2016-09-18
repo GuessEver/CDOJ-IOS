@@ -9,6 +9,8 @@
 #import "Security.h"
 #include <CommonCrypto/CommonDigest.h>
 
+@implementation Security
+
 NSString* sha1(NSString* input) {
     const char *cstr = [input cStringUsingEncoding:NSUTF8StringEncoding];
     NSData *data = [NSData dataWithBytes:cstr length:input.length];
@@ -40,7 +42,13 @@ NSString* md5(NSString* str) {
     return [hash lowercaseString];
 }
 
-NSString* base64(NSString* str) {
+NSString* base64Encode(NSString* str) {
     NSData* base64Data = [str dataUsingEncoding:NSUTF8StringEncoding];
     return [base64Data base64EncodedStringWithOptions:0];
 }
+NSString* base64EncodeUrlsafe(NSString* str) {
+    NSString* strBase64 = base64Encode(str);
+    return [strBase64 stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
+}
+
+@end

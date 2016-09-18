@@ -6,13 +6,14 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#ifndef Security_h
-#define Security_h
 #import <Foundation/Foundation.h>
+
+@interface Security : NSObject
 
 NSString* sha1(NSString* input);
 NSString* md5(NSString* str);
-NSString* base64(NSString* str);
+NSString* base64Encode(NSString* str);
+NSString* base64EncodeUrlsafe(NSString* str);
 
 
-#endif /* Security_h */
+@end
