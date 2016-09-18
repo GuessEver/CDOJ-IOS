@@ -19,7 +19,7 @@
     if(self = [super init]) {
         self.userInfoTitle[0][0] = @"原密码";
         self.userInfoTitle[0][1] = @"新密码";
-        self.userInfoTitle[0][1] = @"重复新密码";
+        self.userInfoTitle[0][2] = @"重复新密码";
         self.userInfoKey[0][0] = @"oldPassword";
         self.userInfoKey[0][1] = @"newPassword";
         self.userInfoKey[0][2] = @"newPasswordRepeat";
