@@ -94,8 +94,9 @@
     for(NSInteger section = 0; section < self.sectionHeaderTitle.count; section++) {
         for(NSInteger row = 0; row < self.userInfoKey[section].count; row++) {
             RegisterTableViewCell* cell = self.userInfoInput[section][row];
-            NSString* value = STR([data objectForKey:self.userInfoKey[section][row]]);
+            NSString* value = [data objectForKey:self.userInfoKey[section][row]];
             if(!value) continue; // make sure null || nil cannot be set
+            value = STR(value); // let value to be NSString, making sure to be the right key value of cell below
             if(section == 1 && (row == 1 || row == 2)) { // sex || size <ratio>
                 [cell chooseItemWithValue:value];
             }
