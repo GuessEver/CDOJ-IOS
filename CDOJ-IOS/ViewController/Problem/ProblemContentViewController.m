@@ -17,6 +17,7 @@
     if(self = [super init]) {
         self.problemId = problemId;
         self.data = [[ProblemContentModel alloc] init];
+        [self loadWebActionBarButtonsWithUrl:STRF(@"%@/#/problem/show/%@", APIURL, problemId)];
         [self.data fetchDataWithProblemId:problemId];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_PROBLEM_DATA_REFRESHED object:nil];
         [self arrangeViews];
@@ -29,6 +30,7 @@
 - (instancetype)initWithProblemContent:(NSDictionary*)data {
     if(self = [super init]) {
         self.data = [[ProblemContentModel alloc] init];
+        [self loadWebActionBarButtonsWithUrl:STRF(@"%@/#/problem/show/%@", APIURL, [data objectForKey:@"problemId"])];
         self.data.content = data;
         [self arrangeViews];
         [self refreshData];
@@ -36,15 +38,10 @@
     return self;
 }
 
-- (void)openInBrowser {
-    NSURL* url = [NSURL URLWithString:STRF(@"%@/#/problem/show/%@", APIURL, [self.data.content objectForKey:@"problemId"])];
-    [[UIApplication sharedApplication] openURL:url];
-}
-
 - (void)arrangeViews {
     // Options
     self.navigationItem.rightBarButtonItems = @[
-                                                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInBrowser)],
+                                                self.navigationItem.rightBarButtonItem,
                                                 [[UIBarButtonItem alloc] initWithTitle:@"记录" style:UIBarButtonItemStylePlain target:self action:@selector(openStatusPage)],
                                                 [[UIBarButtonItem alloc] initWithTitle:@"提交" style:UIBarButtonItemStylePlain target:self action:@selector(openSubmitPage)]
                                                 ];

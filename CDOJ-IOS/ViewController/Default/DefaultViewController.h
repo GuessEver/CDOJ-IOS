@@ -12,4 +12,7 @@
 
 @interface DefaultViewController : UIViewController
 
+@property (nonatomic, strong) NSString* url;
+- (void)loadWebActionBarButtonsWithUrl:(NSString*)url;
+
 @end

@@ -14,11 +14,9 @@
     if(self = [super init]) {
         self.data = [[ArticleContentModel alloc] init];
         [self.data fetchDataWithArticleId:articleId];
+        [self loadWebActionBarButtonsWithUrl:STRF(@"%@/#/article/show/%@", APIURL, articleId)];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_ARTICLE_DATA_REFRESHED object:nil];
         
-        // Options
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInBrowser)];
-                                                   
         
         self.webView = [[DefaultWebView alloc] init];
         [self.view addSubview:self.webView];
@@ -29,11 +27,6 @@
         }];
     }
     return self;
-}
-
-- (void)openInBrowser {
-    NSURL* url = [NSURL URLWithString:STRF(@"%@/#/article/show/%@", APIURL, [self.data.content objectForKey:@"articleId"])];
-    [[UIApplication sharedApplication] openURL:url];
 }
 
 - (void)refreshData {

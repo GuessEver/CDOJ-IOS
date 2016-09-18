@@ -11,4 +11,7 @@
 
 @interface DefaultPageController : TYTabButtonPagerController <TYPagerControllerDataSource, TYTabPagerControllerDelegate>
 
+@property (nonatomic, strong) NSString* url;
+- (void)loadWebActionBarButtonsWithUrl:(NSString*)url;
+
 @end
