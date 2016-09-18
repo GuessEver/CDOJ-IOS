@@ -26,7 +26,7 @@
         [self.title mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(self.contentView.mas_height);
             make.left.equalTo(self.contentView.mas_left).offset(20);
-            make.width.equalTo(self.contentView.mas_width).multipliedBy(0.5).offset(-20);
+//            make.width.equalTo(self.contentView.mas_width).multipliedBy(0.5).offset(-20);
         }];
     }
     return self;
@@ -42,7 +42,8 @@
         [self.inputField mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(self.contentView.mas_height);
             make.right.equalTo(self.contentView.mas_right).offset(-20);
-            make.width.equalTo(self.contentView.mas_width).multipliedBy(0.5).offset(-20);
+            make.left.equalTo(self.title.mas_right).offset(20);
+//            make.width.equalTo(self.contentView.mas_width).multipliedBy(0.5).offset(-20);
         }];
     }
     return self;
