@@ -32,7 +32,7 @@
     return self;
 }
 
-# pragma mark text
+#pragma mark text
 - (instancetype)initWithTitle:(NSString*)title placeholder:(NSString*)placeholder isPassword:(BOOL)isPassword {
     if(self = [self initWithTitle:title]) {
         self.inputField = [[DefaultTextField alloc] initWithPlaceholder:placeholder isPassword:isPassword withBorder:NO];
@@ -59,7 +59,7 @@
     return YES;
 }
 
-# pragma mark radio
+#pragma mark radio
 - (instancetype)initWithRatioTitle:(NSString*)title withPropertyDataKey:(NSString*)propertyKey {
     if(self = [self initWithTitle:title]) {
         [self initLabelsAndValuesWithPropertyDataKey:propertyKey];
@@ -87,7 +87,7 @@
     [self.ratioField setSelectedSegmentIndex:i];
 }
 
-# pragma mark select
+#pragma mark select
 - (instancetype)initWithSelectTitle:(NSString*)title withPropertyDataKey:(NSString*)propertyKey {
     if(self = [self initWithTitle:title]) {
         [self initLabelsAndValuesWithPropertyDataKey:propertyKey];
@@ -130,7 +130,7 @@
     return cell;
 }
 
-# pragma mark radio & select
+#pragma mark radio & select
 - (void)initLabelsAndValuesWithPropertyDataKey:(NSString*)propertyKey {
     NSString* path = [[NSBundle mainBundle] pathForResource:@"globalData" ofType:@"plist"];
     NSDictionary* data = [[NSDictionary dictionaryWithContentsOfFile:path] objectForKey:propertyKey];

@@ -100,7 +100,7 @@ NSString* LocalDataKeyCurrentSubmitterDestination = @"currentSubmitterDestinatio
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_LIST_REFRESHED object:nil];
 }
 
-# pragma mark problem
+#pragma mark problem
 + (void)setCurrentProblem:(NSString*)problemId inContest:(NSString*)contestId withOrderCharacter:(NSString*)orderCharacter {
     NSDictionary* destination = @{
                           @"problemId": problemId,

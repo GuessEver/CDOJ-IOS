@@ -133,7 +133,7 @@
     [Message show:@"注册失败，请检查输入！" withTitle:@"注册失败"];
 }
 
-# pragma mark UITableViewDataSource
+#pragma mark UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
@@ -150,7 +150,7 @@
     return self.userInfoInput[indexPath.section][indexPath.row];
 }
 
-# pragma mark UITableViewDelegate
+#pragma mark UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //    NSLog(@"select %ld - %ld", (long)indexPath.section, (long)indexPath.row);
     if(tableView.tag == 0) {

@@ -23,7 +23,7 @@
     return self;
 }
 
-# pragma mark UITableViewDataSource
+#pragma mark UITableViewDataSource
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"部分主题将在App下次启动时生效";
 }
@@ -46,7 +46,7 @@
     return cell;
 }
 
-# pragma mark UITableViewDelegate
+#pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [ThemeSwitchTableViewCell height];
 }
