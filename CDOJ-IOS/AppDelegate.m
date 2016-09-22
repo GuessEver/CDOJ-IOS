@@ -53,7 +53,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     if(self.userSessionKeeperTimer == nil) {
-        NSTimeInterval seconds = 30 * 60; // 30 minutes
+        NSTimeInterval seconds = 5 * 60; // 5 minutes
         self.userSessionKeeperTimer = [NSTimer scheduledTimerWithTimeInterval:seconds target:[UserModel class] selector:@selector(userLoginWithDefaultUser) userInfo:nil repeats:YES];
     }
     [self.userSessionKeeperTimer fire];
