@@ -87,7 +87,6 @@
     self.numberOfNetworkConnections -= 1;
     [self removeNetworkConnectionErrorTipBar];
     [self setNetworkIndicator];
-    [UserModel userLoginWithDefaultUser];
 }
 - (void)networkError {
     self.numberOfNetworkConnections -= 1;
