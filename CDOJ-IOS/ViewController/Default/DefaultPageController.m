@@ -32,6 +32,9 @@
 }
 - (void)showActions:(UIBarButtonItem*)sender {
     UIAlertController* alertController = [[UIAlertController alloc] init];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"复制原网站链接" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[UIPasteboard generalPasteboard] setString:self.url];
+    }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"浏览器打开" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self openInBrowser];
     }]];
