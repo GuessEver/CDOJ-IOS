@@ -27,6 +27,7 @@
 #define API_PROBLEM                         CONCAT( APIURL,                                         @"/problem"         )
 #define API_STATUS                          CONCAT( APIURL,                                         @"/status"          )
 #define API_TRAINING                        CONCAT( APIURL,                                         @"/training"        )
+#define API_MESSAGE                         CONCAT( APIURL,                                         @"/message"        )
 
 // Global
 #define API_GLOBAL_USERDATA                 CONCAT( API_GLOBAL,                                     @"/data"            )
@@ -67,6 +68,10 @@
 #define API_TRAINING_INFO(id)               CONCAT( CONCAT( API_TRAINING,   @"/data/"           ),  id                  )
 #define API_TRAINING_CONTEST(id)            CONCAT( CONCAT( API_TRAINING,   @"/searchTrainingContest/"),    id          )
 #define API_TRAINING_USER(id)               CONCAT( CONCAT( API_TRAINING,   @"/searchTrainingUser/"),       id          )
+
+// Message
+#define API_MESSAGE_LIST                    CONCAT( API_MESSAGE,                                    @"/search"          )
+#define API_MESSAGE_DATA(id)                CONCAT( CONCAT( API_MESSAGE,    @"/fetch/"          ),  id                  )
 
 
 #endif /* Api_h */

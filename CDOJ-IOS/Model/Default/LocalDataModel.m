@@ -14,6 +14,7 @@
 NSString* LocalDataKeyOpened = @"opened";
 NSString* LocalDataKeyUsers = @"users";
 NSString* LocalDataKeyDefaultUsername = @"defaultUsername";
+NSString* LocalDataKeyDefaultUserId = @"defaultUserId";
 NSString* LocalDataKeyDefaultThemeIndex = @"defaultThemeIndex";
 NSString* LocalDataKeyCurrentSubmitterDestination = @"currentSubmitterDestination";
 
@@ -69,7 +70,10 @@ NSString* LocalDataKeyCurrentSubmitterDestination = @"currentSubmitterDestinatio
     return nil;
 }
 + (NSString*)getDefaultUsername {
-    return [self getDataForKey:LocalDataKeyDefaultUsername];
+    return STR([self getDataForKey:LocalDataKeyDefaultUsername]);
+}
++ (NSString*)getDefaultUserId {
+    return STR([self getDataForKey:LocalDataKeyDefaultUserId]);
 }
 + (NSDictionary*)getDefaultUser {
     return [self getUserByUsername:[self getDefaultUsername]];
@@ -98,6 +102,9 @@ NSString* LocalDataKeyCurrentSubmitterDestination = @"currentSubmitterDestinatio
 + (void)setDefaultUsername:(NSString*)username {
     [self saveData:username to:LocalDataKeyDefaultUsername];
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_LIST_REFRESHED object:nil];
+}
++ (void)setDefaultUserId:(NSString*)userId {
+    [self saveData:userId to:LocalDataKeyDefaultUserId];
 }
 
 #pragma mark problem

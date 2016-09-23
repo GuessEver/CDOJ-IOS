@@ -17,7 +17,6 @@
 
 @implementation UserBlogListViewController
 
-
 - (instancetype)init {
     if(self = [super initWithStyle:UITableViewStylePlain]) {
         self.data = [[ArticleListModel alloc] initWithBlogListWithUsername:[LocalDataModel getDefaultUsername]];

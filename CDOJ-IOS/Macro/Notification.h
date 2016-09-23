@@ -113,5 +113,11 @@
 #define NOTIFICATION_TRAINING_GRAPH                     CONCAT( NOTIFICATION_TRAINING,              @"Graph."       )
 #define NOTIFICATION_TRAINING_GRAPH_REFRESHED           CONCAT( NOTIFICATION_TRAINING_GRAPH,        @"Refreshed."   )
 
+// MESSAGE
+#define NOTIFICATION_MESSAGE                            CONCAT( NOTIFICATION_CENTER,                @"Message."     )
+#define NOTIFICATION_MESSAGE_LIST                       CONCAT( NOTIFICATION_MESSAGE,               @"List."        )
+#define NOTIFICATION_MESSAGE_LIST_REFRESHED             CONCAT( NOTIFICATION_MESSAGE_LIST,          @"Refreshed."   )
+#define NOTIFICATION_MESSAGE_DATA                       CONCAT( NOTIFICATION_MESSAGE,               @"Data."        )
+#define NOTIFICATION_MESSAGE_DATA_REFRESHED             CONCAT( NOTIFICATION_MESSAGE_DATA,          @"Refreshed."   )
 
 #endif /* Notification_h */

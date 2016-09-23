@@ -26,6 +26,9 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
             self.basicInfo = [responseObject objectForKey:@"user"];
+            if([self.username isEqualToString:[LocalDataModel getDefaultUsername]]) { // renew
+                [LocalDataModel setDefaultUserId:[self.basicInfo objectForKey:@"userId"]];
+            }
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_INFO_REFRESHED object:nil];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -99,7 +102,13 @@
     NSDictionary* defaultUser = [LocalDataModel getDefaultUser];
     if(defaultUser != nil) {
         [UserModel userLoginWithUser:defaultUser];
+        [UserModel renewDefaultUserId];
     }
+}
++ (void)renewDefaultUserId {
+    UserModel* user = [[UserModel alloc] init];
+    [user setUsername:[LocalDataModel getDefaultUsername]];
+    [user fetchInfoData];
 }
 
 //////

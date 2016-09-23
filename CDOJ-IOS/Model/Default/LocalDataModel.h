@@ -20,10 +20,12 @@
 + (NSDictionary*)getUserAtIndex:(NSInteger)index;
 + (NSDictionary*)getUserByUsername:(NSString*)username;
 + (NSString*)getDefaultUsername;
++ (NSString*)getDefaultUserId;
 + (NSDictionary*)getDefaultUser;
 + (void)deleteUserByUsername:(NSString*)username;
 + (void)addUserWithUser:(NSDictionary*)newUser;
 + (void)setDefaultUsername:(NSString*)username;
++ (void)setDefaultUserId:(NSString*)userId;
 
 + (void)setCurrentProblem:(NSString*)problemId;
 + (void)setCurrentProblem:(NSString*)problemId inContest:(NSString*)contestId withOrderCharacter:(NSString*)orderCharacter;
