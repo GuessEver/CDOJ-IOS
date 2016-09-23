@@ -26,7 +26,8 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_HTTP_CONNECTED object:nil];
         if([[responseObject objectForKey:@"result"] isEqualToString:@"success"]) {
             self.basicInfo = [responseObject objectForKey:@"user"];
-            if([self.username isEqualToString:[LocalDataModel getDefaultUsername]]) { // renew
+            if([self.username isEqualToString:[LocalDataModel getDefaultUsername]]) { // renew userId
+                NSLog(@"userId renewed: %@", [self.basicInfo objectForKey:@"userId"]);
                 [LocalDataModel setDefaultUserId:[self.basicInfo objectForKey:@"userId"]];
             }
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_INFO_REFRESHED object:nil];
@@ -75,6 +76,9 @@
             NSMutableDictionary* newUser = [NSMutableDictionary dictionaryWithDictionary:user];
             [newUser setObject:[responseObject objectForKey:@"email"] forKey:@"email"];
             [LocalDataModel addUserWithUser:[NSDictionary dictionaryWithDictionary:newUser]];
+            if([[user objectForKey:@"username"] isEqualToString:[LocalDataModel getDefaultUsername]]) {
+                [UserModel renewDefaultUserId];
+            }
             [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_SIGN_IN object:nil];
         }
         else {
@@ -102,7 +106,6 @@
     NSDictionary* defaultUser = [LocalDataModel getDefaultUser];
     if(defaultUser != nil) {
         [UserModel userLoginWithUser:defaultUser];
-        [UserModel renewDefaultUserId];
     }
 }
 + (void)renewDefaultUserId {
