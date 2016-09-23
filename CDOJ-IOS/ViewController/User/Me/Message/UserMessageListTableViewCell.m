@@ -12,9 +12,9 @@
 @implementation UserMessageListTableViewCell
 
 /*****************************************************
- *  +---------+ +---------+  sender -> receiver      *  30
- *  | avatarA | | avatarB |  content                 *  25
- *  +---------+ +---------+  time                    *  15
+ *  +---------+ +---------+  sender -> receiver   |  *  30
+ *  | avatarA | | avatarB |  content              |O *  25
+ *  +---------+ +---------+  time                 |  *  15
  *****************************************************/
 
 - (instancetype)init {
@@ -26,15 +26,19 @@
         self.content = [[UILabel alloc] init];
         self.time = [[UILabel alloc] init];
         self.connectArrow = [[UILabel alloc] init];
+        self.openStatusTag = [[UIView alloc] init];
         
         [self.senderAvatar.layer setCornerRadius:40/2];
         [self.senderAvatar.layer setMasksToBounds:YES];
         [self.receiverAvatar.layer setCornerRadius:40/2];
         [self.receiverAvatar.layer setMasksToBounds:YES];
+        [self.openStatusTag.layer setCornerRadius:10/2];
+        [self.openStatusTag.layer setMasksToBounds:YES];
         
         [self.senderUsername setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]-1]];
         [self.receiverUsername setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]-1]];
         [self.connectArrow setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]-1]];
+        [self.content setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
         [self.time setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]-3]];
         
         [self.senderUsername setTextColor:[ColorSchemeModel defaultColorScheme].commentColor];
@@ -51,6 +55,7 @@
         [self.contentView addSubview:self.connectArrow];
         [self.contentView addSubview:self.content];
         [self.contentView addSubview:self.time];
+        [self.contentView addSubview:self.openStatusTag];
         
         [self.senderAvatar mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView.mas_left).offset(20);
@@ -67,7 +72,7 @@
         [self.senderUsername mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.receiverAvatar.mas_right).offset(20);
             make.top.equalTo(self.contentView.mas_top).offset(5);
-            make.height.equalTo(@25);
+//            make.height.equalTo(@25);
         }];
         [self.connectArrow mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.senderUsername.mas_right).offset(10);
@@ -78,18 +83,25 @@
             make.left.equalTo(self.connectArrow.mas_right).offset(10);
             make.top.equalTo(self.senderUsername.mas_top);
             make.height.equalTo(self.senderUsername.mas_height);
+            make.right.lessThanOrEqualTo(self.openStatusTag.mas_left).offset(-10);
         }];
         [self.content mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.senderUsername.mas_bottom);
             make.left.equalTo(self.senderUsername.mas_left);
-            make.right.equalTo(self.contentView.mas_right).offset(-10);
-            make.height.equalTo(@30);
+            make.right.equalTo(self.openStatusTag.mas_left).offset(-10);
+//            make.height.equalTo(@30);
         }];
         [self.time mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.content.mas_bottom);
             make.left.equalTo(self.content.mas_left);
-            make.right.equalTo(self.contentView.mas_right).offset(-10);
+            make.right.equalTo(self.openStatusTag.mas_left).offset(-10);;
             make.bottom.equalTo(self.contentView.mas_bottom).offset(-5);
+        }];
+        [self.openStatusTag mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.contentView.mas_centerY);
+            make.width.equalTo(@10);
+            make.height.equalTo(self.openStatusTag.mas_width);
+            make.right.equalTo(self.contentView.mas_right).offset(-10);
         }];
     }
     return self;
@@ -100,6 +112,15 @@
     [self.senderAvatar setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];
     [self.receiverAvatar sd_setImageWithURL:[NSURL URLWithString:API_AVATAR(self.receiverEmail, 100)] placeholderImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [self.receiverAvatar setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];
+}
+
+- (void)loadOpenStatusTag:(BOOL)isOpened {
+    if(isOpened) {
+        [self.openStatusTag setBackgroundColor:[[ColorSchemeModel defaultColorScheme].tagColors objectForKey:@"read"]];
+    }
+    else {
+        [self.openStatusTag setBackgroundColor:[[ColorSchemeModel defaultColorScheme].tagColors objectForKey:@"unread"]];
+    }
 }
 
 + (CGFloat)height {

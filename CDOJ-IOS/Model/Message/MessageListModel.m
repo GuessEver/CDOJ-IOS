@@ -37,4 +37,10 @@
     }];
 }
 
+- (void)setOpenStatus:(BOOL)isOpen atIndex:(NSInteger)index {
+    NSMutableDictionary* item = [self.list[index] mutableCopy];
+    [item setObject:isOpen ? @"1" : @"0" forKey:@"isOpened"];
+    self.list[index] = item;
+}
+
 @end

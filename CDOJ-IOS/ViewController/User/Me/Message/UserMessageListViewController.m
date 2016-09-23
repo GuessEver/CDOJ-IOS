@@ -36,6 +36,8 @@
     return [UserMessageListTableViewCell height];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.data setOpenStatus:YES atIndex:indexPath.row];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     [self showMessageWithMessageId:STR([self.data.list[indexPath.row] objectForKey:@"messageId"])];
 }
 
@@ -46,13 +48,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UserMessageListTableViewCell* cell = [[UserMessageListTableViewCell alloc] init];
     NSDictionary* info = self.data.list[indexPath.row];
-    [cell setSenderEmail:[info objectForKey:@"senderEmail"]];
-    [cell setReceiverEmail:[info objectForKey:@"receiverEmail"]];
-    [cell.senderUsername setText:[info objectForKey:@"senderUserName"]];
-    [cell.receiverUsername setText:[info objectForKey:@"receiverUserName"]];
-    [cell.content setText:[info objectForKey:@"title"]];
+    [cell setSenderEmail:STR([info objectForKey:@"senderEmail"])];
+    [cell setReceiverEmail:STR([info objectForKey:@"receiverEmail"])];
+    [cell.senderUsername setText:STR([info objectForKey:@"senderUserName"])];
+    [cell.receiverUsername setText:STR([info objectForKey:@"receiverUserName"])];
+    [cell.content setText:STR([info objectForKey:@"title"])];
     [cell.time setText:getTimeString([info objectForKey:@"time"])];
     [cell loadAvatar];
+    [cell loadOpenStatusTag:[STR([info objectForKey:@"isOpened"]) boolValue]];
     return cell;
 }
 

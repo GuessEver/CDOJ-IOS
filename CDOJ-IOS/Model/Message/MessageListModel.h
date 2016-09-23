@@ -11,4 +11,6 @@
 
 @interface MessageListModel : DefaultListModel
 
+- (void)setOpenStatus:(BOOL)isOpen atIndex:(NSInteger)index;
+
 @end

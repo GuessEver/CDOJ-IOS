@@ -20,8 +20,10 @@
 @property (nonatomic, strong) UILabel* connectArrow;
 @property (nonatomic, strong) UILabel* content;
 @property (nonatomic, strong) UILabel* time;
+@property (nonatomic, strong) UIView* openStatusTag;
 
 - (void)loadAvatar;
+- (void)loadOpenStatusTag:(BOOL)isOpened;
 + (CGFloat)height;
 
 @end

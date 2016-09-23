@@ -78,7 +78,9 @@
              // contest problem status
              @"solved"      : COLOR_LIGHTGREEN,
              @"firstBlood"  : COLOR_DARKGREEN,
-             @"tried"       : COLOR_BRIGHTORANGE
+             @"tried"       : COLOR_BRIGHTORANGE,
+             @"read"        : [UIColor clearColor],
+             @"unread"      : COLOR_RED
              };
 }
 
