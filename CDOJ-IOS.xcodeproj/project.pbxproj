@@ -101,6 +101,7 @@
 		C03610461D8403A800996AB9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03610451D8403A800996AB9 /* RegisterViewController.m */; };
 		C03610491D84049300996AB9 /* DefaultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03610481D84049300996AB9 /* DefaultTableViewController.m */; };
 		C036104C1D840C3B00996AB9 /* RegisterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C036104B1D840C3B00996AB9 /* RegisterTableViewCell.m */; };
+		C0407B3E1D94EBDC002F98F1 /* String.m in Sources */ = {isa = PBXBuildFile; fileRef = C0407B3D1D94EBDC002F98F1 /* String.m */; };
 		C0F784F81D8675CE00E1DC41 /* globalData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0F784F71D8675CE00E1DC41 /* globalData.plist */; };
 /* End PBXBuildFile section */
 
@@ -300,6 +301,8 @@
 		C03610481D84049300996AB9 /* DefaultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultTableViewController.m; sourceTree = "<group>"; };
 		C036104A1D840C3B00996AB9 /* RegisterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterTableViewCell.h; sourceTree = "<group>"; };
 		C036104B1D840C3B00996AB9 /* RegisterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterTableViewCell.m; sourceTree = "<group>"; };
+		C0407B3C1D94EBDC002F98F1 /* String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = String.h; sourceTree = "<group>"; };
+		C0407B3D1D94EBDC002F98F1 /* String.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = String.m; sourceTree = "<group>"; };
 		C0F784F71D8675CE00E1DC41 /* globalData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = globalData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -383,6 +386,8 @@
 				5F03E9D71D581D8100607DB9 /* Security.m */,
 				5F03E9D81D581D8100607DB9 /* Time.h */,
 				5F03E9D91D581D8100607DB9 /* Time.m */,
+				C0407B3C1D94EBDC002F98F1 /* String.h */,
+				C0407B3D1D94EBDC002F98F1 /* String.m */,
 			);
 			path = Function;
 			sourceTree = "<group>";
@@ -1043,6 +1048,7 @@
 				5F03EA161D58246E00607DB9 /* ContestMainViewController.m in Sources */,
 				5F7E4D5E1D596CCB00E9D4C8 /* ContestListViewController.m in Sources */,
 				5FB512C91D608C6D00253B38 /* TrainingRatingContentModel.m in Sources */,
+				C0407B3E1D94EBDC002F98F1 /* String.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

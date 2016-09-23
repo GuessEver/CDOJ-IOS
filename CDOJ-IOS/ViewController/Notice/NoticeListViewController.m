@@ -59,7 +59,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ArticleListTableViewCell* cell = [[ArticleListTableViewCell alloc] init];
     [cell.title setText:STR([self.data.list[indexPath.row] objectForKey:@"title"])];
-    [cell.content setText:STR([self.data.list[indexPath.row] objectForKey:@"content"])];
+    [cell.content setText:convertToBriefContent(STR([self.data.list[indexPath.row] objectForKey:@"content"]))];
     [cell.updateTime setText:getTimeString(STR([self.data.list[indexPath.row] objectForKey:@"time"]))];
     [cell.author setText:STR([self.data.list[indexPath.row] objectForKey:@"ownerName"])];
     return cell;

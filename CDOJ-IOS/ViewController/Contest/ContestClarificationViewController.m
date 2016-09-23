@@ -47,7 +47,7 @@
     ContestClarificationListTableView* cell = [[ContestClarificationListTableView alloc] init];
     [cell.username setText:STR([self.data.list[indexPath.row] objectForKey:@"ownerName"])];
     [cell.submitTime setText:getTimeString(STR([self.data.list[indexPath.row] objectForKey:@"time"]))];
-    [cell.content setText:STR([self.data.list[indexPath.row] objectForKey:@"content"])];
+    [cell.content setText:convertToBriefContent(STR([self.data.list[indexPath.row] objectForKey:@"content"]))];
     [cell loadAvatarWithUserEmail:STR([self.data.list[indexPath.row] objectForKey:@"ownerEmail"])];
     return cell;
 }
