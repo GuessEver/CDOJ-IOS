@@ -95,7 +95,6 @@
 		C03610461D8403A800996AB9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03610451D8403A800996AB9 /* RegisterViewController.m */; };
 		C03610491D84049300996AB9 /* DefaultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03610481D84049300996AB9 /* DefaultTableViewController.m */; };
 		C036104C1D840C3B00996AB9 /* RegisterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C036104B1D840C3B00996AB9 /* RegisterTableViewCell.m */; };
-		C0407B3E1D94EBDC002F98F1 /* String.m in Sources */ = {isa = PBXBuildFile; fileRef = C0407B3D1D94EBDC002F98F1 /* String.m */; };
 		C0407B451D94FF38002F98F1 /* MessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C0407B441D94FF38002F98F1 /* MessageListModel.m */; };
 		C0407B481D95024A002F98F1 /* MessageContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C0407B471D95024A002F98F1 /* MessageContentModel.m */; };
 		C0407B4C1D951A3E002F98F1 /* UserMessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0407B4B1D951A3E002F98F1 /* UserMessageListViewController.m */; };
@@ -107,6 +106,7 @@
 		C0407B661D951BEE002F98F1 /* ContestClarificationListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0407B5E1D951BEE002F98F1 /* ContestClarificationListTableView.m */; };
 		C0407B671D951BEE002F98F1 /* ContestListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0407B601D951BEE002F98F1 /* ContestListTableViewCell.m */; };
 		C0407B681D951BEE002F98F1 /* ContestRankListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0407B621D951BEE002F98F1 /* ContestRankListTableViewCell.m */; };
+		C0407B6B1D955F68002F98F1 /* StringConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = C0407B6A1D955F68002F98F1 /* StringConverter.m */; };
 		C0F784F81D8675CE00E1DC41 /* globalData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0F784F71D8675CE00E1DC41 /* globalData.plist */; };
 /* End PBXBuildFile section */
 
@@ -294,8 +294,6 @@
 		C03610481D84049300996AB9 /* DefaultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultTableViewController.m; sourceTree = "<group>"; };
 		C036104A1D840C3B00996AB9 /* RegisterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterTableViewCell.h; sourceTree = "<group>"; };
 		C036104B1D840C3B00996AB9 /* RegisterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterTableViewCell.m; sourceTree = "<group>"; };
-		C0407B3C1D94EBDC002F98F1 /* String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = String.h; sourceTree = "<group>"; };
-		C0407B3D1D94EBDC002F98F1 /* String.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = String.m; sourceTree = "<group>"; };
 		C0407B431D94FF38002F98F1 /* MessageListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageListModel.h; sourceTree = "<group>"; };
 		C0407B441D94FF38002F98F1 /* MessageListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListModel.m; sourceTree = "<group>"; };
 		C0407B461D95024A002F98F1 /* MessageContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageContentModel.h; sourceTree = "<group>"; };
@@ -318,6 +316,8 @@
 		C0407B601D951BEE002F98F1 /* ContestListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestListTableViewCell.m; sourceTree = "<group>"; };
 		C0407B611D951BEE002F98F1 /* ContestRankListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContestRankListTableViewCell.h; sourceTree = "<group>"; };
 		C0407B621D951BEE002F98F1 /* ContestRankListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestRankListTableViewCell.m; sourceTree = "<group>"; };
+		C0407B691D955F68002F98F1 /* StringConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringConverter.h; sourceTree = "<group>"; };
+		C0407B6A1D955F68002F98F1 /* StringConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringConverter.m; sourceTree = "<group>"; };
 		C0F784F71D8675CE00E1DC41 /* globalData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = globalData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -401,8 +401,8 @@
 				5F03E9D71D581D8100607DB9 /* Security.m */,
 				5F03E9D81D581D8100607DB9 /* Time.h */,
 				5F03E9D91D581D8100607DB9 /* Time.m */,
-				C0407B3C1D94EBDC002F98F1 /* String.h */,
-				C0407B3D1D94EBDC002F98F1 /* String.m */,
+				C0407B691D955F68002F98F1 /* StringConverter.h */,
+				C0407B6A1D955F68002F98F1 /* StringConverter.m */,
 			);
 			path = Function;
 			sourceTree = "<group>";
@@ -1084,6 +1084,7 @@
 				5FB076111D6C083A002C4730 /* ContestRankListModel.m in Sources */,
 				5F03E9F61D581D8100607DB9 /* HTTP.m in Sources */,
 				5F7E4D4F1D58B6F900E9D4C8 /* ProblemListViewController.m in Sources */,
+				C0407B6B1D955F68002F98F1 /* StringConverter.m in Sources */,
 				5FB075E61D698310002C4730 /* StatusListViewController.m in Sources */,
 				C0407B671D951BEE002F98F1 /* ContestListTableViewCell.m in Sources */,
 				5FB512D61D609F6600253B38 /* TrainingRatingUserListTableViewCell.m in Sources */,
@@ -1126,7 +1127,6 @@
 				C0407B521D951B22002F98F1 /* UserMessageListTableViewCell.m in Sources */,
 				C0407B481D95024A002F98F1 /* MessageContentModel.m in Sources */,
 				5FB512C91D608C6D00253B38 /* TrainingRatingContentModel.m in Sources */,
-				C0407B3E1D94EBDC002F98F1 /* String.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

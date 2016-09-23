@@ -13,6 +13,7 @@
 #import "HTTP.h"
 #import "Time.h"
 #import "Message.h"
+#import "StringConverter.h"
 
 
 #endif /* Function_h */

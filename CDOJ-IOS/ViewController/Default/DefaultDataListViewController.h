@@ -11,6 +11,7 @@
 #import "ProblemListModel.h"
 #import "DefaultListModel.h"
 #import "String.h"
+#import "StringConverter.h"
 #import "DefaultTableViewController.h"
 
 @interface DefaultDataListViewController : DefaultTableViewController;

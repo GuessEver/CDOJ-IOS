@@ -1,5 +1,5 @@
 //
-//  String.h
+//  StringConverter.h
 //  CDOJ-IOS
 //
 //  Created by GuessEver on 2016/9/23.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface String : NSObject
+@interface StringConverter : NSObject
 
 NSString* convertToBriefContent(NSString* str);
 
