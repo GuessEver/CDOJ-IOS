@@ -8,4 +8,5 @@ target 'CDOJ-IOS' do
 	pod 'MJRefresh'
 	pod 'JBChartView'
 	pod 'CodeEditorView'
+	pod 'Block-KVO', :git => 'https://github.com/Tricertops/Block-KVO.git'
 end

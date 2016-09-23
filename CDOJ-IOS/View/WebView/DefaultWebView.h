@@ -12,6 +12,7 @@
 @interface DefaultWebView : WKWebView <WKNavigationDelegate>
 
 @property (nonatomic, strong) NSString* htmlStr;
+@property (nonatomic, strong) UIView* progressBar;
 
 
 - (void)loadWithData:(NSDictionary*)data andRenderName:(NSString*)render;
