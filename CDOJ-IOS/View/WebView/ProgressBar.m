@@ -103,4 +103,13 @@
     }
 }
 
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    if(!newSuperview) {
+        if(self.autoProgressTimer) {
+            [self.autoProgressTimer invalidate];
+            self.autoProgressTimer = nil;
+        }
+    }
+}
+
 @end
