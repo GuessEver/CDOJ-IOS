@@ -19,7 +19,7 @@
 #define SHADOW_RADIUS BAR_HEIGHT
 #define PROCESSING_WIDTH 20
 
-- (instancetype)initWithParent:(__weak id)parent inView:(__weak __kindof UIView*)parentView withKeyPath:(NSString*)keyPath {
+- (instancetype)initWithParent:(__weak id)parent inView:(__weak __kindof UIView*)parentView withKeyPath:(NSString*)keyPath loadingIncreasement:(BOOL)loadingIncreasement {
     if(self = [super init]) {
         __weak typeof(self) weakSelf = self;
         [parentView addSubview:weakSelf];
@@ -33,28 +33,55 @@
         
         // init position
         [self mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(parentView.mas_left);
+            make.centerX.equalTo(parentView.mas_left);
             make.top.equalTo(parentView.mas_top);
             make.width.equalTo(parentView.mas_width).multipliedBy(0);
             make.height.equalTo(@(BAR_HEIGHT));
         }];
         
         // KVO
-        [parent observeProperty:keyPath withBlock:^(__weak typeof(parent) parent, id oldValue, id newValue) {
+        self.progress = 0;
+        [self observeProperty:@"progress" withBlock:^(__weak typeof(self) weakSelf, id oldValue, id newValue) {
+            // ====== HELP ======
+            // I CANNNOT use mas_updateConstraints to update it. It seems to have some problems.
+            // When using mas_updateConstraints, the progress will only contain less than 0.5 instead of 1.0
+            // So I can only use mas_remakeConstraints.
+            // BUT using UIView animate with mas_remakeConstraints, it will render from center
+            // More specifically, the animation is to spread from center
+            // So I can only set centerX to parentView.mas_left, and let its length to be 2 times
             [weakSelf mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(parentView.mas_left);
+                make.centerX.equalTo(parentView.mas_left);
                 make.top.equalTo(parentView.mas_top);
-                make.width.equalTo(parentView.mas_width).multipliedBy([newValue doubleValue]);
+                make.width.equalTo(parentView.mas_width).multipliedBy([newValue doubleValue]*2);
                 make.height.equalTo(@(BAR_HEIGHT));
             }];
-            if(self.hideAfterDone) {
-                if([newValue doubleValue] >= 1.0 - 1e-5) { // done
+//            [weakSelf mas_updateConstraints:^(MASConstraintMaker *make) {
+//                make.width.equalTo(parentView.mas_width).multipliedBy([newValue doubleValue]*2);
+//            }];
+            [weakSelf setNeedsLayout];
+            [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                [weakSelf layoutIfNeeded];
+            } completion:^(BOOL finished) {
+                if([newValue doubleValue] >= 1.0 - 1e-5 && self.hideAfterDone) { // hide progressBar when done
                     [UIView animateWithDuration:0.5 animations:^{
                         [weakSelf setAlpha:0];
                     }];
                 }
-            }
+            }];
         }];
+        [parent observeProperty:keyPath withBlock:^(__weak typeof(parent) parent, id oldValue, id newValue) {
+            self.progress = MIN(1.0, MAX(self.progress, [newValue doubleValue]));
+        }];
+        
+        if(loadingIncreasement) { // Auto increase a little progress to let user know it is loading...
+            self.autoProgressTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(autoIncreaseProgress) userInfo:nil repeats:YES];
+            [self.autoProgressTimer fire];
+        }
+    }
+    return self;
+}
+- (instancetype)initWithParent:(__weak id)parent inView:(__weak __kindof UIView*)parentView withKeyPath:(NSString*)keyPath {
+    if(self = [self initWithParent:parent inView:parentView withKeyPath:keyPath loadingIncreasement:YES]) {
     }
     return self;
 }
@@ -66,7 +93,14 @@
     }
 }
 
-- (void)setStatus {
+- (void)autoIncreaseProgress {
+    if(self.progress <= 0.92) {
+        self.progress += 0.05;
+    }
+    else {
+        [self.autoProgressTimer invalidate];
+        self.autoProgressTimer = nil;
+    }
 }
 
 @end

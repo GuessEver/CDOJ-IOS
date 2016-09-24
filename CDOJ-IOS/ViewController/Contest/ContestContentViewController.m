@@ -32,7 +32,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_CONTEST_DATA_REFRESHED object:nil];
         
         self.progress = 0;
-        self.progressBar = [[ProgressBar alloc] initWithParent:self inView:self.view withKeyPath:@"progress"];
+        self.progressBar = [[ProgressBar alloc] initWithParent:self inView:self.view withKeyPath:@"progress" loadingIncreasement:NO];
 //        [self.progressBar setHideAfterDone:NO]; // always show progress bar
     }
     return self;
