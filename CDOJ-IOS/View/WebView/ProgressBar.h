@@ -10,8 +10,6 @@
 
 @interface ProgressBar : UIView
 
-@property (nonatomic, strong) UIView* processing;
-
-- (instancetype)initWithParent:(__weak __kindof UIView*)parent withKeyPath:(NSString*)keyPath;
+- (instancetype)initWithParent:(__weak id)parent inView:(__weak __kindof UIView*)parentView withKeyPath:(NSString*)keyPath;
 
 @end

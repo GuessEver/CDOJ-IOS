@@ -19,7 +19,7 @@
         [self setOpaque:NO];
         [self setNavigationDelegate:self];
         
-        self.progressBar = [[ProgressBar alloc] initWithParent:self withKeyPath:@"estimatedProgress"];
+        self.progressBar = [[ProgressBar alloc] initWithParent:self inView:self withKeyPath:@"estimatedProgress"];
         [self addSubview:self.progressBar];
     }
     return self;
