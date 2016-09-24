@@ -10,8 +10,6 @@
 #import "Api.h"
 #import "ColorSchemeModel.h"
 #import "HTTP.h"
-#import "MTKObserving.h"
-#import "Masonry.h"
 
 @implementation DefaultWebView
 
@@ -21,15 +19,8 @@
         [self setOpaque:NO];
         [self setNavigationDelegate:self];
         
-        self.progressBar = [[UIView alloc] init];
-        [self.progressBar setBackgroundColor:[ColorSchemeModel defaultColorScheme].tintColor];
+        self.progressBar = [[ProgressBar alloc] initWithParent:self withKeyPath:@"estimatedProgress"];
         [self addSubview:self.progressBar];
-        [self.progressBar mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.mas_left);
-            make.top.equalTo(self.mas_top);
-            make.width.equalTo(self.mas_width).multipliedBy(0);
-            make.height.equalTo(@3);
-        }];
     }
     return self;
 }
@@ -53,20 +44,6 @@
                                                            withString:[ColorSchemeModel hexCodeFromUIColor:[ColorSchemeModel defaultColorScheme].tintColor]];
 //    NSLog(@"%@", self.htmlStr);
     [self loadHTMLString:self.htmlStr baseURL:BASEURL];
-
-    [self observeProperty:@keypath(self.estimatedProgress) withBlock:^(__weak typeof(self) self, id oldValue, id newValue) {
-        [self.progressBar mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.mas_left);
-            make.top.equalTo(self.mas_top);
-            make.width.equalTo(self.mas_width).multipliedBy(self.estimatedProgress);
-            make.height.equalTo(@3);
-        }];
-        if(self.estimatedProgress >= 1.0 - 1e-5) { // done
-            [UIView animateWithDuration:0.5 animations:^{
-                [self.progressBar setAlpha:0];
-            }];
-        }
-    }];
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
