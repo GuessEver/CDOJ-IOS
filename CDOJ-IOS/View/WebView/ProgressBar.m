@@ -13,7 +13,7 @@
 
 @implementation ProgressBar
 
-#define BAR_HEIGHT 3
+#define BAR_HEIGHT 2
 #define SHADOW_OFFSET_X 0
 #define SHADOW_OFFSET_Y BAR_HEIGHT
 #define SHADOW_RADIUS BAR_HEIGHT
@@ -21,6 +21,10 @@
 
 - (instancetype)initWithParent:(__weak id)parent inView:(__weak __kindof UIView*)parentView withKeyPath:(NSString*)keyPath {
     if(self = [super init]) {
+        __weak typeof(self) weakSelf = self;
+        [parentView addSubview:weakSelf];
+        
+        [self setHideAfterDone:YES];
         [self setBackgroundColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [self.layer setShadowOffset:CGSizeMake(SHADOW_OFFSET_X, SHADOW_OFFSET_Y)];
         [self.layer setShadowRadius:SHADOW_RADIUS];
@@ -36,7 +40,6 @@
         }];
         
         // KVO
-        __weak typeof(self) weakSelf = self;
         [parent observeProperty:keyPath withBlock:^(__weak typeof(parent) parent, id oldValue, id newValue) {
             [weakSelf mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(parentView.mas_left);
@@ -44,14 +47,26 @@
                 make.width.equalTo(parentView.mas_width).multipliedBy([newValue doubleValue]);
                 make.height.equalTo(@(BAR_HEIGHT));
             }];
-            if([newValue doubleValue] >= 1.0 - 1e-5) { // done
-                [UIView animateWithDuration:0.5 animations:^{
-                    [weakSelf setAlpha:0];
-                }];
+            if(self.hideAfterDone) {
+                if([newValue doubleValue] >= 1.0 - 1e-5) { // done
+                    [UIView animateWithDuration:0.5 animations:^{
+                        [weakSelf setAlpha:0];
+                    }];
+                }
             }
         }];
     }
     return self;
+}
+
+- (void)setHideAfterDone:(BOOL)hideAfterDone {
+    _hideAfterDone = hideAfterDone;
+    if(!hideAfterDone) {
+        [self setAlpha:1.0];
+    }
+}
+
+- (void)setStatus {
 }
 
 @end

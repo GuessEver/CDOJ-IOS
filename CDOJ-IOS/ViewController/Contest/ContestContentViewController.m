@@ -30,6 +30,10 @@
         [self loadWebActionBarButtonsWithUrl:STRF(@"%@/#/contest/show/%@", APIURL, contestId)];
         [self.data fetchDataWithContestId:contestId];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:NOTIFICATION_CONTEST_DATA_REFRESHED object:nil];
+        
+        self.progress = 0;
+        self.progressBar = [[ProgressBar alloc] initWithParent:self inView:self.view withKeyPath:@"progress"];
+//        [self.progressBar setHideAfterDone:NO]; // always show progress bar
     }
     return self;
 }
@@ -39,6 +43,36 @@
     [self.tab_overview loadDetailWithData:self.data.detail];
     [self.tab_problems loadProblemsWithData:self.data.problems];
     [self reloadData];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    if(self.progressTimer == nil) {
+        self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(renewContestProgress) userInfo:nil repeats:YES];
+    }
+    [self.progressTimer fire];
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.progressTimer invalidate];
+    self.progressTimer = nil;
+}
+- (void)renewContestProgress {
+    if(!self.data.detail) return; // no data yet
+    NSInteger length = [[self.data.detail objectForKey:@"length"] integerValue];
+    NSInteger startTime = [[self.data.detail objectForKey:@"startTime"] integerValue];
+    NSInteger endTime = [[self.data.detail objectForKey:@"endTime"] integerValue];
+    NSInteger currentTime = [[NSDate date] timeIntervalSince1970] * 1000;
+    if(currentTime >= endTime) {
+        self.progress = 1.0;
+        [self.progressTimer invalidate];
+    }
+    else if(currentTime <= startTime) {
+        self.progress = 0;
+    }
+    else {
+        self.progress = 1.0 * (currentTime - startTime) / length;
+    }
 }
 
 #pragma mark TYPagerControllerDataSource

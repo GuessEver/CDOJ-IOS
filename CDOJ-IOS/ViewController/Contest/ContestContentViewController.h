@@ -14,6 +14,7 @@
 #import "ContestClarificationViewController.h"
 #import "StatusListViewController.h"
 #import "ContestRankListViewController.h"
+#import "ProgressBar.h"
 
 @interface ContestContentViewController : DefaultPageController
 
@@ -26,6 +27,10 @@
 @property (nonatomic, strong) ContestClarificationViewController* tab_clarification;
 @property (nonatomic, strong) StatusListViewController* tab_status;
 @property (nonatomic, strong) ContestRankListViewController* tab_rank;
+
+@property (nonatomic) double progress;
+@property (nonatomic, strong) ProgressBar* progressBar;
+@property (nonatomic, strong) NSTimer* progressTimer;
 
 - (instancetype)initWithContestId:(NSString*)contestId;
 

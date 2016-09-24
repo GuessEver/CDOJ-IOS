@@ -10,6 +10,8 @@
 
 @interface ProgressBar : UIView
 
+@property (nonatomic) BOOL hideAfterDone;
+
 - (instancetype)initWithParent:(__weak id)parent inView:(__weak __kindof UIView*)parentView withKeyPath:(NSString*)keyPath;
 
 @end
