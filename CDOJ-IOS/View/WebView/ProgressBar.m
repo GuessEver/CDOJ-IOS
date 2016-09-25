@@ -24,7 +24,7 @@
         __weak typeof(self) weakSelf = self;
         [parentView addSubview:weakSelf];
         
-        [self setHideAfterDone:NO];
+        [self setHideAfterDone:YES];
         [self setBackgroundColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [self.layer setShadowOffset:CGSizeMake(SHADOW_OFFSET_X, SHADOW_OFFSET_Y)];
         [self.layer setShadowRadius:SHADOW_RADIUS];
