@@ -107,7 +107,7 @@
 		C0407B671D951BEE002F98F1 /* ContestListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0407B601D951BEE002F98F1 /* ContestListTableViewCell.m */; };
 		C0407B681D951BEE002F98F1 /* ContestRankListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0407B621D951BEE002F98F1 /* ContestRankListTableViewCell.m */; };
 		C0407B6B1D955F68002F98F1 /* StringConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = C0407B6A1D955F68002F98F1 /* StringConverter.m */; };
-		C082C8101D96398D00A91F23 /* ProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C082C80F1D96398D00A91F23 /* ProgressBar.m */; };
+		C068F8AD1D979B0B00E4853F /* ProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C068F8AC1D979B0B00E4853F /* ProgressBar.m */; };
 		C0F784F81D8675CE00E1DC41 /* globalData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0F784F71D8675CE00E1DC41 /* globalData.plist */; };
 /* End PBXBuildFile section */
 
@@ -319,8 +319,8 @@
 		C0407B621D951BEE002F98F1 /* ContestRankListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContestRankListTableViewCell.m; sourceTree = "<group>"; };
 		C0407B691D955F68002F98F1 /* StringConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringConverter.h; sourceTree = "<group>"; };
 		C0407B6A1D955F68002F98F1 /* StringConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringConverter.m; sourceTree = "<group>"; };
-		C082C80E1D96398D00A91F23 /* ProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBar.h; sourceTree = "<group>"; };
-		C082C80F1D96398D00A91F23 /* ProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressBar.m; sourceTree = "<group>"; };
+		C068F8AB1D979B0B00E4853F /* ProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBar.h; sourceTree = "<group>"; };
+		C068F8AC1D979B0B00E4853F /* ProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressBar.m; sourceTree = "<group>"; };
 		C0F784F71D8675CE00E1DC41 /* globalData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = globalData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -587,8 +587,8 @@
 			children = (
 				5FB512BD1D606BA200253B38 /* DefaultWebView.h */,
 				5FB512BE1D606BA200253B38 /* DefaultWebView.m */,
-				C082C80E1D96398D00A91F23 /* ProgressBar.h */,
-				C082C80F1D96398D00A91F23 /* ProgressBar.m */,
+				C068F8AB1D979B0B00E4853F /* ProgressBar.h */,
+				C068F8AC1D979B0B00E4853F /* ProgressBar.m */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -1087,7 +1087,7 @@
 				5F7E4D641D596D9F00E9D4C8 /* ContestContentViewController.m in Sources */,
 				5FB512C31D60865800253B38 /* TrainingRatingListModel.m in Sources */,
 				5FB076111D6C083A002C4730 /* ContestRankListModel.m in Sources */,
-				C082C8101D96398D00A91F23 /* ProgressBar.m in Sources */,
+				C068F8AD1D979B0B00E4853F /* ProgressBar.m in Sources */,
 				5F03E9F61D581D8100607DB9 /* HTTP.m in Sources */,
 				5F7E4D4F1D58B6F900E9D4C8 /* ProblemListViewController.m in Sources */,
 				C0407B6B1D955F68002F98F1 /* StringConverter.m in Sources */,

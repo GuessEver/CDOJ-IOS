@@ -17,14 +17,14 @@
 #define SHADOW_OFFSET_X 0
 #define SHADOW_OFFSET_Y BAR_HEIGHT
 #define SHADOW_RADIUS BAR_HEIGHT
-#define PROCESSING_WIDTH 20
+#define PROCESSINGBAR_WIDTH 20
 
 - (instancetype)initWithParent:(__weak id)parent inView:(__weak __kindof UIView*)parentView withKeyPath:(NSString*)keyPath loadingIncreasement:(BOOL)loadingIncreasement {
     if(self = [super init]) {
         __weak typeof(self) weakSelf = self;
         [parentView addSubview:weakSelf];
         
-        [self setHideAfterDone:YES];
+        [self setHideAfterDone:NO];
         [self setBackgroundColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [self.layer setShadowOffset:CGSizeMake(SHADOW_OFFSET_X, SHADOW_OFFSET_Y)];
         [self.layer setShadowRadius:SHADOW_RADIUS];
@@ -73,7 +73,8 @@
             self.progress = MIN(1.0, MAX(self.progress, [newValue doubleValue]));
         }];
         
-        if(loadingIncreasement) { // Auto increase a little progress to let user know it is loading...
+        // Auto increase a little progress to let user know it is loading...
+        if(loadingIncreasement) {
             self.autoProgressTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(autoIncreaseProgress) userInfo:nil repeats:YES];
             [self.autoProgressTimer fire];
         }

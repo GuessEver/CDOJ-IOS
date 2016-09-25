@@ -25,8 +25,10 @@
         [self.view addSubview:self.webView];
         // self.webView Constraints
         [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.equalTo(self.view.mas_width);
-            make.height.equalTo(self.view.mas_height);
+            make.left.equalTo(self.view.mas_left);
+            make.top.equalTo(self.view.mas_top);
+            make.right.equalTo(self.view.mas_right);
+            make.bottom.equalTo(self.view.mas_bottom);
         }];
     }
     return self;

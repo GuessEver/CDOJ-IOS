@@ -19,10 +19,10 @@
         [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:STRF(@"%@/#/contest/register/%@", APIURL, contestId)]]];
         [self.view addSubview:self.webView];
         [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.view.mas_top);
             make.left.equalTo(self.view.mas_left);
-            make.width.equalTo(self.view.mas_width);
-            make.height.equalTo(self.view.mas_height);
+            make.top.equalTo(self.view.mas_top);
+            make.right.equalTo(self.view.mas_right);
+            make.bottom.equalTo(self.view.mas_bottom);
         }];
     }
     return self;
