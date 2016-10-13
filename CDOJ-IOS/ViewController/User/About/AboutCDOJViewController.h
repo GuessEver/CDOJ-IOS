@@ -6,8 +6,10 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import "DefaultViewController.h"
+#import "DefaultTableViewController.h"
 
-@interface AboutCDOJViewController : DefaultViewController
+@interface AboutCDOJViewController : DefaultTableViewController
+
+@property (nonatomic, strong) UITableViewCell* content;
 
 @end

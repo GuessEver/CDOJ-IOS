@@ -6,11 +6,12 @@
 //  Copyright © 2016年 UESTCACM QKTeam. All rights reserved.
 //
 
-#import "DefaultViewController.h"
+#import "DefaultTableViewController.h"
 #import "UserModel.h"
 
-@interface LoginViewController : DefaultViewController <UITextFieldDelegate>
+@interface LoginViewController : DefaultTableViewController <UITextFieldDelegate>
 
+@property (nonatomic, strong) UITableViewCell* content;
 @property (nonatomic, strong) UIImageView* avatar;
 @property (nonatomic, strong) UITextField* usernameInput;
 @property (nonatomic, strong) UITextField* passwordInput;

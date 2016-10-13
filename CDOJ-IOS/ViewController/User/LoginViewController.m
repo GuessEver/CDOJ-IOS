@@ -15,19 +15,22 @@
 @implementation LoginViewController
 
 - (instancetype)init {
-    if(self = [super init]) {
+    if(self = [super initWithStyle:UITableViewStylePlain]) {
+        self.content = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+        
         self.avatar = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
         [self.avatar setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [self.avatar.layer setCornerRadius:150/2];
         [self.avatar.layer setMasksToBounds:YES];
-        [self.view addSubview:self.avatar];
+        [self.content addSubview:self.avatar];
         
         self.usernameInput = [[UITextField alloc] init];
         [self.usernameInput setPlaceholder:@"用户名"];
         [self.usernameInput setBorderStyle:UITextBorderStyleRoundedRect];
         [self.usernameInput setAutocorrectionType:UITextAutocorrectionTypeNo];
         [self.usernameInput setAutocapitalizationType:UITextAutocapitalizationTypeNone];
-        [self.view addSubview:self.usernameInput];
+        [self.content addSubview:self.usernameInput];
         [self.usernameInput setDelegate:self];
         
         self.passwordInput = [[UITextField alloc] init];
@@ -36,7 +39,7 @@
         [self.passwordInput setAutocorrectionType:UITextAutocorrectionTypeNo];
         [self.passwordInput setAutocapitalizationType:UITextAutocapitalizationTypeNone];
         [self.passwordInput setSecureTextEntry:YES];
-        [self.view addSubview:self.passwordInput];
+        [self.content addSubview:self.passwordInput];
         
         self.loginBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [self.loginBtn.layer setCornerRadius:5];
@@ -45,7 +48,7 @@
         [self.loginBtn setTitleColor:[ColorSchemeModel defaultColorScheme].backgroundColor1 forState:UIControlStateNormal];
         [self.loginBtn setBackgroundColor:[ColorSchemeModel defaultColorScheme].tintColor];
         [self.loginBtn addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:self.loginBtn];
+        [self.content addSubview:self.loginBtn];
         
         self.registerBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [self.registerBtn.layer setCornerRadius:5];
@@ -53,33 +56,33 @@
         [self.registerBtn setTitle:@"还没账号？点此注册" forState:UIControlStateNormal];
         [self.registerBtn setTitleColor:[ColorSchemeModel defaultColorScheme].tintColor forState:UIControlStateNormal];
         [self.registerBtn addTarget:self action:@selector(openRegisterPage) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:self.registerBtn];
+        [self.content addSubview:self.registerBtn];
         
         [self.avatar mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(@150);
             make.height.equalTo(self.avatar.mas_width);
-            make.top.equalTo(self.view.mas_top).offset(50);
-            make.centerX.equalTo(self.view.mas_centerX);
+            make.top.equalTo(self.content.mas_top).offset(50);
+            make.centerX.equalTo(self.content.mas_centerX);
         }];
         [self.usernameInput mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(@250);
             make.top.equalTo(self.avatar.mas_bottom).offset(30);
-            make.centerX.equalTo(self.view.mas_centerX);
+            make.centerX.equalTo(self.content.mas_centerX);
         }];
         [self.passwordInput mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(self.usernameInput.mas_width);
             make.top.equalTo(self.usernameInput.mas_bottom).offset(10);
-            make.centerX.equalTo(self.view.mas_centerX);
+            make.centerX.equalTo(self.content.mas_centerX);
         }];
         [self.loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(self.usernameInput.mas_width);
             make.top.equalTo(self.passwordInput.mas_bottom).offset(10);
-            make.centerX.equalTo(self.view.mas_centerX);
+            make.centerX.equalTo(self.content.mas_centerX);
         }];
         [self.registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(self.loginBtn.mas_width);
             make.top.equalTo(self.loginBtn.mas_bottom).offset(10);
-            make.centerX.equalTo(self.view.mas_centerX);
+            make.centerX.equalTo(self.content.mas_centerX);
         }];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucceed) name:NOTIFICATION_USER_SIGN_IN object:nil];
@@ -134,6 +137,18 @@
         [self.user setUsername:self.usernameInput.text];
         [self.user fetchInfoData];
     }
+}
+
+#pragma mark UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 400;
+}
+#pragma mark UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return self.content;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ColorSchemeModel.h"
+#import "Masonry.h"
 
 @interface DefaultTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
