@@ -22,6 +22,7 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - TYPagerController (1.0.6)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - Masonry
   - MJRefresh
   - SDWebImage (~> 3.7)
+  - TYPagerController (~> 1.0.6)
 
 EXTERNAL SOURCES:
   Block-KVO:
@@ -49,7 +51,8 @@ SPEC CHECKSUMS:
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  TYPagerController: f24234d0234c5ada6609eadc62ba809f072ae8fe
 
-PODFILE CHECKSUM: 60fa8624b0ed6e7a2855cc2824d517cba4b312bf
+PODFILE CHECKSUM: 38537e63dd08ae3c0a678500cc77bc8af9d80d25
 
 COCOAPODS: 1.2.1
