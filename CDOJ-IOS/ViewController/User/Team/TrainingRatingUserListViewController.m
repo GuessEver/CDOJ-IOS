@@ -80,11 +80,11 @@
         [self changeAllUserVisibilityTo:NO];
     }
     self.userVisibility[index] = [NSNumber numberWithBool:![self.userVisibility[index] boolValue]];
-    [self.graph reloadDataAnimated:YES];
+    [self.graph reloadData];
 }
 - (void)showAllUserGraph {
     [self changeAllUserVisibilityTo:YES];
-    [self.graph reloadDataAnimated:YES];
+    [self.graph reloadData];
     [self.tableView selectRowAtIndexPath:nil animated:YES scrollPosition:UITableViewScrollPositionNone];
 }
 - (void)changeAllUserVisibilityTo:(BOOL)visibility {
@@ -104,7 +104,7 @@
     [self.data processGraphData];
 }
 - (void)graphRefreshed {
-    [self.graph reloadDataAnimated:YES];
+    [self.graph reloadData];
 }
 
 #pragma mark JBLineChartViewDelegate

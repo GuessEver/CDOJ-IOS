@@ -16,6 +16,7 @@
     if(self = [super initWithStyle:UITableViewStylePlain]) {
         [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         self.content = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        [self.content setSelectionStyle:UITableViewCellSelectionStyleNone];
         
         UIImageView* logoView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"logo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
         [logoView setTintColor:[ColorSchemeModel defaultColorScheme].tintColor];

@@ -10,5 +10,3 @@ CDOJ App for IOS on iPhone & iPad
 
 UESTCACM评测平台官方客户端
 
-## Feedback
-http://www.qkteam.com/feedback?project=cdoj-ios

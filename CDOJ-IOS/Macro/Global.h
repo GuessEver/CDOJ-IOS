@@ -14,7 +14,7 @@
 #define APP_VERSION [INFO_DIC objectForKey:@"CFBundleShortVersionString"]
 #define APP_BUILD [INFO_DIC objectForKey:@"CFBundleVersion"]
 #define APP_DESCRIPTION @""
-#define APP_FEEDBACK @"Copyright (c) 2016, QKTeam UESTCACM"
+#define APP_FEEDBACK @"Copyright (c) 2016 - 2017, QKTeam UESTCACM"
 
 
 #endif /* Global_h */

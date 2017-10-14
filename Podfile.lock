@@ -16,7 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - Block-KVO (2.2.3)
   - CodeEditorView (0.3.5)
-  - JBChartView (3.0.12)
+  - JBChartView (3.0.13)
   - Masonry (1.0.1)
   - MJRefresh (3.1.12)
   - SDWebImage (3.8.1):
@@ -45,11 +45,11 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Block-KVO: 20d6d9b266d669326fafde3659be7ed33dd425b5
   CodeEditorView: 42212822fc8bf26c13313f55fa0e78315a4b657d
-  JBChartView: 08877554448ccf99c12625ad0ebce70588ff8318
+  JBChartView: ea240dca7b83a92f47d4ae766beb3714753988a1
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
 PODFILE CHECKSUM: 60fa8624b0ed6e7a2855cc2824d517cba4b312bf
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.1
