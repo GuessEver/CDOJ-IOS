@@ -143,6 +143,12 @@
       "idiom" : "ipad",
       "filename" : "CDOJ_167_167.png",
       "scale" : "2x"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "logo_bg.png",
+      "scale" : "1x"
     }
   ],
   "info" : {

@@ -14,7 +14,7 @@
 #define API_AVATAR(email, size) STRF(@"http://cdn.v2ex.com/gravatar/%@.jpg?s=%ld&&d=retro", md5(STR(email)), (long)size)
 
 // Base URL
-#define APIURL @"http://acm.uestc.edu.cn"
+#define APIURL @"http://qscoj.cn"
 #define BASEURL [NSURL URLWithString:APIURL]
 
 // recentContest
